@@ -2569,6 +2569,18 @@ condenser_api::legacy_signed_transaction wallet_api::follow( string follower, st
       return steem::plugins::sps::find_proposal_return ();
    }
 
+   steem::plugins::sps::find_proposal_return wallet_api::find_proposal(int64_t _id)
+   {
+      FC_ASSERT(_id > 0);
+      auto api = appbase::app().get_plugin< steem::plugins::sps::sps_api_plugin >().api;
+      steem::plugins::sps::find_proposal_args args;
+      args.id = _id;
+
+      ddump((args.id));
+
+      return api->find_proposal(args);
+   }
+
    void wallet_api::remove_proposal(account_name_type _deleter, 
                                     int64_t _id)
    {
