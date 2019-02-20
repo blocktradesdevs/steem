@@ -2577,8 +2577,16 @@ condenser_api::legacy_signed_transaction wallet_api::follow( string follower, st
       args.id = _id;
 
       ddump((args.id));
-
-      return api->find_proposal(args);
+      try {
+         return api->find_proposal(args);
+      } catch( fc::exception& _e) {
+         elog("Caught exception while executig find_proposal_return: ${error}",  ("error", _e));
+      } catch( std::exception& _e ) {
+         elog("Caught exception while executig find_proposal_return: ${error}",  ("error", _e.what()));
+      } catch( ... ) {
+         elog("Caught unhandled exception in find_proposal_return.");
+      }
+      return steem::plugins::sps::find_proposal_return ();
    }
 
    void wallet_api::remove_proposal(account_name_type _deleter, 
