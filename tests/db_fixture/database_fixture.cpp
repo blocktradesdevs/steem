@@ -12,7 +12,7 @@
 #include <steem/plugins/rc/rc_plugin.hpp>
 #include <steem/plugins/webserver/webserver_plugin.hpp>
 #include <steem/plugins/witness/witness_plugin.hpp>
-#include <steem/plugins/sps/sps_plugin.hpp>
+#include <steem/plugins/sps_api/sps_api_plugin.hpp>
 
 #include <steem/plugins/condenser_api/condenser_api_plugin.hpp>
 
@@ -34,6 +34,7 @@ uint32_t STEEM_TESTING_GENESIS_TIMESTAMP = 1431700000;
 using namespace steem::plugins::webserver;
 using namespace steem::plugins::database_api;
 using namespace steem::plugins::block_api;
+using namespace steem::plugins::sps;
 using steem::plugins::condenser_api::condenser_api_plugin;
 
 namespace steem { namespace chain {
@@ -1018,16 +1019,109 @@ void t_proposal_database_fixture< T >::transfer( std::string from, std::string t
    this->db->push_transaction( tx, 0 );
 }
 
+template< typename T>
+list_proposals_return t_proposal_database_fixture< T >::list_proposals(std::string _order_by, std::string _order_type, int _active) 
+{
+      auto order_type_check = [&_order_type]() {
+         std::transform(_order_type.begin(), _order_type.end(), _order_type.begin(), [](unsigned char c){return std::tolower(c);});
+         if ( _order_type == "desc" ) {
+            return order_direction_type::direction_descending;
+         } else {
+            return order_direction_type::direction_ascending;
+         }
+      };
+
+      auto api = appbase::app().get_plugin< steem::plugins::sps::sps_api_plugin >().api;
+      steem::plugins::sps::list_proposals_args args;
+      args.order_by        = _order_by;
+      args.order_direction = order_type_check();
+      args.active          = _active;
+
+      try {
+         return api->list_proposals(args);
+      } catch( fc::exception& _e) {
+         elog("Caught exception while executig list_proposals: ${error}",  ("error", _e));
+      } catch( std::exception& _e ) {
+         elog("Caught exception while executig list_proposals: ${error}",  ("error", _e.what()));
+      } catch( ... ) {
+         elog("Caught unhandled exception in list_proposals.");
+      }
+      return steem::plugins::sps::list_proposals_return ();
+}
+
+template< typename T>
+list_voter_proposals_return  t_proposal_database_fixture< T >::list_voter_proposals(account_name_type _voter, std::string _order_by, std::string _order_type, int _active) 
+{
+      auto order_type_check = [&_order_type]() {
+         std::transform(_order_type.begin(), _order_type.end(), _order_type.begin(), [](unsigned char c){return std::tolower(c);});
+         if ( _order_type == "desc" ) {
+            return order_direction_type::direction_descending;
+         } else {
+            return order_direction_type::direction_ascending;
+         }
+      };
+
+      auto api = appbase::app().get_plugin< steem::plugins::sps::sps_api_plugin >().api;
+      steem::plugins::sps::list_voter_proposals_args args;
+      args.voter           = _voter;
+      args.order_by        = _order_by;
+      args.order_direction = order_type_check();
+      args.active          = _active;
+
+      try {
+         return api->list_voter_proposals(args);
+      } catch( fc::exception& _e) {
+         elog("Caught exception while executig list_voter_proposals: ${error}",  ("error", _e));
+      } catch( std::exception& _e ) {
+         elog("Caught exception while executig list_voter_proposals: ${error}",  ("error", _e.what()));
+      } catch( ... ) {
+         elog("Caught unhandled exception in list_voter_proposals.");
+      }
+      return steem::plugins::sps::list_voter_proposals_return ();
+}
+
+template< typename T>
+find_proposal_return t_proposal_database_fixture< T >::find_proposal(int _proposal_id)
+{
+      auto api = appbase::app().get_plugin< steem::plugins::sps::sps_api_plugin >().api;
+      steem::plugins::sps::find_proposal_args args;
+      args.id = _proposal_id;
+
+      try {
+         return api->find_proposal(args);
+      } catch( fc::exception& _e) {
+         elog("Caught exception while executig find_proposal_return: ${error}",  ("error", _e));
+      } catch( std::exception& _e ) {
+         elog("Caught exception while executig find_proposal_return: ${error}",  ("error", _e.what()));
+      } catch( ... ) {
+         elog("Caught unhandled exception in find_proposal_return.");
+      }
+      return steem::plugins::sps::find_proposal_return ();
+}
+
+template< typename T>
+void t_proposal_database_fixture< T >::remove_proposal(account_name_type _deleter, int _proposal_id){
+
+}
+
 template int64_t t_proposal_database_fixture< clean_database_fixture >::create_proposal( std::string creator, std::string receiver, time_point_sec start_date, time_point_sec end_date, asset daily_pay, const fc::ecc::private_key& key );
 template void t_proposal_database_fixture< clean_database_fixture >::vote_proposal( std::string voter, const std::vector< int64_t >& id_proposals, bool approve, const fc::ecc::private_key& key );
 template void t_proposal_database_fixture< clean_database_fixture >::transfer_vests( std::string from, std::string to, asset amount, const fc::ecc::private_key& key );
 template void t_proposal_database_fixture< clean_database_fixture >::transfer( std::string from, std::string to, asset amount, const fc::ecc::private_key& key );
+template list_proposals_return t_proposal_database_fixture< clean_database_fixture >::list_proposals(std::string _order_by, std::string _order_type, int _active);
+template list_voter_proposals_return t_proposal_database_fixture< clean_database_fixture >::list_voter_proposals(account_name_type _voter, std::string _order_by, std::string _order_type, int _active);
+template find_proposal_return t_proposal_database_fixture< clean_database_fixture >::find_proposal(int _proposal_id);
+template void t_proposal_database_fixture< clean_database_fixture >::remove_proposal(account_name_type _deleter, int _proposal_id);
 
 template void t_proposal_database_fixture< database_fixture >::plugin_prepare();
 template int64_t t_proposal_database_fixture< database_fixture >::create_proposal( std::string creator, std::string receiver, time_point_sec start_date, time_point_sec end_date, asset daily_pay, const fc::ecc::private_key& key );
 template void t_proposal_database_fixture< database_fixture >::vote_proposal( std::string voter, const std::vector< int64_t >& id_proposals, bool approve, const fc::ecc::private_key& key );
 template void t_proposal_database_fixture< database_fixture >::transfer_vests( std::string from, std::string to, asset amount, const fc::ecc::private_key& key );
 template void t_proposal_database_fixture< database_fixture >::transfer( std::string from, std::string to, asset amount, const fc::ecc::private_key& key );
+template list_proposals_return t_proposal_database_fixture< database_fixture >::list_proposals(std::string _order_by, std::string _order_type, int _active);
+template list_voter_proposals_return t_proposal_database_fixture< database_fixture >::list_voter_proposals(account_name_type _voter, std::string _order_by, std::string _order_type, int _active);
+template find_proposal_return t_proposal_database_fixture< database_fixture >::find_proposal(int _proposal_id);
+template void t_proposal_database_fixture< database_fixture >::remove_proposal(account_name_type _deleter, int _proposal_id);
 
 json_rpc_database_fixture::json_rpc_database_fixture()
 {
