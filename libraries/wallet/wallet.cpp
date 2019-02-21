@@ -2590,7 +2590,7 @@ condenser_api::legacy_signed_transaction wallet_api::follow( string follower, st
    }
 
    condenser_api::legacy_signed_transaction wallet_api::remove_proposal(account_name_type _deleter, 
-                                                                        flat_set<int64_t> _ids)
+                                                                        flat_set<int64_t> _ids )
    {
       FC_ASSERT(_deleter.size());
       FC_ASSERT(!_ids.empty());
