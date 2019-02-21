@@ -1111,7 +1111,17 @@ find_proposal_return t_proposal_database_fixture< T >::find_proposal(int _propos
 
 template< typename T>
 void t_proposal_database_fixture< T >::remove_proposal(account_name_type _deleter, int _proposal_id){
+   remove_proposal_operation rp;
+   rp.proposal_owner = _deleter;
+   rp.proposal_ids   = _proposal_id;
 
+   signed_transaction trx;
+   trx.operations.push_back( rp );
+   trx.set_expiration( this->db->head_block_time() + STEEM_MAX_TIME_UNTIL_EXPIRATION );
+   this->sign( trx, _key );
+   this->db->push_transaction( trx, 0 );
+   trx.signatures.clear();
+   trx.operations.clear();
 }
 
 template int64_t t_proposal_database_fixture< clean_database_fixture >::create_proposal( std::string creator, std::string receiver, time_point_sec start_date, time_point_sec end_date, asset daily_pay, const fc::ecc::private_key& key );
