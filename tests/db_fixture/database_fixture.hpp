@@ -360,6 +360,7 @@ struct t_proposal_database_fixture : public T
    void remove_proposal(account_name_type _deleter, int _proposal_id);
 };
 
+
 using proposal_database_fixture = t_proposal_database_fixture< clean_database_fixture >;
 using proposal_database_fixture_for_plugin = t_proposal_database_fixture< database_fixture >;
 
