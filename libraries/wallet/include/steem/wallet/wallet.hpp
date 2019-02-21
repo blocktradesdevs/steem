@@ -1129,7 +1129,7 @@ class wallet_api
        * @param _ids      - proposal ids to be removed
        */
       condenser_api::legacy_signed_transaction remove_proposal(account_name_type _deleter, 
-                                                               flat_set<int64_t> _ids);
+                                                               flat_set<int64_t> _ids );
 };
 
 struct plain_keys {
