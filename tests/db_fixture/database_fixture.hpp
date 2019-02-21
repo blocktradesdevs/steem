@@ -12,6 +12,8 @@
 #include <steem/plugins/block_api/block_api_plugin.hpp>
 #include <steem/plugins/condenser_api/condenser_api_legacy_asset.hpp>
 #include <steem/plugins/database_api/database_api_plugin.hpp>
+#include <steem/plugins/sps_api/sps_api.hpp>
+#include <steem/plugins/sps/sps_plugin.hpp>
 
 #include <fc/network/http/connection.hpp>
 #include <fc/network/ip.hpp>
@@ -350,6 +352,11 @@ struct t_proposal_database_fixture : public T
    void transfer_vests( std::string from, std::string to, asset amount, const fc::ecc::private_key& key );
 
    void transfer( std::string from, std::string to, asset amount, const fc::ecc::private_key& key );
+
+   steem::plugins::sps::list_proposals_return list_proposals(std::string _order_by, std::string _order_type, int _active);
+   steem::plugins::sps::list_voter_proposals_return list_voter_proposals(account_name_type _voter, std::string _order_by, std::string _order_type, int _active);
+   steem::plugins::sps::find_proposal_return find_proposal(int _proposal_id);
+   void remove_proposal(account_name_type _deleter, int _proposal_id);
 };
 
 using proposal_database_fixture = t_proposal_database_fixture< clean_database_fixture >;

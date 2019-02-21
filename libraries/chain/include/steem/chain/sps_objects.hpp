@@ -14,7 +14,7 @@ using steem::chain::shared_string;
 using steem::chain::oid;
 using steem::chain::by_id;
 
-using namespace std;
+//using namespace std;  //code clean-up
 
 #ifndef STEEM_SPS_SPACE_ID
 #define STEEM_SPS_SPACE_ID 20
