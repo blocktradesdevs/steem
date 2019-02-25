@@ -356,7 +356,7 @@ struct t_proposal_database_fixture : public T
    steem::plugins::sps::list_proposals_return list_proposals(std::string _order_by, std::string _order_type, int _active);
    steem::plugins::sps::list_voter_proposals_return list_voter_proposals(account_name_type _voter, std::string _order_by, std::string _order_type, int _active);
    steem::plugins::sps::find_proposal_return find_proposal(int _proposal_id);
-   void remove_proposal(account_name_type _deleter, int _proposal_id);
+   void remove_proposal(account_name_type _deleter, flat_set<int64_t> _proposal_id);
 };
 
 using proposal_database_fixture = t_proposal_database_fixture< clean_database_fixture >;

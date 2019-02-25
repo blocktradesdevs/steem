@@ -445,4 +445,212 @@ BOOST_AUTO_TEST_CASE( proposal_vote_object_01_apply )
    FC_LOG_AND_RETHROW()
 }
 
+
+BOOST_AUTO_TEST_CASE( create_proposal_000 )
+{
+   try {
+      BOOST_TEST_MESSAGE( "Testing: create proposal: opration arguments validation - all args are ok" );
+      validate_database();
+   } FC_LOG_AND_RETHROW()
+}
+
+BOOST_AUTO_TEST_CASE( create_proposal_001 )
+{
+   try
+   {
+      BOOST_TEST_MESSAGE( "Testing: create proposal: opration arguments validation - invalid creator" );
+      validate_database();
+   }
+   FC_LOG_AND_RETHROW()
+}
+
+BOOST_AUTO_TEST_CASE( create_proposal_002 )
+{
+   try
+   {
+      BOOST_TEST_MESSAGE( "Testing: create proposal: opration arguments validation - invalid receiver" );
+      validate_database();
+   }
+   FC_LOG_AND_RETHROW()
+}
+
+BOOST_AUTO_TEST_CASE( create_proposal_003 )
+{
+   try
+   {
+      BOOST_TEST_MESSAGE( "Testing: create proposal: opration arguments validation - invalid start date" );
+      validate_database();
+   }
+   FC_LOG_AND_RETHROW()
+}
+
+BOOST_AUTO_TEST_CASE( create_proposal_004 )
+{
+   try
+   {
+      BOOST_TEST_MESSAGE( "Testing: create proposal: opration arguments validation - invalid end date" );
+      validate_database();
+   }
+   FC_LOG_AND_RETHROW()
+}
+
+BOOST_AUTO_TEST_CASE( create_proposal_005 )
+{
+   try
+   {
+      BOOST_TEST_MESSAGE( "Testing: create proposal: opration arguments validation - invalid daily pay (negative asset)" );
+      validate_database();
+   }
+   FC_LOG_AND_RETHROW()
+}
+
+BOOST_AUTO_TEST_CASE( create_proposal_006 )
+{
+   try
+   {
+      BOOST_TEST_MESSAGE( "Testing: create proposal: opration arguments validation - invalid daily pay (zero asset)" );
+      validate_database();
+   }
+   FC_LOG_AND_RETHROW()
+}
+
+BOOST_AUTO_TEST_CASE( create_proposal_007 )
+{
+   try
+   {
+      BOOST_TEST_MESSAGE( "Testing: create proposal: opration arguments validation - invalid daily pay (wrong currency)" );
+      validate_database();
+   }
+   FC_LOG_AND_RETHROW()
+}
+
+BOOST_AUTO_TEST_CASE( create_proposal_008 )
+{
+   try
+   {
+      BOOST_TEST_MESSAGE( "Testing: create proposal: opration arguments validation - invalid subject" );
+      validate_database();
+   }
+   FC_LOG_AND_RETHROW()
+}
+
+BOOST_AUTO_TEST_CASE( update_proposal_votes_000 )
+{
+   try
+   {
+      BOOST_TEST_MESSAGE( "Testing: update proposal votes: opration arguments validation - all ok" );
+      validate_database();
+   }
+   FC_LOG_AND_RETHROW()
+}
+
+BOOST_AUTO_TEST_CASE( update_proposal_votes_001 )
+{
+   try
+   {
+      BOOST_TEST_MESSAGE( "Testing: update proposal votes: opration arguments validation - invalid voter" );
+      validate_database();
+   }
+   FC_LOG_AND_RETHROW()
+}
+
+BOOST_AUTO_TEST_CASE( update_proposal_votes_002 )
+{
+   try
+   {
+      BOOST_TEST_MESSAGE( "Testing: update proposal votes: opration arguments validation - invalid id array (empty array)" );
+      validate_database();
+   }
+   FC_LOG_AND_RETHROW()
+}
+
+BOOST_AUTO_TEST_CASE( update_proposal_votes_003 )
+{
+   try
+   {
+      BOOST_TEST_MESSAGE( "Testing: update proposal votes: opration arguments validation - invalid id array (array with negative digits)" );
+      validate_database();
+   }
+   FC_LOG_AND_RETHROW()
+}
+
+BOOST_AUTO_TEST_CASE( update_proposal_votes_004 )
+{
+   try
+   {
+      BOOST_TEST_MESSAGE( "Testing: update proposal votes: opration arguments validation - invalid id array (digit instead of array)" );
+      validate_database();
+   }
+   FC_LOG_AND_RETHROW()
+}
+
+BOOST_AUTO_TEST_CASE( update_proposal_votes_005 )
+{
+   try
+   {
+      BOOST_TEST_MESSAGE( "Testing: update proposal votes: opration arguments validation - invalid id array (array with greater number of digits than allowed)" );
+      validate_database();
+   }
+   FC_LOG_AND_RETHROW()
+}
+
+BOOST_AUTO_TEST_CASE( update_proposal_votes_006 )
+{
+   try
+   {
+      BOOST_TEST_MESSAGE( "Testing: update proposal votes: opration arguments validation - invalid approve" );
+      validate_database();
+   }
+   FC_LOG_AND_RETHROW()
+}
+
+BOOST_AUTO_TEST_CASE( remove_proposal_000 )
+{
+   try
+   {
+      BOOST_TEST_MESSAGE( "Testing: remove proposal: opration arguments validation - all ok" );
+      validate_database();
+   }
+   FC_LOG_AND_RETHROW()
+}
+
+BOOST_AUTO_TEST_CASE( remove_proposal_001 )
+{
+   try
+   {
+      BOOST_TEST_MESSAGE( "Testing: remove proposal: opration arguments validation - invalid deleter" );
+      validate_database();
+   }
+   FC_LOG_AND_RETHROW()
+}
+
+BOOST_AUTO_TEST_CASE( remove_proposal_002 )
+{
+   try
+   {
+      BOOST_TEST_MESSAGE( "Testing: remove proposal: opration arguments validation - invalid array(empty array)" );
+      validate_database();
+   }
+   FC_LOG_AND_RETHROW()
+}
+
+BOOST_AUTO_TEST_CASE( remove_proposal_003 )
+{
+   try
+   {
+      BOOST_TEST_MESSAGE( "Testing: remove proposal: opration arguments validation - invalid array(array with greater number of digits than allowed)" );
+      validate_database();
+   }
+   FC_LOG_AND_RETHROW()
+}
+
+BOOST_AUTO_TEST_CASE( remove_proposal_004 )
+{
+   try
+   {
+      BOOST_TEST_MESSAGE( "Testing: remove proposal: opration arguments validation - invalid array(invalid args in array)" );
+      validate_database();
+   }
+   FC_LOG_AND_RETHROW()
+}
 BOOST_AUTO_TEST_SUITE_END()
