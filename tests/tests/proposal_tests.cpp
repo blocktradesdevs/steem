@@ -446,10 +446,80 @@ BOOST_AUTO_TEST_CASE( proposal_vote_object_01_apply )
 }
 
 
+struct create_proposal_data {
+      std::string creator    ;
+      std::string receiver   ;
+      fc::time_point_sec start_date ;
+      fc::time_point_sec end_date   ;
+      steem::protocol::asset daily_pay ;
+      std::string subject ;   
+      std::string url     ;   
+
+      create_proposal_data(fc::time_point_sec _start) {
+         creator    = "alice";
+         receiver   = "bob";
+         start_date = _start     + fc::days( 1 );
+         end_date   = start_date + fc::days( 2 );
+         daily_pay  = asset( 100, SBD_SYMBOL );
+         subject    = "hello";
+         url        = "http:://something.html";
+      }
+};
+
 BOOST_AUTO_TEST_CASE( create_proposal_000 )
 {
    try {
       BOOST_TEST_MESSAGE( "Testing: create proposal: opration arguments validation - all args are ok" );
+      ACTORS( (alice)(bob) )
+      generate_block();
+
+      set_price_feed( price( ASSET( "1.000 TBD" ), ASSET( "1.000 TESTS" ) ) );
+      generate_block();
+
+      auto creator    = "alice";
+      auto receiver   = "bob";
+      auto start_date = db->head_block_time() + fc::days( 1 );
+      auto end_date   = start_date + fc::days( 2 );
+      auto daily_pay  = asset( 100, SBD_SYMBOL );
+      auto subject    = "hello";
+      auto url        = "http:://something.html";
+
+      FUND( creator, ASSET( "80.000 TBD" ) );
+
+      {  //hande made create proposal 
+         create_proposal_operation op;
+         op.creator    = creator;
+         op.receiver   = receiver;
+         op.start_date = start_date;
+         op.end_date   = end_date;
+         op.daily_pay  = daily_pay;
+         op.subject    = subject;
+         op.url        = url;
+
+         signed_transaction tx;
+         tx.operations.push_back( op );
+         tx.set_expiration( db->head_block_time() + STEEM_MAX_TIME_UNTIL_EXPIRATION );
+         sign( tx, alice_private_key );
+         db->push_transaction( tx, 0 );
+         tx.operations.clear();
+         tx.signatures.clear();
+
+         const auto& proposal_idx = db->get_index< proposal_index >().indices().get< by_creator >();
+         auto found = proposal_idx.find( creator );
+         BOOST_REQUIRE( found != proposal_idx.end() );
+         BOOST_REQUIRE( found->creator    == creator );
+         BOOST_REQUIRE( found->receiver   == receiver );
+         BOOST_REQUIRE( found->start_date == start_date );
+         BOOST_REQUIRE( found->end_date   == end_date );
+         BOOST_REQUIRE( found->daily_pay  == daily_pay );
+         BOOST_REQUIRE( found->subject    == subject );
+         BOOST_REQUIRE( found->url        == url );
+      }
+
+      {
+         int64_t proposal = create_proposal( creator, receiver, start_date, end_date, daily_pay, alice_private_key );
+         BOOST_REQUIRE( proposal > 0 );
+      }
       validate_database();
    } FC_LOG_AND_RETHROW()
 }
@@ -459,6 +529,14 @@ BOOST_AUTO_TEST_CASE( create_proposal_001 )
    try
    {
       BOOST_TEST_MESSAGE( "Testing: create proposal: opration arguments validation - invalid creator" );
+      {
+         create_proposal_data cpd(db->head_block_time());
+         ACTORS( (alice)(bob) )
+         generate_block();
+         FUND( cpd.creator, ASSET( "80.000 TBD" ) );
+         int64_t proposal = create_proposal( "", cpd.receiver, cpd.start_date, cpd.end_date, cpd.daily_pay, alice_private_key );
+         BOOST_REQUIRE( proposal == -1 );
+      }
       validate_database();
    }
    FC_LOG_AND_RETHROW()
@@ -469,6 +547,12 @@ BOOST_AUTO_TEST_CASE( create_proposal_002 )
    try
    {
       BOOST_TEST_MESSAGE( "Testing: create proposal: opration arguments validation - invalid receiver" );
+      create_proposal_data cpd(db->head_block_time());
+      ACTORS( (alice)(bob) )
+      generate_block();
+      FUND( cpd.creator, ASSET( "80.000 TBD" ) );
+      int64_t proposal = create_proposal( cpd.creator, "", cpd.start_date, cpd.end_date, cpd.daily_pay, alice_private_key );
+      BOOST_REQUIRE( proposal == -1 );
       validate_database();
    }
    FC_LOG_AND_RETHROW()
@@ -479,6 +563,13 @@ BOOST_AUTO_TEST_CASE( create_proposal_003 )
    try
    {
       BOOST_TEST_MESSAGE( "Testing: create proposal: opration arguments validation - invalid start date" );
+      create_proposal_data cpd(db->head_block_time());
+      ACTORS( (alice)(bob) )
+      generate_block();
+      FUND( cpd.creator, ASSET( "80.000 TBD" ) );
+      cpd.start_date = cpd.end_date + fc::days(2);
+      int64_t proposal = create_proposal( cpd.creator, cpd.receiver, cpd.start_date, cpd.end_date, cpd.daily_pay, alice_private_key );
+      BOOST_REQUIRE( proposal == -1 );
       validate_database();
    }
    FC_LOG_AND_RETHROW()
@@ -489,6 +580,13 @@ BOOST_AUTO_TEST_CASE( create_proposal_004 )
    try
    {
       BOOST_TEST_MESSAGE( "Testing: create proposal: opration arguments validation - invalid end date" );
+      create_proposal_data cpd(db->head_block_time());
+      ACTORS( (alice)(bob) )
+      generate_block();
+      FUND( cpd.creator, ASSET( "80.000 TBD" ) );
+      cpd.end_date = cpd.start_date - fc::days(2);
+      int64_t proposal = create_proposal( cpd.creator, cpd.receiver, cpd.start_date, cpd.end_date, cpd.daily_pay, alice_private_key );
+      BOOST_REQUIRE( proposal == -1 );
       validate_database();
    }
    FC_LOG_AND_RETHROW()
@@ -499,6 +597,13 @@ BOOST_AUTO_TEST_CASE( create_proposal_005 )
    try
    {
       BOOST_TEST_MESSAGE( "Testing: create proposal: opration arguments validation - invalid daily pay (negative asset)" );
+      create_proposal_data cpd(db->head_block_time());
+      ACTORS( (alice)(bob) )
+      generate_block();
+      FUND( cpd.creator, ASSET( "80.000 TBD" ) );
+      cpd.daily_pay = asset( -10, SBD_SYMBOL );
+      int64_t proposal = create_proposal( cpd.creator, cpd.receiver, cpd.start_date, cpd.end_date, cpd.daily_pay, alice_private_key );
+      BOOST_REQUIRE( proposal == -1 );
       validate_database();
    }
    FC_LOG_AND_RETHROW()
@@ -509,6 +614,13 @@ BOOST_AUTO_TEST_CASE( create_proposal_006 )
    try
    {
       BOOST_TEST_MESSAGE( "Testing: create proposal: opration arguments validation - invalid daily pay (zero asset)" );
+      create_proposal_data cpd(db->head_block_time());
+      ACTORS( (alice)(bob) )
+      generate_block();
+      FUND( cpd.creator, ASSET( "80.000 TBD" ) );
+      cpd.daily_pay = asset( 0, SBD_SYMBOL );
+      int64_t proposal = create_proposal( cpd.creator, cpd.receiver, cpd.start_date, cpd.end_date, cpd.daily_pay, alice_private_key );
+      BOOST_REQUIRE( proposal == -1 );
       validate_database();
    }
    FC_LOG_AND_RETHROW()
@@ -518,17 +630,27 @@ BOOST_AUTO_TEST_CASE( create_proposal_007 )
 {
    try
    {
-      BOOST_TEST_MESSAGE( "Testing: create proposal: opration arguments validation - invalid daily pay (wrong currency)" );
-      validate_database();
-   }
-   FC_LOG_AND_RETHROW()
-}
-
-BOOST_AUTO_TEST_CASE( create_proposal_008 )
-{
-   try
-   {
       BOOST_TEST_MESSAGE( "Testing: create proposal: opration arguments validation - invalid subject" );
+      ACTORS( (alice)(bob) )
+      create_proposal_operation cpo;
+      cpo.creator    = "alice";
+      cpo.receiver   = "bob";
+      cpo.start_date = db->head_block_time() + fc::days( 1 );
+      cpo.end_date   = cpo.start_date + fc::days( 2 );
+      cpo.daily_pay  = asset( 100, SBD_SYMBOL );
+      cpo.subject    = "hello";
+      cpo.url        = "http:://something.html";
+      signed_transaction tx;
+      tx.operations.push_back( cpo );
+      tx.set_expiration( db->head_block_time() + STEEM_MAX_TIME_UNTIL_EXPIRATION );
+      sign( tx, alice_private_key );
+      db->push_transaction( tx, 0 );
+      tx.operations.clear();
+      tx.signatures.clear();
+
+      const auto& proposal_idx = db->get_index< proposal_index >().indices().get< by_creator >();
+      auto found = proposal_idx.find( cpo.creator );
+      BOOST_REQUIRE( found == proposal_idx.end() );
       validate_database();
    }
    FC_LOG_AND_RETHROW()
