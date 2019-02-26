@@ -618,7 +618,17 @@ BOOST_AUTO_TEST_CASE( update_proposal_votes_000 )
 {
    try
    {
-      BOOST_TEST_MESSAGE( "Testing: update proposal votes: opration arguments validation - all ok" );
+      BOOST_TEST_MESSAGE( "Testing: update proposal votes: opration arguments validation - all ok (approve true)" );
+      create_proposal_data cpd(db->head_block_time());
+      ACTORS( (alice)(bob)(carol) )
+      generate_block();
+      FUND( cpd.creator, ASSET( "80.000 TBD" ) );
+      generate_block();
+
+      int64_t proposal_1 = create_proposal( cpd.creator, cpd.receiver, cpd.start_date, cpd.end_date, cpd.daily_pay, alice_private_key );
+      BOOST_REQUIRE(proposal_1 >= 0);
+      std::vector< int64_t > proposals = {proposal_1};
+      vote_proposal("carol", proposals, true, carol_private_key);
       validate_database();
    }
    FC_LOG_AND_RETHROW()
@@ -628,7 +638,17 @@ BOOST_AUTO_TEST_CASE( update_proposal_votes_001 )
 {
    try
    {
-      BOOST_TEST_MESSAGE( "Testing: update proposal votes: opration arguments validation - invalid voter" );
+      BOOST_TEST_MESSAGE( "Testing: update proposal votes: opration arguments validation - all ok (approve false)" );
+      create_proposal_data cpd(db->head_block_time());
+      ACTORS( (alice)(bob)(carol) )
+      generate_block();
+      FUND( cpd.creator, ASSET( "80.000 TBD" ) );
+      generate_block();
+
+      int64_t proposal_1 = create_proposal( cpd.creator, cpd.receiver, cpd.start_date, cpd.end_date, cpd.daily_pay, alice_private_key );
+      BOOST_REQUIRE(proposal_1 >= 0);
+      std::vector< int64_t > proposals = {proposal_1};
+      vote_proposal("carol", proposals, false, carol_private_key);
       validate_database();
    }
    FC_LOG_AND_RETHROW()
@@ -638,7 +658,17 @@ BOOST_AUTO_TEST_CASE( update_proposal_votes_002 )
 {
    try
    {
-      BOOST_TEST_MESSAGE( "Testing: update proposal votes: opration arguments validation - invalid id array (empty array)" );
+      BOOST_TEST_MESSAGE( "Testing: update proposal votes: opration arguments validation - all ok (empty array)" );
+      create_proposal_data cpd(db->head_block_time());
+      ACTORS( (alice)(bob)(carol) )
+      generate_block();
+      FUND( cpd.creator, ASSET( "80.000 TBD" ) );
+      generate_block();
+
+      int64_t proposal_1 = create_proposal( cpd.creator, cpd.receiver, cpd.start_date, cpd.end_date, cpd.daily_pay, alice_private_key );
+      BOOST_REQUIRE(proposal_1 >= 0);
+      std::vector< int64_t > proposals;
+      vote_proposal("carol", proposals, true, carol_private_key);
       validate_database();
    }
    FC_LOG_AND_RETHROW()
@@ -648,7 +678,15 @@ BOOST_AUTO_TEST_CASE( update_proposal_votes_003 )
 {
    try
    {
-      BOOST_TEST_MESSAGE( "Testing: update proposal votes: opration arguments validation - invalid id array (array with negative digits)" );
+      BOOST_TEST_MESSAGE( "Testing: update proposal votes: opration arguments validation - all ok (array with negative digits)" );
+      create_proposal_data cpd(db->head_block_time());
+      ACTORS( (alice)(bob)(carol) )
+      generate_block();
+      FUND( cpd.creator, ASSET( "80.000 TBD" ) );
+      generate_block();
+
+      std::vector< int64_t > proposals = {-1, -2, -3, -4, -5};
+      vote_proposal("carol", proposals, true, carol_private_key);
       validate_database();
    }
    FC_LOG_AND_RETHROW()
@@ -658,7 +696,17 @@ BOOST_AUTO_TEST_CASE( update_proposal_votes_004 )
 {
    try
    {
-      BOOST_TEST_MESSAGE( "Testing: update proposal votes: opration arguments validation - invalid id array (digit instead of array)" );
+      BOOST_TEST_MESSAGE( "Testing: update proposal votes: opration arguments validation - invalid voter" );
+      create_proposal_data cpd(db->head_block_time());
+      ACTORS( (alice)(bob)(carol) )
+      generate_block();
+      FUND( cpd.creator, ASSET( "80.000 TBD" ) );
+      generate_block();
+
+      int64_t proposal_1 = create_proposal( cpd.creator, cpd.receiver, cpd.start_date, cpd.end_date, cpd.daily_pay, alice_private_key );
+      BOOST_REQUIRE(proposal_1 >= 0);
+      std::vector< int64_t > proposals = {proposal_1};
+      STEEM_REQUIRE_THROW(vote_proposal("urp", proposals, false, carol_private_key), fc::exception);
       validate_database();
    }
    FC_LOG_AND_RETHROW()
@@ -669,16 +717,18 @@ BOOST_AUTO_TEST_CASE( update_proposal_votes_005 )
    try
    {
       BOOST_TEST_MESSAGE( "Testing: update proposal votes: opration arguments validation - invalid id array (array with greater number of digits than allowed)" );
-      validate_database();
-   }
-   FC_LOG_AND_RETHROW()
-}
+      create_proposal_data cpd(db->head_block_time());
+      ACTORS( (alice)(bob)(carol) )
+      generate_block();
+      FUND( cpd.creator, ASSET( "80.000 TBD" ) );
+      generate_block();
 
-BOOST_AUTO_TEST_CASE( update_proposal_votes_006 )
-{
-   try
-   {
-      BOOST_TEST_MESSAGE( "Testing: update proposal votes: opration arguments validation - invalid approve" );
+      std::vector< int64_t > proposals;
+      for(int i = 0; i <= STEEM_PROPOSAL_MAX_IDS_NUMBER; i++) {
+         proposals.push_back(i);
+      }
+      STEEM_REQUIRE_THROW(vote_proposal("carol", proposals, true, carol_private_key), fc::exception);
+      
       validate_database();
    }
    FC_LOG_AND_RETHROW()
