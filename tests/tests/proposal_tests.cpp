@@ -483,7 +483,6 @@ BOOST_AUTO_TEST_CASE( create_proposal_000 )
       auto daily_pay  = asset( 100, SBD_SYMBOL );
 
       FUND( creator, ASSET( "80.000 TBD" ) );
-
       {
          int64_t proposal = create_proposal( creator, receiver, start_date, end_date, daily_pay, alice_private_key );
          BOOST_REQUIRE( proposal >= 0 );
@@ -689,7 +688,28 @@ BOOST_AUTO_TEST_CASE( remove_proposal_000 )
 {
    try
    {
-      BOOST_TEST_MESSAGE( "Testing: remove proposal: opration arguments validation - all ok" );
+      BOOST_TEST_MESSAGE( "Testing: remove proposal: basic verification operation - proposal removal (only one)." );
+      create_proposal_data cpd(db->head_block_time());
+      ACTORS( (alice)(bob) )
+      generate_block();
+      FUND( cpd.creator, ASSET( "80.000 TBD" ) );
+      generate_block();
+
+      int64_t proposal_1 = create_proposal( cpd.creator, cpd.receiver, cpd.start_date, cpd.end_date, cpd.daily_pay, alice_private_key );
+      BOOST_REQUIRE(proposal_1 >= 0);
+
+      auto& proposal_idx = db->get_index< proposal_index >().indices().get< by_creator >();
+      auto found = proposal_idx.find( cpd.creator );
+      BOOST_REQUIRE( found != proposal_idx.end() );
+      BOOST_REQUIRE( proposal_idx.size() == 1 );
+
+      flat_set<int64_t> proposals = { proposal_1 };
+      remove_proposal(cpd.creator, proposals, alice_private_key);
+
+      found = proposal_idx.find( cpd.creator );
+      BOOST_REQUIRE( found == proposal_idx.end() );
+      BOOST_REQUIRE( proposal_idx.empty() );
+
       validate_database();
    }
    FC_LOG_AND_RETHROW()
@@ -699,7 +719,48 @@ BOOST_AUTO_TEST_CASE( remove_proposal_001 )
 {
    try
    {
-      BOOST_TEST_MESSAGE( "Testing: remove proposal: opration arguments validation - invalid deleter" );
+      BOOST_TEST_MESSAGE( "Testing: remove proposal: basic verification operation - proposal removal (one from many)." );
+      create_proposal_data cpd(db->head_block_time());
+      ACTORS( (alice)(bob) )
+      generate_block();
+      FUND( cpd.creator, ASSET( "80.000 TBD" ) );
+      generate_block();
+
+      int64_t proposal_1 = create_proposal( cpd.creator, cpd.receiver, cpd.start_date, cpd.end_date, cpd.daily_pay, alice_private_key );
+      int64_t proposal_2 = create_proposal( cpd.creator, cpd.receiver, cpd.start_date, cpd.end_date, cpd.daily_pay, alice_private_key );
+      int64_t proposal_3 = create_proposal( cpd.creator, cpd.receiver, cpd.start_date, cpd.end_date, cpd.daily_pay, alice_private_key );
+      BOOST_REQUIRE(proposal_1 >= 0);
+      BOOST_REQUIRE(proposal_2 >= 0);
+      BOOST_REQUIRE(proposal_3 >= 0);
+
+      auto& proposal_idx = db->get_index< proposal_index >().indices().get< by_creator >();
+      auto found = proposal_idx.find( cpd.creator );
+      BOOST_REQUIRE( found != proposal_idx.end() );
+      BOOST_REQUIRE( proposal_idx.size() == 3 );
+
+      flat_set<int64_t> proposals = { proposal_1 };
+      remove_proposal(cpd.creator, proposals, alice_private_key);
+
+      found = proposal_idx.find( cpd.creator );
+      BOOST_REQUIRE( found != proposal_idx.end() );   //two left
+      BOOST_REQUIRE( proposal_idx.size() == 2 );
+
+      proposals.clear();
+      proposals.insert(proposal_2);
+      remove_proposal(cpd.creator, proposals, alice_private_key);
+
+      found = proposal_idx.find( cpd.creator );
+      BOOST_REQUIRE( found != proposal_idx.end() );   //one left
+      BOOST_REQUIRE( proposal_idx.size() == 1 );
+
+      proposals.clear();
+      proposals.insert(proposal_3);
+      remove_proposal(cpd.creator, proposals, alice_private_key);
+
+      found = proposal_idx.find( cpd.creator );
+      BOOST_REQUIRE( found == proposal_idx.end() );   //none
+      BOOST_REQUIRE( proposal_idx.empty() );
+
       validate_database();
    }
    FC_LOG_AND_RETHROW()
@@ -709,7 +770,44 @@ BOOST_AUTO_TEST_CASE( remove_proposal_002 )
 {
    try
    {
-      BOOST_TEST_MESSAGE( "Testing: remove proposal: opration arguments validation - invalid array(empty array)" );
+      BOOST_TEST_MESSAGE( "Testing: remove proposal: basic verification operation - proposal removal (n from many in two steps)." );
+      create_proposal_data cpd(db->head_block_time());
+      ACTORS( (alice)(bob) )
+      generate_block();
+      FUND( cpd.creator, ASSET( "80.000 TBD" ) );
+      generate_block();
+
+      int64_t proposal = -1;
+      std::vector<int64_t> proposals;
+
+      for(int i = 0; i < 6; i++) {
+         proposal = create_proposal( cpd.creator, cpd.receiver, cpd.start_date, cpd.end_date, cpd.daily_pay, alice_private_key );
+         BOOST_REQUIRE(proposal >= 0);
+         proposals.push_back(proposal);
+      }
+      BOOST_REQUIRE(proposals.size() == 6);
+
+      auto& proposal_idx = db->get_index< proposal_index >().indices().get< by_creator >();
+      auto found = proposal_idx.find( cpd.creator );
+      BOOST_REQUIRE( found != proposal_idx.end() );
+      BOOST_REQUIRE(proposal_idx.size() == 6);
+
+      flat_set<int64_t> proposals_to_erase = {proposals[0], proposals[1], proposals[2], proposals[3]};
+      remove_proposal(cpd.creator, proposals_to_erase, alice_private_key);
+
+      found = proposal_idx.find( cpd.creator );
+      BOOST_REQUIRE( found != proposal_idx.end() );
+      BOOST_REQUIRE( proposal_idx.size() == 2 );
+
+      proposals_to_erase.clear();
+      proposals_to_erase.insert(proposals[4]);
+      proposals_to_erase.insert(proposals[5]);
+
+      remove_proposal(cpd.creator, proposals_to_erase, alice_private_key);
+      found = proposal_idx.find( cpd.creator );
+      BOOST_REQUIRE( found == proposal_idx.end() );
+      BOOST_REQUIRE( proposal_idx.empty() );
+
       validate_database();
    }
    FC_LOG_AND_RETHROW()
@@ -719,13 +817,155 @@ BOOST_AUTO_TEST_CASE( remove_proposal_003 )
 {
    try
    {
-      BOOST_TEST_MESSAGE( "Testing: remove proposal: opration arguments validation - invalid array(array with greater number of digits than allowed)" );
+      BOOST_TEST_MESSAGE( "Testing: remove proposal: basic verification operation - proper proposal deletion check (one at time)." );
+      create_proposal_data cpd(db->head_block_time());
+      ACTORS( (alice)(bob) )
+      generate_block();
+      FUND( cpd.creator, ASSET( "80.000 TBD" ) );
+      generate_block();
+
+      int64_t proposal = -1;
+      std::vector<int64_t> proposals;
+
+      for(int i = 0; i < 2; i++) {
+         proposal = create_proposal( cpd.creator, cpd.receiver, cpd.start_date, cpd.end_date, cpd.daily_pay, alice_private_key );
+         BOOST_REQUIRE(proposal >= 0);
+         proposals.push_back(proposal);
+      }
+      BOOST_REQUIRE(proposals.size() == 2);
+
+      auto& proposal_idx = db->get_index< proposal_index >().indices().get< by_creator >();
+      auto found = proposal_idx.find( cpd.creator );
+      BOOST_REQUIRE( found != proposal_idx.end() );
+      BOOST_REQUIRE(proposal_idx.size() == 2);
+
+      flat_set<int64_t> proposals_to_erase = {proposals[0]};
+      remove_proposal(cpd.creator, proposals_to_erase, alice_private_key);
+
+      found = proposal_idx.find( cpd.creator );
+      BOOST_REQUIRE( found != proposal_idx.end() );
+      BOOST_REQUIRE( int64_t(found->id)  == proposals[1]);
+      BOOST_REQUIRE( proposal_idx.size() == 1 );
+
+      proposals_to_erase.clear();
+      proposals_to_erase.insert(proposals[1]);
+
+      remove_proposal(cpd.creator, proposals_to_erase, alice_private_key);
+      found = proposal_idx.find( cpd.creator );
+      BOOST_REQUIRE( found == proposal_idx.end() );
+      BOOST_REQUIRE( proposal_idx.empty() );
+
       validate_database();
    }
    FC_LOG_AND_RETHROW()
 }
 
 BOOST_AUTO_TEST_CASE( remove_proposal_004 )
+{
+   try
+   {
+      BOOST_TEST_MESSAGE( "Testing: remove proposal: basic verification operation - proper proposal deletion check (two at one time)." );
+      create_proposal_data cpd(db->head_block_time());
+      ACTORS( (alice)(bob) )
+      generate_block();
+      FUND( cpd.creator, ASSET( "80.000 TBD" ) );
+      generate_block();
+
+      int64_t proposal = -1;
+      std::vector<int64_t> proposals;
+
+      for(int i = 0; i < 6; i++) {
+         proposal = create_proposal( cpd.creator, cpd.receiver, cpd.start_date, cpd.end_date, cpd.daily_pay, alice_private_key );
+         BOOST_REQUIRE(proposal >= 0);
+         proposals.push_back(proposal);
+      }
+      BOOST_REQUIRE(proposals.size() == 6);
+
+      auto& proposal_idx = db->get_index< proposal_index >().indices().get< by_creator >();
+      auto found = proposal_idx.find( cpd.creator );
+      BOOST_REQUIRE( found != proposal_idx.end() );
+      BOOST_REQUIRE(proposal_idx.size() == 6);
+
+      flat_set<int64_t> proposals_to_erase = {proposals[0], proposals[5]};
+      remove_proposal(cpd.creator, proposals_to_erase, alice_private_key);
+
+      found = proposal_idx.find( cpd.creator );
+      BOOST_REQUIRE( found != proposal_idx.end() );
+      for(auto& it : proposal_idx) {
+         BOOST_REQUIRE( int64_t(it.id) != proposals[0] );
+         BOOST_REQUIRE( int64_t(it.id) != proposals[5] );
+      }
+      BOOST_REQUIRE( proposal_idx.size() == 4 );
+
+      proposals_to_erase.clear();
+      proposals_to_erase.insert(proposals[1]);
+      proposals_to_erase.insert(proposals[4]);
+
+      remove_proposal(cpd.creator, proposals_to_erase, alice_private_key);
+      found = proposal_idx.find( cpd.creator );
+      for(auto& it : proposal_idx) {
+         BOOST_REQUIRE( int64_t(it.id) != proposals[0] );
+         BOOST_REQUIRE( int64_t(it.id) != proposals[1] );
+         BOOST_REQUIRE( int64_t(it.id) != proposals[4] );
+         BOOST_REQUIRE( int64_t(it.id) != proposals[5] );
+      }
+      BOOST_REQUIRE( found != proposal_idx.end() );
+      BOOST_REQUIRE( proposal_idx.size() == 2 );
+
+      proposals_to_erase.clear();
+      proposals_to_erase.insert(proposals[2]);
+      proposals_to_erase.insert(proposals[3]);
+      remove_proposal(cpd.creator, proposals_to_erase, alice_private_key);
+      found = proposal_idx.find( cpd.creator );
+      BOOST_REQUIRE( found == proposal_idx.end() );
+      BOOST_REQUIRE( proposal_idx.empty() );
+
+      validate_database();
+   }
+   FC_LOG_AND_RETHROW()
+}
+
+BOOST_AUTO_TEST_CASE( remove_proposal_005 )
+{
+   try
+   {
+      BOOST_TEST_MESSAGE( "Testing: remove proposal: opration arguments validation - all ok" );
+      validate_database();
+   }
+   FC_LOG_AND_RETHROW()
+}
+
+BOOST_AUTO_TEST_CASE( remove_proposal_006 )
+{
+   try
+   {
+      BOOST_TEST_MESSAGE( "Testing: remove proposal: opration arguments validation - invalid deleter" );
+      validate_database();
+   }
+   FC_LOG_AND_RETHROW()
+}
+
+BOOST_AUTO_TEST_CASE( remove_proposal_007 )
+{
+   try
+   {
+      BOOST_TEST_MESSAGE( "Testing: remove proposal: opration arguments validation - invalid array(empty array)" );
+      validate_database();
+   }
+   FC_LOG_AND_RETHROW()
+}
+
+BOOST_AUTO_TEST_CASE( remove_proposal_008 )
+{
+   try
+   {
+      BOOST_TEST_MESSAGE( "Testing: remove proposal: opration arguments validation - invalid array(array with greater number of digits than allowed)" );
+      validate_database();
+   }
+   FC_LOG_AND_RETHROW()
+}
+
+BOOST_AUTO_TEST_CASE( remove_proposal_009 )
 {
    try
    {
