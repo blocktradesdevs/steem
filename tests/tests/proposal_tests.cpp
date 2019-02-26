@@ -925,22 +925,6 @@ BOOST_AUTO_TEST_CASE( remove_proposal_004 )
    FC_LOG_AND_RETHROW()
 }
 
-#define FIND_VOTE(_USER, _ID)                                                                                  \
-{                                                                                                              \
-      auto& proposal_vote_idx = db->get_index< proposal_vote_index >().indices().get< by_voter_proposal >();   \
-      auto found_vote  = proposal_vote_idx.find( _USER );                                                      \
-      bool proposal_founded = false;                                                                           \
-      BOOST_REQUIRE( found_vote != proposal_vote_idx.end() );                                                  \
-      while( found_vote != proposal_vote_idx.end()) {                                                          \
-         if( static_cast< int64_t>(found_vote->id) == _ID ){                                                    \
-            proposal_founded = true;                                                                           \
-            break;                                                                                             \
-         }                                                                                                     \
-         found_vote++;                                                                                         \
-      }                                                                                                        \
-      BOOST_REQUIRE(proposal_founded);                                                                         \
-}                                                              
-
 BOOST_AUTO_TEST_CASE( remove_proposal_005 )
 {
    try
@@ -964,7 +948,7 @@ BOOST_AUTO_TEST_CASE( remove_proposal_005 )
       std::vector<int64_t> vote_proposals = {proposal_1};
 
       vote_proposal( "bob", vote_proposals, true, bob_private_key );
-      FIND_VOTE("bob", proposal_1);
+      BOOST_REQUIRE( find_vote_for_proposal("bob", proposal_1) );
 
       flat_set<int64_t> proposals = { proposal_1 };
       remove_proposal(cpd.creator, proposals, alice_private_key);
@@ -1002,7 +986,7 @@ BOOST_AUTO_TEST_CASE( remove_proposal_006 )
       std::vector<int64_t> vote_proposals = {proposal_1};
 
       vote_proposal( "bob",   vote_proposals, true, bob_private_key );
-      FIND_VOTE("bob", proposal_1);
+      BOOST_REQUIRE( find_vote_for_proposal("bob", proposal_1) );
 
       flat_set<int64_t> proposals = { proposal_1, proposal_2 };
       remove_proposal(cpd.creator, proposals, alice_private_key);
@@ -1039,11 +1023,11 @@ BOOST_AUTO_TEST_CASE( remove_proposal_007 )
 
       std::vector<int64_t> vote_proposals = {proposal_1};
       vote_proposal( "bob",   vote_proposals, true, bob_private_key );
-      FIND_VOTE("bob", proposal_1);
+      BOOST_REQUIRE( find_vote_for_proposal("bob", proposal_1) );
       vote_proposals.clear();
       vote_proposals.push_back(proposal_2);
       vote_proposal( "carol", vote_proposals, true, carol_private_key );
-      FIND_VOTE("carol", proposal_2);
+      BOOST_REQUIRE( find_vote_for_proposal("carol", proposal_2) );
 
       flat_set<int64_t> proposals = { proposal_1, proposal_2 };
       remove_proposal(cpd.creator, proposals, alice_private_key);
@@ -1062,6 +1046,13 @@ BOOST_AUTO_TEST_CASE( remove_proposal_008 )
    try
    {
       BOOST_TEST_MESSAGE( "Testing: remove proposal: opration arguments validation - all ok" );
+      create_proposal_data cpd(db->head_block_time());
+      ACTORS( (alice)(bob) )
+      generate_block();
+      FUND( cpd.creator, ASSET( "80.000 TBD" ) );
+      generate_block();
+      flat_set<int64_t> proposals = { 0 };
+      remove_proposal(cpd.creator, proposals, alice_private_key); 
       validate_database();
    }
    FC_LOG_AND_RETHROW()
@@ -1072,6 +1063,14 @@ BOOST_AUTO_TEST_CASE( remove_proposal_009 )
    try
    {
       BOOST_TEST_MESSAGE( "Testing: remove proposal: opration arguments validation - invalid deleter" );
+      create_proposal_data cpd(db->head_block_time());
+      ACTORS( (alice)(bob) )
+      generate_block();
+      FUND( cpd.creator, ASSET( "80.000 TBD" ) );
+      generate_block();
+      int64_t proposal_1 = create_proposal( cpd.creator, cpd.receiver, cpd.start_date, cpd.end_date, cpd.daily_pay, alice_private_key );
+      flat_set<int64_t> proposals = { proposal_1 };
+      STEEM_REQUIRE_THROW(remove_proposal(cpd.receiver, proposals, bob_private_key), fc::exception); 
       validate_database();
    }
    FC_LOG_AND_RETHROW()
@@ -1082,6 +1081,13 @@ BOOST_AUTO_TEST_CASE( remove_proposal_010 )
    try
    {
       BOOST_TEST_MESSAGE( "Testing: remove proposal: opration arguments validation - invalid array(empty array)" );
+      create_proposal_data cpd(db->head_block_time());
+      ACTORS( (alice)(bob) )
+      generate_block();
+      FUND( cpd.creator, ASSET( "80.000 TBD" ) );
+      generate_block();
+      flat_set<int64_t> proposals;
+      STEEM_REQUIRE_THROW(remove_proposal(cpd.creator, proposals, bob_private_key), fc::exception); 
       validate_database();
    }
    FC_LOG_AND_RETHROW()
@@ -1092,18 +1098,19 @@ BOOST_AUTO_TEST_CASE( remove_proposal_011 )
    try
    {
       BOOST_TEST_MESSAGE( "Testing: remove proposal: opration arguments validation - invalid array(array with greater number of digits than allowed)" );
+      create_proposal_data cpd(db->head_block_time());
+      ACTORS( (alice)(bob) )
+      generate_block();
+      FUND( cpd.creator, ASSET( "80.000 TBD" ) );
+      generate_block();
+      flat_set<int64_t> proposals;
+      for(int i = 0; i <= STEEM_PROPOSAL_MAX_IDS_NUMBER; i++) {
+         proposals.insert(create_proposal( cpd.creator, cpd.receiver, cpd.start_date, cpd.end_date, cpd.daily_pay, alice_private_key ));
+      }
+      STEEM_REQUIRE_THROW(remove_proposal(cpd.creator, proposals, bob_private_key), fc::exception); 
       validate_database();
    }
    FC_LOG_AND_RETHROW()
 }
 
-BOOST_AUTO_TEST_CASE( remove_proposal_012 )
-{
-   try
-   {
-      BOOST_TEST_MESSAGE( "Testing: remove proposal: opration arguments validation - invalid array(invalid args in array)" );
-      validate_database();
-   }
-   FC_LOG_AND_RETHROW()
-}
 BOOST_AUTO_TEST_SUITE_END()
