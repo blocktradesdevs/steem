@@ -1115,6 +1115,14 @@ void t_proposal_database_fixture< T >::remove_proposal(account_name_type _delete
    trx.operations.clear();
 }
 
+template< typename T>
+bool t_proposal_database_fixture< T >::find_vote_for_proposal(const std::string& _user, int64_t _proposal_id)
+{
+      const auto& proposal_vote_idx = this->db-> template get_index< proposal_vote_index >().indices(). template get< by_voter_proposal >();
+      auto found_vote = proposal_vote_idx.find( std::make_tuple(_user, _proposal_id) );
+      return found_vote != proposal_vote_idx.end() ;
+}
+
 template int64_t t_proposal_database_fixture< clean_database_fixture >::create_proposal( std::string creator, std::string receiver, time_point_sec start_date, time_point_sec end_date, asset daily_pay, const fc::ecc::private_key& key );
 template void t_proposal_database_fixture< clean_database_fixture >::vote_proposal( std::string voter, const std::vector< int64_t >& id_proposals, bool approve, const fc::ecc::private_key& key );
 template void t_proposal_database_fixture< clean_database_fixture >::transfer_vests( std::string from, std::string to, asset amount, const fc::ecc::private_key& key );
@@ -1123,6 +1131,7 @@ template list_proposals_return t_proposal_database_fixture< clean_database_fixtu
 template list_voter_proposals_return t_proposal_database_fixture< clean_database_fixture >::list_voter_proposals(account_name_type _voter, std::string _order_by, std::string _order_type, int _active);
 template find_proposal_return t_proposal_database_fixture< clean_database_fixture >::find_proposal(int _proposal_id);
 template void t_proposal_database_fixture< clean_database_fixture >::remove_proposal(account_name_type _deleter, flat_set<int64_t> _proposal_id, const fc::ecc::private_key& _key);
+template bool t_proposal_database_fixture< clean_database_fixture >::find_vote_for_proposal(const std::string& _user, int64_t _proposal_id);
 
 template void t_proposal_database_fixture< database_fixture >::plugin_prepare();
 template int64_t t_proposal_database_fixture< database_fixture >::create_proposal( std::string creator, std::string receiver, time_point_sec start_date, time_point_sec end_date, asset daily_pay, const fc::ecc::private_key& key );
@@ -1133,6 +1142,7 @@ template list_proposals_return t_proposal_database_fixture< database_fixture >::
 template list_voter_proposals_return t_proposal_database_fixture< database_fixture >::list_voter_proposals(account_name_type _voter, std::string _order_by, std::string _order_type, int _active);
 template find_proposal_return t_proposal_database_fixture< database_fixture >::find_proposal(int _proposal_id);
 template void t_proposal_database_fixture< database_fixture >::remove_proposal(account_name_type _deleter, flat_set<int64_t> _proposal_id, const fc::ecc::private_key& _key);
+template bool t_proposal_database_fixture< database_fixture >::find_vote_for_proposal(const std::string& _user, int64_t _proposal_id);
 
 json_rpc_database_fixture::json_rpc_database_fixture()
 {
