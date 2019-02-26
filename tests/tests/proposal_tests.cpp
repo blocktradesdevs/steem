@@ -614,6 +614,40 @@ BOOST_AUTO_TEST_CASE( create_proposal_006 )
    FC_LOG_AND_RETHROW()
 }
 
+BOOST_AUTO_TEST_CASE( create_proposal_007 )
+{
+   try
+   {
+      BOOST_TEST_MESSAGE( "Testing: create proposal: authorization test" );
+      ACTORS( (alice)(bob) )
+      generate_block();
+      create_proposal_operation cpo;
+      cpo.creator    = "alice";
+      cpo.receiver   = "bob";
+      cpo.start_date = db->head_block_time() + fc::days( 1 );
+      cpo.end_date   = cpo.start_date + fc::days( 2 );
+      cpo.daily_pay  = asset( 100, SBD_SYMBOL );
+      cpo.subject    = "subject";
+      cpo.url        = "http:://something.html";
+
+      flat_set< account_name_type > auths;
+      flat_set< account_name_type > expected;
+
+      cpo.get_required_owner_authorities( auths );
+      BOOST_REQUIRE( auths == expected );
+
+      cpo.get_required_posting_authorities( auths );
+      BOOST_REQUIRE( auths == expected );
+
+      expected.insert( "alice" );
+      cpo.get_required_active_authorities( auths );
+      BOOST_REQUIRE( auths == expected );
+
+      validate_database();
+   }
+   FC_LOG_AND_RETHROW()
+}
+
 BOOST_AUTO_TEST_CASE( update_proposal_votes_000 )
 {
    try
@@ -729,6 +763,36 @@ BOOST_AUTO_TEST_CASE( update_proposal_votes_005 )
       }
       STEEM_REQUIRE_THROW(vote_proposal("carol", proposals, true, carol_private_key), fc::exception);
       
+      validate_database();
+   }
+   FC_LOG_AND_RETHROW()
+}
+
+BOOST_AUTO_TEST_CASE( update_proposal_votes_006 )
+{
+   try
+   {
+      BOOST_TEST_MESSAGE( "Testing: update proposal votes: authorization test" );
+      ACTORS( (alice)(bob) )
+      generate_block();
+      update_proposal_votes_operation upv;
+      upv.voter = "alice";
+      upv.proposal_ids = {0};
+      upv.approve = true;
+
+      flat_set< account_name_type > auths;
+      flat_set< account_name_type > expected;
+
+      upv.get_required_owner_authorities( auths );
+      BOOST_REQUIRE( auths == expected );
+
+      upv.get_required_posting_authorities( auths );
+      BOOST_REQUIRE( auths == expected );
+
+      expected.insert( "alice" );
+      upv.get_required_active_authorities( auths );
+      BOOST_REQUIRE( auths == expected );
+
       validate_database();
    }
    FC_LOG_AND_RETHROW()
@@ -1158,6 +1222,35 @@ BOOST_AUTO_TEST_CASE( remove_proposal_011 )
          proposals.insert(create_proposal( cpd.creator, cpd.receiver, cpd.start_date, cpd.end_date, cpd.daily_pay, alice_private_key ));
       }
       STEEM_REQUIRE_THROW(remove_proposal(cpd.creator, proposals, bob_private_key), fc::exception); 
+      validate_database();
+   }
+   FC_LOG_AND_RETHROW()
+}
+
+BOOST_AUTO_TEST_CASE( remove_proposal_012 )
+{
+   try
+   {
+      BOOST_TEST_MESSAGE( "Testing: remove proposal: authorization test" );
+      ACTORS( (alice)(bob) )
+      generate_block();
+      remove_proposal_operation rpo;
+      rpo.proposal_owner = "alice";
+      rpo.proposal_ids = {1,2,3};
+
+      flat_set< account_name_type > auths;
+      flat_set< account_name_type > expected;
+
+      rpo.get_required_owner_authorities( auths );
+      BOOST_REQUIRE( auths == expected );
+
+      rpo.get_required_posting_authorities( auths );
+      BOOST_REQUIRE( auths == expected );
+
+      expected.insert( "alice" );
+      rpo.get_required_active_authorities( auths );
+      BOOST_REQUIRE( auths == expected );
+
       validate_database();
    }
    FC_LOG_AND_RETHROW()
