@@ -992,6 +992,7 @@ void t_proposal_database_fixture< T >::vote_proposal( std::string voter, const s
    this->db->push_transaction( tx, 0 );
 }
 
+
 template< typename T >
 void t_proposal_database_fixture< T >::transfer_vests( std::string from, std::string to, asset amount, const fc::ecc::private_key& key )
 {
