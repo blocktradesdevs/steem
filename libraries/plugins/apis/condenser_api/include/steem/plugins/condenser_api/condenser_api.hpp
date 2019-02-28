@@ -9,7 +9,7 @@
 #include <steem/plugins/follow_api/follow_api.hpp>
 #include <steem/plugins/reputation_api/reputation_api.hpp>
 #include <steem/plugins/market_history_api/market_history_api.hpp>
-
+#include <steem/plugins/sps_api/sps_api.hpp>
 #include <steem/plugins/condenser_api/condenser_api_legacy_objects.hpp>
 
 #include <fc/optional.hpp>
@@ -927,6 +927,52 @@ struct market_trade
    legacy_asset   open_pays;
 };
 
+  typedef uint64_t api_id_type;
+
+  struct api_proposal_object
+  {
+    api_proposal_object() {}
+
+    api_proposal_object(const sps::api_proposal_object& po) : 
+      id(po.id),
+      creator(po.creator),
+      receiver(po.receiver),
+      start_date(po.start_date),
+      end_date(po.end_date),
+      daily_pay(legacy_asset::from_asset(po.daily_pay)),
+      subject(po.subject),
+      url(po.url),
+      total_votes(po.total_votes)
+    {}
+
+    //internal key
+    api_id_type id = 0;
+
+    // account that created the proposal
+    account_name_type creator;
+
+    // account_being_funded
+    account_name_type receiver;
+
+    // start_date (when the proposal will begin paying out if it gets enough vote weight)
+    time_point_sec start_date;
+
+    // end_date (when the proposal expires and can no longer pay out)
+    time_point_sec end_date;
+
+    //daily_pay (the amount of SBD that is being requested to be paid out daily)
+    legacy_asset daily_pay;
+
+    //subject (a very brief description or title for the proposal)
+    string subject;
+
+    //url (a link to a page describing the work proposal in depth, generally this will probably be to a Steem post).
+    string url;
+
+    //This will be calculate every maintenance period
+    uint64_t total_votes = 0;
+  };
+
 #define DEFINE_API_ARGS( api_name, arg_type, return_type )  \
 typedef arg_type api_name ## _args;                         \
 typedef return_type api_name ## _return;
@@ -1014,6 +1060,9 @@ DEFINE_API_ARGS( get_trade_history,                      vector< variant >,   ve
 DEFINE_API_ARGS( get_recent_trades,                      vector< variant >,   vector< market_trade > )
 DEFINE_API_ARGS( get_market_history,                     vector< variant >,   vector< market_history::bucket_object > )
 DEFINE_API_ARGS( get_market_history_buckets,             vector< variant >,   flat_set< uint32_t > )
+DEFINE_API_ARGS( find_proposals,                         vector< variant >,   vector<api_proposal_object> )
+DEFINE_API_ARGS( list_proposals,                         vector< variant >,   vector<api_proposal_object> )
+DEFINE_API_ARGS( list_voter_proposals,                   vector< variant >,   vector<api_proposal_object> )
 
 #undef DEFINE_API_ARGS
 
@@ -1108,6 +1157,9 @@ public:
       (get_recent_trades)
       (get_market_history)
       (get_market_history_buckets)
+      (find_proposals)
+      (list_proposals)
+      (list_voter_proposals)
    )
 
    private:
@@ -1299,3 +1351,15 @@ FC_REFLECT( steem::plugins::condenser_api::order_book,
 
 FC_REFLECT( steem::plugins::condenser_api::market_trade,
             (date)(current_pays)(open_pays) )
+
+FC_REFLECT(steem::plugins::condenser_api::api_proposal_object,
+  (id)
+  (creator)
+  (receiver)
+  (start_date)
+  (end_date)
+  (daily_pay)
+  (subject)
+  (url)
+  (total_votes)
+  );
