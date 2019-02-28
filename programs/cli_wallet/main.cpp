@@ -87,8 +87,6 @@ int main( int argc, char** argv )
       vector<string> allowed_ips;
 
       bpo::variables_map options;
-      appbase::app().register_plugin< steem::plugins::sps::sps_api_plugin >();
-      appbase::app().initialize<steem::plugins::sps::sps_api_plugin>( argc, argv );
       bpo::store( bpo::parse_command_line(argc, argv, opts), options );
 
       if( options.count("help") )
@@ -170,8 +168,9 @@ int main( int argc, char** argv )
       auto apic = std::make_shared<fc::rpc::websocket_api_connection>(*con);
 
       auto remote_api = apic->get_remote_api< steem::wallet::remote_node_api >( 0, "condenser_api" );
+      auto sps_api    = apic->get_remote_api< steem::plugins::sps::sps_api >(1, "sps_api");
 
-      auto wapiptr = std::make_shared<wallet_api>( wdata, _steem_chain_id, remote_api );
+      auto wapiptr = std::make_shared<wallet_api>( wdata, _steem_chain_id, remote_api, sps_api );
       wapiptr->set_wallet_filename( wallet_file.generic_string() );
       wapiptr->load_wallet_file();
 

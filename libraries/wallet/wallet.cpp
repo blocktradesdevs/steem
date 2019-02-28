@@ -220,9 +220,10 @@ class wallet_api_impl
 
 public:
    wallet_api& self;
-   wallet_api_impl( wallet_api& s, const wallet_data& initial_data, const steem::protocol::chain_id_type& _steem_chain_id, fc::api< remote_node_api > rapi )
+   wallet_api_impl( wallet_api& s, const wallet_data& initial_data, const steem::protocol::chain_id_type& _steem_chain_id, fc::api< remote_node_api > rapi, fc::api< steem::plugins::sps::sps_api > _sps_api )
       : self( s ),
-        _remote_api( rapi )
+        _remote_api( rapi ),
+        _sps_api( _sps_api )
    {
       init_prototype_ops();
 
@@ -918,6 +919,7 @@ public:
    map<public_key_type,string>             _keys;
    fc::sha512                              _checksum;
    fc::api< remote_node_api >              _remote_api;
+   fc::api< steem::plugins::sps::sps_api > _sps_api;
    uint32_t                                _tx_expiration_seconds = 30;
 
    flat_map<string, operation>             _prototype_ops;
@@ -936,8 +938,8 @@ public:
 
 namespace steem { namespace wallet {
 
-wallet_api::wallet_api(const wallet_data& initial_data, const steem::protocol::chain_id_type& _steem_chain_id, fc::api< remote_node_api > rapi)
-   : my(new detail::wallet_api_impl(*this, initial_data, _steem_chain_id, rapi))
+wallet_api::wallet_api(const wallet_data& initial_data, const steem::protocol::chain_id_type& _steem_chain_id, fc::api< remote_node_api > rapi, fc::api< steem::plugins::sps::sps_api > _sps_api)
+   : my(new detail::wallet_api_impl(*this, initial_data, _steem_chain_id, rapi, _sps_api))
 {}
 
 wallet_api::~wallet_api(){}
@@ -2497,7 +2499,6 @@ condenser_api::legacy_signed_transaction wallet_api::follow( string follower, st
          }
       };
 
-      auto api = appbase::app().get_plugin< steem::plugins::sps::sps_api_plugin >().api;
       steem::plugins::sps::list_proposals_args args;
       args.start           = _start;
       args.order_by        = ordered_by();
@@ -2512,7 +2513,9 @@ condenser_api::legacy_signed_transaction wallet_api::follow( string follower, st
       ddump((args.active));
 
       try {
-         return api->list_proposals(args);
+         auto result = my->_sps_api->list_proposals(args, false);
+         ddump((result));
+         return result;
       } catch( fc::exception& _e) {
          elog("Caught exception while executig list_proposals: ${error}",  ("error", _e));
       } catch( std::exception& _e ) {
@@ -2557,7 +2560,6 @@ condenser_api::legacy_signed_transaction wallet_api::follow( string follower, st
          }
       };
 
-      auto api = appbase::app().get_plugin< steem::plugins::sps::sps_api_plugin >().api;
       steem::plugins::sps::list_voter_proposals_args args;
       args.voter           = voter.name;
       args.order_by        = ordered_by();
@@ -2572,7 +2574,9 @@ condenser_api::legacy_signed_transaction wallet_api::follow( string follower, st
       ddump((args.active));
 
       try {
-         return api->list_voter_proposals(args);
+         auto result = my->_sps_api->list_voter_proposals(args, false);
+         ddump((result));
+         return result;
       } catch( fc::exception& _e) {
          elog("Caught exception while executig list_voter_proposals: ${error}",  ("error", _e));
       } catch( std::exception& _e ) {
@@ -2586,14 +2590,15 @@ condenser_api::legacy_signed_transaction wallet_api::follow( string follower, st
    steem::plugins::sps::find_proposals_return wallet_api::find_proposals(flat_set<uint64_t> _ids)
    {
       FC_ASSERT(!_ids.empty());
-      auto api = appbase::app().get_plugin< steem::plugins::sps::sps_api_plugin >().api;
       steem::plugins::sps::find_proposals_args args;
       args.id_set = _ids;
 
       ddump((args.id_set));
 
       try {
-         return api->find_proposals(args);
+         auto result = my->_sps_api->find_proposals(args, false);
+         ddump((result));
+         return result;
       } catch( fc::exception& _e) {
          elog("Caught exception while executig find_proposal_return: ${error}",  ("error", _e));
       } catch( std::exception& _e ) {

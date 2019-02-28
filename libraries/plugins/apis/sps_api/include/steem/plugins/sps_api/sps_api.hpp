@@ -1,4 +1,5 @@
 #pragma once
+#include <fc/api.hpp>
 #include <steem/plugins/json_rpc/utility.hpp>
 #include <steem/chain/sps_objects.hpp>
 
@@ -36,6 +37,7 @@ namespace steem { namespace plugins { namespace sps {
 
   struct api_proposal_object
   {
+    api_proposal_object(){}
     api_proposal_object(const proposal_object& po) : 
       id(po.id),
       creator(po.creator),
@@ -139,6 +141,7 @@ namespace steem { namespace plugins { namespace sps {
 
   } } }
 
+
 // Args and return types need to be reflected. We do not reflect typedefs of already reflected types
 FC_REFLECT_ENUM(steem::plugins::sps::order_direction_type, 
   (direction_ascending)
@@ -184,3 +187,8 @@ FC_REFLECT(steem::plugins::sps::list_voter_proposals_args,
   (active)
   );
 
+FC_API(steem::plugins::sps::sps_api,
+      (find_proposals)
+      (list_proposals)
+      (list_voter_proposals)
+ )
