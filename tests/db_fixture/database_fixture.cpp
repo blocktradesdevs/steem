@@ -1022,87 +1022,100 @@ bool t_proposal_database_fixture< T >::exist_proposal( int64_t id )
 template< typename T>
 list_proposals_return t_proposal_database_fixture< T >::list_proposals(fc::variant _start, std::string _order_by, std::string _order_type, int _limit, int _active) 
 {
-      // auto ordered_by = [&_order_by]() {
-      //    std::transform(_order_by.begin(), _order_by.end(), _order_by.begin(), [](unsigned char c){return std::tolower(c);});
-      //    if ( _order_by == "date" ) {
-      //       return order_by_type::by_start_date;
-      //    } else if ( _order_by == "votes" ) {
-      //       return order_by_type::by_total_votes;
-      //    } else {
-      //       return order_by_type::by_creator;
-      //    }
-      // };
-
-      // auto order_type_check = [&_order_type]() {
-      //    std::transform(_order_type.begin(), _order_type.end(), _order_type.begin(), [](unsigned char c){return std::tolower(c);});
-      //    if ( _order_type == "desc" ) {
-      //       return order_direction_type::direction_descending;
-      //    } else {
-      //       return order_direction_type::direction_ascending;
-      //    }
-      // };
-
-      // auto api = appbase::app().get_plugin< steem::plugins::sps::sps_api_plugin >().api;
-      // steem::plugins::sps::list_proposals_args args;
-      // args.start           = _start;
-      // args.order_by        = ordered_by();
-      // args.order_direction = order_type_check();
-      // args.limit           = _limit;
-      // args.active          = _active;
-
-      try {
-         return steem::plugins::sps::list_proposals_return ();
-      } catch( fc::exception& _e) {
-         elog("Caught exception while executig list_proposals: ${error}",  ("error", _e));
-      } catch( std::exception& _e ) {
-         elog("Caught exception while executig list_proposals: ${error}",  ("error", _e.what()));
-      } catch( ... ) {
-         elog("Caught unhandled exception in list_proposals.");
+   auto ordered_by = [&_order_by]() {
+      std::transform(_order_by.begin(), _order_by.end(), _order_by.begin(), [](unsigned char c){return std::tolower(c);});
+      if ( _order_by == "date" ) {
+         return order_by_type::by_start_date;
+      } else if ( _order_by == "votes" ) {
+         return order_by_type::by_total_votes;
+      } else {
+         return order_by_type::by_creator;
       }
+   };
+
+   auto ordered_type = [&_order_type]() {
+      std::transform(_order_type.begin(), _order_type.end(), _order_type.begin(), [](unsigned char c){return std::tolower(c);});
+      if ( _order_type == "desc" ) {
+         return order_direction_type::direction_descending;
+      } else {
+         return order_direction_type::direction_ascending;
+      }
+   };
+
+   steem::plugins::sps::list_proposals_args args;
+   fc::variant var;
+   args.push_back(_start);
+   fc::to_variant(ordered_by(), var);
+   args.push_back(var);
+   fc::to_variant(ordered_type(), var);
+   args.push_back(var);
+   fc::to_variant(_limit, var);
+   args.push_back(var);
+   fc::to_variant(_active, var);
+   args.push_back(var);      
+
+   try {
+      //auto result = my->_sps_api->list_proposals(args, false);
+      //ddump((result));
       return steem::plugins::sps::list_proposals_return ();
+   } catch( fc::exception& _e) {
+      elog("Caught exception while executig list_proposals: ${error}",  ("error", _e));
+   } catch( std::exception& _e ) {
+      elog("Caught exception while executig list_proposals: ${error}",  ("error", _e.what()));
+   } catch( ... ) {
+      elog("Caught unhandled exception in list_proposals.");
+   }
+   return steem::plugins::sps::list_proposals_return ();
 }
 
 template< typename T>
 list_voter_proposals_return  t_proposal_database_fixture< T >::list_voter_proposals(account_name_type _voter, std::string _order_by, std::string _order_type, int _limit, int _active) 
 {
-      // auto ordered_by = [&_order_by]() {
-      //    std::transform(_order_by.begin(), _order_by.end(), _order_by.begin(), [](unsigned char c){return std::tolower(c);});
-      //    if ( _order_by == "date" ) {
-      //       return order_by_type::by_start_date;
-      //    } else if ( _order_by == "votes" ) {
-      //       return order_by_type::by_total_votes;
-      //    } else {
-      //       return order_by_type::by_creator;
-      //    }
-      // };
-
-      // auto order_type_check = [&_order_type]() {
-      //    std::transform(_order_type.begin(), _order_type.end(), _order_type.begin(), [](unsigned char c){return std::tolower(c);});
-      //    if ( _order_type == "desc" ) {
-      //       return order_direction_type::direction_descending;
-      //    } else {
-      //       return order_direction_type::direction_ascending;
-      //    }
-      // };
-
-      // auto api = appbase::app().get_plugin< steem::plugins::sps::sps_api_plugin >().api;
-      // steem::plugins::sps::list_voter_proposals_args args;
-      // args.voter           = _voter;
-      // args.order_by        = ordered_by();
-      // args.order_direction = order_type_check();
-      // args.limit           = _limit;
-      // args.active          = _active;
-
-      try {
-         return steem::plugins::sps::list_voter_proposals_return ();
-      } catch( fc::exception& _e) {
-         elog("Caught exception while executig list_voter_proposals: ${error}",  ("error", _e));
-      } catch( std::exception& _e ) {
-         elog("Caught exception while executig list_voter_proposals: ${error}",  ("error", _e.what()));
-      } catch( ... ) {
-         elog("Caught unhandled exception in list_voter_proposals.");
+   auto ordered_by = [&_order_by]() {
+      std::transform(_order_by.begin(), _order_by.end(), _order_by.begin(), [](unsigned char c){return std::tolower(c);});
+      if ( _order_by == "date" ) {
+         return order_by_type::by_start_date;
+      } else if ( _order_by == "votes" ) {
+         return order_by_type::by_total_votes;
+      } else {
+         return order_by_type::by_creator;
       }
+   };
+
+   auto ordered_type = [&_order_type]() {
+      std::transform(_order_type.begin(), _order_type.end(), _order_type.begin(), [](unsigned char c){return std::tolower(c);});
+      if ( _order_type == "desc" ) {
+         return order_direction_type::direction_descending;
+      } else {
+         return order_direction_type::direction_ascending;
+      }
+   };
+
+   steem::plugins::sps::list_voter_proposals_args args;
+   fc::variant var;
+   fc::to_variant(_voter,var);
+   args.push_back(var);
+   fc::to_variant(ordered_by(), var);
+   args.push_back(var);
+   fc::to_variant(ordered_type(), var);
+   args.push_back(var);
+   fc::to_variant(_limit,var);
+   args.push_back(var);
+   fc::to_variant(_active,var);
+   args.push_back(var);
+
+   try {
+      //auto result = my->_sps_api->list_voter_proposals(args, false);
+      //ddump((result));
       return steem::plugins::sps::list_voter_proposals_return ();
+   } catch( fc::exception& _e) {
+      elog("Caught exception while executig list_voter_proposals: ${error}",  ("error", _e));
+   } catch( std::exception& _e ) {
+      elog("Caught exception while executig list_voter_proposals: ${error}",  ("error", _e.what()));
+   } catch( ... ) {
+      elog("Caught unhandled exception in list_voter_proposals.");
+   }
+   return steem::plugins::sps::list_voter_proposals_return ();
 }
 
 template< typename T>
