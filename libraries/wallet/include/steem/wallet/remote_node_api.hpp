@@ -1,5 +1,7 @@
 #pragma once
 #include <steem/plugins/condenser_api/condenser_api.hpp>
+#include <steem/plugins/sps_api/sps_api_plugin.hpp>
+#include <steem/plugins/sps_api/sps_api.hpp>
 
 namespace steem { namespace wallet {
 
@@ -106,6 +108,10 @@ struct remote_node_api
    vector< condenser_api::market_trade > get_recent_trades( uint32_t );
    vector< market_history::bucket_object > get_market_history( uint32_t, time_point_sec, time_point_sec );
    flat_set< uint32_t > get_market_history_buckets();
+
+   steem::plugins::sps::find_proposals_return find_proposals( steem::plugins::sps::find_proposals_args _args);
+   steem::plugins::sps::list_proposals_return list_proposals( steem::plugins::sps::list_proposals_args _args);
+   steem::plugins::sps::list_voter_proposals_return list_voter_proposals( steem::plugins::sps::list_voter_proposals_args _args);
 };
 
 } }
@@ -196,4 +202,7 @@ FC_API( steem::wallet::remote_node_api,
         (get_recent_trades)
         (get_market_history)
         (get_market_history_buckets)
+        (find_proposals)
+        (list_proposals)
+        (list_voter_proposals)
       )

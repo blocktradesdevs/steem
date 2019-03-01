@@ -429,4 +429,16 @@ flat_set< uint32_t > remote_node_api::get_market_history_buckets()
    FC_ASSERT( false );
 }
 
+steem::plugins::sps::find_proposals_return remote_node_api::find_proposals( steem::plugins::sps::find_proposals_args _args) {
+   FC_ASSERT( false );
+}
+
+steem::plugins::sps::list_proposals_return remote_node_api::list_proposals( steem::plugins::sps::list_proposals_args _args) {
+   FC_ASSERT( false );
+}
+
+steem::plugins::sps::list_voter_proposals_return remote_node_api::list_voter_proposals( steem::plugins::sps::list_voter_proposals_args _args) {
+   FC_ASSERT( false );
+}
+
 } }

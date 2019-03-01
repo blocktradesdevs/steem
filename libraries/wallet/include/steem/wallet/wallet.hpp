@@ -85,7 +85,7 @@ class wallet_api_impl;
 class wallet_api
 {
    public:
-      wallet_api( const wallet_data& initial_data, const steem::protocol::chain_id_type& _steem_chain_id, fc::api< remote_node_api > rapi );
+      wallet_api( const wallet_data& initial_data, const steem::protocol::chain_id_type& _steem_chain_id, fc::api< remote_node_api > rapi, fc::api< remote_node_api > _sps_api );
       virtual ~wallet_api();
 
       bool copy_wallet_file( string destination_filename );
