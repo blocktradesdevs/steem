@@ -2500,17 +2500,23 @@ condenser_api::legacy_signed_transaction wallet_api::follow( string follower, st
       };
 
       steem::plugins::sps::list_proposals_args args;
-      args.start           = _start;
-      args.order_by        = ordered_by();
-      args.order_direction = ordered_type();
-      args.limit           = _limit;
-      args.active          = _active;
+      fc::variant var;
+      //args.start           = _start;
+      args.push_back(_start);
+      //args.order_by        = ordered_by();
+      fc::to_variant(ordered_by(), var);
+      args.push_back(var);
+      //args.order_direction = ordered_type();
+      fc::to_variant(ordered_type(), var);
+      args.push_back(var);
+      //args.limit           = _limit;
+      fc::to_variant(_limit, var);
+      args.push_back(var);
+      //args.active          = _active;
+      fc::to_variant(_active, var);
+      args.push_back(var);      
 
-      ddump((args.start));
-      ddump((args.order_by));
-      ddump((args.order_direction));
-      ddump((args.limit));
-      ddump((args.active));
+      ddump((args));
 
       try {
          auto result = my->_sps_api->list_proposals(args, false);
@@ -2561,17 +2567,24 @@ condenser_api::legacy_signed_transaction wallet_api::follow( string follower, st
       };
 
       steem::plugins::sps::list_voter_proposals_args args;
-      args.voter           = voter.name;
-      args.order_by        = ordered_by();
-      args.order_direction = ordered_type();
-      args.limit           = _limit;
-      args.active          = _active;
+      fc::variant var;
+      //args.voter           = voter.name;
+      fc::to_variant(voter.name,var);
+      args.push_back(var);
+      //args.order_by        = ordered_by();
+      fc::to_variant(ordered_by(), var);
+      args.push_back(var);
+      //args.order_direction = ordered_type();
+      fc::to_variant(ordered_type(), var);
+      args.push_back(var);
+      //args.limit           = _limit;
+      fc::to_variant(_limit,var);
+      args.push_back(var);
+      //args.active          = _active;
+      fc::to_variant(_active,var);
+      args.push_back(var);
 
-      ddump((args.voter));
-      ddump((args.order_by));
-      ddump((args.order_direction));
-      ddump((args.limit));
-      ddump((args.active));
+      ddump((args));
 
       try {
          auto result = my->_sps_api->list_voter_proposals(args, false);
@@ -2590,16 +2603,12 @@ condenser_api::legacy_signed_transaction wallet_api::follow( string follower, st
    steem::plugins::sps::find_proposals_return wallet_api::find_proposals(flat_set<uint64_t> _ids)
    {
       FC_ASSERT(!_ids.empty());
-      //steem::plugins::sps::find_proposals arg;
-      //arg.id_set = _ids;
       steem::plugins::sps::find_proposals_args args;
       fc::variant var;
       fc::to_variant(_ids,var);
-      ddump((var));
       args.push_back(var);
       
-
-      //ddump((arg.id_set));
+      ddump((args));
 
       try {
          auto result = my->_sps_api->find_proposals(args, false );

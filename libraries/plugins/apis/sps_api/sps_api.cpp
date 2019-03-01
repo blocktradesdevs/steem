@@ -90,21 +90,15 @@ void sort_results(RESULT_TYPE& result, order_by_type order_by, order_direction_t
 
 DEFINE_API_IMPL(sps_api_impl, find_proposals) {
   ilog("find_proposal called");
+
+  find_proposals_struct fps; 
+  fps.id_set = args[0].get_array()[0].as<flat_set<uint64_t> >();
   // cannot query for more than SPS_API_SINGLE_QUERY_LIMIT ids
-
-  ddump((args[0]));
-  auto array = args[0].get_array();
-  ddump((array));
-  ddump((array[0]));
-  find_proposals_struct pr; 
-  pr.id_set = array[0].as<flat_set<uint64_t> >();
-  ddump((pr));
-
-  FC_ASSERT(pr.id_set.size() <= SPS_API_SINGLE_QUERY_LIMIT);
+  FC_ASSERT(fps.id_set.size() <= SPS_API_SINGLE_QUERY_LIMIT);
 
   find_proposals_return result;
   
-  std::for_each(pr.id_set.begin(), pr.id_set.end(), [&](auto& id) {
+  std::for_each(fps.id_set.begin(), fps.id_set.end(), [&](auto& id) {
     auto po = _db.find<steem::chain::proposal_object, steem::chain::by_id>(id);
     if (po != nullptr)
     {
@@ -117,19 +111,29 @@ DEFINE_API_IMPL(sps_api_impl, find_proposals) {
 
 DEFINE_API_IMPL(sps_api_impl, list_proposals) {
   ilog("list_proposals called");
-  FC_ASSERT(args.limit <= SPS_API_SINGLE_QUERY_LIMIT);
+
+  const auto arg = args[0].get_array();
+
+  list_proposals_struct lps;
+  lps.start            = arg[0] ;
+  lps.order_by         = arg[1].as< order_by_type >() ;
+  lps.order_direction  = arg[2].as< order_direction_type >() ;
+  lps.limit            = arg[3].as< uint16_t >() ;
+  lps.active           = arg[4].as< int8_t >() ;
+
+  FC_ASSERT(lps.limit <= SPS_API_SINGLE_QUERY_LIMIT);
 
   list_proposals_return result;
-  result.reserve(args.limit);
+  result.reserve(lps.limit);
 
-  switch(args.order_by)
+  switch(lps.order_by)
   {
     case by_creator:
     {
       steem::utilities::iterate_results<proposal_index, steem::chain::by_creator>(
-        args.start.as<account_name_type>(),
+        lps.start.as<account_name_type>(),
         result,
-        args.limit,
+        lps.limit,
         _db,
         [&](auto& proposal) { return api_proposal_object(proposal); } 
       );
@@ -138,9 +142,9 @@ DEFINE_API_IMPL(sps_api_impl, list_proposals) {
     case by_start_date:
     {
       steem::utilities::iterate_results<proposal_index, steem::chain::by_start_date>(
-        args.start.as<time_point_sec>(),
+        lps.start.as<time_point_sec>(),
         result,
-        args.limit,
+        lps.limit,
         _db,
         [&](auto& proposal) { return api_proposal_object(proposal); } 
       );
@@ -149,9 +153,9 @@ DEFINE_API_IMPL(sps_api_impl, list_proposals) {
     case by_end_date:
     {
       steem::utilities::iterate_results<proposal_index, steem::chain::by_end_date>(
-        args.start.as<time_point_sec>(),
+        lps.start.as<time_point_sec>(),
         result,
-        args.limit,
+        lps.limit,
         _db,
         [&](auto& proposal) { return api_proposal_object(proposal); } 
       );
@@ -160,9 +164,9 @@ DEFINE_API_IMPL(sps_api_impl, list_proposals) {
     case by_total_votes:
     {
       steem::utilities::iterate_results<proposal_index, steem::chain::by_total_votes>(
-        args.start.as<uint64_t>(),
+        lps.start.as<uint64_t>(),
         result,
-        args.limit,
+        lps.limit,
         _db,
         [&](auto& proposal) { return api_proposal_object(proposal); } 
       );
@@ -175,22 +179,32 @@ DEFINE_API_IMPL(sps_api_impl, list_proposals) {
   if (!result.empty())
   {
     // sorting operations
-    sort_results<list_proposals_return>(result, args.order_by, args.order_direction);
+    sort_results<list_proposals_return>(result, lps.order_by, lps.order_direction);
   }
   return result;
 }
 
 DEFINE_API_IMPL(sps_api_impl, list_voter_proposals) {
   ilog("list_voter_proposals called");
-  FC_ASSERT(args.limit <= SPS_API_SINGLE_QUERY_LIMIT);
+  
+  const auto arg = args[0].get_array();
+
+  list_voter_proposals_struct lvps;
+  lvps.voter            = arg[0].as< account_name_type >() ;
+  lvps.order_by         = arg[1].as< order_by_type >() ;
+  lvps.order_direction  = arg[2].as< order_direction_type >() ;
+  lvps.limit            = arg[3].as< uint16_t >() ;
+  lvps.active           = arg[4].as< int8_t >() ;
+
+  FC_ASSERT(lvps.limit <= SPS_API_SINGLE_QUERY_LIMIT);
 
   list_voter_proposals_return result;
-  result.reserve(args.limit);
+  result.reserve(lvps.limit);
 
   steem::utilities::iterate_results<proposal_vote_index, by_voter_proposal>(
-    account_name_type(args.voter),
+    account_name_type(lvps.voter),
     result,
-    args.limit,
+    lvps.limit,
     _db,
     [&](auto& vote_object) 
     { 
@@ -203,7 +217,7 @@ DEFINE_API_IMPL(sps_api_impl, list_voter_proposals) {
   if (!result.empty())
   {
     // sorting operations
-    sort_results<list_voter_proposals_return>(result, args.order_by, args.order_direction);
+    sort_results<list_voter_proposals_return>(result, lvps.order_by, lvps.order_direction);
   }
   return result;
 }

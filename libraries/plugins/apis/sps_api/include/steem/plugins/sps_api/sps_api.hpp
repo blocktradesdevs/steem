@@ -91,7 +91,7 @@ namespace steem { namespace plugins { namespace sps {
   typedef std::vector<api_proposal_object> find_proposals_return;
   
   // Struct with argumentse for list_proposals method
-  struct list_proposals_args 
+  struct list_proposals_struct
   {
     // starting value for querying results
     fc::variant start;
@@ -105,11 +105,13 @@ namespace steem { namespace plugins { namespace sps {
     int8_t active;
   };
 
+  typedef fc::variants list_proposals_args;
+
   // Return type for list_proposals
   typedef std::vector<api_proposal_object> list_proposals_return;
   
   // Struct with arguments for list_voter_proposals methid
-  struct list_voter_proposals_args 
+  struct list_voter_proposals_struct
   {
     // list only proposal voted by this voter
     account_name_type voter;
@@ -122,6 +124,8 @@ namespace steem { namespace plugins { namespace sps {
     // result will contain only data with active flag set to this value
     int8_t active;
   };
+
+  typedef fc::variants list_voter_proposals_args;
 
   // Return type for list_voter_proposals
   typedef std::vector<api_proposal_object> list_voter_proposals_return;
@@ -171,12 +175,12 @@ FC_REFLECT(steem::plugins::sps::api_proposal_object,
 
 FC_REFLECT(steem::plugins::sps::find_proposals_struct,
   (id_set)
-)
+);
 
 FC_REFLECT(steem::plugins::sps::find_proposals_args, 
-  );
+);
 
-FC_REFLECT(steem::plugins::sps::list_proposals_args, 
+FC_REFLECT(steem::plugins::sps::list_proposals_struct, 
   (start)
   (order_by)
   (order_direction)
@@ -184,13 +188,21 @@ FC_REFLECT(steem::plugins::sps::list_proposals_args,
   (active)
   );
 
-FC_REFLECT(steem::plugins::sps::list_voter_proposals_args, 
+
+
+FC_REFLECT(steem::plugins::sps::list_voter_proposals_struct, 
   (voter)
   (order_by)
   (order_direction)
   (limit)
   (active)
-  );
+);
+
+//those are redudant because FC_REFLECT(steem::plugins::sps::find_proposals_args alreadu defines fc::variants...
+// FC_REFLECT(steem::plugins::sps::list_voter_proposals_args, 
+// );
+// FC_REFLECT(steem::plugins::sps::list_proposals_args, 
+// );
 
 FC_API(steem::plugins::sps::sps_api,
       (find_proposals)
