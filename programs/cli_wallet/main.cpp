@@ -41,7 +41,7 @@
 #include <steem/protocol/protocol.hpp>
 #include <steem/wallet/remote_node_api.hpp>
 #include <steem/wallet/wallet.hpp>
-
+#include <steem/plugins/rc_api/rc_api.hpp>
 #include <fc/interprocess/signals.hpp>
 #include <boost/program_options.hpp>
 #include <boost/algorithm/string.hpp>
@@ -169,6 +169,12 @@ int main( int argc, char** argv )
 
       auto remote_api = apic->get_remote_api< steem::wallet::remote_node_api >( 0, "condenser_api" );
       auto sps_api    = apic->get_remote_api< steem::plugins::sps::sps_api >(1, "sps_api");
+      //auto rc_api     = apic->get_remote_api< steem::plugins::rc::rc_api >(2, "rc_api");
+
+      //steem::plugins::rc::find_rc_accounts_args args;
+      //args.accounts = {"urp", "urp2"};
+
+      //rc_api->find_rc_accounts(args, true);
 
       auto wapiptr = std::make_shared<wallet_api>( wdata, _steem_chain_id, remote_api, sps_api );
       wapiptr->set_wallet_filename( wallet_file.generic_string() );

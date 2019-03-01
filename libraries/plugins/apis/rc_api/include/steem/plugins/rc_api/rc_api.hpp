@@ -7,6 +7,7 @@
 #include <fc/optional.hpp>
 #include <fc/variant.hpp>
 #include <fc/vector.hpp>
+#include <fc/api.hpp>
 
 #define RC_API_SINGLE_QUERY_LIMIT 1000
 
@@ -115,3 +116,9 @@ FC_REFLECT( steem::plugins::rc::find_rc_accounts_args,
 FC_REFLECT( steem::plugins::rc::find_rc_accounts_return,
    (rc_accounts)
    )
+
+FC_API(steem::plugins::rc::rc_api,
+   (get_resource_params)
+   (get_resource_pool)
+   (find_rc_accounts)
+)

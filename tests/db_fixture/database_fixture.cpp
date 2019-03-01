@@ -1108,12 +1108,12 @@ list_voter_proposals_return  t_proposal_database_fixture< T >::list_voter_propos
 template< typename T>
 find_proposals_return t_proposal_database_fixture< T >::find_proposals(flat_set<uint64_t> _proposal_ids)
 {
-   auto api = appbase::app().get_plugin< steem::plugins::sps::sps_api_plugin >().api;
-   steem::plugins::sps::find_proposals_args args;
-   args.id_set = _proposal_ids;
+   // auto api = appbase::app().get_plugin< steem::plugins::sps::sps_api_plugin >().api;
+   // steem::plugins::sps::find_proposals_args args;
+   // args.id_set = _proposal_ids;
 
    try {
-      return api->find_proposals(args);
+      return steem::plugins::sps::find_proposals_return ();
    } catch( fc::exception& _e) {
       elog("Caught exception while executig find_proposal_return: ${error}",  ("error", _e));
    } catch( std::exception& _e ) {

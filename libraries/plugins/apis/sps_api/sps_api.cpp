@@ -91,11 +91,20 @@ void sort_results(RESULT_TYPE& result, order_by_type order_by, order_direction_t
 DEFINE_API_IMPL(sps_api_impl, find_proposals) {
   ilog("find_proposal called");
   // cannot query for more than SPS_API_SINGLE_QUERY_LIMIT ids
-  FC_ASSERT(args.id_set.size() <= SPS_API_SINGLE_QUERY_LIMIT);
+
+  ddump((args[0]));
+  auto array = args[0].get_array();
+  ddump((array));
+  ddump((array[0]));
+  find_proposals_struct pr; 
+  pr.id_set = array[0].as<flat_set<uint64_t> >();
+  ddump((pr));
+
+  FC_ASSERT(pr.id_set.size() <= SPS_API_SINGLE_QUERY_LIMIT);
 
   find_proposals_return result;
   
-  std::for_each(args.id_set.begin(), args.id_set.end(), [&](auto& id) {
+  std::for_each(pr.id_set.begin(), pr.id_set.end(), [&](auto& id) {
     auto po = _db.find<steem::chain::proposal_object, steem::chain::by_id>(id);
     if (po != nullptr)
     {

@@ -79,11 +79,13 @@ namespace steem { namespace plugins { namespace sps {
   };
 
   // Struct with arguments for find_proposals methd
-  struct find_proposals_args 
+  struct find_proposals_struct
   {
     // set of ids of the proposals to find
     flat_set<api_id_type> id_set;
   };
+
+  typedef fc::variants find_proposals_args;
 
   // Return type for find_proposal method
   typedef std::vector<api_proposal_object> find_proposals_return;
@@ -167,8 +169,11 @@ FC_REFLECT(steem::plugins::sps::api_proposal_object,
   (total_votes)
   );
 
-FC_REFLECT(steem::plugins::sps::find_proposals_args, 
+FC_REFLECT(steem::plugins::sps::find_proposals_struct,
   (id_set)
+)
+
+FC_REFLECT(steem::plugins::sps::find_proposals_args, 
   );
 
 FC_REFLECT(steem::plugins::sps::list_proposals_args, 

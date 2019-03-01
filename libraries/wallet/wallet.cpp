@@ -2590,13 +2590,19 @@ condenser_api::legacy_signed_transaction wallet_api::follow( string follower, st
    steem::plugins::sps::find_proposals_return wallet_api::find_proposals(flat_set<uint64_t> _ids)
    {
       FC_ASSERT(!_ids.empty());
+      //steem::plugins::sps::find_proposals arg;
+      //arg.id_set = _ids;
       steem::plugins::sps::find_proposals_args args;
-      args.id_set = _ids;
+      fc::variant var;
+      fc::to_variant(_ids,var);
+      ddump((var));
+      args.push_back(var);
+      
 
-      ddump((args.id_set));
+      //ddump((arg.id_set));
 
       try {
-         auto result = my->_sps_api->find_proposals(args, false);
+         auto result = my->_sps_api->find_proposals(args, false );
          ddump((result));
          return result;
       } catch( fc::exception& _e) {
