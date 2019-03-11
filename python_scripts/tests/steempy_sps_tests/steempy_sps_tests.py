@@ -194,6 +194,7 @@ if __name__ == '__main__':
     parser.add_argument("--node-port", help = "Steem node port", default = 8090, dest = "node_port")
     parser.add_argument("--account", default = "initminer", dest = "account")
     parser.add_argument("--wif", default = "5JNHfZYKGaomSFvd4NUdQ9qMcEAC43kujbfjueTHpVapX1Kzq2n", dest = "wif")
+    parser.add_argument("--no-erase-proposal", action='store_false', dest = "no_erase_proposal")
 
     args = parser.parse_args()
 
@@ -206,4 +207,5 @@ if __name__ == '__main__':
     test_find_proposals(url, args.account, args.wif)
     test_vote_proposal(url, args.account, args.wif)
     sleep(6)
-    test_remove_proposal(url, args.account, args.wif)
+    if args.no_erase_proposal:
+        test_remove_proposal(url, args.account, args.wif)
