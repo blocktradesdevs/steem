@@ -1,6 +1,8 @@
 import json
+import requests
 
 from utils.logger     import log
+from utils.cmd_args   import args
 
 class ArgsCheckException(Exception):
     def __init__(self, _message):
@@ -64,5 +66,59 @@ def last_message_as_json( _message):
                     _message = _message[:index+1]
                     break
     else:
-        _message = "[]"
+        _message = "{}"
     return json.loads(_message)
+
+
+def find_creator_proposals(_creator, _proposal_list):
+    proposals = []
+    if "result" in _proposal_list:
+        result = _proposal_list["result"]
+        for rs in result:
+            if rs["creator"] == _creator:
+                proposals.append(rs)
+    return proposals
+
+
+def ws_to_http(_url):
+    pos = _url.find(":")
+    return "http" + _url[pos:]
+
+user_name = list("aaaaaaaaaaaa")
+
+
+def get_valid_steem_account_name():
+    http_url = ws_to_http(args.server_rpc_endpoint)
+    while True:
+        params = {"jsonrpc":"2.0", "method":"condenser_api.get_accounts", "params":[["".join(user_name)]], "id":1}
+        resp = requests.post(http_url, json=params)
+        data = resp.json()
+        if "result" in data:
+            if len(data["result"]) == 0:
+                return ''.join(user_name)
+        if ord(user_name[0]) >= ord('z'):
+            for i, _ in enumerate("".join(user_name)):
+                if user_name[i] >= 'z':
+                    user_name[i] = 'a'
+                    continue
+                user_name[i] = chr(ord(user_name[i]) + 1)
+                break
+        else:
+            user_name[0] = chr(ord(user_name[0]) + 1)
+        if len(set(user_name)) == 1 and user_name[0] == 'z':
+            break
+
+def make_user_for_tests(_cli_wallet, _value_for_vesting = None,  _value_for_transfer_tests = None, _value_for_transfer_tbd = None):
+    value_for_vesting           = _value_for_vesting        if _value_for_vesting else "20.000 TESTS"
+    value_for_transfer_tests    = _value_for_transfer_tests if _value_for_transfer_tests else "20.000 TESTS"
+    value_for_transfer_tbd      = _value_for_transfer_tbd   if _value_for_transfer_tbd else "20.000 TBD"
+
+    creator = get_valid_steem_account_name()
+    _cli_wallet.create_account( "initminer", creator, "", "true")
+    receiver = get_valid_steem_account_name()
+    _cli_wallet.create_account( "initminer", receiver, "", "true")
+
+    _cli_wallet.transfer_to_vesting( "initminer", creator, value_for_vesting, "true")
+    _cli_wallet.transfer( "initminer", creator, value_for_transfer_tests, "initial transfer", "true" )
+    _cli_wallet.transfer( "initminer", creator, value_for_transfer_tbd, "initial transfer", "true")
+    return creator, receiver
