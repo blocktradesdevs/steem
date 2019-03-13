@@ -11,6 +11,9 @@ class ArgsCheckException(Exception):
     def __str__(self):
         return self.message
 
+user_name = list("aaaaaaaaaaaa")
+
+
 def unifie_to_string(_arg):
     if not isinstance(_arg, str):
         prepared = str(_arg)
@@ -19,6 +22,7 @@ def unifie_to_string(_arg):
     prepared = prepared.strip()
     prepared = prepared.replace(" ", "")
     return prepared
+
 
 def check_call_args(_call_args, _response, _arg_prefix):
     splited_response = _response.split()
@@ -80,11 +84,18 @@ def find_creator_proposals(_creator, _proposal_list):
     return proposals
 
 
+def find_voter_proposals(_voter, _proposal_list):
+    if "result" in _proposal_list:
+        result = _proposal_list["result"]
+        for user, user_propsals in result.items():
+            if user == _voter:
+                return user_propsals
+    return []
+
+
 def ws_to_http(_url):
     pos = _url.find(":")
     return "http" + _url[pos:]
-
-user_name = list("aaaaaaaaaaaa")
 
 
 def get_valid_steem_account_name():
