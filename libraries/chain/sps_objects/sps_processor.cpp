@@ -25,17 +25,18 @@ bool sps_processor::is_maintenance_period( const time_point_sec& head_time ) con
 
 void sps_processor::remove_proposals( const time_point_sec& head_time )
 {
-   auto& proposalIndex = db.get_mutable_index< proposal_index >();
-   auto& byEndDateIdx = proposalIndex.indices().get< by_end_date >();
+   FC_TODO("implement proposal removal based on automatic actions")
+   // auto& proposalIndex = db.get_mutable_index< proposal_index >();
+   // auto& byEndDateIdx = proposalIndex.indices().get< by_end_date >();
 
-   auto& votesIndex = db.get_mutable_index< proposal_vote_index >();
-   auto& byVoterIdx = votesIndex.indices().get< by_proposal_voter >();
+   // auto& votesIndex = db.get_mutable_index< proposal_vote_index >();
+   // auto& byVoterIdx = votesIndex.indices().get< by_proposal_voter >();
 
-   auto found = byEndDateIdx.upper_bound( head_time );
-   auto itr = byEndDateIdx.begin();
+   // auto found = byEndDateIdx.upper_bound( head_time );
+   // auto itr = byEndDateIdx.begin();
 
-   while( itr != found )
-      itr = sps_helper::remove_proposal< by_end_date >( itr, proposalIndex, votesIndex, byVoterIdx );
+   // while( itr != found )
+   //    itr = sps_helper::remove_proposal< by_end_date >( itr, proposalIndex, votesIndex, byVoterIdx );
 }
 
 void sps_processor::find_active_proposals( const time_point_sec& head_time, t_proposals& proposals )
@@ -191,9 +192,10 @@ void sps_processor::update_settings( const time_point_sec& head_time )
 
 void sps_processor::remove_old_proposals( const block_notification& note )
 {
-   auto head_time = note.block.timestamp;
-
-   remove_proposals( head_time );
+   FC_TODO("implement proposal removal based on automatic actions")
+   // auto head_time = note.block.timestamp;
+   
+   // remove_proposals( head_time );
 }
 
 void sps_processor::make_payments( const block_notification& note ) 
