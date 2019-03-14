@@ -212,7 +212,7 @@ DEFINE_API_IMPL(sps_api_impl, list_voter_proposals) {
   while( result.size() < args.limit && itr != end )
   {
     auto po = _db.find<steem::chain::proposal_object, steem::chain::by_id>(itr->proposal_id);
-    FC_ASSERT(po != nullptr, "Proposal with given id does not exists");
+    FC_ASSERT(po != nullptr, "Proposal with given id does not exist");
     auto apo = api_proposal_object(*po);
     if (args.status == proposal_status::all || apo.is_active(_db.head_block_time()) == args.status)
     {
