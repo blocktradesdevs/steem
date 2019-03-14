@@ -5071,12 +5071,20 @@ void database::apply_hardfork( uint32_t hardfork )
          break;
       case STEEM_PROPOSALS_HARDFORK:
          {
-            create< account_authority_object >( [&]( account_authority_object& auth )
-            {
-               auth.account = STEEM_TREASURY_ACCOUNT;
-               auth.owner.weight_threshold = 1;
-               auth.active.weight_threshold = 1;
-            });
+            auto account_auth = find< account_authority_object, by_account >( STEEM_TREASURY_ACCOUNT );
+            if( account_auth == nullptr )
+               create< account_authority_object >( [&]( account_authority_object& auth )
+               {
+                  auth.account = STEEM_TREASURY_ACCOUNT;
+                  auth.owner.weight_threshold = 1;
+                  auth.active.weight_threshold = 1;
+               });
+            else
+               modify( *account_auth, [&]( account_authority_object& auth )
+               {
+                  auth.owner.weight_threshold = 1;
+                  auth.active.weight_threshold = 1;
+               });
          }
          break;
       case STEEM_SMT_HARDFORK:
