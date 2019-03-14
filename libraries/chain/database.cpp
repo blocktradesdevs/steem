@@ -2736,16 +2736,12 @@ void database::init_genesis( uint64_t init_supply, uint64_t sbd_init_supply )
          auth.active.weight_threshold = 1;
       });
 
+#ifdef IS_TEST_NET
       create< account_object >( [&]( account_object& a )
       {
          a.name = STEEM_TREASURY_ACCOUNT;
       } );
-      create< account_authority_object >( [&]( account_authority_object& auth )
-      {
-         auth.account = STEEM_TREASURY_ACCOUNT;
-         auth.owner.weight_threshold = 1;
-         auth.active.weight_threshold = 1;
-      });
+#endif
 
       create< account_object >( [&]( account_object& a )
       {
@@ -5070,6 +5066,16 @@ void database::apply_hardfork( uint32_t hardfork )
             modify( wso, [&]( witness_schedule_object& wso )
             {
                wso.median_props.account_creation_fee = asset( wso.median_props.account_creation_fee.amount * STEEM_CREATE_ACCOUNT_WITH_STEEM_MODIFIER, STEEM_SYMBOL );
+            });
+         }
+         break;
+      case STEEM_PROPOSALS_HARDFORK:
+         {
+            create< account_authority_object >( [&]( account_authority_object& auth )
+            {
+               auth.account = STEEM_TREASURY_ACCOUNT;
+               auth.owner.weight_threshold = 1;
+               auth.active.weight_threshold = 1;
             });
          }
          break;
