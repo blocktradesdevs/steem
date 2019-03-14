@@ -235,7 +235,7 @@ void sps_processor::make_payments( const block_notification& note )
 
 void sps_processor::run( const block_notification& note )
 {
-   remove_old_proposals( note );
+   //remove_old_proposals( note );
    make_payments( note );
 }
 
