@@ -369,7 +369,6 @@ struct t_proposal_database_fixture : public T
 
 
 using proposal_database_fixture = t_proposal_database_fixture< clean_database_fixture >;
-using proposal_database_fixture_for_plugin = t_proposal_database_fixture< database_fixture >;
 
 struct json_rpc_database_fixture : public database_fixture
 {
