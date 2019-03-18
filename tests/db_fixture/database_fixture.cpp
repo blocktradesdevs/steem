@@ -880,54 +880,6 @@ template smt_capped_generation_policy t_smt_database_fixture< clean_database_fix
 #endif
 
 template< typename T >
-void t_proposal_database_fixture< T >::plugin_prepare()
-{
-   using namespace steem::plugins::sps;
-
-   int argc = boost::unit_test::framework::master_test_suite().argc;
-   char** argv = boost::unit_test::framework::master_test_suite().argv;
-   for( int i=1; i<argc; i++ )
-   {
-      const std::string arg = argv[i];
-      if( arg == "--record-assert-trip" )
-         fc::enable_record_assert_trip = true;
-      if( arg == "--show-test-names" )
-         std::cout << "running test " << boost::unit_test::framework::current_test_case().p_name << std::endl;
-   }
-
-   appbase::app().register_plugin< sps_plugin >();
-   this->db_plugin = &appbase::app().register_plugin< steem::plugins::debug_node::debug_node_plugin >();
-   this->init_account_pub_key = this->init_account_priv_key.get_public_key();
-
-   this->db_plugin->logging = false;
-   appbase::app().initialize<
-      steem::plugins::sps::sps_plugin,
-      steem::plugins::debug_node::debug_node_plugin
-   >( argc, argv );
-
-   this->db = &appbase::app().get_plugin< steem::plugins::chain::chain_plugin >().db();
-   BOOST_REQUIRE( this->db );
-
-   this->open_database();
-
-   this->generate_block();
-   this->db->set_hardfork( STEEM_NUM_HARDFORKS );
-   this->generate_block();
-
-   this->vest( "initminer", 10000 );
-
-   // Fill up the rest of the required miners
-   for( int i = STEEM_NUM_INIT_MINERS; i < STEEM_MAX_WITNESSES; i++ )
-   {
-      this->account_create( STEEM_INIT_MINER_NAME + fc::to_string( i ), this->init_account_pub_key );
-      this->fund( STEEM_INIT_MINER_NAME + fc::to_string( i ), STEEM_MIN_PRODUCER_REWARD.amount.value );
-      this->witness_create( STEEM_INIT_MINER_NAME + fc::to_string( i ), this->init_account_priv_key, "foo.bar", this->init_account_pub_key, STEEM_MIN_PRODUCER_REWARD.amount );
-   }
-
-   this->validate_database();
-}
-
-template< typename T >
 int64_t t_proposal_database_fixture< T >::create_proposal( std::string creator, std::string receiver,
                            time_point_sec start_date, time_point_sec end_date,
                            asset daily_pay, const fc::ecc::private_key& key )
