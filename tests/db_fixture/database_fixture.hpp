@@ -350,8 +350,6 @@ struct t_proposal_database_fixture : public T
 
    void vote_proposal( std::string voter, const std::vector< int64_t >& id_proposals, bool approve, const fc::ecc::private_key& key );
 
-   void transfer_vests( std::string from, std::string to, asset amount, const fc::ecc::private_key& key );
-
    void transfer( std::string from, std::string to, asset amount, const fc::ecc::private_key& key );
 
    bool exist_proposal( int64_t id );

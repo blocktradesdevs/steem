@@ -991,21 +991,6 @@ void t_proposal_database_fixture< T >::vote_proposal( std::string voter, const s
 
 
 template< typename T >
-void t_proposal_database_fixture< T >::transfer_vests( std::string from, std::string to, asset amount, const fc::ecc::private_key& key )
-{
-   transfer_to_vesting_operation op;
-   op.from = from;
-   op.to = to;
-   op.amount = amount;
-
-   signed_transaction tx;
-   tx.set_expiration( this->db->head_block_time() + STEEM_MAX_TIME_UNTIL_EXPIRATION );
-   tx.operations.push_back( op );
-   this->sign( tx, key );
-   this->db->push_transaction( tx, 0 );
-}
-
-template< typename T >
 void t_proposal_database_fixture< T >::transfer( std::string from, std::string to, asset amount, const fc::ecc::private_key& key )
 {
    transfer_operation op;
@@ -1152,7 +1137,6 @@ void t_proposal_database_fixture< T >::post_comment( std::string _authro, std::s
 
 template int64_t t_proposal_database_fixture< clean_database_fixture >::create_proposal( std::string creator, std::string receiver, time_point_sec start_date, time_point_sec end_date, asset daily_pay, const fc::ecc::private_key& key );
 template void t_proposal_database_fixture< clean_database_fixture >::vote_proposal( std::string voter, const std::vector< int64_t >& id_proposals, bool approve, const fc::ecc::private_key& key );
-template void t_proposal_database_fixture< clean_database_fixture >::transfer_vests( std::string from, std::string to, asset amount, const fc::ecc::private_key& key );
 template void t_proposal_database_fixture< clean_database_fixture >::transfer( std::string from, std::string to, asset amount, const fc::ecc::private_key& key );
 template bool t_proposal_database_fixture< clean_database_fixture >::exist_proposal( int64_t id );
 template list_proposals_return t_proposal_database_fixture< clean_database_fixture >::list_proposals(fc::variant _start, std::string _order_by, std::string _order_type, int _limit,  std::string _status);

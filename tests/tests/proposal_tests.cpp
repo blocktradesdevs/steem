@@ -59,7 +59,6 @@ BOOST_AUTO_TEST_CASE( generating_payments )
       FUND( STEEM_TREASURY_ACCOUNT, ASSET( "5000.000 TBD" ) );
 
       auto voter_01 = "carol";
-      auto voter_vests_amount_01 = ASSET( "1.000 TESTS" );
       //=====================preparing=====================
 
       //Needed basic operations
@@ -69,7 +68,7 @@ BOOST_AUTO_TEST_CASE( generating_payments )
       vote_proposal( voter_01, { id_proposal_00 }, true/*approve*/, carol_private_key );
       generate_blocks( 1 );
 
-      transfer_vests( creator, voter_01, voter_vests_amount_01, alice_private_key );
+      vest("initminer", voter_01, ASSET( "1.000 TESTS" ));
       generate_blocks( 1 );
 
       //skipping interest generating is necessary
