@@ -879,15 +879,11 @@ template smt_capped_generation_policy t_smt_database_fixture< clean_database_fix
 
 #endif
 
-template< typename T >
-int64_t t_proposal_database_fixture< T >::create_proposal( std::string creator, std::string receiver,
+int64_t sps_proposal_database_fixture::create_proposal( std::string creator, std::string receiver,
                            time_point_sec start_date, time_point_sec end_date,
                            asset daily_pay, const fc::ecc::private_key& key )
 {
    signed_transaction tx;
-
-   
-
    create_proposal_operation op;
 
    op.creator = creator;
@@ -925,8 +921,7 @@ int64_t t_proposal_database_fixture< T >::create_proposal( std::string creator, 
    return itr->id;
 }
 
-template< typename T >
-void t_proposal_database_fixture< T >::vote_proposal( std::string voter, const std::vector< int64_t >& id_proposals, bool approve, const fc::ecc::private_key& key )
+void sps_proposal_database_fixture::vote_proposal( std::string voter, const std::vector< int64_t >& id_proposals, bool approve, const fc::ecc::private_key& key )
 {
    update_proposal_votes_operation op;
 
@@ -941,15 +936,13 @@ void t_proposal_database_fixture< T >::vote_proposal( std::string voter, const s
    this->db->push_transaction( tx, 0 );
 }
 
-template< typename T >
-bool t_proposal_database_fixture< T >::exist_proposal( int64_t id )
+bool sps_proposal_database_fixture::exist_proposal( int64_t id )
 {
    const auto& proposal_idx = this->db-> template get_index< proposal_index >().indices(). template get< by_id >();
    return proposal_idx.find( id ) != proposal_idx.end();
 }
 
-template< typename T>
-list_proposals_return t_proposal_database_fixture< T >::list_proposals(fc::variant _start, std::string _order_by, std::string _order_type, int _limit, std::string _status) 
+list_proposals_return sps_proposal_database_fixture::list_proposals(fc::variant _start, std::string _order_by, std::string _order_type, int _limit, std::string _status) 
 {
       auto api = appbase::app().get_plugin< steem::plugins::sps::sps_api_plugin >().api;
       steem::plugins::sps::list_proposals_args args;
@@ -971,8 +964,7 @@ list_proposals_return t_proposal_database_fixture< T >::list_proposals(fc::varia
       return steem::plugins::sps::list_proposals_return ();
 }
 
-template< typename T>
-list_voter_proposals_return  t_proposal_database_fixture< T >::list_voter_proposals(fc::variant _start, std::string _order_by, std::string _order_type, int _limit, std::string _status) 
+list_voter_proposals_return  sps_proposal_database_fixture::list_voter_proposals(fc::variant _start, std::string _order_by, std::string _order_type, int _limit, std::string _status) 
 {
       auto api = appbase::app().get_plugin< steem::plugins::sps::sps_api_plugin >().api;
       steem::plugins::sps::list_voter_proposals_args args;
@@ -994,8 +986,7 @@ list_voter_proposals_return  t_proposal_database_fixture< T >::list_voter_propos
       return steem::plugins::sps::list_voter_proposals_return ();
 }
 
-template< typename T>
-find_proposals_return t_proposal_database_fixture< T >::find_proposals(flat_set<uint64_t> _proposal_ids)
+find_proposals_return sps_proposal_database_fixture::find_proposals(flat_set<uint64_t> _proposal_ids)
 {
    auto api = appbase::app().get_plugin< steem::plugins::sps::sps_api_plugin >().api;
    steem::plugins::sps::find_proposals_args args;
@@ -1013,8 +1004,7 @@ find_proposals_return t_proposal_database_fixture< T >::find_proposals(flat_set<
    return steem::plugins::sps::find_proposals_return ();
 }
 
-template< typename T>
-void t_proposal_database_fixture< T >::remove_proposal(account_name_type _deleter, flat_set<int64_t> _proposal_id, const fc::ecc::private_key& _key)
+void sps_proposal_database_fixture::remove_proposal(account_name_type _deleter, flat_set<int64_t> _proposal_id, const fc::ecc::private_key& _key)
 {
    remove_proposal_operation rp;
    rp.proposal_owner = _deleter;
@@ -1029,16 +1019,14 @@ void t_proposal_database_fixture< T >::remove_proposal(account_name_type _delete
    trx.operations.clear();
 }
 
-template< typename T>
-bool t_proposal_database_fixture< T >::find_vote_for_proposal(const std::string& _user, int64_t _proposal_id)
+bool sps_proposal_database_fixture::find_vote_for_proposal(const std::string& _user, int64_t _proposal_id)
 {
       const auto& proposal_vote_idx = this->db-> template get_index< proposal_vote_index >().indices(). template get< by_voter_proposal >();
       auto found_vote = proposal_vote_idx.find( std::make_tuple(_user, _proposal_id) );
       return found_vote != proposal_vote_idx.end() ;
 }
 
-template< typename T >
-uint64_t t_proposal_database_fixture< T >::get_nr_blocks_until_maintenance_block()
+uint64_t sps_proposal_database_fixture::get_nr_blocks_until_maintenance_block()
 {
    auto block_time = this->db->head_block_time();
 
@@ -1050,8 +1038,7 @@ uint64_t t_proposal_database_fixture< T >::get_nr_blocks_until_maintenance_block
    return ret;
 }
 
-template< typename T>
-void t_proposal_database_fixture< T >::post_comment( std::string _authro, std::string _permlink, std::string _title, std::string _body, std::string _parent_permlink, const fc::ecc::private_key& _key)
+void sps_proposal_database_fixture::post_comment( std::string _authro, std::string _permlink, std::string _title, std::string _body, std::string _parent_permlink, const fc::ecc::private_key& _key)
 {
    this->generate_blocks( this->db->head_block_time() + STEEM_MIN_ROOT_COMMENT_INTERVAL + fc::seconds( STEEM_BLOCK_INTERVAL ), true );
    comment_operation comment;
@@ -1070,17 +1057,6 @@ void t_proposal_database_fixture< T >::post_comment( std::string _authro, std::s
    trx.signatures.clear();
    trx.operations.clear();
 }
-
-template int64_t t_proposal_database_fixture< clean_database_fixture >::create_proposal( std::string creator, std::string receiver, time_point_sec start_date, time_point_sec end_date, asset daily_pay, const fc::ecc::private_key& key );
-template void t_proposal_database_fixture< clean_database_fixture >::vote_proposal( std::string voter, const std::vector< int64_t >& id_proposals, bool approve, const fc::ecc::private_key& key );
-template bool t_proposal_database_fixture< clean_database_fixture >::exist_proposal( int64_t id );
-template list_proposals_return t_proposal_database_fixture< clean_database_fixture >::list_proposals(fc::variant _start, std::string _order_by, std::string _order_type, int _limit,  std::string _status);
-template list_voter_proposals_return t_proposal_database_fixture< clean_database_fixture >::list_voter_proposals(fc::variant _start, std::string _order_by, std::string _order_type, int _limit,  std::string _status);
-template find_proposals_return t_proposal_database_fixture< clean_database_fixture >::find_proposals(flat_set<uint64_t> _proposal_ids);
-template void t_proposal_database_fixture< clean_database_fixture >::remove_proposal(account_name_type _deleter, flat_set<int64_t> _proposal_id, const fc::ecc::private_key& _key);
-template bool t_proposal_database_fixture< clean_database_fixture >::find_vote_for_proposal(const std::string& _user, int64_t _proposal_id);
-template uint64_t t_proposal_database_fixture< clean_database_fixture >::get_nr_blocks_until_maintenance_block();
-template void t_proposal_database_fixture< clean_database_fixture >::post_comment( std::string _authro, std::string _permlink, std::string _title, std::string _body, std::string _parent_permlink, const fc::ecc::private_key& _key);
 
 json_rpc_database_fixture::json_rpc_database_fixture()
 {

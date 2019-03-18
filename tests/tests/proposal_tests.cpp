@@ -30,7 +30,7 @@ using namespace steem::protocol;
 using fc::string;
 
 
-BOOST_FIXTURE_TEST_SUITE( proposal_tests, proposal_database_fixture )
+BOOST_FIXTURE_TEST_SUITE( proposal_tests, sps_proposal_database_fixture )
 
 BOOST_AUTO_TEST_CASE( generating_payments )
 {

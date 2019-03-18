@@ -336,11 +336,10 @@ using smt_database_fixture_for_plugin = t_smt_database_fixture< database_fixture
 
 #endif
 
-template< typename T >
-struct t_proposal_database_fixture : public T
+struct sps_proposal_database_fixture : public clean_database_fixture
 {
-   t_proposal_database_fixture(){}
-   virtual ~t_proposal_database_fixture(){}
+   sps_proposal_database_fixture(){}
+   virtual ~sps_proposal_database_fixture(){}
 
    int64_t create_proposal(   std::string creator, std::string receiver,
                               time_point_sec start_date, time_point_sec end_date,
@@ -360,9 +359,6 @@ struct t_proposal_database_fixture : public T
 
    void post_comment( std::string _authro, std::string _permlink, std::string _title, std::string _body, std::string _parent_permlink, const fc::ecc::private_key& _key);
 };
-
-
-using proposal_database_fixture = t_proposal_database_fixture< clean_database_fixture >;
 
 struct json_rpc_database_fixture : public database_fixture
 {
