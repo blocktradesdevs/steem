@@ -350,8 +350,6 @@ struct t_proposal_database_fixture : public T
 
    void vote_proposal( std::string voter, const std::vector< int64_t >& id_proposals, bool approve, const fc::ecc::private_key& key );
 
-   void transfer( std::string from, std::string to, asset amount, const fc::ecc::private_key& key );
-
    bool exist_proposal( int64_t id );
    steem::plugins::sps::list_proposals_return list_proposals(fc::variant _start, std::string _order_by, std::string _order_type, int _limit, std::string _status) ;
    steem::plugins::sps::list_voter_proposals_return list_voter_proposals(fc::variant _start, std::string _order_by, std::string _order_type, int _limit, std::string _status) ;

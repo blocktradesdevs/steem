@@ -68,13 +68,13 @@ BOOST_AUTO_TEST_CASE( generating_payments )
       vote_proposal( voter_01, { id_proposal_00 }, true/*approve*/, carol_private_key );
       generate_blocks( 1 );
 
-      vest("initminer", voter_01, ASSET( "1.000 TESTS" ));
+      vest(STEEM_INIT_MINER_NAME, voter_01, ASSET( "1.000 TESTS" ));
       generate_blocks( 1 );
 
       //skipping interest generating is necessary
-      transfer( creator, receiver, ASSET( "0.001 TBD" ), alice_private_key );
+      transfer( STEEM_INIT_MINER_NAME, receiver, ASSET( "0.001 TBD" ));
       generate_block( 5 );
-      transfer( creator, STEEM_TREASURY_ACCOUNT, ASSET( "0.001 TBD" ), alice_private_key );
+      transfer( STEEM_INIT_MINER_NAME, STEEM_TREASURY_ACCOUNT, ASSET( "0.001 TBD" ) );
       generate_block( 5 );
 
       const account_object& _creator = db->get_account( creator );
