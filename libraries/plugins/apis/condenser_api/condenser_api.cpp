@@ -1916,11 +1916,9 @@ namespace detail
       steem::plugins::sps::list_proposals_args list_args;
       list_args.start           = args[0].as<fc::variant>();
       list_args.order_by        = args[1].as< steem::plugins::sps::order_by_type >();
-      list_args.order_direction = args[2].as<steem::plugins::sps::order_direction_type>();
-      list_args.limit           = args[3].as<int>();
-      list_args.status          = args[4].as<steem::plugins::sps::proposal_status>();
+      list_args.limit           = args[2].as<int>();
+      list_args.status          = args[3].as<steem::plugins::sps::proposal_status>();
 
-      //return _sps_api->list_proposals( {args[0].as<fc::variant>, args[1].as< steem::plugins::sps::order_by_type >, args[2].as<steem::plugins::sps::order_direction_type>, args[3].as<int>, args[4].as<int>} );
       return _sps_api->list_proposals( list_args );
    }
 
@@ -1931,11 +1929,9 @@ namespace detail
       steem::plugins::sps::list_voter_proposals_args list_args;
       list_args.start           = args[0].as<fc::variant>();
       list_args.order_by        = args[1].as< steem::plugins::sps::order_by_type >();
-      list_args.order_direction = args[2].as<steem::plugins::sps::order_direction_type>();
-      list_args.limit           = args[3].as<int>();
-      list_args.status          = args[4].as<steem::plugins::sps::proposal_status>();
+      list_args.limit           = args[2].as<int>();
+      list_args.status          = args[3].as<steem::plugins::sps::proposal_status>();
 
-      //return _sps_api->list_voter_proposals( {args[0].as<fc::variant>, args[1].as< steem::plugins::sps::order_by_type >, args[2].as<steem::plugins::sps::order_direction_type>, args[3].as<int>, args[4].as<int>} );
       return _sps_api->list_voter_proposals( list_args );
    }
 

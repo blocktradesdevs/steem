@@ -17,12 +17,6 @@ namespace steem { namespace plugins { namespace sps {
     class sps_api_impl;
   }
 
-  enum order_direction_type : int
-  {
-    direction_ascending, ///< sort with ascending order
-    direction_descending ///< sort with descending order
-  };
-
   enum order_by_type : int
   {
     by_creator, ///< order by proposal creator
@@ -38,39 +32,30 @@ namespace steem { namespace plugins { namespace sps {
     all = -1,
   };
 
-   inline order_direction_type to_order_direction(std::string _order_type)
-   {
-      std::transform(_order_type.begin(), _order_type.end(), _order_type.begin(), [](unsigned char c) {return std::tolower(c); });
-      if(_order_type == "desc")
-         return order_direction_type::direction_descending;
-      else
-         return order_direction_type::direction_ascending;
-   }
+  inline order_by_type to_order_by(std::string _order_by)
+  {
+    std::transform(_order_by.begin(), _order_by.end(), _order_by.begin(), [](unsigned char c) {return std::tolower(c); });
+    if(_order_by == "start_date")
+      return order_by_type::by_start_date;
+    else if(_order_by == "end_date")
+      return order_by_type::by_end_date;
+    else if(_order_by == "total_votes")
+      return order_by_type::by_total_votes;
+    else
+      return order_by_type::by_creator; /// Consider exception throw when no constant was matched...
+  }
 
-   inline order_by_type to_order_by(std::string _order_by)
-   {
-      std::transform(_order_by.begin(), _order_by.end(), _order_by.begin(), [](unsigned char c) {return std::tolower(c); });
-      if(_order_by == "start_date")
-         return order_by_type::by_start_date;
-      else if(_order_by == "end_date")
-         return order_by_type::by_end_date;
-      else if(_order_by == "total_votes")
-         return order_by_type::by_total_votes;
-      else
-         return order_by_type::by_creator; /// Consider exception throw when no constant was matched...
-   }
+  inline proposal_status to_proposal_status(std::string _status)
+  {
+    std::transform(_status.begin(), _status.end(), _status.begin(), [](unsigned char c) {return std::tolower(c); });
 
-   inline proposal_status to_proposal_status(std::string _status)
-   {
-   std::transform(_status.begin(), _status.end(), _status.begin(), [](unsigned char c) {return std::tolower(c); });
-
-   if(_status == "active")
-      return proposal_status::active;
-   else if(_status == "inactive")
-      return proposal_status::inactive;
-   else
-      return proposal_status::all;  /// Consider exception throw when no constant was matched...
-   }
+    if(_status == "active")
+        return proposal_status::active;
+    else if(_status == "inactive")
+        return proposal_status::inactive;
+    else
+        return proposal_status::all;  /// Consider exception throw when no constant was matched...
+  }
 
   typedef uint64_t api_id_type;
 
@@ -144,8 +129,6 @@ namespace steem { namespace plugins { namespace sps {
     fc::variant start;
     // name of the field by which results will be sored
     order_by_type order_by;
-    // sorting order (ascending or descending) of the result vector
-    order_direction_type order_direction;
      // query limit
     uint16_t limit = 0;
     // result will contain only data with status flag set to this value
@@ -162,8 +145,6 @@ namespace steem { namespace plugins { namespace sps {
     fc::variant start;
     // name of the field by which results will be sored
     order_by_type order_by;
-    // sorting order (ascending or descending) of the result vector
-    order_direction_type order_direction;
     // query limit
     uint16_t limit = 0;
     // result will contain only data with status flag set to this value
@@ -191,11 +172,6 @@ namespace steem { namespace plugins { namespace sps {
   } } }
 
 // Args and return types need to be reflected. We do not reflect typedefs of already reflected types
-FC_REFLECT_ENUM(steem::plugins::sps::order_direction_type, 
-  (direction_ascending)
-  (direction_descending)
-  );
-
 FC_REFLECT_ENUM(steem::plugins::sps::order_by_type, 
   (by_creator)
   (by_start_date)
@@ -228,7 +204,6 @@ FC_REFLECT(steem::plugins::sps::find_proposals_args,
 FC_REFLECT(steem::plugins::sps::list_proposals_args, 
   (start)
   (order_by)
-  (order_direction)
   (limit)
   (status)
   );
@@ -236,7 +211,6 @@ FC_REFLECT(steem::plugins::sps::list_proposals_args,
 FC_REFLECT(steem::plugins::sps::list_voter_proposals_args, 
   (start)
   (order_by)
-  (order_direction)
   (limit)
   (status)
   );

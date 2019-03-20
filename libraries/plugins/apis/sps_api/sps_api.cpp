@@ -29,64 +29,6 @@ sps_api_impl::sps_api_impl() : _db(appbase::app().get_plugin< steem::plugins::ch
 
 sps_api_impl::~sps_api_impl() {}
 
-template<typename RESULT_TYPE, typename FIELD_TYPE>
-void sort_results_helper(RESULT_TYPE& result, order_direction_type order_direction, FIELD_TYPE api_proposal_object::*field)
-{
-  switch (order_direction)
-  {
-    case direction_ascending:
-    {
-      std::sort(result.begin(), result.end(), [&](const api_proposal_object& a, const api_proposal_object& b)
-      {
-        return a.*field < b.*field;
-      });
-    }
-    break;
-    case direction_descending:
-    {
-      std::sort(result.begin(), result.end(), [&](const api_proposal_object& a, const api_proposal_object& b)
-      {
-        return a.*field > b.*field;
-      });
-    }
-    break;
-    default:
-      FC_ASSERT(false, "Unknown or unsupported sort order");
-  }
-}
-
-template<typename RESULT_TYPE>
-void sort_results(RESULT_TYPE& result, order_by_type order_by, order_direction_type order_direction)
-{
-  switch (order_by)
-  {
-    case by_creator:
-    {
-      sort_results_helper<RESULT_TYPE, account_name_type>(result, order_direction, &api_proposal_object::creator);
-      return;
-    }
-
-    case by_start_date:
-    {
-      sort_results_helper<RESULT_TYPE, time_point_sec>(result, order_direction, &api_proposal_object::start_date);
-      return;
-    }
-
-    case by_end_date:
-    {
-      sort_results_helper<RESULT_TYPE, time_point_sec>(result, order_direction, &api_proposal_object::end_date);
-      return;
-    }
-
-    case by_total_votes:
-    {
-      sort_results_helper<RESULT_TYPE, uint64_t>(result, order_direction, &api_proposal_object::total_votes);
-      return;
-    }
-    default:
-      FC_ASSERT(false, "Unknown or unsupported field name");
-  }
-}
 
 template <typename CONTAINER, typename PREDICATE>
 CONTAINER filter(const CONTAINER &container, PREDICATE predicate) {
@@ -190,12 +132,6 @@ DEFINE_API_IMPL(sps_api_impl, list_proposals) {
       }
     });
   }
-
-  if (!result.empty())
-  {
-    // sorting operations
-    sort_results<list_proposals_return>(result, args.order_by, args.order_direction);
-  }
   return result;
 }
 
@@ -219,15 +155,6 @@ DEFINE_API_IMPL(sps_api_impl, list_voter_proposals) {
       result[itr->voter].push_back(apo);
     }
     ++itr;
-  }
-
-  if (!result.empty())
-  {
-    // sorting operations
-    for (auto it = result.begin(); it != result.end(); ++it)
-    {
-      sort_results<std::vector<api_proposal_object> >(it->second, args.order_by, args.order_direction);
-    }
   }
   return result;
 }

@@ -29,7 +29,7 @@ if not logger.hasHandlers():
 def get_random_id():
   return str(uuid.uuid4())
 
-def list_voter_proposals(start, order_by, order_direction, limit, status):
+def list_voter_proposals(start, order_by, limit, status):
   payload = {
     "jsonrpc" : "2.0",
     "id" : get_random_id(),
@@ -37,7 +37,6 @@ def list_voter_proposals(start, order_by, order_direction, limit, status):
     "params" : {
       "start" : start,
       "order_by" : order_by, 
-      "order_direction" : order_direction,
       "limit" : limit,
       "status" : status
     }
@@ -59,7 +58,7 @@ def find_proposals(id_set):
   logger.info("New payload: {}".format(ret))
   return ret
 
-def list_proposals(start, order_by, order_direction, limit, status):
+def list_proposals(start, order_by, limit, status):
   payload = {
     "jsonrpc" : "2.0",
     "id" : get_random_id(),
@@ -67,7 +66,6 @@ def list_proposals(start, order_by, order_direction, limit, status):
     "params" : {
       "start" : start,
       "order_by" : order_by, 
-      "order_direction" : order_direction,
       "limit" : limit,
       "status" : status
     }
@@ -76,23 +74,23 @@ def list_proposals(start, order_by, order_direction, limit, status):
   logger.info("New payload: {}".format(ret))
   return ret
 
-def condenser_list_proposals(start, order_by, order_direction, limit, status):
+def condenser_list_proposals(start, order_by, limit, status):
   payload = {
     "jsonrpc" : "2.0",
     "id" : get_random_id(),
     "method" : "condenser_api.list_proposals", 
-    "params" : [start, order_by, order_direction, limit, status]
+    "params" : [start, order_by, limit, status]
   }
   ret = json.dumps(payload)
   logger.info("New payload: {}".format(ret))
   return ret
 
-def condenser_list_voter_proposals(start, order_by, order_direction, limit, status):
+def condenser_list_voter_proposals(start, order_by, limit, status):
   payload = {
     "jsonrpc" : "2.0",
     "id" : get_random_id(),
     "method" : "condenser_api.list_voter_proposals", 
-    "params" : [start, order_by, order_direction, limit, status]
+    "params" : [start, order_by, limit, status]
   }
   ret = json.dumps(payload)
   logger.info("New payload: {}".format(ret))
@@ -133,19 +131,19 @@ if __name__ == '__main__':
   payload = find_proposals([1234, 2, 3, 4])
   run_test("Basic find_proposal test", None, url, payload)
 
-  payload = list_proposals("blocktrades", "by_creator", "direction_ascending", 1, "all")
+  payload = list_proposals("blocktrades", "by_creator", 1, "all")
   run_test("Basic list_proposals test", None, url, payload)
 
-  payload = list_voter_proposals("blocktrades", "by_creator", "direction_ascending", 1, "all")
+  payload = list_voter_proposals("blocktrades", "by_creator", 1, "all")
   run_test("Basic list_voter_proposals test", None, url, payload)
 
   logger.info("Running SPS API tests via condeser API")
   payload = condenser_find_proposals([1234, 2, 3, 4])
   run_test("Basic find_proposal test", None, url, payload)
 
-  payload = condenser_list_proposals("blocktrades", "by_creator", "direction_ascending", 1, "all")
+  payload = condenser_list_proposals("blocktrades", "by_creator", 1, "all")
   run_test("Basic list_proposals test", None, url, payload)
 
-  payload = condenser_list_voter_proposals("blocktrades", "by_creator", "direction_ascending", 1, "all")
+  payload = condenser_list_voter_proposals("blocktrades", "by_creator", 1, "all")
   run_test("Basic list_voter_proposals test", None, url, payload)
 

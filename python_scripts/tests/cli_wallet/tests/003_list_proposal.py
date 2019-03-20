@@ -23,19 +23,17 @@ if __name__ == "__main__":
 
         active          = ["active", "inactive", "all"]
         order_by        = ["creator", "start_date", "end_date", "total_votes"]
-        order_direction = ["asc", "desc"]
 
         for by in order_by:
-            for direct in  order_direction:
-                for act in active:
-                    if by == "creator":
-                        start = ""
-                    elif by == "start_date" or by == "end_date":
-                        start = "2019-03-01T00:00:00"
-                    else:
-                        start = 0
-                    call_args = {"start":start, "order_by":by, "order_direction":direct, "limit":10, "status":act}
-                    call_and_check(wallet.list_proposals, call_args, "args")
+            for act in active:
+                if by == "creator":
+                    start = ""
+                elif by == "start_date" or by == "end_date":
+                    start = "2019-03-01T00:00:00"
+                else:
+                    start = 0
+                call_args = {"start":start, "order_by":by, "limit":10, "status":act}
+                call_and_check(wallet.list_proposals, call_args, "args")
 
     except Exception as _ex:
         log.exception(str(_ex))
