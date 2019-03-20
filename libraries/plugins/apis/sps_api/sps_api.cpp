@@ -95,6 +95,15 @@ CONTAINER filter(const CONTAINER &container, PREDICATE predicate) {
     return result;
 }
 
+template< bool NullCheck, typename Proposal >
+bool check_proposal( const Proposal* proposal )
+{
+   if( NullCheck )
+      return proposal != nullptr && !proposal->removed;
+   else
+      return !proposal->removed;
+}
+
 template<typename OrderType, typename ValueType, typename ResultType, typename OnPush>
 void iterate_ordered_results(ValueType start, std::vector<ResultType>& result, uint32_t limit, chain::database& db, bool ordered_ascending, bool start_from_end, fc::optional<uint64_t> last_id, OnPush&& on_push)
 {
@@ -111,7 +120,8 @@ void iterate_ordered_results(ValueType start, std::vector<ResultType>& result, u
 
     while (result.size() < limit && itr != end)
     {
-      result.push_back(on_push(*itr));
+      if( check_proposal< false/*NullCheck*/>( &(*itr) ) )
+         result.push_back(on_push(*itr));
       ++itr;
     }
   }
@@ -126,7 +136,8 @@ void iterate_ordered_results(ValueType start, std::vector<ResultType>& result, u
 
     while (result.size() < limit && itr != end)
     {
-      result.push_back(on_push(*itr));
+      if( check_proposal< false/*NullCheck*/>( &(*itr) ) )
+         result.push_back(on_push(*itr));
       ++itr;
     }
   }
@@ -141,7 +152,7 @@ DEFINE_API_IMPL(sps_api_impl, find_proposals) {
   
   std::for_each(args.id_set.begin(), args.id_set.end(), [&](auto& id) {
     auto po = _db.find<steem::chain::proposal_object, steem::chain::by_id>(id);
-    if (po != nullptr)
+    if ( check_proposal< true/*NullCheck*/>( po ) )
     {
       result.emplace_back(api_proposal_object(*po));
     }
@@ -247,7 +258,7 @@ DEFINE_API_IMPL(sps_api_impl, list_voter_proposals) {
   while( proposals_count < args.limit && itr != end )
   {
     auto po = _db.find<steem::chain::proposal_object, steem::chain::by_id>(itr->proposal_id);
-    FC_ASSERT(po != nullptr, "Proposal with given id does not exist");
+    FC_ASSERT( check_proposal< true/*NullCheck*/>( po ), "Proposal with given id does not exist");
     auto apo = api_proposal_object(*po);
     if (args.status == proposal_status::all || apo.get_status(_db.head_block_time()) == args.status)
     {

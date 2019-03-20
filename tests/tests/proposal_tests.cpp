@@ -197,10 +197,6 @@ BOOST_AUTO_TEST_CASE( proposals_maintenance)
    try
    {
       BOOST_TEST_MESSAGE( "Testing: removing inactive proposals" );
-      //Update see issue #85 -> https://github.com/blocktradesdevs/steem/issues/85
-      //Remove proposal will be automatic action - this test shall be temporary disabled.
-
-      return ;
 
       ACTORS( (alice)(bob) )
       generate_block();
@@ -1742,6 +1738,319 @@ BOOST_AUTO_TEST_CASE( find_proposals_000 )
       flat_set<uint64_t> prop_after = {proposal_1};
       resp = find_proposals(prop_after);
       BOOST_REQUIRE(!resp.empty());
+
+      validate_database();
+   }
+   FC_LOG_AND_RETHROW()
+}
+
+template< typename PROPOSAL_IDX >
+int64_t calc_proposals( const PROPOSAL_IDX& proposal_idx, const std::vector< int64_t >& proposals_id )
+{
+   auto cnt = 0;
+   for( auto id : proposals_id )
+      cnt += proposal_idx.find( id ) != proposal_idx.end() ? 1 : 0;
+   return cnt;
+}
+
+template< typename PROPOSAL_VOTE_IDX >
+int64_t calc_proposal_votes( const PROPOSAL_VOTE_IDX& proposal_vote_idx, uint64_t proposal_id )
+{
+   auto cnt = 0;
+   auto found = proposal_vote_idx.find( proposal_id );
+   while( found != proposal_vote_idx.end() && static_cast< size_t >( found->proposal_id ) == proposal_id )
+   {
+      ++cnt;
+      ++found;
+   }
+   return cnt;
+}
+
+template< typename PROPOSAL_VOTE_IDX >
+int64_t calc_votes( const PROPOSAL_VOTE_IDX& proposal_vote_idx, const std::vector< int64_t >& proposals_id )
+{
+   auto cnt = 0;
+   for( auto id : proposals_id )
+      cnt += calc_proposal_votes( proposal_vote_idx, id );
+   return cnt;
+}
+
+BOOST_AUTO_TEST_CASE( proposals_maintenance_01 )
+{
+   try
+   {
+      BOOST_TEST_MESSAGE( "Testing: removing of old proposals using threshold" );
+
+      ACTORS( (a00)(a01)(a02)(a03)(a04) )
+      generate_block();
+
+      set_price_feed( price( ASSET( "1.000 TBD" ), ASSET( "1.000 TESTS" ) ) );
+      generate_block();
+
+      //=====================preparing=====================
+      auto receiver = "steem.dao";
+
+      auto start_time = db->head_block_time();
+
+      const auto start_time_shift = fc::hours( 11 );
+      const auto end_time_shift = fc::hours( 10 );
+      const auto block_interval = fc::seconds( STEEM_BLOCK_INTERVAL );
+
+      auto start_date_00 = start_time + start_time_shift;
+      auto end_date_00 = start_date_00 + end_time_shift;
+
+      auto daily_pay = asset( 100, SBD_SYMBOL );
+
+      const auto nr_proposals = 200;
+      std::vector< int64_t > proposals_id;
+
+      struct initial_data
+      {
+         std::string account;
+         fc::ecc::private_key key;
+      };
+
+      std::vector< initial_data > inits = {
+                                       {"a00", a00_private_key },
+                                       {"a01", a01_private_key },
+                                       {"a02", a02_private_key },
+                                       {"a03", a03_private_key },
+                                       {"a04", a04_private_key },
+                                       };
+
+      for( auto item : inits )
+         FUND( item.account, ASSET( "10000.000 TBD" ) );
+      //=====================preparing=====================
+
+      for( int32_t i = 0; i < nr_proposals; ++i )
+      {
+         auto item = inits[ i % inits.size() ];
+         proposals_id.push_back( create_proposal( item.account, receiver, start_date_00, end_date_00, daily_pay, item.key ) );
+         generate_block();
+      }
+
+      const auto& proposal_idx = db->get_index< proposal_index >().indices().get< by_id >();
+
+      auto current_active_proposals = nr_proposals;
+      BOOST_REQUIRE( calc_proposals( proposal_idx, proposals_id ) == current_active_proposals );
+
+      generate_blocks( start_time + fc::seconds( STEEM_PROPOSAL_MAINTENANCE_CLEANUP ) );
+      start_time = db->head_block_time();
+
+      generate_blocks( start_time + ( start_time_shift + end_time_shift - block_interval ) );
+
+      auto threshold = db->get_sps_remove_threshold();
+      auto nr_stages = current_active_proposals / threshold;
+
+      for( auto i = 0; i < nr_stages; ++i )
+      {
+         generate_block();
+
+         current_active_proposals -= threshold;
+         auto found = calc_proposals( proposal_idx, proposals_id );
+
+         BOOST_REQUIRE( current_active_proposals == found );
+      }
+
+      BOOST_REQUIRE( current_active_proposals == 0 );
+
+      validate_database();
+   }
+   FC_LOG_AND_RETHROW()
+}
+
+BOOST_AUTO_TEST_CASE( proposals_maintenance_02 )
+{
+   try
+   {
+      BOOST_TEST_MESSAGE( "Testing: removing of old proposals + votes using threshold" );
+
+      ACTORS( (a00)(a01)(a02)(a03)(a04) )
+      generate_block();
+
+      set_price_feed( price( ASSET( "1.000 TBD" ), ASSET( "1.000 TESTS" ) ) );
+      generate_block();
+
+      //=====================preparing=====================
+      auto receiver = "steem.dao";
+
+      auto start_time = db->head_block_time();
+
+      const auto start_time_shift = fc::hours( 11 );
+      const auto end_time_shift = fc::hours( 10 );
+      const auto block_interval = fc::seconds( STEEM_BLOCK_INTERVAL );
+
+      auto start_date_00 = start_time + start_time_shift;
+      auto end_date_00 = start_date_00 + end_time_shift;
+
+      auto daily_pay = asset( 100, SBD_SYMBOL );
+
+      const auto nr_proposals = 10;
+      std::vector< int64_t > proposals_id;
+
+      struct initial_data
+      {
+         std::string account;
+         fc::ecc::private_key key;
+      };
+
+      std::vector< initial_data > inits = {
+                                       {"a00", a00_private_key },
+                                       {"a01", a01_private_key },
+                                       {"a02", a02_private_key },
+                                       {"a03", a03_private_key },
+                                       {"a04", a04_private_key },
+                                       };
+
+      for( auto item : inits )
+         FUND( item.account, ASSET( "10000.000 TBD" ) );
+      //=====================preparing=====================
+
+      for( auto i = 0; i < nr_proposals; ++i )
+      {
+         auto item = inits[ i % inits.size() ];
+         proposals_id.push_back( create_proposal( item.account, receiver, start_date_00, end_date_00, daily_pay, item.key ) );
+         generate_block();
+      }
+
+      auto itr_begin_2 = proposals_id.begin() + STEEM_PROPOSAL_MAX_IDS_NUMBER;
+      std::vector< int64_t > v1( proposals_id.begin(), itr_begin_2 );
+      std::vector< int64_t > v2( itr_begin_2, proposals_id.end() );
+
+      for( auto item : inits )
+      {
+         vote_proposal( item.account, v1, true/*approve*/, item.key);
+         generate_blocks( 1 );
+         vote_proposal( item.account, v2, true/*approve*/, item.key);
+         generate_blocks( 1 );
+      }
+
+      const auto& proposal_idx = db->get_index< proposal_index >().indices().get< by_id >();
+      const auto& proposal_vote_idx = db->get_index< proposal_vote_index >().indices().get< by_proposal_voter >();
+
+      auto current_active_proposals = nr_proposals;
+      BOOST_REQUIRE( calc_proposals( proposal_idx, proposals_id ) == current_active_proposals );
+
+      auto current_active_votes = current_active_proposals * static_cast< int16_t > ( inits.size() );
+      BOOST_REQUIRE( calc_votes( proposal_vote_idx, proposals_id ) == current_active_votes );
+
+      generate_blocks( start_time + fc::seconds( STEEM_PROPOSAL_MAINTENANCE_CLEANUP ) );
+      start_time = db->head_block_time();
+
+      generate_blocks( start_time + ( start_time_shift + end_time_shift - block_interval ) );
+
+      auto threshold = db->get_sps_remove_threshold();
+      auto current_active_anything = current_active_proposals + current_active_votes;
+      auto nr_stages = current_active_anything / threshold;
+
+      for( auto i = 0; i < nr_stages; ++i )
+      {
+         generate_block();
+
+         current_active_anything -= threshold;
+         auto found_proposals = calc_proposals( proposal_idx, proposals_id );
+         auto found_votes = calc_votes( proposal_vote_idx, proposals_id );
+
+         BOOST_REQUIRE( current_active_anything == found_proposals + found_votes );
+      }
+
+      BOOST_REQUIRE( current_active_anything == 0 );
+
+      validate_database();
+   }
+   FC_LOG_AND_RETHROW()
+}
+
+BOOST_AUTO_TEST_CASE( proposals_removing_with_threshold )
+{
+   try
+   {
+      BOOST_TEST_MESSAGE( "Testing: removing of old proposals + votes using threshold" );
+
+      ACTORS( (a00)(a01)(a02)(a03)(a04) )
+      generate_block();
+
+      set_price_feed( price( ASSET( "1.000 TBD" ), ASSET( "1.000 TESTS" ) ) );
+      generate_block();
+
+      //=====================preparing=====================
+      auto receiver = "steem.dao";
+
+      auto start_time = db->head_block_time();
+
+      const auto start_time_shift = fc::days( 100 );
+      const auto end_time_shift = fc::days( 101 );
+
+      auto start_date_00 = start_time + start_time_shift;
+      auto end_date_00 = start_date_00 + end_time_shift;
+
+      auto daily_pay = asset( 100, SBD_SYMBOL );
+
+      const auto nr_proposals = 5;
+      std::vector< int64_t > proposals_id;
+
+      struct initial_data
+      {
+         std::string account;
+         fc::ecc::private_key key;
+      };
+
+      std::vector< initial_data > inits = {
+                                       {"a00", a00_private_key },
+                                       {"a01", a01_private_key },
+                                       {"a02", a02_private_key },
+                                       {"a03", a03_private_key },
+                                       {"a04", a04_private_key },
+                                       };
+
+      for( auto item : inits )
+         FUND( item.account, ASSET( "10000.000 TBD" ) );
+      //=====================preparing=====================
+
+      auto item_creator = inits[ 0 ];
+      for( auto i = 0; i < nr_proposals; ++i )
+      {
+         proposals_id.push_back( create_proposal( item_creator.account, receiver, start_date_00, end_date_00, daily_pay, item_creator.key ) );
+         generate_block();
+      }
+
+      for( auto item : inits )
+      {
+         vote_proposal( item.account, proposals_id, true/*approve*/, item.key);
+         generate_blocks( 1 );
+      }
+
+      const auto& proposal_idx = db->get_index< proposal_index >().indices().get< by_id >();
+      const auto& proposal_vote_idx = db->get_index< proposal_vote_index >().indices().get< by_proposal_voter >();
+
+      auto current_active_proposals = nr_proposals;
+      BOOST_REQUIRE( calc_proposals( proposal_idx, proposals_id ) == current_active_proposals );
+
+      auto current_active_votes = current_active_proposals * static_cast< int16_t > ( inits.size() );
+      BOOST_REQUIRE( calc_votes( proposal_vote_idx, proposals_id ) == current_active_votes );
+
+      auto threshold = db->get_sps_remove_threshold();
+      BOOST_REQUIRE( threshold == 20 );
+
+      flat_set<long int> _proposals_id( proposals_id.begin(), proposals_id.end() );
+
+      {
+         remove_proposal( item_creator.account,  _proposals_id, item_creator.key );
+         auto found_proposals = calc_proposals( proposal_idx, proposals_id );
+         auto found_votes = calc_votes( proposal_vote_idx, proposals_id );
+         BOOST_REQUIRE( found_proposals == 2 );
+         BOOST_REQUIRE( found_votes == 8 );
+         generate_blocks( 1 );
+      }
+
+      {
+         remove_proposal( item_creator.account,  _proposals_id, item_creator.key );
+         auto found_proposals = calc_proposals( proposal_idx, proposals_id );
+         auto found_votes = calc_votes( proposal_vote_idx, proposals_id );
+         BOOST_REQUIRE( found_proposals == 0 );
+         BOOST_REQUIRE( found_votes == 0 );
+         generate_blocks( 1 );
+      }
 
       validate_database();
    }

@@ -261,6 +261,7 @@ void database_fixture::open_database()
       args.initial_supply = INITIAL_TEST_SUPPLY;
       args.sbd_initial_supply = SBD_INITIAL_TEST_SUPPLY;
       args.shared_file_size = 1024 * 1024 * 8;     // 8MB file for testing
+      args.sps_remove_threshold = 20;
       db->open(args);
    }
 }
