@@ -1910,7 +1910,7 @@ namespace detail
 
    DEFINE_API_IMPL( condenser_api_impl, list_proposals )
    {
-      CHECK_ARG_SIZE( 5 )
+      CHECK_ARG_SIZE( 4 )
       FC_ASSERT( _sps_api, "sps_api_plugin not enabled." );
 
       steem::plugins::sps::list_proposals_args list_args;
@@ -1924,7 +1924,7 @@ namespace detail
 
    DEFINE_API_IMPL( condenser_api_impl, list_voter_proposals )
    {
-      CHECK_ARG_SIZE( 5 )
+      CHECK_ARG_SIZE( 4 )
       FC_ASSERT( _sps_api, "sps_api_plugin not enabled." );
       steem::plugins::sps::list_voter_proposals_args list_args;
       list_args.start           = args[0].as<fc::variant>();
