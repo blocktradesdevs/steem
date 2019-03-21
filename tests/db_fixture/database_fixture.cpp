@@ -992,7 +992,9 @@ list_proposals_return sps_proposal_database_fixture::list_proposals(fc::variant 
       args.limit           = _limit;
       args.status          = steem::plugins::sps::to_proposal_status(_status);
 
-      return api->list_proposals(args);
+      try {
+         return api->list_proposals(args);
+      } FC_CAPTURE_AND_RETHROW();
 }
 
 list_voter_proposals_return  sps_proposal_database_fixture::list_voter_proposals(fc::variant _start, std::string _order_by, std::string _order_type, int _limit, std::string _status) 
@@ -1005,7 +1007,9 @@ list_voter_proposals_return  sps_proposal_database_fixture::list_voter_proposals
       args.limit           = _limit;
       args.status          = steem::plugins::sps::to_proposal_status(_status);
 
-      return api->list_voter_proposals(args);
+      try {
+         return api->list_voter_proposals(args);
+      } FC_CAPTURE_AND_RETHROW();
 }
 
 find_proposals_return sps_proposal_database_fixture::find_proposals(flat_set<uint64_t> _proposal_ids)
@@ -1014,7 +1018,9 @@ find_proposals_return sps_proposal_database_fixture::find_proposals(flat_set<uin
    steem::plugins::sps::find_proposals_args args;
    args.id_set = _proposal_ids;
 
-   return api->find_proposals(args);
+   try {
+      return api->find_proposals(args);
+   } FC_CAPTURE_AND_RETHROW();
 }
 
 void sps_proposal_database_fixture::remove_proposal(account_name_type _deleter, flat_set<int64_t> _proposal_id, const fc::ecc::private_key& _key)
