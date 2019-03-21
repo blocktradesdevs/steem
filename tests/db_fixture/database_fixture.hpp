@@ -341,6 +341,8 @@ struct sps_proposal_database_fixture : public clean_database_fixture
    sps_proposal_database_fixture(){}
    virtual ~sps_proposal_database_fixture(){}
 
+   void plugin_prepare();
+
    int64_t create_proposal(   std::string creator, std::string receiver,
                               time_point_sec start_date, time_point_sec end_date,
                               asset daily_pay, const fc::ecc::private_key& key );

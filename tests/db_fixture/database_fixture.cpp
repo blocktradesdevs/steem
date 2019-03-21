@@ -879,6 +879,46 @@ template smt_capped_generation_policy t_smt_database_fixture< clean_database_fix
 
 #endif
 
+void sps_proposal_database_fixture::plugin_prepare()
+{
+   using namespace steem::plugins::sps;
+
+   int argc = boost::unit_test::framework::master_test_suite().argc;
+   char** argv = boost::unit_test::framework::master_test_suite().argv;
+   for( int i=1; i<argc; i++ )
+   {
+      const std::string arg = argv[i];
+      if( arg == "--record-assert-trip" )
+         fc::enable_record_assert_trip = true;
+      if( arg == "--show-test-names" )
+         std::cout << "running test " << boost::unit_test::framework::current_test_case().p_name << std::endl;
+   }
+
+   appbase::app().register_plugin< sps_plugin >();
+   appbase::app().register_plugin< sps_api_plugin >();
+   db_plugin = &appbase::app().register_plugin< steem::plugins::debug_node::debug_node_plugin >();
+   init_account_pub_key = init_account_priv_key.get_public_key();
+
+   db_plugin->logging = false;
+   appbase::app().initialize<
+      steem::plugins::sps::sps_plugin,
+      steem::plugins::sps::sps_api_plugin,
+      steem::plugins::debug_node::debug_node_plugin
+   >( argc, argv );
+
+   db = &appbase::app().get_plugin< steem::plugins::chain::chain_plugin >().db();
+   BOOST_REQUIRE( db );
+
+   open_database();
+
+   generate_block();
+   db->set_hardfork( STEEM_NUM_HARDFORKS );
+   generate_block();
+
+
+   validate_database();
+}
+
 int64_t sps_proposal_database_fixture::create_proposal( std::string creator, std::string receiver,
                            time_point_sec start_date, time_point_sec end_date,
                            asset daily_pay, const fc::ecc::private_key& key )
@@ -903,13 +943,13 @@ int64_t sps_proposal_database_fixture::create_proposal( std::string creator, std
    op.permlink = permlink;
 
    tx.operations.push_back( op );
-   tx.set_expiration( this->db->head_block_time() + STEEM_MAX_TIME_UNTIL_EXPIRATION );
-   this->sign( tx, key );
-   this->db->push_transaction( tx, 0 );
+   tx.set_expiration( db->head_block_time() + STEEM_MAX_TIME_UNTIL_EXPIRATION );
+   sign( tx, key );
+   db->push_transaction( tx, 0 );
    tx.signatures.clear();
    tx.operations.clear();
 
-   const auto& proposal_idx = this->db-> template get_index< proposal_index >().indices(). template get< by_id >();
+   const auto& proposal_idx = db-> template get_index< proposal_index >().indices(). template get< by_id >();
    auto itr = proposal_idx.end();
    BOOST_REQUIRE( proposal_idx.begin() != itr );
    --itr;
@@ -930,15 +970,15 @@ void sps_proposal_database_fixture::vote_proposal( std::string voter, const std:
    op.approve = approve;
 
    signed_transaction tx;
-   tx.set_expiration( this->db->head_block_time() + STEEM_MAX_TIME_UNTIL_EXPIRATION );
+   tx.set_expiration( db->head_block_time() + STEEM_MAX_TIME_UNTIL_EXPIRATION );
    tx.operations.push_back( op );
-   this->sign( tx, key );
-   this->db->push_transaction( tx, 0 );
+   sign( tx, key );
+   db->push_transaction( tx, 0 );
 }
 
 bool sps_proposal_database_fixture::exist_proposal( int64_t id )
 {
-   const auto& proposal_idx = this->db-> template get_index< proposal_index >().indices(). template get< by_id >();
+   const auto& proposal_idx = db->get_index< proposal_index >().indices(). template get< by_id >();
    return proposal_idx.find( id ) != proposal_idx.end();
 }
 
@@ -952,16 +992,7 @@ list_proposals_return sps_proposal_database_fixture::list_proposals(fc::variant 
       args.limit           = _limit;
       args.status          = steem::plugins::sps::to_proposal_status(_status);
 
-      try {
-         return api->list_proposals(args);
-      } catch( fc::exception& _e) {
-         elog("Caught exception while executig list_proposals: ${error}",  ("error", _e));
-      } catch( std::exception& _e ) {
-         elog("Caught exception while executig list_proposals: ${error}",  ("error", _e.what()));
-      } catch( ... ) {
-         elog("Caught unhandled exception in list_proposals.");
-      }
-      return steem::plugins::sps::list_proposals_return ();
+      return api->list_proposals(args);
 }
 
 list_voter_proposals_return  sps_proposal_database_fixture::list_voter_proposals(fc::variant _start, std::string _order_by, std::string _order_type, int _limit, std::string _status) 
@@ -974,16 +1005,7 @@ list_voter_proposals_return  sps_proposal_database_fixture::list_voter_proposals
       args.limit           = _limit;
       args.status          = steem::plugins::sps::to_proposal_status(_status);
 
-      try {
-         return api->list_voter_proposals(args);
-      } catch( fc::exception& _e) {
-         elog("Caught exception while executig list_voter_proposals: ${error}",  ("error", _e));
-      } catch( std::exception& _e ) {
-         elog("Caught exception while executig list_voter_proposals: ${error}",  ("error", _e.what()));
-      } catch( ... ) {
-         elog("Caught unhandled exception in list_voter_proposals.");
-      }
-      return steem::plugins::sps::list_voter_proposals_return ();
+      return api->list_voter_proposals(args);
 }
 
 find_proposals_return sps_proposal_database_fixture::find_proposals(flat_set<uint64_t> _proposal_ids)
@@ -992,16 +1014,7 @@ find_proposals_return sps_proposal_database_fixture::find_proposals(flat_set<uin
    steem::plugins::sps::find_proposals_args args;
    args.id_set = _proposal_ids;
 
-   try {
-      return api->find_proposals(args);
-   } catch( fc::exception& _e) {
-      elog("Caught exception while executig find_proposal_return: ${error}",  ("error", _e));
-   } catch( std::exception& _e ) {
-      elog("Caught exception while executig find_proposal_return: ${error}",  ("error", _e.what()));
-   } catch( ... ) {
-      elog("Caught unhandled exception in find_proposal_return.");
-   }
-   return steem::plugins::sps::find_proposals_return ();
+   return api->find_proposals(args);
 }
 
 void sps_proposal_database_fixture::remove_proposal(account_name_type _deleter, flat_set<int64_t> _proposal_id, const fc::ecc::private_key& _key)
@@ -1012,25 +1025,25 @@ void sps_proposal_database_fixture::remove_proposal(account_name_type _deleter, 
 
    signed_transaction trx;
    trx.operations.push_back( rp );
-   trx.set_expiration( this->db->head_block_time() + STEEM_MAX_TIME_UNTIL_EXPIRATION );
-   this->sign( trx, _key );
-   this->db->push_transaction( trx, 0 );
+   trx.set_expiration( db->head_block_time() + STEEM_MAX_TIME_UNTIL_EXPIRATION );
+   sign( trx, _key );
+   db->push_transaction( trx, 0 );
    trx.signatures.clear();
    trx.operations.clear();
 }
 
 bool sps_proposal_database_fixture::find_vote_for_proposal(const std::string& _user, int64_t _proposal_id)
 {
-      const auto& proposal_vote_idx = this->db-> template get_index< proposal_vote_index >().indices(). template get< by_voter_proposal >();
+      const auto& proposal_vote_idx = db->get_index< proposal_vote_index >().indices(). template get< by_voter_proposal >();
       auto found_vote = proposal_vote_idx.find( std::make_tuple(_user, _proposal_id) );
       return found_vote != proposal_vote_idx.end() ;
 }
 
 uint64_t sps_proposal_database_fixture::get_nr_blocks_until_maintenance_block()
 {
-   auto block_time = this->db->head_block_time();
+   auto block_time = db->head_block_time();
 
-   auto next_maintenance_time = this->db->get_dynamic_global_properties().next_maintenance_time;
+   auto next_maintenance_time = db->get_dynamic_global_properties().next_maintenance_time;
    auto ret = ( next_maintenance_time - block_time ).to_seconds() / STEEM_BLOCK_INTERVAL;
 
    FC_ASSERT( next_maintenance_time >= block_time );
@@ -1040,7 +1053,7 @@ uint64_t sps_proposal_database_fixture::get_nr_blocks_until_maintenance_block()
 
 void sps_proposal_database_fixture::post_comment( std::string _authro, std::string _permlink, std::string _title, std::string _body, std::string _parent_permlink, const fc::ecc::private_key& _key)
 {
-   this->generate_blocks( this->db->head_block_time() + STEEM_MIN_ROOT_COMMENT_INTERVAL + fc::seconds( STEEM_BLOCK_INTERVAL ), true );
+   generate_blocks( db->head_block_time() + STEEM_MIN_ROOT_COMMENT_INTERVAL + fc::seconds( STEEM_BLOCK_INTERVAL ), true );
    comment_operation comment;
 
    comment.author = _authro;
@@ -1051,9 +1064,9 @@ void sps_proposal_database_fixture::post_comment( std::string _authro, std::stri
 
    signed_transaction trx;
    trx.operations.push_back( comment );
-   trx.set_expiration( this->db->head_block_time() + STEEM_MAX_TIME_UNTIL_EXPIRATION );
-   this->sign( trx, _key );
-   this->db->push_transaction( trx, 0 );
+   trx.set_expiration( db->head_block_time() + STEEM_MAX_TIME_UNTIL_EXPIRATION );
+   sign( trx, _key );
+   db->push_transaction( trx, 0 );
    trx.signatures.clear();
    trx.operations.clear();
 }
