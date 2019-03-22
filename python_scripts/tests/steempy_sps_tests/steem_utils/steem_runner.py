@@ -7,7 +7,8 @@ import time
 import sys
 import json
 import datetime
-import steem_tools
+
+from .steem_tools import *
 
 LOG_LEVEL = logging.INFO
 LOG_FORMAT = "%(asctime)-15s - %(name)s - %(levelname)s - %(message)s"
@@ -46,7 +47,16 @@ class SteemNode(object):
         self.steem_config = self.parse_node_config_file(self.working_dir + "/config.ini")
         self.ip_address, self.port = self.steem_config["webserver-http-endpoint"][0].split(":")
         self.ip_address = "http://{}".format(self.ip_address)
-        self.is_running = False
+        self.node_running = False
+
+    def get_from_config(self, key):
+        return self.steem_config.get(key, None)
+
+    def get_node_url(self):
+        return "{}:{}/".format(self.ip_address, self.port)
+
+    def is_running(self):
+        return self.node_running
 
     def parse_node_config_file(self, config_file_name):
         ret = dict()
@@ -69,7 +79,7 @@ class SteemNode(object):
         return ret
 
     def run_steem_node(self):
-        steem_tools.detect_process_by_name("steem", self.ip_address, self.port)
+        detect_process_by_name("steem", self.ip_address, self.port)
 
         logger.info("*** START NODE at {0}:{1} in {2}".format(self.ip_address, self.port, self.working_dir))
 
@@ -84,7 +94,7 @@ class SteemNode(object):
         log_file_name = "{0}/{1}-{2}-{3}.log".format(self.working_dir, "steem", self.port, current_time_str)
         screen_cfg_name = "{0}/steem_screen-{1}.cfg".format(self.working_dir, self.port)
 
-        steem_tools.save_screen_cfg(screen_cfg_name, log_file_name)
+        save_screen_cfg(screen_cfg_name, log_file_name)
         screen_params = [
             "screen",
             "-m",
@@ -101,20 +111,20 @@ class SteemNode(object):
         
         try:
             subprocess.Popen(parameters)
-            steem_tools.save_pid_file(self.pid_file_name, "steem", self.port, current_time_str)
-            steem_tools.wait_for_blocks_produced(2, "{}:{}".format(self.ip_address, self.port))
-            self.is_running = True
+            save_pid_file(self.pid_file_name, "steem", self.port, current_time_str)
+            wait_for_blocks_produced(2, "{}:{}".format(self.ip_address, self.port))
+            self.node_running = True
             logger.info("Node at {0}:{1} in {2} is up and running...".format(self.ip_address, self.port, self.working_dir))
         except Exception as ex:
             logger.error("Exception during steemd run: {0}".format(ex))
-            steem_tools.kill_process(self.pid_file_name, "steem", self.ip_address, self.port)
-            self.is_running = False
+            kill_process(self.pid_file_name, "steem", self.ip_address, self.port)
+            self.node_running = False
 
 
     def stop_steem_node(self):
         logger.info("Stopping node at {0}:{1}".format(self.ip_address, self.port))
-        steem_tools.kill_process(self.pid_file_name, "steem", self.ip_address, self.port)
-        self.is_running = False
+        kill_process(self.pid_file_name, "steem", self.ip_address, self.port)
+        self.node_running = False
 
 
 if __name__ == "__main__":
