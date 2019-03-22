@@ -187,7 +187,7 @@ def wait_for_blocks_produced(block_count, node_url):
     last_block_number = global_properties.get('result', None)
     if last_block_number is not None:
         last_block_number = last_block_number.get('head_block_number', None)
-    logger.info("Acquiring starting block number...")
+    logger.debug("Acquiring starting block number...")
     count = 0
     while last_block_number is None:
         global_properties = get_dynamic_global_properties(node_url)
@@ -201,8 +201,9 @@ def wait_for_blocks_produced(block_count, node_url):
             msg = "Maximum tries exceeded"
             logger.error(msg)
             raise TimeoutError(msg)
+    logger.debug("Got: {}".format(last_block_number))
 
-    logger.info("Acquiring current block number...")
+    logger.debug("Acquiring current block number...")
     count = 0
     while True:
         global_properties = get_dynamic_global_properties(node_url)
@@ -210,6 +211,7 @@ def wait_for_blocks_produced(block_count, node_url):
         curr_block_number = global_properties.get('result', 0)
         if curr_block_number != 0:
             curr_block_number = curr_block_number.get('head_block_number', 0)
+        logger.debug("Got: {}".format(last_block_number))
         if curr_block_number - last_block_number > block_count:
             return
         time.sleep(3)
