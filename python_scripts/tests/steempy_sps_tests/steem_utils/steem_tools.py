@@ -10,8 +10,6 @@ import datetime
 import sys
 import uuid
 
-sys.path.append(os.path.dirname(os.path.abspath(__file__)))
-
 LOG_LEVEL = logging.INFO
 LOG_FORMAT = "%(asctime)-15s - %(name)s - %(levelname)s - %(message)s"
 MAIN_LOG_PATH = "./steem_tools.log"
@@ -199,7 +197,7 @@ def wait_for_blocks_produced(block_count, node_url):
             last_block_number = last_block_number.get('head_block_number', None)
         time.sleep(3)
         count += 1
-        if count > (block_count + 5):
+        if count > (block_count + 10):
             msg = "Maximum tries exceeded"
             logger.error(msg)
             raise TimeoutError(msg)
@@ -216,7 +214,7 @@ def wait_for_blocks_produced(block_count, node_url):
             return
         time.sleep(3)
         count += 1
-        if count > (block_count + 5):
+        if count > (block_count + 10):
             msg = "Maximum tries exceeded"
             logger.error(msg)
             raise TimeoutError(msg)
