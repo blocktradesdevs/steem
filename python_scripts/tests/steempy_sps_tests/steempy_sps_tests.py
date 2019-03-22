@@ -320,7 +320,6 @@ if __name__ == '__main__':
 
     subject = str(uuid4())
     logger.info("Subject of testing proposal is set to: {}".format(subject))
-
     node.run_steem_node()
     if node.is_running():
         test_create_proposal(node_url, args.creator, args.receiver, wif, subject)
