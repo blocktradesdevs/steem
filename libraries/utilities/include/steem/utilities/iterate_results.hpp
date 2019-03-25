@@ -1,5 +1,6 @@
 #include <vector>
 #include <steem/chain/database.hpp>
+#include <typeinfo>
 
 namespace steem { namespace utilities {
   template<typename IndexType, typename OrderType, typename ValueType, typename ResultType, typename OnPush>
