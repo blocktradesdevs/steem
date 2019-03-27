@@ -78,7 +78,7 @@ class SteemNode(object):
                     ret[k] = [v]
         return ret
 
-    def run_steem_node(self):
+    def run_steem_node(self, additional_params = [], wait_for_blocks = True):
         detect_process_by_name("steem", self.ip_address, self.port)
 
         logger.info("*** START NODE at {0}:{1} in {2}".format(self.ip_address, self.port, self.working_dir))
@@ -88,6 +88,8 @@ class SteemNode(object):
             "-d",
             self.working_dir
         ]
+
+        parameters = parameters + additional_params
         
         self.pid_file_name = "{0}/run_steem-{1}.pid".format(self.working_dir, self.port)
         current_time_str = datetime.datetime.now().strftime("%Y-%m-%d")
@@ -112,7 +114,10 @@ class SteemNode(object):
         try:
             subprocess.Popen(parameters)
             save_pid_file(self.pid_file_name, "steem", self.port, current_time_str)
-            wait_for_blocks_produced(2, "{}:{}".format(self.ip_address, self.port))
+            if wait_for_blocks:
+                wait_for_blocks_produced(2, "{}:{}".format(self.ip_address, self.port))
+            else:
+                wait_for_string_in_file(log_file_name, "start listening for ws requests", 240.)
             self.node_running = True
             logger.info("Node at {0}:{1} in {2} is up and running...".format(self.ip_address, self.port, self.working_dir))
         except Exception as ex:

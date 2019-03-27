@@ -62,6 +62,7 @@ def wait_for_string_in_file(log_file_name, string, timeout):
         string -- sting to be found,
         timout -- block timeout in seconds, after this time exception will be raised.
     """
+    logger.info("Waiting for string \"{}\" in file {}".format(string, log_file_name))
     step = 0.5
     to_timeout = 0.
     while True:

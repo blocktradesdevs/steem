@@ -52,41 +52,105 @@ def create_accounts(node, creator, accounts):
             memo_key=account['public_key'],
             store_keys = False,
             creator=creator,
-            asset='TESTS')
+            asset='TESTS'
+        )
     steem_utils.steem_tools.wait_for_blocks_produced(5, node.url)
 
 
 # transfer_to_vesting initminer pychol "310.000 TESTS" true
-def transfer_to_vesting(node, from_account, accounts):
+def transfer_to_vesting(node, from_account, accounts, amount, asset):
     for acnt in accounts:
-        logger.info("Transfer to vesting from {} to {} amount {} {}".format(from_account, acnt['name'], "310.000", "TESTS"))
-        node.commit.transfer_to_vesting("310.000", to = acnt['name'], 
-            account = from_account, asset='TESTS')
+        logger.info("Transfer to vesting from {} to {} amount {} {}".format(
+            from_account, acnt['name'], amount, asset)
+        )
+        
+        node.commit.transfer_to_vesting(amount, to = acnt['name'], 
+            account = from_account, asset = asset
+        )
     steem_utils.steem_tools.wait_for_blocks_produced(5, node.url)
 
 
 # transfer initminer pychol "399.000 TESTS" "initial transfer" true
 # transfer initminer pychol "398.000 TBD" "initial transfer" true
-def transfer_assets_to_accounts(node, from_account, accounts):
+def transfer_assets_to_accounts(node, from_account, accounts, amount, asset):
     for acnt in accounts:
-        logger.info("Transfer from {} to {} amount {} {}".format(from_account, acnt['name'], "399.000", "TESTS"))
-        node.commit.transfer(acnt['name'], "399.000", "TESTS", memo = "initial transfer", account = from_account)
-    steem_utils.steem_tools.wait_for_blocks_produced(5, node.url)
-    for acnt in accounts:
-        logger.info("Transfer from {} to {} amount {} {}".format(from_account, acnt['name'], "398.000", "TBD"))
-        node.commit.transfer(acnt['name'], "398.000", "TBD", memo = "initial transfer", account = from_account)
+        logger.info("Transfer from {} to {} amount {} {}".format(from_account, 
+            acnt['name'], amount, asset)
+        )
+        node.commit.transfer(acnt['name'], amount, asset, 
+            memo = "initial transfer", account = from_account
+        )
     steem_utils.steem_tools.wait_for_blocks_produced(5, node.url)
 
+
+def transfer_assets_to_treasury(node, from_account, treasury_account, amount, asset):
+    logger.info("Transfer from {} to {} amount {} {}".format(from_account, 
+        treasury_account, amount, asset)
+    )
+    node.commit.transfer(treasury_account, amount, asset, 
+        memo = "initial transfer", account = from_account
+    )
+    steem_utils.steem_tools.wait_for_blocks_produced(2, node.url)
+
+
+def get_permlink(account):
+    return "steempy-proposal-title-{}".format(account)
 
 def create_posts(node, accounts):
     logger.info("Creating posts...")
     for acnt in accounts:
+        logger.info("New post ==> ({},{},{},{},{})".format(
+            "Steempy proposal title [{}]".format(acnt['name']), 
+            "Steempy proposal body [{}]".format(acnt['name']), 
+            acnt['name'], 
+            get_permlink(acnt['name']), 
+            "proposals"
+        ))
         node.commit.post("Steempy proposal title [{}]".format(acnt['name']), 
             "Steempy proposal body [{}]".format(acnt['name']), 
             acnt['name'], 
-            permlink = "steempy-proposal-title-{}".format(acnt['name']), 
+            permlink = get_permlink(acnt['name']), 
             tags = "proposals")
     steem_utils.steem_tools.wait_for_blocks_produced(5, node.url)
+
+
+def create_proposals(node, accounts, start_date, end_date):
+    logger.info("Creating proposals...")
+    for acnt in accounts:
+        logger.info("New proposal ==> ({},{},{},{},{},{},{})".format(
+            acnt['name'], 
+            acnt['name'], 
+            start_date, 
+            end_date,
+            "24.000 TBD",
+            "Proposal from account {}".format(acnt['name']),
+            get_permlink(acnt['name'])
+        ))
+        node.commit.create_proposal(
+            acnt['name'], 
+            acnt['name'], 
+            start_date, 
+            end_date,
+            "24.000 TBD",
+            "Proposal from account {}".format(acnt['name']),
+            get_permlink(acnt['name'])
+        )
+    steem_utils.steem_tools.wait_for_blocks_produced(5, node.url)
+
+
+def vote_proposals(node, accounts):
+    logger.info("Voting proposals...")
+    for acnt in accounts:
+        proposal_set = [x for x in range(0, len(accounts))]
+        logger.info("Account {} voted for proposals: {}".format(acnt["name"], ",".join(str(x) for x in proposal_set)))
+        node.commit.update_proposal_votes(acnt["name"], proposal_set, True)
+    steem_utils.steem_tools.wait_for_blocks_produced(5, node.url)
+
+
+def print_balance(node, accounts):
+    for acnt in accounts:
+        ret = node.get_account(acnt['name'])
+        logger.info("{} :: balance ==> {}, sbd_balance ==> {}".format(acnt['name'], ret.get('balance', 'Error'), ret.get('sbd_balance', 'Error')))
 
 
 if __name__ == '__main__':
@@ -94,10 +158,16 @@ if __name__ == '__main__':
     import argparse
     parser = argparse.ArgumentParser()
     parser.add_argument("creator", help = "Account to create test accounts with")
+    parser.add_argument("treasury", help = "Account to create test accounts with")
 
     args = parser.parse_args()
 
-    node = steem_utils.steem_runner.SteemNode("/home/dariusz-work/Builds/steem/programs/steemd/steemd", "/home/dariusz-work/steem-data", "./steem_utils/resources/config.ini.in")
+    node = steem_utils.steem_runner.SteemNode(
+        "/home/dariusz-work/Builds/steem/programs/steemd/steemd", 
+        "/home/dariusz-work/steem-data", 
+        "./steem_utils/resources/config.ini.in"
+    )
+    
     node_url = node.get_node_url()
     wif = node.get_from_config('private-key')[0]
 
@@ -105,25 +175,98 @@ if __name__ == '__main__':
     logger.info("Using private-key: {}".format(wif))
 
     accounts = [
-        {"name" : "tester001", "private_key" : "", "public_key" : ""}
     ]
 
     keys = [wif]
     for account in accounts:
         keys.append(account["private_key"])
     
-    node.run_steem_node()
+    node.run_steem_node(["--enable-stale-production"])
     try:
         if node.is_running():
-            node_client = Steem(nodes = [node_url], no_broadcast = False, keys = keys)
+            node_client = Steem(nodes = [node_url], no_broadcast = False, 
+                keys = keys
+            )
 
+            import datetime
+            now = datetime.datetime.now()
+            # create accounts
             create_accounts(node_client, args.creator, accounts)
+            # tranfer to vesting
+            transfer_to_vesting(node_client, args.creator, accounts, "300.000", 
+                "TESTS"
+            )
+            # transfer assets to accounts
+            transfer_assets_to_accounts(node_client, args.creator, accounts, 
+                "400.000", "TESTS"
+            )
 
-            transfer_to_vesting(node_client, args.creator, accounts)            
+            transfer_assets_to_accounts(node_client, args.creator, accounts, 
+                "400.000", "TBD"
+            )
 
-            transfer_assets_to_accounts(node_client, args.creator, accounts)
+            logger.info("Balances for accounts after initial transfer")
+            print_balance(node_client, accounts)
+            # transfer assets to treasury
+            transfer_assets_to_treasury(node_client, args.creator, args.treasury, 
+                "400.000", "TESTS"
+            )
 
+            transfer_assets_to_treasury(node_client, args.creator, args.treasury, 
+                "400.000", "TBD"
+            )
+
+            logger.info("Balances for treasury account after initial transfer")
+            print_balance(node_client, [{'name' : args.treasury}])
+
+            # create post for valid permlinks
             create_posts(node_client, accounts)
+
+            start_date = now + datetime.timedelta(hours = 1)
+            end_date = start_date + datetime.timedelta(days = 2)
+
+            end_date_blocks = start_date + datetime.timedelta(days = 2, hours = 1)
+
+            start_date_str = start_date.replace(microsecond=0).isoformat()
+            end_date_str = end_date.replace(microsecond=0).isoformat()
+
+            end_date_blocks_str = end_date_blocks.replace(microsecond=0).isoformat()
+
+            # create proposals - each account creates one proposal
+            create_proposals(node_client, accounts, start_date_str, end_date_str)
+
+            # each account is voting on proposal
+            vote_proposals(node_client, accounts)
+
+            logger.info("Balances for accounts after creating proposals transfer")
+            print_balance(node_client, accounts)
+            logger.info("Balances for treasury after creating proposals transfer")
+            print_balance(node_client, [{'name' : args.treasury}])
+
+            # move forward in time to see if proposals are paid
+            # moving is made in 1h increments at a time, after each 
+            # increment balance is printed
+            logger.info("Moving to date: {}".format(start_date_str))
+            node_client.debug_generate_blocks_until(wif, start_date_str, False)
+            current_date = start_date
+            while current_date < end_date:
+                current_date = current_date + datetime.timedelta(hours = 1)
+                current_date_str = current_date.replace(microsecond=0).isoformat()
+                logger.info("Moving to date: {}".format(current_date_str))
+                node_client.debug_generate_blocks_until(wif, current_date_str, False)
+
+                logger.info("Balances for accounts at time: {}".format(current_date_str))
+                print_balance(node_client, accounts)
+                logger.info("Balances for treasury at time: {}".format(current_date_str))
+                print_balance(node_client, [{'name' : args.treasury}])
+
+            # move additional hour to ensure that all proposals ended
+            logger.info("Moving to date: {}".format(end_date_blocks_str))
+            node_client.debug_generate_blocks_until(wif, end_date_blocks_str, False)
+            logger.info("Balances for accounts at time: {}".format(end_date_blocks_str))
+            print_balance(node_client, accounts)
+            logger.info("Balances for treasury at time: {}".format(end_date_blocks_str))
+            print_balance(node_client, [{'name' : args.treasury}])
 
             node.stop_steem_node()
             sys.exit(0)
