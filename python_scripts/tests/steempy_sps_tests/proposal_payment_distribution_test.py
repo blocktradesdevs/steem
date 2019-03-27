@@ -147,6 +147,13 @@ def vote_proposals(node, accounts):
     steem_utils.steem_tools.wait_for_blocks_produced(5, node.url)
 
 
+def list_proposals(node, start_date, status):
+    proposals = node.list_proposals(start_date, "by_start_date", "direction_ascending", 1000, status)
+    ret = []
+    for proposal in proposals:
+        ret.append("{}:{}".format(proposal.get('id', 'Error'), proposal.get('total_votes', 'Error')))
+    logger.info("Listing proposals with status {} (id:total_votes): {}".format(status, ",".join(ret)))
+
 def print_balance(node, accounts):
     for acnt in accounts:
         ret = node.get_account(acnt['name'])
@@ -170,12 +177,19 @@ if __name__ == '__main__':
     
     node_url = node.get_node_url()
     wif = node.get_from_config('private-key')[0]
+    if len(wif) == 0:
+        logger.error("Private-key is not set in config.ini")
+        sys.exit(1)
 
     logger.info("Using node at: {}".format(node_url))
     logger.info("Using private-key: {}".format(wif))
 
     accounts = [
     ]
+
+    if not accounts:
+        logger.error("Accounts array is empty, please add accounts in a form {\"name\" : name, \"private_key\" : private_key, \"public_key\" : public_key}")
+        sys.exit(1)
 
     keys = [wif]
     for account in accounts:
@@ -235,8 +249,14 @@ if __name__ == '__main__':
             # create proposals - each account creates one proposal
             create_proposals(node_client, accounts, start_date_str, end_date_str)
 
+            # list proposals with inactive status, it shoud be list of pairs id:total_votes
+            list_proposals(node_client, start_date_str, "inactive")
+
             # each account is voting on proposal
             vote_proposals(node_client, accounts)
+
+            # list proposals with inactive status, it shoud be list of pairs id:total_votes
+            list_proposals(node_client, start_date_str, "inactive")
 
             logger.info("Balances for accounts after creating proposals transfer")
             print_balance(node_client, accounts)
@@ -259,6 +279,7 @@ if __name__ == '__main__':
                 print_balance(node_client, accounts)
                 logger.info("Balances for treasury at time: {}".format(current_date_str))
                 print_balance(node_client, [{'name' : args.treasury}])
+                list_proposals(node_client, start_date_str, "active")
 
             # move additional hour to ensure that all proposals ended
             logger.info("Moving to date: {}".format(end_date_blocks_str))
@@ -267,6 +288,7 @@ if __name__ == '__main__':
             print_balance(node_client, accounts)
             logger.info("Balances for treasury at time: {}".format(end_date_blocks_str))
             print_balance(node_client, [{'name' : args.treasury}])
+            list_proposals(node_client, start_date_str, "expired")
 
             node.stop_steem_node()
             sys.exit(0)
