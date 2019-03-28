@@ -202,8 +202,6 @@ if __name__ == '__main__':
                 keys = keys
             )
 
-            import datetime
-            now = datetime.datetime.now()
             # create accounts
             create_accounts(node_client, args.creator, accounts)
             # tranfer to vesting
@@ -235,6 +233,13 @@ if __name__ == '__main__':
 
             # create post for valid permlinks
             create_posts(node_client, accounts)
+
+            import datetime
+            import dateutil.parser
+            now = node_client.get_dynamic_global_properties().get('time', None)
+            if now is None:
+                raise ValueError("Head time is None")
+            now = dateutil.parser.parse(now)
 
             start_date = now + datetime.timedelta(hours = 1)
             end_date = start_date + datetime.timedelta(days = 2)
