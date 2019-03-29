@@ -141,13 +141,15 @@ typedef multi_index_container<
          composite_key< proposal_vote_object,
             member< proposal_vote_object, account_name_type, &proposal_vote_object::voter >,
             member< proposal_vote_object, proposal_id_type, &proposal_vote_object::proposal_id >
-            >
+            >,
+         composite_key_compare<std::less<account_name_type>, std::less<proposal_id_type> >
        >,
       ordered_unique< tag< by_proposal_voter >,
          composite_key< proposal_vote_object,
             member< proposal_vote_object, proposal_id_type, &proposal_vote_object::proposal_id >,
             member< proposal_vote_object, account_name_type, &proposal_vote_object::voter >
-            >
+            >,
+         composite_key_compare<std::less<proposal_id_type>, std::less<account_name_type> >
        >
    >,
    allocator< proposal_vote_object >
