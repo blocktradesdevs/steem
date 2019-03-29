@@ -150,14 +150,20 @@ def vote_proposals(node, accounts):
 def list_proposals(node, start_date, status):
     proposals = node.list_proposals(start_date, "by_start_date", "direction_ascending", 1000, status)
     ret = []
+    votes = []
     for proposal in proposals:
         ret.append("{}:{}".format(proposal.get('id', 'Error'), proposal.get('total_votes', 'Error')))
+        votes.append(int(proposal.get('total_votes', -1)))
     logger.info("Listing proposals with status {} (id:total_votes): {}".format(status, ",".join(ret)))
+    return votes
 
 def print_balance(node, accounts):
+    balances = []
     for acnt in accounts:
         ret = node.get_account(acnt['name'])
         logger.info("{} :: balance ==> {}, sbd_balance ==> {}".format(acnt['name'], ret.get('balance', 'Error'), ret.get('sbd_balance', 'Error')))
+        balances.append(ret.get('sbd_balance', 'Error'))
+    return balances
 
 
 if __name__ == '__main__':
@@ -170,7 +176,7 @@ if __name__ == '__main__':
     args = parser.parse_args()
 
     node = steem_utils.steem_runner.SteemNode(
-        "/home/dariusz-work/Builds/steem/programs/steemd/steemd", 
+        "/home/dariusz-work/Builds/steem2/programs/steemd/steemd", 
         "/home/dariusz-work/steem-data", 
         "./steem_utils/resources/config.ini.in"
     )
@@ -185,7 +191,7 @@ if __name__ == '__main__':
     logger.info("Using private-key: {}".format(wif))
 
     accounts = [
-    ]
+        ]
 
     if not accounts:
         logger.error("Accounts array is empty, please add accounts in a form {\"name\" : name, \"private_key\" : private_key, \"public_key\" : public_key}")
@@ -221,11 +227,11 @@ if __name__ == '__main__':
             print_balance(node_client, accounts)
             # transfer assets to treasury
             transfer_assets_to_treasury(node_client, args.creator, args.treasury, 
-                "400.000", "TESTS"
+                "1000000.000", "TESTS"
             )
 
             transfer_assets_to_treasury(node_client, args.creator, args.treasury, 
-                "400.000", "TBD"
+                "1000000.000", "TBD"
             )
 
             logger.info("Balances for treasury account after initial transfer")
@@ -241,7 +247,7 @@ if __name__ == '__main__':
                 raise ValueError("Head time is None")
             now = dateutil.parser.parse(now)
 
-            start_date = now + datetime.timedelta(hours = 1)
+            start_date = now + datetime.timedelta(days = 1)
             end_date = start_date + datetime.timedelta(days = 2)
 
             end_date_blocks = start_date + datetime.timedelta(days = 2, hours = 1)
@@ -261,11 +267,18 @@ if __name__ == '__main__':
             vote_proposals(node_client, accounts)
 
             # list proposals with inactive status, it shoud be list of pairs id:total_votes
-            list_proposals(node_client, start_date_str, "inactive")
+            votes = list_proposals(node_client, start_date_str, "inactive")
+            for vote in votes:
+                #should be 0 for all
+                assert vote == 0
 
-            logger.info("Balances for accounts after creating proposals transfer")
-            print_balance(node_client, accounts)
-            logger.info("Balances for treasury after creating proposals transfer")
+            logger.info("Balances for accounts after creating proposals")
+            balances = print_balance(node_client, accounts)
+            for balance in balances:
+                #should be 390.000 TBD for all
+                assert balance == '390.000 TBD'
+
+            logger.info("Balances for treasury after creating proposals")
             print_balance(node_client, [{'name' : args.treasury}])
 
             # move forward in time to see if proposals are paid
@@ -284,16 +297,25 @@ if __name__ == '__main__':
                 print_balance(node_client, accounts)
                 logger.info("Balances for treasury at time: {}".format(current_date_str))
                 print_balance(node_client, [{'name' : args.treasury}])
-                list_proposals(node_client, start_date_str, "active")
+                votes = list_proposals(node_client, start_date_str, "active")
+                for vote in votes:
+                    # should be > 0 for all
+                    assert vote > 0
 
             # move additional hour to ensure that all proposals ended
             logger.info("Moving to date: {}".format(end_date_blocks_str))
             node_client.debug_generate_blocks_until(wif, end_date_blocks_str, False)
             logger.info("Balances for accounts at time: {}".format(end_date_blocks_str))
-            print_balance(node_client, accounts)
+            balances = print_balance(node_client, accounts)
+            for balance in balances:
+                # shoud be 438.000 TBD for all
+                assert balance == '438.000 TBD'
             logger.info("Balances for treasury at time: {}".format(end_date_blocks_str))
             print_balance(node_client, [{'name' : args.treasury}])
-            list_proposals(node_client, start_date_str, "expired")
+            votes = list_proposals(node_client, start_date_str, "expired")
+            for vote in votes:
+                    # should be > 0 for all
+                    assert vote > 0
 
             node.stop_steem_node()
             sys.exit(0)
