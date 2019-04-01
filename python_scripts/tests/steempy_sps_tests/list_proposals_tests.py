@@ -97,6 +97,9 @@ def list_proposals_test(node_client, creator):
     assert proposals[0]['subject'] == START_END_SUBJECTS[0][2], "Subject of the first proposal does not match with assumed proposal subject {}!={}".format(proposals[0]['subject'], START_END_SUBJECTS[0][2])
     assert proposals[-1]['subject'] == START_END_SUBJECTS[-1][2], "Subject of the last proposal does not match with assumed proposal subject {}!={}".format(proposals[-1]['subject'], START_END_SUBJECTS[-1][2])
 
+    id_first = proposals[0]['id']
+    id_last  = proposals[-1]['id']
+
     logger.info("Testing direction descending with start field given")
     proposals = node_client.list_proposals(creator, "by_creator", "direction_descending", 1000, "all")
     # we should get len(START_END_SUBJECTS) proposals with first proposal with subject Subject009
@@ -127,7 +130,7 @@ def list_proposals_test(node_client, creator):
     logger.info("Testing empty start string and descending direction and last_id set")
     proposals = node_client.list_proposals("", "by_start_date", "direction_descending", 100, "all", 5)
     assert proposals[0]['id'] == 5, "First proposal should have id == 5, has {}".format(proposals[0]['id'])
-    assert proposals[0]['subject'] == START_END_SUBJECTS[0][2], "Subject of the proposal does not match with assumed proposal subject {}!={}".format(proposals[0]['subject'], START_END_SUBJECTS[0][2])
+    assert proposals[-1]['subject'] == START_END_SUBJECTS[0][2], "Subject of the proposal does not match with assumed proposal subject {}!={}".format(proposals[-1]['subject'], START_END_SUBJECTS[0][2])
 
     # now we will test empty start string with ascending order and last_id set
     logger.info("Testing not empty start string and ascenging direction and last_id set")
@@ -139,7 +142,25 @@ def list_proposals_test(node_client, creator):
     logger.info("Testing not empty start string and descending direction and last_id set")
     proposals = node_client.list_proposals(creator, "by_creator", "direction_descending", 100, "all", 5)
     assert proposals[0]['id'] == 5, "First proposal should have id == 5, has {}".format(proposals[0]['id'])
-    assert proposals[0]['subject'] == START_END_SUBJECTS[0][2], "Subject of the proposal does not match with assumed proposal subject {}!={}".format(proposals[0]['subject'], START_END_SUBJECTS[0][2])
+    assert proposals[-1]['subject'] == START_END_SUBJECTS[0][2], "Subject of the proposal does not match with assumed proposal subject {}!={}".format(proposals[-1]['subject'], START_END_SUBJECTS[0][2])
+
+    logger.info("Testing not empty start string and ascending direction and last_id set to the last element")
+    proposals = node_client.list_proposals(creator, "by_creator", "direction_ascending", 100, "all", id_last)
+    assert len(proposals) == 1
+    assert proposals[0]['id'] == id_last
+
+    logger.info("Testing not empty start string and descending direction and last_id set to the first element")
+    proposals = node_client.list_proposals(creator, "by_creator", "direction_descending", 100, "all", id_first)
+    assert len(proposals) == 1
+    assert proposals[0]['id'] == id_first
+
+    logger.info("Testing not empty start string and ascending direction and last_id set to the first element")
+    proposals = node_client.list_proposals(creator, "by_creator", "direction_ascending", 100, "all", id_first)
+    assert len(proposals) == len(START_END_SUBJECTS)
+
+    logger.info("Testing not empty start string and descending direction and last_id set to the last element")
+    proposals = node_client.list_proposals(creator, "by_creator", "direction_descending", 100, "all", id_last)
+    assert len(proposals) == len(START_END_SUBJECTS)
 
 
 if __name__ == '__main__':
