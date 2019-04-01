@@ -35,6 +35,7 @@ class sps_api_impl
     {
       const auto& idx = _db.get_index<proposal_index, OrderType>();
       const std::string& start_as_str = start.as<std::string>();
+      const bool last_id_valid = last_id.valid();
 
       switch (direction)
       {
@@ -43,9 +44,16 @@ class sps_api_impl
           // we are introducing last_id parameter to fix situations where one wants to paginathe trough results with the same values that
           // exceed given limit
           // if last_id is valid variable we will try to get reverse iterator to the element with id set to last_id
-          auto last_id_itr = last_id.valid() ? idx.iterator_to(*(_db.get_index<proposal_index, by_id>().find(*last_id))) : idx.iterator_to(*(idx.begin()));
-          
-          auto itr = last_id.valid() ? last_id_itr : (start_as_str.empty() ? idx.begin() : idx.lower_bound(start.as<ValueType>()));
+          auto get_last_id_itr = [&]()
+          {
+            if (last_id_valid)
+            {
+              return idx.iterator_to(*(_db.get_index<proposal_index, by_id>().find(*last_id)));
+            }
+            return idx.begin();
+          };
+
+          auto itr = last_id_valid ? get_last_id_itr() : (start_as_str.empty() ? idx.begin() : idx.lower_bound(start.as<ValueType>()));
           auto end = idx.end();
 
           while (result.size() < limit && itr != end)
@@ -68,7 +76,7 @@ class sps_api_impl
           // reverse iterator is shifted by one in relation to normal iterator, so we need to increment it by one
           auto get_last_id_itr = [&]()
           {
-            if (last_id.valid())
+            if (last_id_valid)
             {
               auto itr = idx.iterator_to(*(_db.get_index<proposal_index, by_id>().find(*last_id)));
               ++itr;
@@ -77,7 +85,7 @@ class sps_api_impl
             return idx.rbegin();
           };
           
-          auto itr = last_id.valid() ?  get_last_id_itr() :
+          auto itr = last_id_valid ?  get_last_id_itr() :
             (start_as_str.empty() ? idx.rbegin() : make_reverse_iterator(idx.upper_bound(start.as<ValueType>())));
           auto end = idx.rend();
 
