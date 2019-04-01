@@ -42,7 +42,7 @@ class sps_api_impl
         {
           // we are introducing last_id parameter to fix situations where one wants to paginathe trough results with the same values that
           // exceed given limit
-
+          // if last_id is valid variable we will try to get reverse iterator to the element with id set to last_id
           auto last_id_itr = last_id.valid() ? idx.iterator_to(*(_db.get_index<proposal_index, by_id>().find(*last_id))) : idx.iterator_to(*(idx.begin()));
           
           auto itr = last_id.valid() ? last_id_itr : (start_as_str.empty() ? idx.begin() : idx.lower_bound(start.as<ValueType>()));
@@ -64,9 +64,20 @@ class sps_api_impl
         {
           // we are introducing last_id parameter to fix situations where one wants to paginathe trough results with the same values that
           // exceed given limit
-          auto last_id_itr = last_id.valid() ? make_reverse_iterator(idx.iterator_to(*(_db.get_index<proposal_index, by_id>().find(*last_id)))) : idx.rbegin();
-
-          auto itr = last_id.valid() ? last_id_itr :
+          // if last_id is valid variable we will try to get reverse iterator to the element with id set to last_id
+          // reverse iterator is shifted by one in relation to normal iterator, so we need to increment it by one
+          auto get_last_id_itr = [&]()
+          {
+            if (last_id.valid())
+            {
+              auto itr = idx.iterator_to(*(_db.get_index<proposal_index, by_id>().find(*last_id)));
+              ++itr;
+              return make_reverse_iterator(itr);
+            }
+            return idx.rbegin();
+          };
+          
+          auto itr = last_id.valid() ?  get_last_id_itr() :
             (start_as_str.empty() ? idx.rbegin() : make_reverse_iterator(idx.upper_bound(start.as<ValueType>())));
           auto end = idx.rend();
 
