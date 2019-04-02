@@ -55,15 +55,15 @@ class ProposalsCreatorThread(threading.Thread):
         node_client = Steem(nodes = [self.node_url], keys = [self.private_key])
         sleep(self.delay)
         for proposal in self.proposals:
-          node_client.commit.create_proposal(
-            proposal['creator'],
-            proposal['receiver'],
-            proposal['start_date'],
-            proposal['end_date'],
-            proposal['daily_pay'],
-            proposal['subject'],
-            proposal['permlink']
-          )
+            node_client.commit.create_proposal(
+                proposal['creator'],
+                proposal['receiver'],
+                proposal['start_date'],
+                proposal['end_date'],
+                proposal['daily_pay'],
+                proposal['subject'],
+                proposal['permlink']
+            )
 
 
 def get_permlink(account):
@@ -76,7 +76,8 @@ if __name__ == "__main__":
     parser.add_argument("creator", help = "Account to create test accounts with")
     parser.add_argument("receiver", help = "Account to receive payment for proposal")
     parser.add_argument("wif", help="Private key for creator account")
-    parser.add_argument("--nodes-url", dest="nodes_url", type=str, nargs="+", help="Url of working steem node")
+    parser.add_argument("nodes_url", type=str, nargs="+", help="Url of working steem node")
+    parser.add_argument("--delays", dest="delays", type=float, nargs="+", help="Delays for each worker/node (default 0)")
     parser.add_argument("--proposal-count", dest="proposal_count", type=int, default=1, help="Number of proposals each worker will create.")
 
     args = parser.parse_args()
@@ -107,7 +108,7 @@ if __name__ == "__main__":
     node_subjects = []
 
     logger.info("Creating proposals and workers...")
-    for node in args.nodes_url:
+    for idx in range(0, len(args.nodes_url)):
         proposals = []
         subjects = []
         for i in range(0, args.proposal_count):
@@ -124,7 +125,10 @@ if __name__ == "__main__":
             proposals.append(proposal)
             subjects.append(subject)
         node_subjects.append(subjects)
-        worker = ProposalsCreatorThread(node, proposals, args.wif, 0)
+        delay = 0.
+        if args.delays:
+            delay = args.delays[idx]
+        worker = ProposalsCreatorThread(args.nodes_url[idx], proposals, args.wif, delay)
         workers.append(worker)
 
     logger.info("Starting workers...")
@@ -139,7 +143,6 @@ if __name__ == "__main__":
     steem_utils.steem_tools.wait_for_blocks_produced(5, args.nodes_url[0])
 
     proposals = node_client.list_proposals(args.creator, "by_creator", "direction_ascending", 1000, "all")
-    logger.info(proposals)
     for idx in range(0, len(node_subjects)):
         node = args.nodes_url[idx]
         for subject in node_subjects[idx]:
