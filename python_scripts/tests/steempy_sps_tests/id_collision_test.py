@@ -55,6 +55,16 @@ class ProposalsCreatorThread(threading.Thread):
         node_client = Steem(nodes = [self.node_url], keys = [self.private_key])
         sleep(self.delay)
         for proposal in self.proposals:
+            self.log.info("New proposal ==> ({},{},{},{},{},{},{})".format(
+                proposal['creator'],
+                proposal['receiver'],
+                proposal['start_date'],
+                proposal['end_date'],
+                proposal['daily_pay'],
+                proposal['subject'],
+                proposal['permlink']
+            ))
+
             node_client.commit.create_proposal(
                 proposal['creator'],
                 proposal['receiver'],
@@ -83,6 +93,14 @@ if __name__ == "__main__":
     args = parser.parse_args()
 
     node_client = Steem(nodes = args.nodes_url, keys = [args.wif])
+    logger.info("New post ==> ({},{},{},{},{})".format(
+        "Steempy proposal title [{}]".format(args.creator), 
+        "Steempy proposal body [{}]".format(args.creator), 
+        args.creator, 
+        get_permlink(args.creator), 
+        "proposals"
+    ))
+
     node_client.commit.post("Steempy proposal title [{}]".format(args.creator), 
         "Steempy proposal body [{}]".format(args.creator), 
         args.creator, 
@@ -146,7 +164,7 @@ if __name__ == "__main__":
     for idx in range(0, len(node_subjects)):
         node = args.nodes_url[idx]
         for subject in node_subjects[idx]:
-            logger.info("Lookin for id of proposal sent to {} with subject {}".format(node, subject))
+            logger.info("Looking for id of proposal sent to {} with subject {}".format(node, subject))
             for proposal in proposals:
                 if proposal['subject'] == subject:
                     logger.info("Proposal found, proposal id: {}".format(proposal['id']))
