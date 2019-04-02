@@ -10,6 +10,16 @@ namespace detail {
 
 using namespace steem::chain;
 
+template<bool NullCheck, typename Proposal>
+bool check_proposal(const Proposal* proposal)
+{
+  if(NullCheck)
+  {
+    return proposal != nullptr && !proposal->removed;
+  }
+  return !proposal->removed;
+}
+
 class sps_api_impl
 {
   public:
@@ -23,16 +33,6 @@ class sps_api_impl
         )
     
     chain::database& _db;
-
-    template<bool NullCheck, typename Proposal>
-    bool check_proposal(const Proposal* proposal)
-    {
-      if(NullCheck)
-      {
-        return proposal != nullptr && !proposal->removed;
-      }
-      return !proposal->removed;
-    }
 
     template<class Iterator>
     boost::reverse_iterator<Iterator> make_reverse_iterator(Iterator iterator)
