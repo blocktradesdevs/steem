@@ -199,4 +199,22 @@ if __name__ == "__main__":
             logger.info(msg)
 
 
+    steem_utils.steem_tools.wait_for_blocks_produced(5, args.nodes_url[0])
+    logger.info("Checking for all transaction IDs by querying all nodes (after some blocks produced)")
+    for idx in range(0, len(args.nodes_url)):
+        node = args.nodes_url[idx]
+        logger.info("Listing proposals using node at {}".format(node))
+        s = Steem(nodes = [node], keys = [args.wif])
+        proposals = s.list_proposals(args.creator, "by_creator", "direction_ascending", 1000, "all")
+        for subject in only_subjects:
+            msg = "Looking for id of proposal with subject {}".format(subject)
+            for proposal in proposals:
+                if proposal['subject'] == subject:
+                    msg = msg + " - FOUND ID = {}".format(proposal['id'])
+                    #assert proposal['id'] == results[subject], "ID do not match expected {} got {}".format(results[subject], proposal['id'])
+                    break
+            logger.info(msg)
+
+
+
 
