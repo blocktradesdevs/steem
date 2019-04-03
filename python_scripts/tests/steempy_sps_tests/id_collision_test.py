@@ -92,6 +92,8 @@ if __name__ == "__main__":
 
     args = parser.parse_args()
 
+    logger.info("Performing ID collision test with nodes {}".format(args.nodes_url))
+
     import steem_utils.steem_tools
 
     node_client = Steem(nodes = args.nodes_url, keys = [args.wif])
@@ -163,9 +165,10 @@ if __name__ == "__main__":
     for worker in workers:
         worker.join()
 
-    steem_utils.steem_tools.wait_for_blocks_produced(5, args.nodes_url[0])
 
     logger.info("===== QUERY PROPOSALS =====")
+    logger.info("Gathering proposals ID from the nodes where we send the transactions")
+    results = {}
     for idx in range(0, len(node_subjects)):
         node = args.nodes_url[idx]
         s = Steem(nodes = [node], keys = [args.wif])
@@ -175,19 +178,23 @@ if __name__ == "__main__":
                 msg = "Looking for id of proposal sent to {} with subject {}".format(node, subject)
                 if proposal['subject'] == subject:
                     msg = msg + " - FOUND ID = {}".format(proposal['id'])
+                    results[subject] = proposal['id']
                     break
             logger.info(msg)
 
 
+    logger.info("Checking for all transaction IDs by querying all nodes, IDs should match those gathered from nodes where we send the transactions")
     for idx in range(0, len(args.nodes_url)):
         node = args.nodes_url[idx]
+        logger.info("Listing proposals using node at {}".format(node))
         s = Steem(nodes = [node], keys = [args.wif])
         proposals = s.list_proposals(args.creator, "by_creator", "direction_ascending", 1000, "all")
         for subject in only_subjects:
-            msg = "Looking for id of proposal with subject {} with node {}".format(subject, node)
+            msg = "Looking for id of proposal with subject {}".format(subject)
             for proposal in proposals:
                 if proposal['subject'] == subject:
                     msg = msg + " - FOUND ID = {}".format(proposal['id'])
+                    #assert proposal['id'] == results[subject], "ID do not match expected {} got {}".format(results[subject], proposal['id'])
                     break
             logger.info(msg)
 
