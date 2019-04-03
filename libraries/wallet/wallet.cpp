@@ -2487,7 +2487,13 @@ condenser_api::legacy_signed_transaction wallet_api::follow( string follower, st
 
       try {
          if (!_last_id.empty() ) {
-            args.last_id         = boost::lexical_cast<uint64_t>(_last_id);
+            uint64_t last_id = 0;
+            if( !boost::conversion::try_lexical_convert(_last_id, last_id) ) {
+               elog("The value `${value}` for `_last_id` argument is invalid, it should be integer type.", ("value", _last_id));
+               return steem::plugins::sps::list_proposals_return ();
+            } else {
+               args.last_id = last_id;
+            }
          }
          ddump((args.start));
          ddump((args.order_by));
