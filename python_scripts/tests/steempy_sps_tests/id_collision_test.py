@@ -80,6 +80,21 @@ def get_permlink(account):
     return "steempy-proposal-title-{}".format(account)
 
 
+def list_proposals_by_node(creator, private_key, nodes, subjects):
+    for idx in range(0, len(nodes)):
+        node = nodes[idx]
+        logger.info("Listing proposals using node at {}".format(node))
+        s = Steem(nodes = [node], keys = [private_key])
+        proposals = s.list_proposals(creator, "by_creator", "direction_ascending", 1000, "all")
+        for subject in subjects:
+            msg = "Looking for id of proposal with subject {}".format(subject)
+            for proposal in proposals:
+                if proposal['subject'] == subject:
+                    msg = msg + " - FOUND ID = {}".format(proposal['id'])
+                    #assert proposal['id'] == results[subject], "ID do not match expected {} got {}".format(results[subject], proposal['id'])
+                    break
+            logger.info(msg)
+
 if __name__ == "__main__":
     import argparse
     parser = argparse.ArgumentParser()
@@ -182,38 +197,12 @@ if __name__ == "__main__":
                     break
             logger.info(msg)
 
-
     logger.info("Checking for all transaction IDs by querying all nodes, IDs should match those gathered from nodes where we send the transactions")
-    for idx in range(0, len(args.nodes_url)):
-        node = args.nodes_url[idx]
-        logger.info("Listing proposals using node at {}".format(node))
-        s = Steem(nodes = [node], keys = [args.wif])
-        proposals = s.list_proposals(args.creator, "by_creator", "direction_ascending", 1000, "all")
-        for subject in only_subjects:
-            msg = "Looking for id of proposal with subject {}".format(subject)
-            for proposal in proposals:
-                if proposal['subject'] == subject:
-                    msg = msg + " - FOUND ID = {}".format(proposal['id'])
-                    #assert proposal['id'] == results[subject], "ID do not match expected {} got {}".format(results[subject], proposal['id'])
-                    break
-            logger.info(msg)
-
+    list_proposals_by_node(args.creator, args.wif, args.nodes_url, only_subjects)
 
     steem_utils.steem_tools.wait_for_blocks_produced(5, args.nodes_url[0])
     logger.info("Checking for all transaction IDs by querying all nodes (after some blocks produced)")
-    for idx in range(0, len(args.nodes_url)):
-        node = args.nodes_url[idx]
-        logger.info("Listing proposals using node at {}".format(node))
-        s = Steem(nodes = [node], keys = [args.wif])
-        proposals = s.list_proposals(args.creator, "by_creator", "direction_ascending", 1000, "all")
-        for subject in only_subjects:
-            msg = "Looking for id of proposal with subject {}".format(subject)
-            for proposal in proposals:
-                if proposal['subject'] == subject:
-                    msg = msg + " - FOUND ID = {}".format(proposal['id'])
-                    #assert proposal['id'] == results[subject], "ID do not match expected {} got {}".format(results[subject], proposal['id'])
-                    break
-            logger.info(msg)
+    list_proposals_by_node(args.creator, args.wif, args.nodes_url, only_subjects)
 
 
 
