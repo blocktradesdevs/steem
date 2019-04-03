@@ -48,11 +48,11 @@ class ProposalsCreatorThread(threading.Thread):
         self.private_key = private_key
         self.delay = delay
         self.log = logging.getLogger(MODULE_NAME + ".ProposalsCreatorThread." + self.node_url)
+        self.node_client = Steem(nodes = [self.node_url], keys = [self.private_key])
 
 
     def run(self):
-        self.log.info("Sending proposals to node at: {}".format(self.node_url))
-        node_client = Steem(nodes = [self.node_url], keys = [self.private_key])
+        self.log.info("Sending proposals to node at: {} with delay {}".format(self.node_url, self.delay))
         sleep(self.delay)
         for proposal in self.proposals:
             self.log.info("New proposal ==> ({},{},{},{},{},{},{})".format(
@@ -65,7 +65,7 @@ class ProposalsCreatorThread(threading.Thread):
                 proposal['permlink']
             ))
 
-            node_client.commit.create_proposal(
+            self.node_client.commit.create_proposal(
                 proposal['creator'],
                 proposal['receiver'],
                 proposal['start_date'],
@@ -92,6 +92,8 @@ if __name__ == "__main__":
 
     args = parser.parse_args()
 
+    import steem_utils.steem_tools
+
     node_client = Steem(nodes = args.nodes_url, keys = [args.wif])
     logger.info("New post ==> ({},{},{},{},{})".format(
         "Steempy proposal title [{}]".format(args.creator), 
@@ -107,6 +109,8 @@ if __name__ == "__main__":
         permlink = get_permlink(args.creator), 
         tags = "proposals"
     )
+
+    steem_utils.steem_tools.wait_for_blocks_produced(5, args.nodes_url[0])
 
     workers = []
 
@@ -124,6 +128,7 @@ if __name__ == "__main__":
     end_date_str = end_date.replace(microsecond=0).isoformat()
 
     node_subjects = []
+    only_subjects = []
 
     logger.info("Creating proposals and workers...")
     for idx in range(0, len(args.nodes_url)):
@@ -142,6 +147,7 @@ if __name__ == "__main__":
             }
             proposals.append(proposal)
             subjects.append(subject)
+            only_subjects.append(subject)
         node_subjects.append(subjects)
         delay = 0.
         if args.delays:
@@ -157,18 +163,33 @@ if __name__ == "__main__":
     for worker in workers:
         worker.join()
 
-    import steem_utils.steem_tools
     steem_utils.steem_tools.wait_for_blocks_produced(5, args.nodes_url[0])
 
-    proposals = node_client.list_proposals(args.creator, "by_creator", "direction_ascending", 1000, "all")
+    logger.info("===== QUERY PROPOSALS =====")
     for idx in range(0, len(node_subjects)):
         node = args.nodes_url[idx]
+        s = Steem(nodes = [node], keys = [args.wif])
+        proposals = s.list_proposals(args.creator, "by_creator", "direction_ascending", 1000, "all")
         for subject in node_subjects[idx]:
-            logger.info("Looking for id of proposal sent to {} with subject {}".format(node, subject))
+            for proposal in proposals:
+                msg = "Looking for id of proposal sent to {} with subject {}".format(node, subject)
+                if proposal['subject'] == subject:
+                    msg = msg + " - FOUND ID = {}".format(proposal['id'])
+                    break
+            logger.info(msg)
+
+
+    for idx in range(0, len(args.nodes_url)):
+        node = args.nodes_url[idx]
+        s = Steem(nodes = [node], keys = [args.wif])
+        proposals = s.list_proposals(args.creator, "by_creator", "direction_ascending", 1000, "all")
+        for subject in only_subjects:
+            msg = "Looking for id of proposal with subject {} with node {}".format(subject, node)
             for proposal in proposals:
                 if proposal['subject'] == subject:
-                    logger.info("Proposal found, proposal id: {}".format(proposal['id']))
+                    msg = msg + " - FOUND ID = {}".format(proposal['id'])
                     break
+            logger.info(msg)
 
 
 
