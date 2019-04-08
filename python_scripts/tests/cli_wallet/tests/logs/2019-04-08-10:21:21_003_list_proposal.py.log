@@ -1,0 +1,56 @@
+2019-04-08 10:21:21,754 [INFO] Calling cli_wallet with args `['/home/lumpy/Work/STEEM/steem/build/programs/cli_wallet//cli_wallet --server-rpc-endpoint  ws://127.0.0.1:8090 --cert-auth  _default --rpc-tls-endpoint  127.0.0.1:8092 --rpc-tls-cert  server.pem --rpc-http-endpoint  127.0.0.1:8093 --wallet-file  wallet.json --chain-id  18dcf0a285365fc58b71f18b3d3fec954aa0c141c44e4e5cb4cf777b9eab274e']`
+2019-04-08 10:21:21,755 [INFO] Sending set_password "testpassword" 
+
+2019-04-08 10:21:25,262 [INFO] Sending unlock "testpassword" 
+
+2019-04-08 10:21:28,764 [INFO] Sending import_key "5JNHfZYKGaomSFvd4NUdQ9qMcEAC43kujbfjueTHpVapX1Kzq2n" 
+
+2019-04-08 10:21:32,288 [INFO] Sending list_proposals "" "creator" "asc" 10 "active" "" 
+
+2019-04-08 10:21:35,791 [INFO] Sending list_proposals "" "creator" "asc" 10 "inactive" "" 
+
+2019-04-08 10:21:39,295 [INFO] Sending list_proposals "" "creator" "asc" 10 "all" "" 
+
+2019-04-08 10:21:42,799 [INFO] Sending list_proposals "" "creator" "desc" 10 "active" "" 
+
+2019-04-08 10:21:46,302 [INFO] Sending list_proposals "" "creator" "desc" 10 "inactive" "" 
+
+2019-04-08 10:21:49,806 [INFO] Sending list_proposals "" "creator" "desc" 10 "all" "" 
+
+2019-04-08 10:21:53,309 [INFO] Sending list_proposals "2019-03-01T00:00:00" "start_date" "asc" 10 "active" "" 
+
+2019-04-08 10:21:56,813 [INFO] Sending list_proposals "2019-03-01T00:00:00" "start_date" "asc" 10 "inactive" "" 
+
+2019-04-08 10:22:00,316 [INFO] Sending list_proposals "2019-03-01T00:00:00" "start_date" "asc" 10 "all" "" 
+
+2019-04-08 10:22:03,819 [INFO] Sending list_proposals "2019-03-01T00:00:00" "start_date" "desc" 10 "active" "" 
+
+2019-04-08 10:22:07,322 [INFO] Sending list_proposals "2019-03-01T00:00:00" "start_date" "desc" 10 "inactive" "" 
+
+2019-04-08 10:22:10,825 [INFO] Sending list_proposals "2019-03-01T00:00:00" "start_date" "desc" 10 "all" "" 
+
+2019-04-08 10:22:14,327 [INFO] Sending list_proposals "2019-03-01T00:00:00" "end_date" "asc" 10 "active" "" 
+
+2019-04-08 10:22:17,830 [INFO] Sending list_proposals "2019-03-01T00:00:00" "end_date" "asc" 10 "inactive" "" 
+
+2019-04-08 10:22:21,333 [INFO] Sending list_proposals "2019-03-01T00:00:00" "end_date" "asc" 10 "all" "" 
+
+2019-04-08 10:22:24,837 [INFO] Sending list_proposals "2019-03-01T00:00:00" "end_date" "desc" 10 "active" "" 
+
+2019-04-08 10:22:28,340 [INFO] Sending list_proposals "2019-03-01T00:00:00" "end_date" "desc" 10 "inactive" "" 
+
+2019-04-08 10:22:31,844 [INFO] Sending list_proposals "2019-03-01T00:00:00" "end_date" "desc" 10 "all" "" 
+
+2019-04-08 10:22:35,346 [INFO] Sending list_proposals 0 "total_votes" "asc" 10 "active" "" 
+
+2019-04-08 10:22:38,848 [INFO] Sending list_proposals 0 "total_votes" "asc" 10 "inactive" "" 
+
+2019-04-08 10:22:42,352 [INFO] Sending list_proposals 0 "total_votes" "asc" 10 "all" "" 
+
+2019-04-08 10:22:45,856 [INFO] Sending list_proposals 0 "total_votes" "desc" 10 "active" "" 
+
+2019-04-08 10:22:49,359 [INFO] Sending list_proposals 0 "total_votes" "desc" 10 "inactive" "" 
+
+2019-04-08 10:22:52,862 [INFO] Sending list_proposals 0 "total_votes" "desc" 10 "all" "" 
+
+2019-04-08 10:22:56,366 [INFO] TEST `./tests/003_list_proposal.py` passed

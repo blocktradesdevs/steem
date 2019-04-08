@@ -1,0 +1,56 @@
+2019-04-08 10:22:56,496 [INFO] Calling cli_wallet with args `['/home/lumpy/Work/STEEM/steem/build/programs/cli_wallet//cli_wallet --server-rpc-endpoint  ws://127.0.0.1:8090 --cert-auth  _default --rpc-tls-endpoint  127.0.0.1:8092 --rpc-tls-cert  server.pem --rpc-http-endpoint  127.0.0.1:8093 --wallet-file  wallet.json --chain-id  18dcf0a285365fc58b71f18b3d3fec954aa0c141c44e4e5cb4cf777b9eab274e']`
+2019-04-08 10:22:56,497 [INFO] Sending set_password "testpassword" 
+
+2019-04-08 10:23:00,003 [INFO] Sending unlock "testpassword" 
+
+2019-04-08 10:23:03,505 [INFO] Sending import_key "5JNHfZYKGaomSFvd4NUdQ9qMcEAC43kujbfjueTHpVapX1Kzq2n" 
+
+2019-04-08 10:23:07,027 [INFO] Sending list_voter_proposals "initminer" "creator" "asc" 10 "active" 
+
+2019-04-08 10:23:10,530 [INFO] Sending list_voter_proposals "initminer" "creator" "asc" 10 "inactive" 
+
+2019-04-08 10:23:14,032 [INFO] Sending list_voter_proposals "initminer" "creator" "asc" 10 "all" 
+
+2019-04-08 10:23:17,534 [INFO] Sending list_voter_proposals "initminer" "creator" "desc" 10 "active" 
+
+2019-04-08 10:23:21,037 [INFO] Sending list_voter_proposals "initminer" "creator" "desc" 10 "inactive" 
+
+2019-04-08 10:23:24,540 [INFO] Sending list_voter_proposals "initminer" "creator" "desc" 10 "all" 
+
+2019-04-08 10:23:28,042 [INFO] Sending list_voter_proposals "initminer" "start_date" "asc" 10 "active" 
+
+2019-04-08 10:23:31,545 [INFO] Sending list_voter_proposals "initminer" "start_date" "asc" 10 "inactive" 
+
+2019-04-08 10:23:35,048 [INFO] Sending list_voter_proposals "initminer" "start_date" "asc" 10 "all" 
+
+2019-04-08 10:23:38,550 [INFO] Sending list_voter_proposals "initminer" "start_date" "desc" 10 "active" 
+
+2019-04-08 10:23:42,053 [INFO] Sending list_voter_proposals "initminer" "start_date" "desc" 10 "inactive" 
+
+2019-04-08 10:23:45,555 [INFO] Sending list_voter_proposals "initminer" "start_date" "desc" 10 "all" 
+
+2019-04-08 10:23:49,057 [INFO] Sending list_voter_proposals "initminer" "end_date" "asc" 10 "active" 
+
+2019-04-08 10:23:52,561 [INFO] Sending list_voter_proposals "initminer" "end_date" "asc" 10 "inactive" 
+
+2019-04-08 10:23:56,063 [INFO] Sending list_voter_proposals "initminer" "end_date" "asc" 10 "all" 
+
+2019-04-08 10:23:59,565 [INFO] Sending list_voter_proposals "initminer" "end_date" "desc" 10 "active" 
+
+2019-04-08 10:24:03,068 [INFO] Sending list_voter_proposals "initminer" "end_date" "desc" 10 "inactive" 
+
+2019-04-08 10:24:06,571 [INFO] Sending list_voter_proposals "initminer" "end_date" "desc" 10 "all" 
+
+2019-04-08 10:24:10,074 [INFO] Sending list_voter_proposals "initminer" "total_votes" "asc" 10 "active" 
+
+2019-04-08 10:24:13,576 [INFO] Sending list_voter_proposals "initminer" "total_votes" "asc" 10 "inactive" 
+
+2019-04-08 10:24:17,079 [INFO] Sending list_voter_proposals "initminer" "total_votes" "asc" 10 "all" 
+
+2019-04-08 10:24:20,582 [INFO] Sending list_voter_proposals "initminer" "total_votes" "desc" 10 "active" 
+
+2019-04-08 10:24:24,085 [INFO] Sending list_voter_proposals "initminer" "total_votes" "desc" 10 "inactive" 
+
+2019-04-08 10:24:27,587 [INFO] Sending list_voter_proposals "initminer" "total_votes" "desc" 10 "all" 
+
+2019-04-08 10:24:31,090 [INFO] TEST `./tests/004_list_voter_proposal.py` passed
