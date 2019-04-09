@@ -1,0 +1,15 @@
+2019-04-09 18:00:45,967 - SPS Tester via steempy - INFO - Performing SPS tests
+2019-04-09 18:01:06,030 - SPS Tester via steempy - INFO - Performing SPS tests
+2019-04-09 18:01:06,034 - SPS Tester via steempy - INFO - Running steemd via /home/lumpy/Work/STEEM/steem/build/programs/steemd/steemd in /home/lumpy/Work/STEEM/steem/build/programs/steemd/src/ with config /home/lumpy/Work/STEEM/steem/build/programs/steemd/src/
+2019-04-09 18:02:08,158 - SPS Tester via steempy - INFO - Performing SPS tests
+2019-04-09 18:02:08,161 - SPS Tester via steempy - INFO - Running steemd via /home/lumpy/Work/STEEM/steem/build/programs/steemd/steemd in /home/lumpy/Work/STEEM/steem/build/programs/steemd/src/ with config /home/lumpy/Work/STEEM/steem/build/programs/steemd/config.ini
+2019-04-09 18:02:08,162 - SPS Tester via steempy - INFO - Using node at: http://127.0.0.1:8090
+2019-04-09 18:02:08,162 - SPS Tester via steempy - INFO - Using private-key: 5JNHfZYKGaomSFvd4NUdQ9qMcEAC43kujbfjueTHpVapX1Kzq2n
+2019-04-09 18:02:08,162 - SPS Tester via steempy - INFO - Subject of testing proposal is set to: cf051e52-4267-4d82-b6f7-dc0668b66e7c
+2019-04-09 18:02:20,286 - SPS Tester via steempy - INFO - Testing: create_proposal
+2019-04-09 18:02:28,594 - SPS Tester via steempy - INFO - Testing: list_proposals
+2019-04-09 18:02:28,748 - SPS Tester via steempy - INFO - Testing: find_proposals
+2019-04-09 18:02:28,890 - SPS Tester via steempy - INFO - Testing: vote_proposal
+2019-04-09 18:02:35,566 - SPS Tester via steempy - INFO - Testing: list_voter_proposals
+2019-04-09 18:02:41,725 - SPS Tester via steempy - INFO - Testing: remove_proposal
+2019-04-09 18:02:42,282 - SPS Tester via steempy - INFO - Testing: test_iterate_results_test

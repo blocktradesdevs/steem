@@ -1,0 +1,553 @@
+2019-04-09 18:10:47,548 - SPS Tester via steempy - proposal payment test - INFO - Performing SPS tests
+2019-04-09 18:10:47,551 - SPS Tester via steempy - proposal payment test - INFO - Running steemd via /home/lumpy/Work/STEEM/steem/build/programs/steemd/steemd in /home/lumpy/Work/STEEM/steem/build/programs/steemd/src/ with config /home/lumpy/Work/STEEM/steem/build/programs/steemd/config.ini
+2019-04-09 18:10:47,553 - SPS Tester via steempy - proposal payment test - INFO - Using node at: http://127.0.0.1:8090
+2019-04-09 18:10:47,553 - SPS Tester via steempy - proposal payment test - INFO - Using private-key: 5JNHfZYKGaomSFvd4NUdQ9qMcEAC43kujbfjueTHpVapX1Kzq2n
+2019-04-09 18:11:00,534 - SPS Tester via steempy - proposal payment test - INFO - Creating account: tester001
+2019-04-09 18:11:01,139 - SPS Tester via steempy - proposal payment test - INFO - Creating account: tester002
+2019-04-09 18:11:01,756 - SPS Tester via steempy - proposal payment test - INFO - Creating account: tester003
+2019-04-09 18:11:02,520 - SPS Tester via steempy - proposal payment test - INFO - Creating account: tester004
+2019-04-09 18:11:03,188 - SPS Tester via steempy - proposal payment test - INFO - Creating account: tester005
+2019-04-09 18:11:21,721 - SPS Tester via steempy - proposal payment test - INFO - Transfer to vesting from initminer to tester001 amount 300.000 TESTS
+2019-04-09 18:11:22,169 - SPS Tester via steempy - proposal payment test - INFO - Transfer to vesting from initminer to tester002 amount 300.000 TESTS
+2019-04-09 18:11:22,623 - SPS Tester via steempy - proposal payment test - INFO - Transfer to vesting from initminer to tester003 amount 300.000 TESTS
+2019-04-09 18:11:23,228 - SPS Tester via steempy - proposal payment test - INFO - Transfer to vesting from initminer to tester004 amount 300.000 TESTS
+2019-04-09 18:11:23,865 - SPS Tester via steempy - proposal payment test - INFO - Transfer to vesting from initminer to tester005 amount 300.000 TESTS
+2019-04-09 18:11:42,455 - SPS Tester via steempy - proposal payment test - INFO - Transfer from initminer to tester001 amount 400.000 TESTS
+2019-04-09 18:11:43,130 - SPS Tester via steempy - proposal payment test - INFO - Transfer from initminer to tester002 amount 400.000 TESTS
+2019-04-09 18:11:43,846 - SPS Tester via steempy - proposal payment test - INFO - Transfer from initminer to tester003 amount 400.000 TESTS
+2019-04-09 18:11:44,511 - SPS Tester via steempy - proposal payment test - INFO - Transfer from initminer to tester004 amount 400.000 TESTS
+2019-04-09 18:11:45,259 - SPS Tester via steempy - proposal payment test - INFO - Transfer from initminer to tester005 amount 400.000 TESTS
+2019-04-09 18:12:04,003 - SPS Tester via steempy - proposal payment test - INFO - Transfer from initminer to tester001 amount 400.000 TBD
+2019-04-09 18:12:04,996 - SPS Tester via steempy - proposal payment test - INFO - Transfer from initminer to tester002 amount 400.000 TBD
+2019-04-09 18:12:05,855 - SPS Tester via steempy - proposal payment test - INFO - Transfer from initminer to tester003 amount 400.000 TBD
+2019-04-09 18:12:06,309 - SPS Tester via steempy - proposal payment test - INFO - Transfer from initminer to tester004 amount 400.000 TBD
+2019-04-09 18:12:06,934 - SPS Tester via steempy - proposal payment test - INFO - Transfer from initminer to tester005 amount 400.000 TBD
+2019-04-09 18:12:25,642 - SPS Tester via steempy - proposal payment test - INFO - Balances for accounts after initial transfer
+2019-04-09 18:12:25,644 - SPS Tester via steempy - proposal payment test - INFO - tester001 :: balance ==> 400.000 TESTS, sbd_balance ==> 400.000 TBD
+2019-04-09 18:12:25,645 - SPS Tester via steempy - proposal payment test - INFO - tester002 :: balance ==> 400.000 TESTS, sbd_balance ==> 400.000 TBD
+2019-04-09 18:12:25,646 - SPS Tester via steempy - proposal payment test - INFO - tester003 :: balance ==> 400.000 TESTS, sbd_balance ==> 400.000 TBD
+2019-04-09 18:12:25,648 - SPS Tester via steempy - proposal payment test - INFO - tester004 :: balance ==> 400.000 TESTS, sbd_balance ==> 400.000 TBD
+2019-04-09 18:12:25,649 - SPS Tester via steempy - proposal payment test - INFO - tester005 :: balance ==> 400.000 TESTS, sbd_balance ==> 400.000 TBD
+2019-04-09 18:12:25,649 - SPS Tester via steempy - proposal payment test - INFO - Transfer from initminer to steem.dao amount 1000000.000 TESTS
+2019-04-09 18:12:35,348 - SPS Tester via steempy - proposal payment test - INFO - Transfer from initminer to steem.dao amount 1000000.000 TBD
+2019-04-09 18:12:44,965 - SPS Tester via steempy - proposal payment test - INFO - Balances for treasury account after initial transfer
+2019-04-09 18:12:44,969 - SPS Tester via steempy - proposal payment test - INFO - steem.dao :: balance ==> 1000000.000 TESTS, sbd_balance ==> 1000000.000 TBD
+2019-04-09 18:12:44,969 - SPS Tester via steempy - proposal payment test - INFO - Creating posts...
+2019-04-09 18:12:44,969 - SPS Tester via steempy - proposal payment test - INFO - New post ==> (Steempy proposal title [tester001],Steempy proposal body [tester001],tester001,steempy-proposal-title-tester001,proposals)
+2019-04-09 18:12:45,568 - SPS Tester via steempy - proposal payment test - INFO - New post ==> (Steempy proposal title [tester002],Steempy proposal body [tester002],tester002,steempy-proposal-title-tester002,proposals)
+2019-04-09 18:12:46,163 - SPS Tester via steempy - proposal payment test - INFO - New post ==> (Steempy proposal title [tester003],Steempy proposal body [tester003],tester003,steempy-proposal-title-tester003,proposals)
+2019-04-09 18:12:46,586 - SPS Tester via steempy - proposal payment test - INFO - New post ==> (Steempy proposal title [tester004],Steempy proposal body [tester004],tester004,steempy-proposal-title-tester004,proposals)
+2019-04-09 18:12:47,212 - SPS Tester via steempy - proposal payment test - INFO - New post ==> (Steempy proposal title [tester005],Steempy proposal body [tester005],tester005,steempy-proposal-title-tester005,proposals)
+2019-04-09 18:13:05,958 - SPS Tester via steempy - proposal payment test - INFO - Creating proposals...
+2019-04-09 18:13:05,958 - SPS Tester via steempy - proposal payment test - INFO - New proposal ==> (tester001,tester001,2019-04-10T16:13:06,2019-04-12T16:13:06,24.000 TBD,Proposal from account tester001,steempy-proposal-title-tester001)
+2019-04-09 18:13:06,649 - SPS Tester via steempy - proposal payment test - INFO - New proposal ==> (tester002,tester002,2019-04-10T16:13:06,2019-04-12T16:13:06,24.000 TBD,Proposal from account tester002,steempy-proposal-title-tester002)
+2019-04-09 18:13:07,093 - SPS Tester via steempy - proposal payment test - INFO - New proposal ==> (tester003,tester003,2019-04-10T16:13:06,2019-04-12T16:13:06,24.000 TBD,Proposal from account tester003,steempy-proposal-title-tester003)
+2019-04-09 18:13:07,849 - SPS Tester via steempy - proposal payment test - INFO - New proposal ==> (tester004,tester004,2019-04-10T16:13:06,2019-04-12T16:13:06,24.000 TBD,Proposal from account tester004,steempy-proposal-title-tester004)
+2019-04-09 18:13:08,565 - SPS Tester via steempy - proposal payment test - INFO - New proposal ==> (tester005,tester005,2019-04-10T16:13:06,2019-04-12T16:13:06,24.000 TBD,Proposal from account tester005,steempy-proposal-title-tester005)
+2019-04-09 18:13:27,254 - SPS Tester via steempy - proposal payment test - INFO - Listing proposals with status inactive (id:total_votes): 0:0,1:0,2:0,3:0,4:0
+2019-04-09 18:13:27,254 - SPS Tester via steempy - proposal payment test - INFO - Voting proposals...
+2019-04-09 18:13:27,254 - SPS Tester via steempy - proposal payment test - INFO - Account tester001 voted for proposals: 0,1,2,3,4
+2019-04-09 18:13:27,755 - SPS Tester via steempy - proposal payment test - INFO - Account tester002 voted for proposals: 0,1,2,3,4
+2019-04-09 18:13:28,380 - SPS Tester via steempy - proposal payment test - INFO - Account tester003 voted for proposals: 0,1,2,3,4
+2019-04-09 18:13:28,814 - SPS Tester via steempy - proposal payment test - INFO - Account tester004 voted for proposals: 0,1,2,3,4
+2019-04-09 18:13:29,439 - SPS Tester via steempy - proposal payment test - INFO - Account tester005 voted for proposals: 0,1,2,3,4
+2019-04-09 18:13:47,950 - SPS Tester via steempy - proposal payment test - INFO - Listing proposals with status inactive (id:total_votes): 0:0,1:0,2:0,3:0,4:0
+2019-04-09 18:13:47,950 - SPS Tester via steempy - proposal payment test - INFO - Balances for accounts after creating proposals
+2019-04-09 18:13:47,952 - SPS Tester via steempy - proposal payment test - INFO - tester001 :: balance ==> 400.000 TESTS, sbd_balance ==> 390.000 TBD
+2019-04-09 18:13:47,953 - SPS Tester via steempy - proposal payment test - INFO - tester002 :: balance ==> 400.000 TESTS, sbd_balance ==> 390.000 TBD
+2019-04-09 18:13:47,955 - SPS Tester via steempy - proposal payment test - INFO - tester003 :: balance ==> 400.000 TESTS, sbd_balance ==> 390.000 TBD
+2019-04-09 18:13:47,956 - SPS Tester via steempy - proposal payment test - INFO - tester004 :: balance ==> 400.000 TESTS, sbd_balance ==> 390.000 TBD
+2019-04-09 18:13:47,958 - SPS Tester via steempy - proposal payment test - INFO - tester005 :: balance ==> 400.000 TESTS, sbd_balance ==> 390.000 TBD
+2019-04-09 18:13:47,958 - SPS Tester via steempy - proposal payment test - INFO - Balances for treasury after creating proposals
+2019-04-09 18:13:47,959 - SPS Tester via steempy - proposal payment test - INFO - steem.dao :: balance ==> 1000000.000 TESTS, sbd_balance ==> 1000050.095 TBD
+2019-04-09 18:13:47,960 - SPS Tester via steempy - proposal payment test - INFO - Moving to date: 2019-04-10T16:13:06
+2019-04-09 18:14:00,355 - SPS Tester via steempy - proposal payment test - INFO - Moving to date: 2019-04-10T17:13:06
+2019-04-09 18:14:00,876 - SPS Tester via steempy - proposal payment test - INFO - Balances for accounts at time: 2019-04-10T17:13:06
+2019-04-09 18:14:00,878 - SPS Tester via steempy - proposal payment test - INFO - tester001 :: balance ==> 400.000 TESTS, sbd_balance ==> 391.000 TBD
+2019-04-09 18:14:00,880 - SPS Tester via steempy - proposal payment test - INFO - tester002 :: balance ==> 400.000 TESTS, sbd_balance ==> 391.000 TBD
+2019-04-09 18:14:00,881 - SPS Tester via steempy - proposal payment test - INFO - tester003 :: balance ==> 400.000 TESTS, sbd_balance ==> 391.000 TBD
+2019-04-09 18:14:00,882 - SPS Tester via steempy - proposal payment test - INFO - tester004 :: balance ==> 400.000 TESTS, sbd_balance ==> 391.000 TBD
+2019-04-09 18:14:00,884 - SPS Tester via steempy - proposal payment test - INFO - tester005 :: balance ==> 400.000 TESTS, sbd_balance ==> 391.000 TBD
+2019-04-09 18:14:00,884 - SPS Tester via steempy - proposal payment test - INFO - Balances for treasury at time: 2019-04-10T17:13:06
+2019-04-09 18:14:00,885 - SPS Tester via steempy - proposal payment test - INFO - steem.dao :: balance ==> 1000000.000 TESTS, sbd_balance ==> 1000045.095 TBD
+2019-04-09 18:14:00,886 - SPS Tester via steempy - proposal payment test - INFO - Listing proposals with status active (id:total_votes): 0:100008311,1:100008311,2:100008311,3:100008311,4:100008311
+2019-04-09 18:14:00,886 - SPS Tester via steempy - proposal payment test - INFO - Moving to date: 2019-04-10T18:13:06
+2019-04-09 18:14:01,445 - SPS Tester via steempy - proposal payment test - INFO - Balances for accounts at time: 2019-04-10T18:13:06
+2019-04-09 18:14:01,447 - SPS Tester via steempy - proposal payment test - INFO - tester001 :: balance ==> 400.000 TESTS, sbd_balance ==> 392.000 TBD
+2019-04-09 18:14:01,448 - SPS Tester via steempy - proposal payment test - INFO - tester002 :: balance ==> 400.000 TESTS, sbd_balance ==> 392.000 TBD
+2019-04-09 18:14:01,449 - SPS Tester via steempy - proposal payment test - INFO - tester003 :: balance ==> 400.000 TESTS, sbd_balance ==> 392.000 TBD
+2019-04-09 18:14:01,451 - SPS Tester via steempy - proposal payment test - INFO - tester004 :: balance ==> 400.000 TESTS, sbd_balance ==> 392.000 TBD
+2019-04-09 18:14:01,452 - SPS Tester via steempy - proposal payment test - INFO - tester005 :: balance ==> 400.000 TESTS, sbd_balance ==> 392.000 TBD
+2019-04-09 18:14:01,452 - SPS Tester via steempy - proposal payment test - INFO - Balances for treasury at time: 2019-04-10T18:13:06
+2019-04-09 18:14:01,453 - SPS Tester via steempy - proposal payment test - INFO - steem.dao :: balance ==> 1000000.000 TESTS, sbd_balance ==> 1000040.095 TBD
+2019-04-09 18:14:01,454 - SPS Tester via steempy - proposal payment test - INFO - Listing proposals with status active (id:total_votes): 0:100008311,1:100008311,2:100008311,3:100008311,4:100008311
+2019-04-09 18:14:01,454 - SPS Tester via steempy - proposal payment test - INFO - Moving to date: 2019-04-10T19:13:06
+2019-04-09 18:14:01,985 - SPS Tester via steempy - proposal payment test - INFO - Balances for accounts at time: 2019-04-10T19:13:06
+2019-04-09 18:14:01,986 - SPS Tester via steempy - proposal payment test - INFO - tester001 :: balance ==> 400.000 TESTS, sbd_balance ==> 393.000 TBD
+2019-04-09 18:14:01,988 - SPS Tester via steempy - proposal payment test - INFO - tester002 :: balance ==> 400.000 TESTS, sbd_balance ==> 393.000 TBD
+2019-04-09 18:14:01,989 - SPS Tester via steempy - proposal payment test - INFO - tester003 :: balance ==> 400.000 TESTS, sbd_balance ==> 393.000 TBD
+2019-04-09 18:14:01,990 - SPS Tester via steempy - proposal payment test - INFO - tester004 :: balance ==> 400.000 TESTS, sbd_balance ==> 393.000 TBD
+2019-04-09 18:14:01,991 - SPS Tester via steempy - proposal payment test - INFO - tester005 :: balance ==> 400.000 TESTS, sbd_balance ==> 393.000 TBD
+2019-04-09 18:14:01,991 - SPS Tester via steempy - proposal payment test - INFO - Balances for treasury at time: 2019-04-10T19:13:06
+2019-04-09 18:14:01,992 - SPS Tester via steempy - proposal payment test - INFO - steem.dao :: balance ==> 1000000.000 TESTS, sbd_balance ==> 1000035.095 TBD
+2019-04-09 18:14:01,993 - SPS Tester via steempy - proposal payment test - INFO - Listing proposals with status active (id:total_votes): 0:100008311,1:100008311,2:100008311,3:100008311,4:100008311
+2019-04-09 18:14:01,993 - SPS Tester via steempy - proposal payment test - INFO - Moving to date: 2019-04-10T20:13:06
+2019-04-09 18:14:02,534 - SPS Tester via steempy - proposal payment test - INFO - Balances for accounts at time: 2019-04-10T20:13:06
+2019-04-09 18:14:02,535 - SPS Tester via steempy - proposal payment test - INFO - tester001 :: balance ==> 400.000 TESTS, sbd_balance ==> 394.000 TBD
+2019-04-09 18:14:02,540 - SPS Tester via steempy - proposal payment test - INFO - tester002 :: balance ==> 400.000 TESTS, sbd_balance ==> 394.000 TBD
+2019-04-09 18:14:02,542 - SPS Tester via steempy - proposal payment test - INFO - tester003 :: balance ==> 400.000 TESTS, sbd_balance ==> 394.000 TBD
+2019-04-09 18:14:02,543 - SPS Tester via steempy - proposal payment test - INFO - tester004 :: balance ==> 400.000 TESTS, sbd_balance ==> 394.000 TBD
+2019-04-09 18:14:02,544 - SPS Tester via steempy - proposal payment test - INFO - tester005 :: balance ==> 400.000 TESTS, sbd_balance ==> 394.000 TBD
+2019-04-09 18:14:02,544 - SPS Tester via steempy - proposal payment test - INFO - Balances for treasury at time: 2019-04-10T20:13:06
+2019-04-09 18:14:02,545 - SPS Tester via steempy - proposal payment test - INFO - steem.dao :: balance ==> 1000000.000 TESTS, sbd_balance ==> 1000030.095 TBD
+2019-04-09 18:14:02,546 - SPS Tester via steempy - proposal payment test - INFO - Listing proposals with status active (id:total_votes): 0:100008311,1:100008311,2:100008311,3:100008311,4:100008311
+2019-04-09 18:14:02,546 - SPS Tester via steempy - proposal payment test - INFO - Moving to date: 2019-04-10T21:13:06
+2019-04-09 18:14:03,098 - SPS Tester via steempy - proposal payment test - INFO - Balances for accounts at time: 2019-04-10T21:13:06
+2019-04-09 18:14:03,100 - SPS Tester via steempy - proposal payment test - INFO - tester001 :: balance ==> 400.000 TESTS, sbd_balance ==> 395.000 TBD
+2019-04-09 18:14:03,101 - SPS Tester via steempy - proposal payment test - INFO - tester002 :: balance ==> 400.000 TESTS, sbd_balance ==> 395.000 TBD
+2019-04-09 18:14:03,103 - SPS Tester via steempy - proposal payment test - INFO - tester003 :: balance ==> 400.000 TESTS, sbd_balance ==> 395.000 TBD
+2019-04-09 18:14:03,104 - SPS Tester via steempy - proposal payment test - INFO - tester004 :: balance ==> 400.000 TESTS, sbd_balance ==> 395.000 TBD
+2019-04-09 18:14:03,105 - SPS Tester via steempy - proposal payment test - INFO - tester005 :: balance ==> 400.000 TESTS, sbd_balance ==> 395.000 TBD
+2019-04-09 18:14:03,105 - SPS Tester via steempy - proposal payment test - INFO - Balances for treasury at time: 2019-04-10T21:13:06
+2019-04-09 18:14:03,107 - SPS Tester via steempy - proposal payment test - INFO - steem.dao :: balance ==> 1000000.000 TESTS, sbd_balance ==> 1000025.095 TBD
+2019-04-09 18:14:03,108 - SPS Tester via steempy - proposal payment test - INFO - Listing proposals with status active (id:total_votes): 0:100008311,1:100008311,2:100008311,3:100008311,4:100008311
+2019-04-09 18:14:03,108 - SPS Tester via steempy - proposal payment test - INFO - Moving to date: 2019-04-10T22:13:06
+2019-04-09 18:14:03,638 - SPS Tester via steempy - proposal payment test - INFO - Balances for accounts at time: 2019-04-10T22:13:06
+2019-04-09 18:14:03,639 - SPS Tester via steempy - proposal payment test - INFO - tester001 :: balance ==> 400.000 TESTS, sbd_balance ==> 396.000 TBD
+2019-04-09 18:14:03,641 - SPS Tester via steempy - proposal payment test - INFO - tester002 :: balance ==> 400.000 TESTS, sbd_balance ==> 396.000 TBD
+2019-04-09 18:14:03,642 - SPS Tester via steempy - proposal payment test - INFO - tester003 :: balance ==> 400.000 TESTS, sbd_balance ==> 396.000 TBD
+2019-04-09 18:14:03,643 - SPS Tester via steempy - proposal payment test - INFO - tester004 :: balance ==> 400.000 TESTS, sbd_balance ==> 396.000 TBD
+2019-04-09 18:14:03,644 - SPS Tester via steempy - proposal payment test - INFO - tester005 :: balance ==> 400.000 TESTS, sbd_balance ==> 396.000 TBD
+2019-04-09 18:14:03,644 - SPS Tester via steempy - proposal payment test - INFO - Balances for treasury at time: 2019-04-10T22:13:06
+2019-04-09 18:14:03,645 - SPS Tester via steempy - proposal payment test - INFO - steem.dao :: balance ==> 1000000.000 TESTS, sbd_balance ==> 1000020.095 TBD
+2019-04-09 18:14:03,647 - SPS Tester via steempy - proposal payment test - INFO - Listing proposals with status active (id:total_votes): 0:100008311,1:100008311,2:100008311,3:100008311,4:100008311
+2019-04-09 18:14:03,647 - SPS Tester via steempy - proposal payment test - INFO - Moving to date: 2019-04-10T23:13:06
+2019-04-09 18:14:04,182 - SPS Tester via steempy - proposal payment test - INFO - Balances for accounts at time: 2019-04-10T23:13:06
+2019-04-09 18:14:04,184 - SPS Tester via steempy - proposal payment test - INFO - tester001 :: balance ==> 400.000 TESTS, sbd_balance ==> 397.000 TBD
+2019-04-09 18:14:04,185 - SPS Tester via steempy - proposal payment test - INFO - tester002 :: balance ==> 400.000 TESTS, sbd_balance ==> 397.000 TBD
+2019-04-09 18:14:04,186 - SPS Tester via steempy - proposal payment test - INFO - tester003 :: balance ==> 400.000 TESTS, sbd_balance ==> 397.000 TBD
+2019-04-09 18:14:04,187 - SPS Tester via steempy - proposal payment test - INFO - tester004 :: balance ==> 400.000 TESTS, sbd_balance ==> 397.000 TBD
+2019-04-09 18:14:04,188 - SPS Tester via steempy - proposal payment test - INFO - tester005 :: balance ==> 400.000 TESTS, sbd_balance ==> 397.000 TBD
+2019-04-09 18:14:04,188 - SPS Tester via steempy - proposal payment test - INFO - Balances for treasury at time: 2019-04-10T23:13:06
+2019-04-09 18:14:04,189 - SPS Tester via steempy - proposal payment test - INFO - steem.dao :: balance ==> 1000000.000 TESTS, sbd_balance ==> 1000015.095 TBD
+2019-04-09 18:14:04,190 - SPS Tester via steempy - proposal payment test - INFO - Listing proposals with status active (id:total_votes): 0:100008311,1:100008311,2:100008311,3:100008311,4:100008311
+2019-04-09 18:14:04,190 - SPS Tester via steempy - proposal payment test - INFO - Moving to date: 2019-04-11T00:13:06
+2019-04-09 18:14:04,722 - SPS Tester via steempy - proposal payment test - INFO - Balances for accounts at time: 2019-04-11T00:13:06
+2019-04-09 18:14:04,723 - SPS Tester via steempy - proposal payment test - INFO - tester001 :: balance ==> 400.000 TESTS, sbd_balance ==> 398.000 TBD
+2019-04-09 18:14:04,724 - SPS Tester via steempy - proposal payment test - INFO - tester002 :: balance ==> 400.000 TESTS, sbd_balance ==> 398.000 TBD
+2019-04-09 18:14:04,725 - SPS Tester via steempy - proposal payment test - INFO - tester003 :: balance ==> 400.000 TESTS, sbd_balance ==> 398.000 TBD
+2019-04-09 18:14:04,727 - SPS Tester via steempy - proposal payment test - INFO - tester004 :: balance ==> 400.000 TESTS, sbd_balance ==> 398.000 TBD
+2019-04-09 18:14:04,728 - SPS Tester via steempy - proposal payment test - INFO - tester005 :: balance ==> 400.000 TESTS, sbd_balance ==> 398.000 TBD
+2019-04-09 18:14:04,728 - SPS Tester via steempy - proposal payment test - INFO - Balances for treasury at time: 2019-04-11T00:13:06
+2019-04-09 18:14:04,729 - SPS Tester via steempy - proposal payment test - INFO - steem.dao :: balance ==> 1000000.000 TESTS, sbd_balance ==> 1000010.095 TBD
+2019-04-09 18:14:04,730 - SPS Tester via steempy - proposal payment test - INFO - Listing proposals with status active (id:total_votes): 0:100008311,1:100008311,2:100008311,3:100008311,4:100008311
+2019-04-09 18:14:04,730 - SPS Tester via steempy - proposal payment test - INFO - Moving to date: 2019-04-11T01:13:06
+2019-04-09 18:14:05,266 - SPS Tester via steempy - proposal payment test - INFO - Balances for accounts at time: 2019-04-11T01:13:06
+2019-04-09 18:14:05,267 - SPS Tester via steempy - proposal payment test - INFO - tester001 :: balance ==> 400.000 TESTS, sbd_balance ==> 399.000 TBD
+2019-04-09 18:14:05,269 - SPS Tester via steempy - proposal payment test - INFO - tester002 :: balance ==> 400.000 TESTS, sbd_balance ==> 399.000 TBD
+2019-04-09 18:14:05,270 - SPS Tester via steempy - proposal payment test - INFO - tester003 :: balance ==> 400.000 TESTS, sbd_balance ==> 399.000 TBD
+2019-04-09 18:14:05,271 - SPS Tester via steempy - proposal payment test - INFO - tester004 :: balance ==> 400.000 TESTS, sbd_balance ==> 399.000 TBD
+2019-04-09 18:14:05,273 - SPS Tester via steempy - proposal payment test - INFO - tester005 :: balance ==> 400.000 TESTS, sbd_balance ==> 399.000 TBD
+2019-04-09 18:14:05,273 - SPS Tester via steempy - proposal payment test - INFO - Balances for treasury at time: 2019-04-11T01:13:06
+2019-04-09 18:14:05,274 - SPS Tester via steempy - proposal payment test - INFO - steem.dao :: balance ==> 1000000.000 TESTS, sbd_balance ==> 1000005.095 TBD
+2019-04-09 18:14:05,275 - SPS Tester via steempy - proposal payment test - INFO - Listing proposals with status active (id:total_votes): 0:100008311,1:100008311,2:100008311,3:100008311,4:100008311
+2019-04-09 18:14:05,275 - SPS Tester via steempy - proposal payment test - INFO - Moving to date: 2019-04-11T02:13:06
+2019-04-09 18:14:05,811 - SPS Tester via steempy - proposal payment test - INFO - Balances for accounts at time: 2019-04-11T02:13:06
+2019-04-09 18:14:05,813 - SPS Tester via steempy - proposal payment test - INFO - tester001 :: balance ==> 400.000 TESTS, sbd_balance ==> 400.000 TBD
+2019-04-09 18:14:05,814 - SPS Tester via steempy - proposal payment test - INFO - tester002 :: balance ==> 400.000 TESTS, sbd_balance ==> 400.000 TBD
+2019-04-09 18:14:05,815 - SPS Tester via steempy - proposal payment test - INFO - tester003 :: balance ==> 400.000 TESTS, sbd_balance ==> 400.000 TBD
+2019-04-09 18:14:05,816 - SPS Tester via steempy - proposal payment test - INFO - tester004 :: balance ==> 400.000 TESTS, sbd_balance ==> 400.000 TBD
+2019-04-09 18:14:05,818 - SPS Tester via steempy - proposal payment test - INFO - tester005 :: balance ==> 400.000 TESTS, sbd_balance ==> 400.000 TBD
+2019-04-09 18:14:05,818 - SPS Tester via steempy - proposal payment test - INFO - Balances for treasury at time: 2019-04-11T02:13:06
+2019-04-09 18:14:05,819 - SPS Tester via steempy - proposal payment test - INFO - steem.dao :: balance ==> 1000000.000 TESTS, sbd_balance ==> 1000000.095 TBD
+2019-04-09 18:14:05,820 - SPS Tester via steempy - proposal payment test - INFO - Listing proposals with status active (id:total_votes): 0:100008311,1:100008311,2:100008311,3:100008311,4:100008311
+2019-04-09 18:14:05,820 - SPS Tester via steempy - proposal payment test - INFO - Moving to date: 2019-04-11T03:13:06
+2019-04-09 18:14:06,354 - SPS Tester via steempy - proposal payment test - INFO - Balances for accounts at time: 2019-04-11T03:13:06
+2019-04-09 18:14:06,356 - SPS Tester via steempy - proposal payment test - INFO - tester001 :: balance ==> 400.000 TESTS, sbd_balance ==> 401.000 TBD
+2019-04-09 18:14:06,357 - SPS Tester via steempy - proposal payment test - INFO - tester002 :: balance ==> 400.000 TESTS, sbd_balance ==> 401.000 TBD
+2019-04-09 18:14:06,358 - SPS Tester via steempy - proposal payment test - INFO - tester003 :: balance ==> 400.000 TESTS, sbd_balance ==> 401.000 TBD
+2019-04-09 18:14:06,359 - SPS Tester via steempy - proposal payment test - INFO - tester004 :: balance ==> 400.000 TESTS, sbd_balance ==> 401.000 TBD
+2019-04-09 18:14:06,360 - SPS Tester via steempy - proposal payment test - INFO - tester005 :: balance ==> 400.000 TESTS, sbd_balance ==> 401.000 TBD
+2019-04-09 18:14:06,361 - SPS Tester via steempy - proposal payment test - INFO - Balances for treasury at time: 2019-04-11T03:13:06
+2019-04-09 18:14:06,362 - SPS Tester via steempy - proposal payment test - INFO - steem.dao :: balance ==> 1000000.000 TESTS, sbd_balance ==> 999995.095 TBD
+2019-04-09 18:14:06,363 - SPS Tester via steempy - proposal payment test - INFO - Listing proposals with status active (id:total_votes): 0:100008311,1:100008311,2:100008311,3:100008311,4:100008311
+2019-04-09 18:14:06,363 - SPS Tester via steempy - proposal payment test - INFO - Moving to date: 2019-04-11T04:13:06
+2019-04-09 18:14:06,896 - SPS Tester via steempy - proposal payment test - INFO - Balances for accounts at time: 2019-04-11T04:13:06
+2019-04-09 18:14:06,898 - SPS Tester via steempy - proposal payment test - INFO - tester001 :: balance ==> 400.000 TESTS, sbd_balance ==> 402.000 TBD
+2019-04-09 18:14:06,899 - SPS Tester via steempy - proposal payment test - INFO - tester002 :: balance ==> 400.000 TESTS, sbd_balance ==> 402.000 TBD
+2019-04-09 18:14:06,900 - SPS Tester via steempy - proposal payment test - INFO - tester003 :: balance ==> 400.000 TESTS, sbd_balance ==> 402.000 TBD
+2019-04-09 18:14:06,901 - SPS Tester via steempy - proposal payment test - INFO - tester004 :: balance ==> 400.000 TESTS, sbd_balance ==> 402.000 TBD
+2019-04-09 18:14:06,903 - SPS Tester via steempy - proposal payment test - INFO - tester005 :: balance ==> 400.000 TESTS, sbd_balance ==> 402.000 TBD
+2019-04-09 18:14:06,903 - SPS Tester via steempy - proposal payment test - INFO - Balances for treasury at time: 2019-04-11T04:13:06
+2019-04-09 18:14:06,904 - SPS Tester via steempy - proposal payment test - INFO - steem.dao :: balance ==> 1000000.000 TESTS, sbd_balance ==> 999990.095 TBD
+2019-04-09 18:14:06,905 - SPS Tester via steempy - proposal payment test - INFO - Listing proposals with status active (id:total_votes): 0:100008311,1:100008311,2:100008311,3:100008311,4:100008311
+2019-04-09 18:14:06,905 - SPS Tester via steempy - proposal payment test - INFO - Moving to date: 2019-04-11T05:13:06
+2019-04-09 18:14:07,438 - SPS Tester via steempy - proposal payment test - INFO - Balances for accounts at time: 2019-04-11T05:13:06
+2019-04-09 18:14:07,440 - SPS Tester via steempy - proposal payment test - INFO - tester001 :: balance ==> 400.000 TESTS, sbd_balance ==> 403.000 TBD
+2019-04-09 18:14:07,441 - SPS Tester via steempy - proposal payment test - INFO - tester002 :: balance ==> 400.000 TESTS, sbd_balance ==> 403.000 TBD
+2019-04-09 18:14:07,443 - SPS Tester via steempy - proposal payment test - INFO - tester003 :: balance ==> 400.000 TESTS, sbd_balance ==> 403.000 TBD
+2019-04-09 18:14:07,444 - SPS Tester via steempy - proposal payment test - INFO - tester004 :: balance ==> 400.000 TESTS, sbd_balance ==> 403.000 TBD
+2019-04-09 18:14:07,445 - SPS Tester via steempy - proposal payment test - INFO - tester005 :: balance ==> 400.000 TESTS, sbd_balance ==> 403.000 TBD
+2019-04-09 18:14:07,445 - SPS Tester via steempy - proposal payment test - INFO - Balances for treasury at time: 2019-04-11T05:13:06
+2019-04-09 18:14:07,446 - SPS Tester via steempy - proposal payment test - INFO - steem.dao :: balance ==> 1000000.000 TESTS, sbd_balance ==> 999985.095 TBD
+2019-04-09 18:14:07,447 - SPS Tester via steempy - proposal payment test - INFO - Listing proposals with status active (id:total_votes): 0:100008311,1:100008311,2:100008311,3:100008311,4:100008311
+2019-04-09 18:14:07,447 - SPS Tester via steempy - proposal payment test - INFO - Moving to date: 2019-04-11T06:13:06
+2019-04-09 18:14:07,978 - SPS Tester via steempy - proposal payment test - INFO - Balances for accounts at time: 2019-04-11T06:13:06
+2019-04-09 18:14:07,980 - SPS Tester via steempy - proposal payment test - INFO - tester001 :: balance ==> 400.000 TESTS, sbd_balance ==> 404.000 TBD
+2019-04-09 18:14:07,981 - SPS Tester via steempy - proposal payment test - INFO - tester002 :: balance ==> 400.000 TESTS, sbd_balance ==> 404.000 TBD
+2019-04-09 18:14:07,982 - SPS Tester via steempy - proposal payment test - INFO - tester003 :: balance ==> 400.000 TESTS, sbd_balance ==> 404.000 TBD
+2019-04-09 18:14:07,984 - SPS Tester via steempy - proposal payment test - INFO - tester004 :: balance ==> 400.000 TESTS, sbd_balance ==> 404.000 TBD
+2019-04-09 18:14:07,985 - SPS Tester via steempy - proposal payment test - INFO - tester005 :: balance ==> 400.000 TESTS, sbd_balance ==> 404.000 TBD
+2019-04-09 18:14:07,985 - SPS Tester via steempy - proposal payment test - INFO - Balances for treasury at time: 2019-04-11T06:13:06
+2019-04-09 18:14:07,986 - SPS Tester via steempy - proposal payment test - INFO - steem.dao :: balance ==> 1000000.000 TESTS, sbd_balance ==> 999980.095 TBD
+2019-04-09 18:14:07,987 - SPS Tester via steempy - proposal payment test - INFO - Listing proposals with status active (id:total_votes): 0:100008311,1:100008311,2:100008311,3:100008311,4:100008311
+2019-04-09 18:14:07,987 - SPS Tester via steempy - proposal payment test - INFO - Moving to date: 2019-04-11T07:13:06
+2019-04-09 18:14:08,518 - SPS Tester via steempy - proposal payment test - INFO - Balances for accounts at time: 2019-04-11T07:13:06
+2019-04-09 18:14:08,520 - SPS Tester via steempy - proposal payment test - INFO - tester001 :: balance ==> 400.000 TESTS, sbd_balance ==> 405.000 TBD
+2019-04-09 18:14:08,521 - SPS Tester via steempy - proposal payment test - INFO - tester002 :: balance ==> 400.000 TESTS, sbd_balance ==> 405.000 TBD
+2019-04-09 18:14:08,522 - SPS Tester via steempy - proposal payment test - INFO - tester003 :: balance ==> 400.000 TESTS, sbd_balance ==> 405.000 TBD
+2019-04-09 18:14:08,523 - SPS Tester via steempy - proposal payment test - INFO - tester004 :: balance ==> 400.000 TESTS, sbd_balance ==> 405.000 TBD
+2019-04-09 18:14:08,524 - SPS Tester via steempy - proposal payment test - INFO - tester005 :: balance ==> 400.000 TESTS, sbd_balance ==> 405.000 TBD
+2019-04-09 18:14:08,524 - SPS Tester via steempy - proposal payment test - INFO - Balances for treasury at time: 2019-04-11T07:13:06
+2019-04-09 18:14:08,525 - SPS Tester via steempy - proposal payment test - INFO - steem.dao :: balance ==> 1000000.000 TESTS, sbd_balance ==> 999975.095 TBD
+2019-04-09 18:14:08,526 - SPS Tester via steempy - proposal payment test - INFO - Listing proposals with status active (id:total_votes): 0:100008311,1:100008311,2:100008311,3:100008311,4:100008311
+2019-04-09 18:14:08,526 - SPS Tester via steempy - proposal payment test - INFO - Moving to date: 2019-04-11T08:13:06
+2019-04-09 18:14:09,052 - SPS Tester via steempy - proposal payment test - INFO - Balances for accounts at time: 2019-04-11T08:13:06
+2019-04-09 18:14:09,054 - SPS Tester via steempy - proposal payment test - INFO - tester001 :: balance ==> 400.000 TESTS, sbd_balance ==> 406.000 TBD
+2019-04-09 18:14:09,055 - SPS Tester via steempy - proposal payment test - INFO - tester002 :: balance ==> 400.000 TESTS, sbd_balance ==> 406.000 TBD
+2019-04-09 18:14:09,057 - SPS Tester via steempy - proposal payment test - INFO - tester003 :: balance ==> 400.000 TESTS, sbd_balance ==> 406.000 TBD
+2019-04-09 18:14:09,058 - SPS Tester via steempy - proposal payment test - INFO - tester004 :: balance ==> 400.000 TESTS, sbd_balance ==> 406.000 TBD
+2019-04-09 18:14:09,059 - SPS Tester via steempy - proposal payment test - INFO - tester005 :: balance ==> 400.000 TESTS, sbd_balance ==> 406.000 TBD
+2019-04-09 18:14:09,060 - SPS Tester via steempy - proposal payment test - INFO - Balances for treasury at time: 2019-04-11T08:13:06
+2019-04-09 18:14:09,061 - SPS Tester via steempy - proposal payment test - INFO - steem.dao :: balance ==> 1000000.000 TESTS, sbd_balance ==> 999970.095 TBD
+2019-04-09 18:14:09,062 - SPS Tester via steempy - proposal payment test - INFO - Listing proposals with status active (id:total_votes): 0:100008311,1:100008311,2:100008311,3:100008311,4:100008311
+2019-04-09 18:14:09,062 - SPS Tester via steempy - proposal payment test - INFO - Moving to date: 2019-04-11T09:13:06
+2019-04-09 18:14:09,594 - SPS Tester via steempy - proposal payment test - INFO - Balances for accounts at time: 2019-04-11T09:13:06
+2019-04-09 18:14:09,596 - SPS Tester via steempy - proposal payment test - INFO - tester001 :: balance ==> 400.000 TESTS, sbd_balance ==> 407.000 TBD
+2019-04-09 18:14:09,597 - SPS Tester via steempy - proposal payment test - INFO - tester002 :: balance ==> 400.000 TESTS, sbd_balance ==> 407.000 TBD
+2019-04-09 18:14:09,598 - SPS Tester via steempy - proposal payment test - INFO - tester003 :: balance ==> 400.000 TESTS, sbd_balance ==> 407.000 TBD
+2019-04-09 18:14:09,599 - SPS Tester via steempy - proposal payment test - INFO - tester004 :: balance ==> 400.000 TESTS, sbd_balance ==> 407.000 TBD
+2019-04-09 18:14:09,600 - SPS Tester via steempy - proposal payment test - INFO - tester005 :: balance ==> 400.000 TESTS, sbd_balance ==> 407.000 TBD
+2019-04-09 18:14:09,601 - SPS Tester via steempy - proposal payment test - INFO - Balances for treasury at time: 2019-04-11T09:13:06
+2019-04-09 18:14:09,602 - SPS Tester via steempy - proposal payment test - INFO - steem.dao :: balance ==> 1000000.000 TESTS, sbd_balance ==> 999965.095 TBD
+2019-04-09 18:14:09,603 - SPS Tester via steempy - proposal payment test - INFO - Listing proposals with status active (id:total_votes): 0:100008311,1:100008311,2:100008311,3:100008311,4:100008311
+2019-04-09 18:14:09,603 - SPS Tester via steempy - proposal payment test - INFO - Moving to date: 2019-04-11T10:13:06
+2019-04-09 18:14:10,137 - SPS Tester via steempy - proposal payment test - INFO - Balances for accounts at time: 2019-04-11T10:13:06
+2019-04-09 18:14:10,138 - SPS Tester via steempy - proposal payment test - INFO - tester001 :: balance ==> 400.000 TESTS, sbd_balance ==> 408.000 TBD
+2019-04-09 18:14:10,139 - SPS Tester via steempy - proposal payment test - INFO - tester002 :: balance ==> 400.000 TESTS, sbd_balance ==> 408.000 TBD
+2019-04-09 18:14:10,140 - SPS Tester via steempy - proposal payment test - INFO - tester003 :: balance ==> 400.000 TESTS, sbd_balance ==> 408.000 TBD
+2019-04-09 18:14:10,142 - SPS Tester via steempy - proposal payment test - INFO - tester004 :: balance ==> 400.000 TESTS, sbd_balance ==> 408.000 TBD
+2019-04-09 18:14:10,143 - SPS Tester via steempy - proposal payment test - INFO - tester005 :: balance ==> 400.000 TESTS, sbd_balance ==> 408.000 TBD
+2019-04-09 18:14:10,143 - SPS Tester via steempy - proposal payment test - INFO - Balances for treasury at time: 2019-04-11T10:13:06
+2019-04-09 18:14:10,144 - SPS Tester via steempy - proposal payment test - INFO - steem.dao :: balance ==> 1000000.000 TESTS, sbd_balance ==> 999960.095 TBD
+2019-04-09 18:14:10,145 - SPS Tester via steempy - proposal payment test - INFO - Listing proposals with status active (id:total_votes): 0:100008311,1:100008311,2:100008311,3:100008311,4:100008311
+2019-04-09 18:14:10,145 - SPS Tester via steempy - proposal payment test - INFO - Moving to date: 2019-04-11T11:13:06
+2019-04-09 18:14:10,685 - SPS Tester via steempy - proposal payment test - INFO - Balances for accounts at time: 2019-04-11T11:13:06
+2019-04-09 18:14:10,686 - SPS Tester via steempy - proposal payment test - INFO - tester001 :: balance ==> 400.000 TESTS, sbd_balance ==> 409.000 TBD
+2019-04-09 18:14:10,687 - SPS Tester via steempy - proposal payment test - INFO - tester002 :: balance ==> 400.000 TESTS, sbd_balance ==> 409.000 TBD
+2019-04-09 18:14:10,688 - SPS Tester via steempy - proposal payment test - INFO - tester003 :: balance ==> 400.000 TESTS, sbd_balance ==> 409.000 TBD
+2019-04-09 18:14:10,690 - SPS Tester via steempy - proposal payment test - INFO - tester004 :: balance ==> 400.000 TESTS, sbd_balance ==> 409.000 TBD
+2019-04-09 18:14:10,691 - SPS Tester via steempy - proposal payment test - INFO - tester005 :: balance ==> 400.000 TESTS, sbd_balance ==> 409.000 TBD
+2019-04-09 18:14:10,691 - SPS Tester via steempy - proposal payment test - INFO - Balances for treasury at time: 2019-04-11T11:13:06
+2019-04-09 18:14:10,692 - SPS Tester via steempy - proposal payment test - INFO - steem.dao :: balance ==> 1000000.000 TESTS, sbd_balance ==> 999955.095 TBD
+2019-04-09 18:14:10,693 - SPS Tester via steempy - proposal payment test - INFO - Listing proposals with status active (id:total_votes): 0:100008311,1:100008311,2:100008311,3:100008311,4:100008311
+2019-04-09 18:14:10,693 - SPS Tester via steempy - proposal payment test - INFO - Moving to date: 2019-04-11T12:13:06
+2019-04-09 18:14:11,228 - SPS Tester via steempy - proposal payment test - INFO - Balances for accounts at time: 2019-04-11T12:13:06
+2019-04-09 18:14:11,230 - SPS Tester via steempy - proposal payment test - INFO - tester001 :: balance ==> 400.000 TESTS, sbd_balance ==> 410.000 TBD
+2019-04-09 18:14:11,231 - SPS Tester via steempy - proposal payment test - INFO - tester002 :: balance ==> 400.000 TESTS, sbd_balance ==> 410.000 TBD
+2019-04-09 18:14:11,232 - SPS Tester via steempy - proposal payment test - INFO - tester003 :: balance ==> 400.000 TESTS, sbd_balance ==> 410.000 TBD
+2019-04-09 18:14:11,233 - SPS Tester via steempy - proposal payment test - INFO - tester004 :: balance ==> 400.000 TESTS, sbd_balance ==> 410.000 TBD
+2019-04-09 18:14:11,234 - SPS Tester via steempy - proposal payment test - INFO - tester005 :: balance ==> 400.000 TESTS, sbd_balance ==> 410.000 TBD
+2019-04-09 18:14:11,234 - SPS Tester via steempy - proposal payment test - INFO - Balances for treasury at time: 2019-04-11T12:13:06
+2019-04-09 18:14:11,235 - SPS Tester via steempy - proposal payment test - INFO - steem.dao :: balance ==> 1000000.000 TESTS, sbd_balance ==> 999950.095 TBD
+2019-04-09 18:14:11,236 - SPS Tester via steempy - proposal payment test - INFO - Listing proposals with status active (id:total_votes): 0:100008311,1:100008311,2:100008311,3:100008311,4:100008311
+2019-04-09 18:14:11,237 - SPS Tester via steempy - proposal payment test - INFO - Moving to date: 2019-04-11T13:13:06
+2019-04-09 18:14:11,786 - SPS Tester via steempy - proposal payment test - INFO - Balances for accounts at time: 2019-04-11T13:13:06
+2019-04-09 18:14:11,787 - SPS Tester via steempy - proposal payment test - INFO - tester001 :: balance ==> 400.000 TESTS, sbd_balance ==> 411.000 TBD
+2019-04-09 18:14:11,788 - SPS Tester via steempy - proposal payment test - INFO - tester002 :: balance ==> 400.000 TESTS, sbd_balance ==> 411.000 TBD
+2019-04-09 18:14:11,789 - SPS Tester via steempy - proposal payment test - INFO - tester003 :: balance ==> 400.000 TESTS, sbd_balance ==> 411.000 TBD
+2019-04-09 18:14:11,791 - SPS Tester via steempy - proposal payment test - INFO - tester004 :: balance ==> 400.000 TESTS, sbd_balance ==> 411.000 TBD
+2019-04-09 18:14:11,792 - SPS Tester via steempy - proposal payment test - INFO - tester005 :: balance ==> 400.000 TESTS, sbd_balance ==> 411.000 TBD
+2019-04-09 18:14:11,792 - SPS Tester via steempy - proposal payment test - INFO - Balances for treasury at time: 2019-04-11T13:13:06
+2019-04-09 18:14:11,793 - SPS Tester via steempy - proposal payment test - INFO - steem.dao :: balance ==> 1000000.000 TESTS, sbd_balance ==> 999945.095 TBD
+2019-04-09 18:14:11,795 - SPS Tester via steempy - proposal payment test - INFO - Listing proposals with status active (id:total_votes): 0:100008311,1:100008311,2:100008311,3:100008311,4:100008311
+2019-04-09 18:14:11,795 - SPS Tester via steempy - proposal payment test - INFO - Moving to date: 2019-04-11T14:13:06
+2019-04-09 18:14:12,326 - SPS Tester via steempy - proposal payment test - INFO - Balances for accounts at time: 2019-04-11T14:13:06
+2019-04-09 18:14:12,328 - SPS Tester via steempy - proposal payment test - INFO - tester001 :: balance ==> 400.000 TESTS, sbd_balance ==> 412.000 TBD
+2019-04-09 18:14:12,330 - SPS Tester via steempy - proposal payment test - INFO - tester002 :: balance ==> 400.000 TESTS, sbd_balance ==> 412.000 TBD
+2019-04-09 18:14:12,331 - SPS Tester via steempy - proposal payment test - INFO - tester003 :: balance ==> 400.000 TESTS, sbd_balance ==> 412.000 TBD
+2019-04-09 18:14:12,332 - SPS Tester via steempy - proposal payment test - INFO - tester004 :: balance ==> 400.000 TESTS, sbd_balance ==> 412.000 TBD
+2019-04-09 18:14:12,333 - SPS Tester via steempy - proposal payment test - INFO - tester005 :: balance ==> 400.000 TESTS, sbd_balance ==> 412.000 TBD
+2019-04-09 18:14:12,333 - SPS Tester via steempy - proposal payment test - INFO - Balances for treasury at time: 2019-04-11T14:13:06
+2019-04-09 18:14:12,335 - SPS Tester via steempy - proposal payment test - INFO - steem.dao :: balance ==> 1000000.000 TESTS, sbd_balance ==> 999940.095 TBD
+2019-04-09 18:14:12,336 - SPS Tester via steempy - proposal payment test - INFO - Listing proposals with status active (id:total_votes): 0:100008311,1:100008311,2:100008311,3:100008311,4:100008311
+2019-04-09 18:14:12,336 - SPS Tester via steempy - proposal payment test - INFO - Moving to date: 2019-04-11T15:13:06
+2019-04-09 18:14:12,869 - SPS Tester via steempy - proposal payment test - INFO - Balances for accounts at time: 2019-04-11T15:13:06
+2019-04-09 18:14:12,871 - SPS Tester via steempy - proposal payment test - INFO - tester001 :: balance ==> 400.000 TESTS, sbd_balance ==> 413.000 TBD
+2019-04-09 18:14:12,872 - SPS Tester via steempy - proposal payment test - INFO - tester002 :: balance ==> 400.000 TESTS, sbd_balance ==> 413.000 TBD
+2019-04-09 18:14:12,874 - SPS Tester via steempy - proposal payment test - INFO - tester003 :: balance ==> 400.000 TESTS, sbd_balance ==> 413.000 TBD
+2019-04-09 18:14:12,875 - SPS Tester via steempy - proposal payment test - INFO - tester004 :: balance ==> 400.000 TESTS, sbd_balance ==> 413.000 TBD
+2019-04-09 18:14:12,876 - SPS Tester via steempy - proposal payment test - INFO - tester005 :: balance ==> 400.000 TESTS, sbd_balance ==> 413.000 TBD
+2019-04-09 18:14:12,876 - SPS Tester via steempy - proposal payment test - INFO - Balances for treasury at time: 2019-04-11T15:13:06
+2019-04-09 18:14:12,877 - SPS Tester via steempy - proposal payment test - INFO - steem.dao :: balance ==> 1000000.000 TESTS, sbd_balance ==> 999935.095 TBD
+2019-04-09 18:14:12,878 - SPS Tester via steempy - proposal payment test - INFO - Listing proposals with status active (id:total_votes): 0:100008311,1:100008311,2:100008311,3:100008311,4:100008311
+2019-04-09 18:14:12,878 - SPS Tester via steempy - proposal payment test - INFO - Moving to date: 2019-04-11T16:13:06
+2019-04-09 18:14:13,412 - SPS Tester via steempy - proposal payment test - INFO - Balances for accounts at time: 2019-04-11T16:13:06
+2019-04-09 18:14:13,414 - SPS Tester via steempy - proposal payment test - INFO - tester001 :: balance ==> 400.000 TESTS, sbd_balance ==> 414.000 TBD
+2019-04-09 18:14:13,415 - SPS Tester via steempy - proposal payment test - INFO - tester002 :: balance ==> 400.000 TESTS, sbd_balance ==> 414.000 TBD
+2019-04-09 18:14:13,416 - SPS Tester via steempy - proposal payment test - INFO - tester003 :: balance ==> 400.000 TESTS, sbd_balance ==> 414.000 TBD
+2019-04-09 18:14:13,417 - SPS Tester via steempy - proposal payment test - INFO - tester004 :: balance ==> 400.000 TESTS, sbd_balance ==> 414.000 TBD
+2019-04-09 18:14:13,418 - SPS Tester via steempy - proposal payment test - INFO - tester005 :: balance ==> 400.000 TESTS, sbd_balance ==> 414.000 TBD
+2019-04-09 18:14:13,418 - SPS Tester via steempy - proposal payment test - INFO - Balances for treasury at time: 2019-04-11T16:13:06
+2019-04-09 18:14:13,419 - SPS Tester via steempy - proposal payment test - INFO - steem.dao :: balance ==> 1000000.000 TESTS, sbd_balance ==> 999930.095 TBD
+2019-04-09 18:14:13,420 - SPS Tester via steempy - proposal payment test - INFO - Listing proposals with status active (id:total_votes): 0:100008311,1:100008311,2:100008311,3:100008311,4:100008311
+2019-04-09 18:14:13,420 - SPS Tester via steempy - proposal payment test - INFO - Moving to date: 2019-04-11T17:13:06
+2019-04-09 18:14:13,958 - SPS Tester via steempy - proposal payment test - INFO - Balances for accounts at time: 2019-04-11T17:13:06
+2019-04-09 18:14:13,960 - SPS Tester via steempy - proposal payment test - INFO - tester001 :: balance ==> 400.000 TESTS, sbd_balance ==> 415.000 TBD
+2019-04-09 18:14:13,961 - SPS Tester via steempy - proposal payment test - INFO - tester002 :: balance ==> 400.000 TESTS, sbd_balance ==> 415.000 TBD
+2019-04-09 18:14:13,962 - SPS Tester via steempy - proposal payment test - INFO - tester003 :: balance ==> 400.000 TESTS, sbd_balance ==> 415.000 TBD
+2019-04-09 18:14:13,964 - SPS Tester via steempy - proposal payment test - INFO - tester004 :: balance ==> 400.000 TESTS, sbd_balance ==> 415.000 TBD
+2019-04-09 18:14:13,965 - SPS Tester via steempy - proposal payment test - INFO - tester005 :: balance ==> 400.000 TESTS, sbd_balance ==> 415.000 TBD
+2019-04-09 18:14:13,965 - SPS Tester via steempy - proposal payment test - INFO - Balances for treasury at time: 2019-04-11T17:13:06
+2019-04-09 18:14:13,966 - SPS Tester via steempy - proposal payment test - INFO - steem.dao :: balance ==> 1000000.000 TESTS, sbd_balance ==> 999925.095 TBD
+2019-04-09 18:14:13,967 - SPS Tester via steempy - proposal payment test - INFO - Listing proposals with status active (id:total_votes): 0:100008311,1:100008311,2:100008311,3:100008311,4:100008311
+2019-04-09 18:14:13,968 - SPS Tester via steempy - proposal payment test - INFO - Moving to date: 2019-04-11T18:13:06
+2019-04-09 18:14:14,499 - SPS Tester via steempy - proposal payment test - INFO - Balances for accounts at time: 2019-04-11T18:13:06
+2019-04-09 18:14:14,500 - SPS Tester via steempy - proposal payment test - INFO - tester001 :: balance ==> 400.000 TESTS, sbd_balance ==> 416.000 TBD
+2019-04-09 18:14:14,502 - SPS Tester via steempy - proposal payment test - INFO - tester002 :: balance ==> 400.000 TESTS, sbd_balance ==> 416.000 TBD
+2019-04-09 18:14:14,503 - SPS Tester via steempy - proposal payment test - INFO - tester003 :: balance ==> 400.000 TESTS, sbd_balance ==> 416.000 TBD
+2019-04-09 18:14:14,504 - SPS Tester via steempy - proposal payment test - INFO - tester004 :: balance ==> 400.000 TESTS, sbd_balance ==> 416.000 TBD
+2019-04-09 18:14:14,506 - SPS Tester via steempy - proposal payment test - INFO - tester005 :: balance ==> 400.000 TESTS, sbd_balance ==> 416.000 TBD
+2019-04-09 18:14:14,506 - SPS Tester via steempy - proposal payment test - INFO - Balances for treasury at time: 2019-04-11T18:13:06
+2019-04-09 18:14:14,507 - SPS Tester via steempy - proposal payment test - INFO - steem.dao :: balance ==> 1000000.000 TESTS, sbd_balance ==> 999920.095 TBD
+2019-04-09 18:14:14,508 - SPS Tester via steempy - proposal payment test - INFO - Listing proposals with status active (id:total_votes): 0:100008311,1:100008311,2:100008311,3:100008311,4:100008311
+2019-04-09 18:14:14,508 - SPS Tester via steempy - proposal payment test - INFO - Moving to date: 2019-04-11T19:13:06
+2019-04-09 18:14:15,037 - SPS Tester via steempy - proposal payment test - INFO - Balances for accounts at time: 2019-04-11T19:13:06
+2019-04-09 18:14:15,039 - SPS Tester via steempy - proposal payment test - INFO - tester001 :: balance ==> 400.000 TESTS, sbd_balance ==> 417.000 TBD
+2019-04-09 18:14:15,040 - SPS Tester via steempy - proposal payment test - INFO - tester002 :: balance ==> 400.000 TESTS, sbd_balance ==> 417.000 TBD
+2019-04-09 18:14:15,041 - SPS Tester via steempy - proposal payment test - INFO - tester003 :: balance ==> 400.000 TESTS, sbd_balance ==> 417.000 TBD
+2019-04-09 18:14:15,043 - SPS Tester via steempy - proposal payment test - INFO - tester004 :: balance ==> 400.000 TESTS, sbd_balance ==> 417.000 TBD
+2019-04-09 18:14:15,044 - SPS Tester via steempy - proposal payment test - INFO - tester005 :: balance ==> 400.000 TESTS, sbd_balance ==> 417.000 TBD
+2019-04-09 18:14:15,044 - SPS Tester via steempy - proposal payment test - INFO - Balances for treasury at time: 2019-04-11T19:13:06
+2019-04-09 18:14:15,045 - SPS Tester via steempy - proposal payment test - INFO - steem.dao :: balance ==> 1000000.000 TESTS, sbd_balance ==> 999915.095 TBD
+2019-04-09 18:14:15,046 - SPS Tester via steempy - proposal payment test - INFO - Listing proposals with status active (id:total_votes): 0:100008311,1:100008311,2:100008311,3:100008311,4:100008311
+2019-04-09 18:14:15,046 - SPS Tester via steempy - proposal payment test - INFO - Moving to date: 2019-04-11T20:13:06
+2019-04-09 18:14:15,578 - SPS Tester via steempy - proposal payment test - INFO - Balances for accounts at time: 2019-04-11T20:13:06
+2019-04-09 18:14:15,580 - SPS Tester via steempy - proposal payment test - INFO - tester001 :: balance ==> 400.000 TESTS, sbd_balance ==> 418.000 TBD
+2019-04-09 18:14:15,582 - SPS Tester via steempy - proposal payment test - INFO - tester002 :: balance ==> 400.000 TESTS, sbd_balance ==> 418.000 TBD
+2019-04-09 18:14:15,583 - SPS Tester via steempy - proposal payment test - INFO - tester003 :: balance ==> 400.000 TESTS, sbd_balance ==> 418.000 TBD
+2019-04-09 18:14:15,584 - SPS Tester via steempy - proposal payment test - INFO - tester004 :: balance ==> 400.000 TESTS, sbd_balance ==> 418.000 TBD
+2019-04-09 18:14:15,585 - SPS Tester via steempy - proposal payment test - INFO - tester005 :: balance ==> 400.000 TESTS, sbd_balance ==> 418.000 TBD
+2019-04-09 18:14:15,586 - SPS Tester via steempy - proposal payment test - INFO - Balances for treasury at time: 2019-04-11T20:13:06
+2019-04-09 18:14:15,587 - SPS Tester via steempy - proposal payment test - INFO - steem.dao :: balance ==> 1000000.000 TESTS, sbd_balance ==> 999910.095 TBD
+2019-04-09 18:14:15,588 - SPS Tester via steempy - proposal payment test - INFO - Listing proposals with status active (id:total_votes): 0:100008311,1:100008311,2:100008311,3:100008311,4:100008311
+2019-04-09 18:14:15,588 - SPS Tester via steempy - proposal payment test - INFO - Moving to date: 2019-04-11T21:13:06
+2019-04-09 18:14:16,116 - SPS Tester via steempy - proposal payment test - INFO - Balances for accounts at time: 2019-04-11T21:13:06
+2019-04-09 18:14:16,118 - SPS Tester via steempy - proposal payment test - INFO - tester001 :: balance ==> 400.000 TESTS, sbd_balance ==> 419.000 TBD
+2019-04-09 18:14:16,119 - SPS Tester via steempy - proposal payment test - INFO - tester002 :: balance ==> 400.000 TESTS, sbd_balance ==> 419.000 TBD
+2019-04-09 18:14:16,121 - SPS Tester via steempy - proposal payment test - INFO - tester003 :: balance ==> 400.000 TESTS, sbd_balance ==> 419.000 TBD
+2019-04-09 18:14:16,122 - SPS Tester via steempy - proposal payment test - INFO - tester004 :: balance ==> 400.000 TESTS, sbd_balance ==> 419.000 TBD
+2019-04-09 18:14:16,123 - SPS Tester via steempy - proposal payment test - INFO - tester005 :: balance ==> 400.000 TESTS, sbd_balance ==> 419.000 TBD
+2019-04-09 18:14:16,123 - SPS Tester via steempy - proposal payment test - INFO - Balances for treasury at time: 2019-04-11T21:13:06
+2019-04-09 18:14:16,124 - SPS Tester via steempy - proposal payment test - INFO - steem.dao :: balance ==> 1000000.000 TESTS, sbd_balance ==> 999905.095 TBD
+2019-04-09 18:14:16,126 - SPS Tester via steempy - proposal payment test - INFO - Listing proposals with status active (id:total_votes): 0:100008311,1:100008311,2:100008311,3:100008311,4:100008311
+2019-04-09 18:14:16,126 - SPS Tester via steempy - proposal payment test - INFO - Moving to date: 2019-04-11T22:13:06
+2019-04-09 18:14:16,653 - SPS Tester via steempy - proposal payment test - INFO - Balances for accounts at time: 2019-04-11T22:13:06
+2019-04-09 18:14:16,655 - SPS Tester via steempy - proposal payment test - INFO - tester001 :: balance ==> 400.000 TESTS, sbd_balance ==> 420.000 TBD
+2019-04-09 18:14:16,656 - SPS Tester via steempy - proposal payment test - INFO - tester002 :: balance ==> 400.000 TESTS, sbd_balance ==> 420.000 TBD
+2019-04-09 18:14:16,657 - SPS Tester via steempy - proposal payment test - INFO - tester003 :: balance ==> 400.000 TESTS, sbd_balance ==> 420.000 TBD
+2019-04-09 18:14:16,658 - SPS Tester via steempy - proposal payment test - INFO - tester004 :: balance ==> 400.000 TESTS, sbd_balance ==> 420.000 TBD
+2019-04-09 18:14:16,660 - SPS Tester via steempy - proposal payment test - INFO - tester005 :: balance ==> 400.000 TESTS, sbd_balance ==> 420.000 TBD
+2019-04-09 18:14:16,660 - SPS Tester via steempy - proposal payment test - INFO - Balances for treasury at time: 2019-04-11T22:13:06
+2019-04-09 18:14:16,661 - SPS Tester via steempy - proposal payment test - INFO - steem.dao :: balance ==> 1000000.000 TESTS, sbd_balance ==> 999900.095 TBD
+2019-04-09 18:14:16,662 - SPS Tester via steempy - proposal payment test - INFO - Listing proposals with status active (id:total_votes): 0:100008311,1:100008311,2:100008311,3:100008311,4:100008311
+2019-04-09 18:14:16,662 - SPS Tester via steempy - proposal payment test - INFO - Moving to date: 2019-04-11T23:13:06
+2019-04-09 18:14:17,200 - SPS Tester via steempy - proposal payment test - INFO - Balances for accounts at time: 2019-04-11T23:13:06
+2019-04-09 18:14:17,201 - SPS Tester via steempy - proposal payment test - INFO - tester001 :: balance ==> 400.000 TESTS, sbd_balance ==> 421.000 TBD
+2019-04-09 18:14:17,203 - SPS Tester via steempy - proposal payment test - INFO - tester002 :: balance ==> 400.000 TESTS, sbd_balance ==> 421.000 TBD
+2019-04-09 18:14:17,204 - SPS Tester via steempy - proposal payment test - INFO - tester003 :: balance ==> 400.000 TESTS, sbd_balance ==> 421.000 TBD
+2019-04-09 18:14:17,205 - SPS Tester via steempy - proposal payment test - INFO - tester004 :: balance ==> 400.000 TESTS, sbd_balance ==> 421.000 TBD
+2019-04-09 18:14:17,206 - SPS Tester via steempy - proposal payment test - INFO - tester005 :: balance ==> 400.000 TESTS, sbd_balance ==> 421.000 TBD
+2019-04-09 18:14:17,206 - SPS Tester via steempy - proposal payment test - INFO - Balances for treasury at time: 2019-04-11T23:13:06
+2019-04-09 18:14:17,208 - SPS Tester via steempy - proposal payment test - INFO - steem.dao :: balance ==> 1000000.000 TESTS, sbd_balance ==> 999895.095 TBD
+2019-04-09 18:14:17,209 - SPS Tester via steempy - proposal payment test - INFO - Listing proposals with status active (id:total_votes): 0:100008311,1:100008311,2:100008311,3:100008311,4:100008311
+2019-04-09 18:14:17,209 - SPS Tester via steempy - proposal payment test - INFO - Moving to date: 2019-04-12T00:13:06
+2019-04-09 18:14:17,746 - SPS Tester via steempy - proposal payment test - INFO - Balances for accounts at time: 2019-04-12T00:13:06
+2019-04-09 18:14:17,747 - SPS Tester via steempy - proposal payment test - INFO - tester001 :: balance ==> 400.000 TESTS, sbd_balance ==> 422.000 TBD
+2019-04-09 18:14:17,748 - SPS Tester via steempy - proposal payment test - INFO - tester002 :: balance ==> 400.000 TESTS, sbd_balance ==> 422.000 TBD
+2019-04-09 18:14:17,750 - SPS Tester via steempy - proposal payment test - INFO - tester003 :: balance ==> 400.000 TESTS, sbd_balance ==> 422.000 TBD
+2019-04-09 18:14:17,751 - SPS Tester via steempy - proposal payment test - INFO - tester004 :: balance ==> 400.000 TESTS, sbd_balance ==> 422.000 TBD
+2019-04-09 18:14:17,752 - SPS Tester via steempy - proposal payment test - INFO - tester005 :: balance ==> 400.000 TESTS, sbd_balance ==> 422.000 TBD
+2019-04-09 18:14:17,752 - SPS Tester via steempy - proposal payment test - INFO - Balances for treasury at time: 2019-04-12T00:13:06
+2019-04-09 18:14:17,753 - SPS Tester via steempy - proposal payment test - INFO - steem.dao :: balance ==> 1000000.000 TESTS, sbd_balance ==> 999890.095 TBD
+2019-04-09 18:14:17,754 - SPS Tester via steempy - proposal payment test - INFO - Listing proposals with status active (id:total_votes): 0:100008311,1:100008311,2:100008311,3:100008311,4:100008311
+2019-04-09 18:14:17,754 - SPS Tester via steempy - proposal payment test - INFO - Moving to date: 2019-04-12T01:13:06
+2019-04-09 18:14:18,290 - SPS Tester via steempy - proposal payment test - INFO - Balances for accounts at time: 2019-04-12T01:13:06
+2019-04-09 18:14:18,292 - SPS Tester via steempy - proposal payment test - INFO - tester001 :: balance ==> 400.000 TESTS, sbd_balance ==> 423.000 TBD
+2019-04-09 18:14:18,293 - SPS Tester via steempy - proposal payment test - INFO - tester002 :: balance ==> 400.000 TESTS, sbd_balance ==> 423.000 TBD
+2019-04-09 18:14:18,295 - SPS Tester via steempy - proposal payment test - INFO - tester003 :: balance ==> 400.000 TESTS, sbd_balance ==> 423.000 TBD
+2019-04-09 18:14:18,296 - SPS Tester via steempy - proposal payment test - INFO - tester004 :: balance ==> 400.000 TESTS, sbd_balance ==> 423.000 TBD
+2019-04-09 18:14:18,298 - SPS Tester via steempy - proposal payment test - INFO - tester005 :: balance ==> 400.000 TESTS, sbd_balance ==> 423.000 TBD
+2019-04-09 18:14:18,298 - SPS Tester via steempy - proposal payment test - INFO - Balances for treasury at time: 2019-04-12T01:13:06
+2019-04-09 18:14:18,299 - SPS Tester via steempy - proposal payment test - INFO - steem.dao :: balance ==> 1000000.000 TESTS, sbd_balance ==> 999885.095 TBD
+2019-04-09 18:14:18,301 - SPS Tester via steempy - proposal payment test - INFO - Listing proposals with status active (id:total_votes): 0:100008311,1:100008311,2:100008311,3:100008311,4:100008311
+2019-04-09 18:14:18,301 - SPS Tester via steempy - proposal payment test - INFO - Moving to date: 2019-04-12T02:13:06
+2019-04-09 18:14:18,839 - SPS Tester via steempy - proposal payment test - INFO - Balances for accounts at time: 2019-04-12T02:13:06
+2019-04-09 18:14:18,840 - SPS Tester via steempy - proposal payment test - INFO - tester001 :: balance ==> 400.000 TESTS, sbd_balance ==> 424.000 TBD
+2019-04-09 18:14:18,841 - SPS Tester via steempy - proposal payment test - INFO - tester002 :: balance ==> 400.000 TESTS, sbd_balance ==> 424.000 TBD
+2019-04-09 18:14:18,842 - SPS Tester via steempy - proposal payment test - INFO - tester003 :: balance ==> 400.000 TESTS, sbd_balance ==> 424.000 TBD
+2019-04-09 18:14:18,843 - SPS Tester via steempy - proposal payment test - INFO - tester004 :: balance ==> 400.000 TESTS, sbd_balance ==> 424.000 TBD
+2019-04-09 18:14:18,845 - SPS Tester via steempy - proposal payment test - INFO - tester005 :: balance ==> 400.000 TESTS, sbd_balance ==> 424.000 TBD
+2019-04-09 18:14:18,845 - SPS Tester via steempy - proposal payment test - INFO - Balances for treasury at time: 2019-04-12T02:13:06
+2019-04-09 18:14:18,846 - SPS Tester via steempy - proposal payment test - INFO - steem.dao :: balance ==> 1000000.000 TESTS, sbd_balance ==> 999880.095 TBD
+2019-04-09 18:14:18,847 - SPS Tester via steempy - proposal payment test - INFO - Listing proposals with status active (id:total_votes): 0:100008311,1:100008311,2:100008311,3:100008311,4:100008311
+2019-04-09 18:14:18,847 - SPS Tester via steempy - proposal payment test - INFO - Moving to date: 2019-04-12T03:13:06
+2019-04-09 18:14:19,380 - SPS Tester via steempy - proposal payment test - INFO - Balances for accounts at time: 2019-04-12T03:13:06
+2019-04-09 18:14:19,382 - SPS Tester via steempy - proposal payment test - INFO - tester001 :: balance ==> 400.000 TESTS, sbd_balance ==> 425.000 TBD
+2019-04-09 18:14:19,383 - SPS Tester via steempy - proposal payment test - INFO - tester002 :: balance ==> 400.000 TESTS, sbd_balance ==> 425.000 TBD
+2019-04-09 18:14:19,384 - SPS Tester via steempy - proposal payment test - INFO - tester003 :: balance ==> 400.000 TESTS, sbd_balance ==> 425.000 TBD
+2019-04-09 18:14:19,386 - SPS Tester via steempy - proposal payment test - INFO - tester004 :: balance ==> 400.000 TESTS, sbd_balance ==> 425.000 TBD
+2019-04-09 18:14:19,387 - SPS Tester via steempy - proposal payment test - INFO - tester005 :: balance ==> 400.000 TESTS, sbd_balance ==> 425.000 TBD
+2019-04-09 18:14:19,387 - SPS Tester via steempy - proposal payment test - INFO - Balances for treasury at time: 2019-04-12T03:13:06
+2019-04-09 18:14:19,388 - SPS Tester via steempy - proposal payment test - INFO - steem.dao :: balance ==> 1000000.000 TESTS, sbd_balance ==> 999875.095 TBD
+2019-04-09 18:14:19,389 - SPS Tester via steempy - proposal payment test - INFO - Listing proposals with status active (id:total_votes): 0:100008311,1:100008311,2:100008311,3:100008311,4:100008311
+2019-04-09 18:14:19,389 - SPS Tester via steempy - proposal payment test - INFO - Moving to date: 2019-04-12T04:13:06
+2019-04-09 18:14:19,936 - SPS Tester via steempy - proposal payment test - INFO - Balances for accounts at time: 2019-04-12T04:13:06
+2019-04-09 18:14:19,937 - SPS Tester via steempy - proposal payment test - INFO - tester001 :: balance ==> 400.000 TESTS, sbd_balance ==> 426.000 TBD
+2019-04-09 18:14:19,939 - SPS Tester via steempy - proposal payment test - INFO - tester002 :: balance ==> 400.000 TESTS, sbd_balance ==> 426.000 TBD
+2019-04-09 18:14:19,940 - SPS Tester via steempy - proposal payment test - INFO - tester003 :: balance ==> 400.000 TESTS, sbd_balance ==> 426.000 TBD
+2019-04-09 18:14:19,941 - SPS Tester via steempy - proposal payment test - INFO - tester004 :: balance ==> 400.000 TESTS, sbd_balance ==> 426.000 TBD
+2019-04-09 18:14:19,943 - SPS Tester via steempy - proposal payment test - INFO - tester005 :: balance ==> 400.000 TESTS, sbd_balance ==> 426.000 TBD
+2019-04-09 18:14:19,943 - SPS Tester via steempy - proposal payment test - INFO - Balances for treasury at time: 2019-04-12T04:13:06
+2019-04-09 18:14:19,944 - SPS Tester via steempy - proposal payment test - INFO - steem.dao :: balance ==> 1000000.000 TESTS, sbd_balance ==> 999870.095 TBD
+2019-04-09 18:14:19,945 - SPS Tester via steempy - proposal payment test - INFO - Listing proposals with status active (id:total_votes): 0:100008311,1:100008311,2:100008311,3:100008311,4:100008311
+2019-04-09 18:14:19,945 - SPS Tester via steempy - proposal payment test - INFO - Moving to date: 2019-04-12T05:13:06
+2019-04-09 18:14:20,481 - SPS Tester via steempy - proposal payment test - INFO - Balances for accounts at time: 2019-04-12T05:13:06
+2019-04-09 18:14:20,483 - SPS Tester via steempy - proposal payment test - INFO - tester001 :: balance ==> 400.000 TESTS, sbd_balance ==> 427.000 TBD
+2019-04-09 18:14:20,484 - SPS Tester via steempy - proposal payment test - INFO - tester002 :: balance ==> 400.000 TESTS, sbd_balance ==> 427.000 TBD
+2019-04-09 18:14:20,486 - SPS Tester via steempy - proposal payment test - INFO - tester003 :: balance ==> 400.000 TESTS, sbd_balance ==> 427.000 TBD
+2019-04-09 18:14:20,487 - SPS Tester via steempy - proposal payment test - INFO - tester004 :: balance ==> 400.000 TESTS, sbd_balance ==> 427.000 TBD
+2019-04-09 18:14:20,488 - SPS Tester via steempy - proposal payment test - INFO - tester005 :: balance ==> 400.000 TESTS, sbd_balance ==> 427.000 TBD
+2019-04-09 18:14:20,488 - SPS Tester via steempy - proposal payment test - INFO - Balances for treasury at time: 2019-04-12T05:13:06
+2019-04-09 18:14:20,489 - SPS Tester via steempy - proposal payment test - INFO - steem.dao :: balance ==> 1000000.000 TESTS, sbd_balance ==> 999865.095 TBD
+2019-04-09 18:14:20,491 - SPS Tester via steempy - proposal payment test - INFO - Listing proposals with status active (id:total_votes): 0:100008311,1:100008311,2:100008311,3:100008311,4:100008311
+2019-04-09 18:14:20,491 - SPS Tester via steempy - proposal payment test - INFO - Moving to date: 2019-04-12T06:13:06
+2019-04-09 18:14:21,019 - SPS Tester via steempy - proposal payment test - INFO - Balances for accounts at time: 2019-04-12T06:13:06
+2019-04-09 18:14:21,021 - SPS Tester via steempy - proposal payment test - INFO - tester001 :: balance ==> 400.000 TESTS, sbd_balance ==> 428.000 TBD
+2019-04-09 18:14:21,022 - SPS Tester via steempy - proposal payment test - INFO - tester002 :: balance ==> 400.000 TESTS, sbd_balance ==> 428.000 TBD
+2019-04-09 18:14:21,023 - SPS Tester via steempy - proposal payment test - INFO - tester003 :: balance ==> 400.000 TESTS, sbd_balance ==> 428.000 TBD
+2019-04-09 18:14:21,024 - SPS Tester via steempy - proposal payment test - INFO - tester004 :: balance ==> 400.000 TESTS, sbd_balance ==> 428.000 TBD
+2019-04-09 18:14:21,025 - SPS Tester via steempy - proposal payment test - INFO - tester005 :: balance ==> 400.000 TESTS, sbd_balance ==> 428.000 TBD
+2019-04-09 18:14:21,025 - SPS Tester via steempy - proposal payment test - INFO - Balances for treasury at time: 2019-04-12T06:13:06
+2019-04-09 18:14:21,026 - SPS Tester via steempy - proposal payment test - INFO - steem.dao :: balance ==> 1000000.000 TESTS, sbd_balance ==> 999860.095 TBD
+2019-04-09 18:14:21,027 - SPS Tester via steempy - proposal payment test - INFO - Listing proposals with status active (id:total_votes): 0:100008311,1:100008311,2:100008311,3:100008311,4:100008311
+2019-04-09 18:14:21,028 - SPS Tester via steempy - proposal payment test - INFO - Moving to date: 2019-04-12T07:13:06
+2019-04-09 18:14:21,562 - SPS Tester via steempy - proposal payment test - INFO - Balances for accounts at time: 2019-04-12T07:13:06
+2019-04-09 18:14:21,564 - SPS Tester via steempy - proposal payment test - INFO - tester001 :: balance ==> 400.000 TESTS, sbd_balance ==> 429.000 TBD
+2019-04-09 18:14:21,565 - SPS Tester via steempy - proposal payment test - INFO - tester002 :: balance ==> 400.000 TESTS, sbd_balance ==> 429.000 TBD
+2019-04-09 18:14:21,567 - SPS Tester via steempy - proposal payment test - INFO - tester003 :: balance ==> 400.000 TESTS, sbd_balance ==> 429.000 TBD
+2019-04-09 18:14:21,568 - SPS Tester via steempy - proposal payment test - INFO - tester004 :: balance ==> 400.000 TESTS, sbd_balance ==> 429.000 TBD
+2019-04-09 18:14:21,569 - SPS Tester via steempy - proposal payment test - INFO - tester005 :: balance ==> 400.000 TESTS, sbd_balance ==> 429.000 TBD
+2019-04-09 18:14:21,570 - SPS Tester via steempy - proposal payment test - INFO - Balances for treasury at time: 2019-04-12T07:13:06
+2019-04-09 18:14:21,571 - SPS Tester via steempy - proposal payment test - INFO - steem.dao :: balance ==> 1000000.000 TESTS, sbd_balance ==> 999855.095 TBD
+2019-04-09 18:14:21,573 - SPS Tester via steempy - proposal payment test - INFO - Listing proposals with status active (id:total_votes): 0:100008311,1:100008311,2:100008311,3:100008311,4:100008311
+2019-04-09 18:14:21,573 - SPS Tester via steempy - proposal payment test - INFO - Moving to date: 2019-04-12T08:13:06
+2019-04-09 18:14:22,106 - SPS Tester via steempy - proposal payment test - INFO - Balances for accounts at time: 2019-04-12T08:13:06
+2019-04-09 18:14:22,108 - SPS Tester via steempy - proposal payment test - INFO - tester001 :: balance ==> 400.000 TESTS, sbd_balance ==> 430.000 TBD
+2019-04-09 18:14:22,109 - SPS Tester via steempy - proposal payment test - INFO - tester002 :: balance ==> 400.000 TESTS, sbd_balance ==> 430.000 TBD
+2019-04-09 18:14:22,110 - SPS Tester via steempy - proposal payment test - INFO - tester003 :: balance ==> 400.000 TESTS, sbd_balance ==> 430.000 TBD
+2019-04-09 18:14:22,112 - SPS Tester via steempy - proposal payment test - INFO - tester004 :: balance ==> 400.000 TESTS, sbd_balance ==> 430.000 TBD
+2019-04-09 18:14:22,113 - SPS Tester via steempy - proposal payment test - INFO - tester005 :: balance ==> 400.000 TESTS, sbd_balance ==> 430.000 TBD
+2019-04-09 18:14:22,113 - SPS Tester via steempy - proposal payment test - INFO - Balances for treasury at time: 2019-04-12T08:13:06
+2019-04-09 18:14:22,114 - SPS Tester via steempy - proposal payment test - INFO - steem.dao :: balance ==> 1000000.000 TESTS, sbd_balance ==> 999850.095 TBD
+2019-04-09 18:14:22,116 - SPS Tester via steempy - proposal payment test - INFO - Listing proposals with status active (id:total_votes): 0:100008311,1:100008311,2:100008311,3:100008311,4:100008311
+2019-04-09 18:14:22,116 - SPS Tester via steempy - proposal payment test - INFO - Moving to date: 2019-04-12T09:13:06
+2019-04-09 18:14:22,658 - SPS Tester via steempy - proposal payment test - INFO - Balances for accounts at time: 2019-04-12T09:13:06
+2019-04-09 18:14:22,660 - SPS Tester via steempy - proposal payment test - INFO - tester001 :: balance ==> 400.000 TESTS, sbd_balance ==> 431.000 TBD
+2019-04-09 18:14:22,661 - SPS Tester via steempy - proposal payment test - INFO - tester002 :: balance ==> 400.000 TESTS, sbd_balance ==> 431.000 TBD
+2019-04-09 18:14:22,663 - SPS Tester via steempy - proposal payment test - INFO - tester003 :: balance ==> 400.000 TESTS, sbd_balance ==> 431.000 TBD
+2019-04-09 18:14:22,664 - SPS Tester via steempy - proposal payment test - INFO - tester004 :: balance ==> 400.000 TESTS, sbd_balance ==> 431.000 TBD
+2019-04-09 18:14:22,665 - SPS Tester via steempy - proposal payment test - INFO - tester005 :: balance ==> 400.000 TESTS, sbd_balance ==> 431.000 TBD
+2019-04-09 18:14:22,665 - SPS Tester via steempy - proposal payment test - INFO - Balances for treasury at time: 2019-04-12T09:13:06
+2019-04-09 18:14:22,666 - SPS Tester via steempy - proposal payment test - INFO - steem.dao :: balance ==> 1000000.000 TESTS, sbd_balance ==> 999845.095 TBD
+2019-04-09 18:14:22,668 - SPS Tester via steempy - proposal payment test - INFO - Listing proposals with status active (id:total_votes): 0:100008311,1:100008311,2:100008311,3:100008311,4:100008311
+2019-04-09 18:14:22,668 - SPS Tester via steempy - proposal payment test - INFO - Moving to date: 2019-04-12T10:13:06
+2019-04-09 18:14:23,203 - SPS Tester via steempy - proposal payment test - INFO - Balances for accounts at time: 2019-04-12T10:13:06
+2019-04-09 18:14:23,205 - SPS Tester via steempy - proposal payment test - INFO - tester001 :: balance ==> 400.000 TESTS, sbd_balance ==> 432.000 TBD
+2019-04-09 18:14:23,206 - SPS Tester via steempy - proposal payment test - INFO - tester002 :: balance ==> 400.000 TESTS, sbd_balance ==> 432.000 TBD
+2019-04-09 18:14:23,207 - SPS Tester via steempy - proposal payment test - INFO - tester003 :: balance ==> 400.000 TESTS, sbd_balance ==> 432.000 TBD
+2019-04-09 18:14:23,209 - SPS Tester via steempy - proposal payment test - INFO - tester004 :: balance ==> 400.000 TESTS, sbd_balance ==> 432.000 TBD
+2019-04-09 18:14:23,210 - SPS Tester via steempy - proposal payment test - INFO - tester005 :: balance ==> 400.000 TESTS, sbd_balance ==> 432.000 TBD
+2019-04-09 18:14:23,210 - SPS Tester via steempy - proposal payment test - INFO - Balances for treasury at time: 2019-04-12T10:13:06
+2019-04-09 18:14:23,211 - SPS Tester via steempy - proposal payment test - INFO - steem.dao :: balance ==> 1000000.000 TESTS, sbd_balance ==> 999840.095 TBD
+2019-04-09 18:14:23,212 - SPS Tester via steempy - proposal payment test - INFO - Listing proposals with status active (id:total_votes): 0:100008311,1:100008311,2:100008311,3:100008311,4:100008311
+2019-04-09 18:14:23,212 - SPS Tester via steempy - proposal payment test - INFO - Moving to date: 2019-04-12T11:13:06
+2019-04-09 18:14:23,756 - SPS Tester via steempy - proposal payment test - INFO - Balances for accounts at time: 2019-04-12T11:13:06
+2019-04-09 18:14:23,758 - SPS Tester via steempy - proposal payment test - INFO - tester001 :: balance ==> 400.000 TESTS, sbd_balance ==> 433.000 TBD
+2019-04-09 18:14:23,759 - SPS Tester via steempy - proposal payment test - INFO - tester002 :: balance ==> 400.000 TESTS, sbd_balance ==> 433.000 TBD
+2019-04-09 18:14:23,760 - SPS Tester via steempy - proposal payment test - INFO - tester003 :: balance ==> 400.000 TESTS, sbd_balance ==> 433.000 TBD
+2019-04-09 18:14:23,761 - SPS Tester via steempy - proposal payment test - INFO - tester004 :: balance ==> 400.000 TESTS, sbd_balance ==> 433.000 TBD
+2019-04-09 18:14:23,762 - SPS Tester via steempy - proposal payment test - INFO - tester005 :: balance ==> 400.000 TESTS, sbd_balance ==> 433.000 TBD
+2019-04-09 18:14:23,763 - SPS Tester via steempy - proposal payment test - INFO - Balances for treasury at time: 2019-04-12T11:13:06
+2019-04-09 18:14:23,764 - SPS Tester via steempy - proposal payment test - INFO - steem.dao :: balance ==> 1000000.000 TESTS, sbd_balance ==> 999835.095 TBD
+2019-04-09 18:14:23,765 - SPS Tester via steempy - proposal payment test - INFO - Listing proposals with status active (id:total_votes): 0:100008311,1:100008311,2:100008311,3:100008311,4:100008311
+2019-04-09 18:14:23,765 - SPS Tester via steempy - proposal payment test - INFO - Moving to date: 2019-04-12T12:13:06
+2019-04-09 18:14:24,298 - SPS Tester via steempy - proposal payment test - INFO - Balances for accounts at time: 2019-04-12T12:13:06
+2019-04-09 18:14:24,299 - SPS Tester via steempy - proposal payment test - INFO - tester001 :: balance ==> 400.000 TESTS, sbd_balance ==> 434.000 TBD
+2019-04-09 18:14:24,300 - SPS Tester via steempy - proposal payment test - INFO - tester002 :: balance ==> 400.000 TESTS, sbd_balance ==> 434.000 TBD
+2019-04-09 18:14:24,301 - SPS Tester via steempy - proposal payment test - INFO - tester003 :: balance ==> 400.000 TESTS, sbd_balance ==> 434.000 TBD
+2019-04-09 18:14:24,302 - SPS Tester via steempy - proposal payment test - INFO - tester004 :: balance ==> 400.000 TESTS, sbd_balance ==> 434.000 TBD
+2019-04-09 18:14:24,304 - SPS Tester via steempy - proposal payment test - INFO - tester005 :: balance ==> 400.000 TESTS, sbd_balance ==> 434.000 TBD
+2019-04-09 18:14:24,304 - SPS Tester via steempy - proposal payment test - INFO - Balances for treasury at time: 2019-04-12T12:13:06
+2019-04-09 18:14:24,305 - SPS Tester via steempy - proposal payment test - INFO - steem.dao :: balance ==> 1000000.000 TESTS, sbd_balance ==> 999830.095 TBD
+2019-04-09 18:14:24,306 - SPS Tester via steempy - proposal payment test - INFO - Listing proposals with status active (id:total_votes): 0:100008311,1:100008311,2:100008311,3:100008311,4:100008311
+2019-04-09 18:14:24,306 - SPS Tester via steempy - proposal payment test - INFO - Moving to date: 2019-04-12T13:13:06
+2019-04-09 18:14:24,848 - SPS Tester via steempy - proposal payment test - INFO - Balances for accounts at time: 2019-04-12T13:13:06
+2019-04-09 18:14:24,850 - SPS Tester via steempy - proposal payment test - INFO - tester001 :: balance ==> 400.000 TESTS, sbd_balance ==> 435.000 TBD
+2019-04-09 18:14:24,851 - SPS Tester via steempy - proposal payment test - INFO - tester002 :: balance ==> 400.000 TESTS, sbd_balance ==> 435.000 TBD
+2019-04-09 18:14:24,852 - SPS Tester via steempy - proposal payment test - INFO - tester003 :: balance ==> 400.000 TESTS, sbd_balance ==> 435.000 TBD
+2019-04-09 18:14:24,853 - SPS Tester via steempy - proposal payment test - INFO - tester004 :: balance ==> 400.000 TESTS, sbd_balance ==> 435.000 TBD
+2019-04-09 18:14:24,854 - SPS Tester via steempy - proposal payment test - INFO - tester005 :: balance ==> 400.000 TESTS, sbd_balance ==> 435.000 TBD
+2019-04-09 18:14:24,854 - SPS Tester via steempy - proposal payment test - INFO - Balances for treasury at time: 2019-04-12T13:13:06
+2019-04-09 18:14:24,855 - SPS Tester via steempy - proposal payment test - INFO - steem.dao :: balance ==> 1000000.000 TESTS, sbd_balance ==> 999825.095 TBD
+2019-04-09 18:14:24,856 - SPS Tester via steempy - proposal payment test - INFO - Listing proposals with status active (id:total_votes): 0:100008311,1:100008311,2:100008311,3:100008311,4:100008311
+2019-04-09 18:14:24,856 - SPS Tester via steempy - proposal payment test - INFO - Moving to date: 2019-04-12T14:13:06
+2019-04-09 18:14:25,385 - SPS Tester via steempy - proposal payment test - INFO - Balances for accounts at time: 2019-04-12T14:13:06
+2019-04-09 18:14:25,386 - SPS Tester via steempy - proposal payment test - INFO - tester001 :: balance ==> 400.000 TESTS, sbd_balance ==> 436.000 TBD
+2019-04-09 18:14:25,388 - SPS Tester via steempy - proposal payment test - INFO - tester002 :: balance ==> 400.000 TESTS, sbd_balance ==> 436.000 TBD
+2019-04-09 18:14:25,389 - SPS Tester via steempy - proposal payment test - INFO - tester003 :: balance ==> 400.000 TESTS, sbd_balance ==> 436.000 TBD
+2019-04-09 18:14:25,390 - SPS Tester via steempy - proposal payment test - INFO - tester004 :: balance ==> 400.000 TESTS, sbd_balance ==> 436.000 TBD
+2019-04-09 18:14:25,391 - SPS Tester via steempy - proposal payment test - INFO - tester005 :: balance ==> 400.000 TESTS, sbd_balance ==> 436.000 TBD
+2019-04-09 18:14:25,391 - SPS Tester via steempy - proposal payment test - INFO - Balances for treasury at time: 2019-04-12T14:13:06
+2019-04-09 18:14:25,392 - SPS Tester via steempy - proposal payment test - INFO - steem.dao :: balance ==> 1000000.000 TESTS, sbd_balance ==> 999820.095 TBD
+2019-04-09 18:14:25,393 - SPS Tester via steempy - proposal payment test - INFO - Listing proposals with status active (id:total_votes): 0:100008311,1:100008311,2:100008311,3:100008311,4:100008311
+2019-04-09 18:14:25,393 - SPS Tester via steempy - proposal payment test - INFO - Moving to date: 2019-04-12T15:13:06
+2019-04-09 18:14:25,924 - SPS Tester via steempy - proposal payment test - INFO - Balances for accounts at time: 2019-04-12T15:13:06
+2019-04-09 18:14:25,926 - SPS Tester via steempy - proposal payment test - INFO - tester001 :: balance ==> 400.000 TESTS, sbd_balance ==> 437.000 TBD
+2019-04-09 18:14:25,927 - SPS Tester via steempy - proposal payment test - INFO - tester002 :: balance ==> 400.000 TESTS, sbd_balance ==> 437.000 TBD
+2019-04-09 18:14:25,929 - SPS Tester via steempy - proposal payment test - INFO - tester003 :: balance ==> 400.000 TESTS, sbd_balance ==> 437.000 TBD
+2019-04-09 18:14:25,930 - SPS Tester via steempy - proposal payment test - INFO - tester004 :: balance ==> 400.000 TESTS, sbd_balance ==> 437.000 TBD
+2019-04-09 18:14:25,931 - SPS Tester via steempy - proposal payment test - INFO - tester005 :: balance ==> 400.000 TESTS, sbd_balance ==> 437.000 TBD
+2019-04-09 18:14:25,931 - SPS Tester via steempy - proposal payment test - INFO - Balances for treasury at time: 2019-04-12T15:13:06
+2019-04-09 18:14:25,932 - SPS Tester via steempy - proposal payment test - INFO - steem.dao :: balance ==> 1000000.000 TESTS, sbd_balance ==> 999815.095 TBD
+2019-04-09 18:14:25,933 - SPS Tester via steempy - proposal payment test - INFO - Listing proposals with status active (id:total_votes): 0:100008311,1:100008311,2:100008311,3:100008311,4:100008311
+2019-04-09 18:14:25,933 - SPS Tester via steempy - proposal payment test - INFO - Moving to date: 2019-04-12T16:13:06
+2019-04-09 18:14:26,472 - SPS Tester via steempy - proposal payment test - INFO - Balances for accounts at time: 2019-04-12T16:13:06
+2019-04-09 18:14:26,474 - SPS Tester via steempy - proposal payment test - INFO - tester001 :: balance ==> 400.000 TESTS, sbd_balance ==> 438.000 TBD
+2019-04-09 18:14:26,475 - SPS Tester via steempy - proposal payment test - INFO - tester002 :: balance ==> 400.000 TESTS, sbd_balance ==> 438.000 TBD
+2019-04-09 18:14:26,476 - SPS Tester via steempy - proposal payment test - INFO - tester003 :: balance ==> 400.000 TESTS, sbd_balance ==> 438.000 TBD
+2019-04-09 18:14:26,478 - SPS Tester via steempy - proposal payment test - INFO - tester004 :: balance ==> 400.000 TESTS, sbd_balance ==> 438.000 TBD
+2019-04-09 18:14:26,479 - SPS Tester via steempy - proposal payment test - INFO - tester005 :: balance ==> 400.000 TESTS, sbd_balance ==> 438.000 TBD
+2019-04-09 18:14:26,479 - SPS Tester via steempy - proposal payment test - INFO - Balances for treasury at time: 2019-04-12T16:13:06
+2019-04-09 18:14:26,481 - SPS Tester via steempy - proposal payment test - INFO - steem.dao :: balance ==> 1000000.000 TESTS, sbd_balance ==> 999810.095 TBD
+2019-04-09 18:14:26,482 - SPS Tester via steempy - proposal payment test - INFO - Listing proposals with status active (id:total_votes): 0:100008311,1:100008311,2:100008311,3:100008311,4:100008311
+2019-04-09 18:14:26,482 - SPS Tester via steempy - proposal payment test - INFO - Moving to date: 2019-04-12T17:13:06
+2019-04-09 18:14:27,022 - SPS Tester via steempy - proposal payment test - INFO - Balances for accounts at time: 2019-04-12T17:13:06
+2019-04-09 18:14:27,023 - SPS Tester via steempy - proposal payment test - INFO - tester001 :: balance ==> 400.000 TESTS, sbd_balance ==> 438.000 TBD
+2019-04-09 18:14:27,024 - SPS Tester via steempy - proposal payment test - INFO - tester002 :: balance ==> 400.000 TESTS, sbd_balance ==> 438.000 TBD
+2019-04-09 18:14:27,025 - SPS Tester via steempy - proposal payment test - INFO - tester003 :: balance ==> 400.000 TESTS, sbd_balance ==> 438.000 TBD
+2019-04-09 18:14:27,026 - SPS Tester via steempy - proposal payment test - INFO - tester004 :: balance ==> 400.000 TESTS, sbd_balance ==> 438.000 TBD
+2019-04-09 18:14:27,027 - SPS Tester via steempy - proposal payment test - INFO - tester005 :: balance ==> 400.000 TESTS, sbd_balance ==> 438.000 TBD
+2019-04-09 18:14:27,027 - SPS Tester via steempy - proposal payment test - INFO - Balances for treasury at time: 2019-04-12T17:13:06
+2019-04-09 18:14:27,028 - SPS Tester via steempy - proposal payment test - INFO - steem.dao :: balance ==> 1000000.000 TESTS, sbd_balance ==> 999810.095 TBD
+2019-04-09 18:14:27,029 - SPS Tester via steempy - proposal payment test - INFO - Listing proposals with status expired (id:total_votes): 0:100008311,1:100008311,2:100008311,3:100008311,4:100008311

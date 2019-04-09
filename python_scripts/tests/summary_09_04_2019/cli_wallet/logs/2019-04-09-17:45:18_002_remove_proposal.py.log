@@ -1,0 +1,43 @@
+2019-04-09 17:45:18,775 [INFO] Calling cli_wallet with args `['/home/lumpy/Work/STEEM/steem/build/programs/cli_wallet//cli_wallet --server-rpc-endpoint  ws://127.0.0.1:8090 --cert-auth  _default --rpc-tls-endpoint  127.0.0.1:8092 --rpc-tls-cert  server.pem --rpc-http-endpoint  127.0.0.1:8093 --wallet-file  wallet.json --chain-id  18dcf0a285365fc58b71f18b3d3fec954aa0c141c44e4e5cb4cf777b9eab274e']`
+2019-04-09 17:45:18,776 [INFO] Sending set_password "testpassword" 
+
+2019-04-09 17:45:22,283 [INFO] Sending unlock "testpassword" 
+
+2019-04-09 17:45:25,785 [INFO] Sending import_key "5JNHfZYKGaomSFvd4NUdQ9qMcEAC43kujbfjueTHpVapX1Kzq2n" 
+
+2019-04-09 17:45:29,329 [INFO] Sending create_account "initminer" "eaaaaaaaaaaa" "" "true" 
+
+2019-04-09 17:45:33,123 [INFO] Transaction `730dad63db10f96e82f274376eee2f9664c24589` founded in block `49`
+2019-04-09 17:45:33,127 [INFO] Sending create_account "initminer" "faaaaaaaaaaa" "" "true" 
+
+2019-04-09 17:45:39,121 [INFO] Transaction `ac11ae775d784263df398f35beb2b56875a07c67` founded in block `51`
+2019-04-09 17:45:39,122 [INFO] Sending transfer_to_vesting "initminer" "eaaaaaaaaaaa" "20.000 TESTS" "true" 
+
+2019-04-09 17:45:45,115 [INFO] Transaction `7363e3045eeca752621f4f1f47ceadae1e313338` founded in block `53`
+2019-04-09 17:45:45,115 [INFO] Sending transfer "initminer" "eaaaaaaaaaaa" "20.000 TESTS" "initial transfer" "true" 
+
+2019-04-09 17:45:51,114 [INFO] Transaction `ec713eb8ccd8faa687eaef7cdb531a5be4db0886` founded in block `55`
+2019-04-09 17:45:51,114 [INFO] Sending transfer "initminer" "eaaaaaaaaaaa" "20.000 TBD" "initial transfer" "true" 
+
+2019-04-09 17:45:57,115 [INFO] Transaction `1c427dfa82b1de4bc0087f4bc1813c5198700521` founded in block `57`
+2019-04-09 17:45:57,115 [INFO] Sending list_proposals "eaaaaaaaaaaa" "creator" "asc" 20 "all" "" 
+
+2019-04-09 17:46:00,617 [INFO] proposals_before 0
+2019-04-09 17:46:00,617 [INFO] Sending post_comment "eaaaaaaaaaaa" "lorem" "" "ipsum" "Lorem Ipsum" "body" "{}" "true" 
+
+2019-04-09 17:46:06,119 [INFO] Transaction `2d0da8a8adb0701c40c2ee2757165bddcfe0f661` founded in block `60`
+2019-04-09 17:46:06,119 [INFO] Sending create_proposal "eaaaaaaaaaaa" "faaaaaaaaaaa" "2029-06-02T00:00:00" "2029-08-01T00:00:00" "1.000 TBD" "this is subject" "lorem" "true" 
+
+2019-04-09 17:46:12,127 [INFO] Transaction `643fc68207a4d41947483ccea6c9b08311935d53` founded in block `62`
+2019-04-09 17:46:12,127 [INFO] Sending list_proposals "eaaaaaaaaaaa" "creator" "asc" 50 "all" "" 
+
+2019-04-09 17:46:15,630 [INFO] Sending list_proposals "eaaaaaaaaaaa" "creator" "asc" 20 "all" "" 
+
+2019-04-09 17:46:19,133 [INFO] proposals_middle 1
+2019-04-09 17:46:19,134 [INFO] Sending remove_proposal "eaaaaaaaaaaa" [2] "true" "true" 
+
+2019-04-09 17:46:24,120 [INFO] Transaction `ba54ff32b528e6306bfe4e52311bb4dd8b897555` founded in block `66`
+2019-04-09 17:46:24,121 [INFO] Sending list_proposals "eaaaaaaaaaaa" "creator" "asc" 20 "all" "" 
+
+2019-04-09 17:46:27,623 [INFO] proposals_after 0
+2019-04-09 17:46:27,623 [INFO] TEST `./tests/002_remove_proposal.py` passed

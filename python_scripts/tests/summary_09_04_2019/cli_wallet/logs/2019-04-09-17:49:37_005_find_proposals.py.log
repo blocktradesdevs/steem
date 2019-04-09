@@ -1,0 +1,26 @@
+2019-04-09 17:49:37,301 [INFO] Calling cli_wallet with args `['/home/lumpy/Work/STEEM/steem/build/programs/cli_wallet//cli_wallet --server-rpc-endpoint  ws://127.0.0.1:8090 --cert-auth  _default --rpc-tls-endpoint  127.0.0.1:8092 --rpc-tls-cert  server.pem --rpc-http-endpoint  127.0.0.1:8093 --wallet-file  wallet.json --chain-id  18dcf0a285365fc58b71f18b3d3fec954aa0c141c44e4e5cb4cf777b9eab274e']`
+2019-04-09 17:49:37,303 [INFO] Sending set_password "testpassword" 
+
+2019-04-09 17:49:40,810 [INFO] Sending unlock "testpassword" 
+
+2019-04-09 17:49:44,311 [INFO] Sending import_key "5JNHfZYKGaomSFvd4NUdQ9qMcEAC43kujbfjueTHpVapX1Kzq2n" 
+
+2019-04-09 17:49:47,837 [INFO] Sending find_proposals [1] 
+
+2019-04-09 17:49:51,340 [INFO] Sending find_proposals [2] 
+
+2019-04-09 17:49:54,842 [INFO] Sending find_proposals [3] 
+
+2019-04-09 17:49:58,344 [INFO] Sending find_proposals [1, 2] 
+
+2019-04-09 17:50:01,848 [INFO] Sending find_proposals [1, 2, 3] 
+
+2019-04-09 17:50:05,352 [INFO] Sending find_proposals [2, 3] 
+
+2019-04-09 17:50:08,854 [INFO] Sending find_proposals [3, 4] 
+
+2019-04-09 17:50:12,357 [INFO] Sending find_proposals [4, 5] 
+
+2019-04-09 17:50:15,859 [INFO] Sending find_proposals [1, 2, 3, 4, 5, 6, 7] 
+
+2019-04-09 17:50:19,363 [INFO] TEST `./tests/005_find_proposals.py` passed

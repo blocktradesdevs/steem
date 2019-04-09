@@ -1,0 +1,18 @@
+2019-04-09 18:08:00,668 - SPS Tester via steempy - list proposals test - INFO - Performing SPS tests
+2019-04-09 18:08:00,672 - SPS Tester via steempy - list proposals test - INFO - Running steemd via /home/lumpy/Work/STEEM/steem/build/programs/steemd/steemd in /home/lumpy/Work/STEEM/steem/build/programs/steemd/src/ with config /home/lumpy/Work/STEEM/steem/build/programs/steemd/config.ini
+2019-04-09 18:08:00,674 - SPS Tester via steempy - list proposals test - INFO - Using node at: http://127.0.0.1:8090
+2019-04-09 18:08:00,674 - SPS Tester via steempy - list proposals test - INFO - Using private-key: 5JNHfZYKGaomSFvd4NUdQ9qMcEAC43kujbfjueTHpVapX1Kzq2n
+2019-04-09 18:08:14,766 - SPS Tester via steempy - list proposals test - INFO - Creating initial post...
+2019-04-09 18:08:15,268 - SPS Tester via steempy - list proposals test - INFO - Creating proposals...
+2019-04-09 18:08:54,202 - SPS Tester via steempy - list proposals test - INFO - Testing direction ascending with start field given
+2019-04-09 18:08:54,206 - SPS Tester via steempy - list proposals test - INFO - Testing direction descending with start field given
+2019-04-09 18:08:54,209 - SPS Tester via steempy - list proposals test - INFO - Testing empty start string and ascending direction
+2019-04-09 18:08:54,212 - SPS Tester via steempy - list proposals test - INFO - Testing empty start string and descending direction
+2019-04-09 18:08:54,214 - SPS Tester via steempy - list proposals test - INFO - Testing empty start string and ascenging direction and last_id set
+2019-04-09 18:08:54,215 - SPS Tester via steempy - list proposals test - INFO - Testing empty start string and descending direction and last_id set
+2019-04-09 18:08:54,216 - SPS Tester via steempy - list proposals test - INFO - Testing not empty start string and ascenging direction and last_id set
+2019-04-09 18:08:54,218 - SPS Tester via steempy - list proposals test - INFO - Testing not empty start string and descending direction and last_id set
+2019-04-09 18:08:54,220 - SPS Tester via steempy - list proposals test - INFO - Testing not empty start string and ascending direction and last_id set to the last element
+2019-04-09 18:08:54,221 - SPS Tester via steempy - list proposals test - INFO - Testing not empty start string and descending direction and last_id set to the first element
+2019-04-09 18:08:54,223 - SPS Tester via steempy - list proposals test - INFO - Testing not empty start string and ascending direction and last_id set to the first element
+2019-04-09 18:08:54,225 - SPS Tester via steempy - list proposals test - INFO - Testing not empty start string and descending direction and last_id set to the last element

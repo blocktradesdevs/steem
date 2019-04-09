@@ -1,0 +1,4 @@
+2019-04-09 18:15:59,653 - STEEM Runner Py - INFO - *** START NODE at http://127.0.0.1:8090 in /home/lumpy/Work/STEEM/steem/build/programs/steemd/src/
+2019-04-09 18:15:59,653 - STEEM Runner Py - INFO - Running steemd with command: screen -m -d -L -c /home/lumpy/Work/STEEM/steem/build/programs/steemd/src//steem_screen-8090.cfg -S steem-8090-2019-04-09 /home/lumpy/Work/STEEM/steem/build/programs/steemd/steemd -d /home/lumpy/Work/STEEM/steem/build/programs/steemd/src/ --advanced-benchmark --sps-remove-threshold -1 --enable-stale-production
+2019-04-09 18:16:11,743 - STEEM Runner Py - INFO - Node at http://127.0.0.1:8090 in /home/lumpy/Work/STEEM/steem/build/programs/steemd/src/ is up and running...
+2019-04-09 18:18:24,927 - STEEM Runner Py - INFO - Stopping node at http://127.0.0.1:8090

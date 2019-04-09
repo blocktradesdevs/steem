@@ -1,0 +1,23 @@
+2019-04-09 18:15:47,361 - SPS Tester via steempy - proposal payment test - INFO - Performing SPS tests
+2019-04-09 18:15:59,619 - SPS Tester via steempy - proposal payment test - INFO - Performing SPS tests
+2019-04-09 18:15:59,622 - SPS Tester via steempy - proposal payment test - INFO - Running steemd via /home/lumpy/Work/STEEM/steem/build/programs/steemd/steemd in /home/lumpy/Work/STEEM/steem/build/programs/steemd/src/ with config /home/lumpy/Work/STEEM/steem/build/programs/steemd/config.ini
+2019-04-09 18:15:59,628 - SPS Tester via steempy - proposal payment test - INFO - Using node at: http://127.0.0.1:8090
+2019-04-09 18:15:59,629 - SPS Tester via steempy - proposal payment test - INFO - Using private-key: 5JNHfZYKGaomSFvd4NUdQ9qMcEAC43kujbfjueTHpVapX1Kzq2n
+2019-04-09 18:15:59,629 - SPS Tester via steempy - proposal payment test - INFO - ['5JNHfZYKGaomSFvd4NUdQ9qMcEAC43kujbfjueTHpVapX1Kzq2n', '5JBuekd1sVXXK3wBu6nvPB1LWypZ83BYdu7tGcUNYVd42xQGGh1']
+2019-04-09 18:16:12,031 - SPS Tester via steempy - proposal payment test - INFO - Creating account: tester001
+2019-04-09 18:16:30,730 - SPS Tester via steempy - proposal payment test - INFO - Transfer to vesting from initminer to tester001 amount 300.000 TESTS
+2019-04-09 18:16:49,463 - SPS Tester via steempy - proposal payment test - INFO - Transfer from initminer to tester001 amount 400.000 TESTS
+2019-04-09 18:17:08,105 - SPS Tester via steempy - proposal payment test - INFO - Transfer from initminer to tester001 amount 400.000 TBD
+2019-04-09 18:17:26,796 - SPS Tester via steempy - proposal payment test - INFO - Creating posts...
+2019-04-09 18:17:26,796 - SPS Tester via steempy - proposal payment test - INFO - New post ==> (Steempy proposal title [tester001],Steempy proposal body [tester001],tester001,steempy-proposal-title-tester001,proposals)
+2019-04-09 18:17:45,327 - SPS Tester via steempy - proposal payment test - INFO - Creating proposals...
+2019-04-09 18:17:45,327 - SPS Tester via steempy - proposal payment test - INFO - New proposal ==> (tester001,tester001,2019-04-10T16:17:45,2019-04-12T16:17:45,24.000 TBD,Proposal from account tester001 0/5,steempy-proposal-title-tester001)
+2019-04-09 18:17:45,778 - SPS Tester via steempy - proposal payment test - INFO - New proposal ==> (tester001,tester001,2019-04-10T16:17:45,2019-04-12T16:17:45,24.000 TBD,Proposal from account tester001 1/5,steempy-proposal-title-tester001)
+2019-04-09 18:17:46,394 - SPS Tester via steempy - proposal payment test - INFO - New proposal ==> (tester001,tester001,2019-04-10T16:17:45,2019-04-12T16:17:45,24.000 TBD,Proposal from account tester001 2/5,steempy-proposal-title-tester001)
+2019-04-09 18:17:46,807 - SPS Tester via steempy - proposal payment test - INFO - New proposal ==> (tester001,tester001,2019-04-10T16:17:45,2019-04-12T16:17:45,24.000 TBD,Proposal from account tester001 3/5,steempy-proposal-title-tester001)
+2019-04-09 18:17:47,412 - SPS Tester via steempy - proposal payment test - INFO - New proposal ==> (tester001,tester001,2019-04-10T16:17:45,2019-04-12T16:17:45,24.000 TBD,Proposal from account tester001 4/5,steempy-proposal-title-tester001)
+2019-04-09 18:18:06,240 - SPS Tester via steempy - proposal payment test - INFO - Listing proposals: [0, 1, 2, 3, 4]
+2019-04-09 18:18:06,240 - SPS Tester via steempy - proposal payment test - INFO - Voting proposals...
+2019-04-09 18:18:24,927 - SPS Tester via steempy - proposal payment test - INFO - All
+2019-04-09 18:18:24,927 - SPS Tester via steempy - proposal payment test - INFO - List voted proposals...
+2019-04-09 18:18:24,927 - SPS Tester via steempy - proposal payment test - ERROR - Exception: list_voter_proposals() takes 6 positional arguments but 7 were given

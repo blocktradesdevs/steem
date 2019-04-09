@@ -1,0 +1,31 @@
+2019-04-09 18:22:44,422 - SPS Tester via steempy - proposal payment test - INFO - Performing SPS tests
+2019-04-09 18:22:44,426 - SPS Tester via steempy - proposal payment test - INFO - Using node at: http://127.0.0.1:8090/
+2019-04-09 18:22:44,426 - SPS Tester via steempy - proposal payment test - INFO - Using private-key: 5JNHfZYKGaomSFvd4NUdQ9qMcEAC43kujbfjueTHpVapX1Kzq2n
+2019-04-09 18:22:56,812 - SPS Tester via steempy - proposal payment test - INFO - Creating account: tester0
+2019-04-09 18:22:57,500 - SPS Tester via steempy - proposal payment test - INFO - Creating account: tester1
+2019-04-09 18:22:57,964 - SPS Tester via steempy - proposal payment test - INFO - Creating account: tester2
+2019-04-09 18:22:58,579 - SPS Tester via steempy - proposal payment test - INFO - Creating account: tester3
+2019-04-09 18:22:59,164 - SPS Tester via steempy - proposal payment test - INFO - Creating account: tester4
+2019-04-09 18:23:05,596 - SPS Tester via steempy - proposal payment test - INFO - Transfer to vesting from initminer to tester0 amount 1000 TESTS
+2019-04-09 18:23:06,194 - SPS Tester via steempy - proposal payment test - INFO - Transfer to vesting from initminer to tester1 amount 1000 TESTS
+2019-04-09 18:23:06,819 - SPS Tester via steempy - proposal payment test - INFO - Transfer to vesting from initminer to tester2 amount 1000 TESTS
+2019-04-09 18:23:07,343 - SPS Tester via steempy - proposal payment test - INFO - Transfer to vesting from initminer to tester3 amount 1000 TESTS
+2019-04-09 18:23:07,828 - SPS Tester via steempy - proposal payment test - INFO - Transfer to vesting from initminer to tester4 amount 1000 TESTS
+2019-04-09 18:23:14,387 - SPS Tester via steempy - proposal payment test - INFO - Transfer from initminer to tester0 amount 1000 TESTS
+2019-04-09 18:23:15,231 - SPS Tester via steempy - proposal payment test - INFO - Transfer from initminer to tester1 amount 1000 TESTS
+2019-04-09 18:23:15,997 - SPS Tester via steempy - proposal payment test - INFO - Transfer from initminer to tester2 amount 1000 TESTS
+2019-04-09 18:23:16,461 - SPS Tester via steempy - proposal payment test - INFO - Transfer from initminer to tester3 amount 1000 TESTS
+2019-04-09 18:23:17,086 - SPS Tester via steempy - proposal payment test - INFO - Transfer from initminer to tester4 amount 1000 TESTS
+2019-04-09 18:23:23,920 - SPS Tester via steempy - proposal payment test - INFO - Transfer from initminer to tester0 amount 1000 TBD
+2019-04-09 18:23:24,445 - SPS Tester via steempy - proposal payment test - INFO - Transfer from initminer to tester1 amount 1000 TBD
+2019-04-09 18:23:25,021 - SPS Tester via steempy - proposal payment test - INFO - Transfer from initminer to tester2 amount 1000 TBD
+2019-04-09 18:23:25,525 - SPS Tester via steempy - proposal payment test - INFO - Transfer from initminer to tester3 amount 1000 TBD
+2019-04-09 18:23:26,009 - SPS Tester via steempy - proposal payment test - INFO - Transfer from initminer to tester4 amount 1000 TBD
+2019-04-09 18:23:32,488 - SPS Tester via steempy - proposal payment test - INFO - Creating posts...
+2019-04-09 18:23:41,521 - SPS Tester via steempy - proposal payment test - INFO - Generating dates...
+2019-04-09 18:23:41,525 - SPS Tester via steempy - proposal payment test - INFO - Creating proposals...
+2019-04-09 18:24:02,406 - SPS Tester via steempy - proposal payment test - INFO - Listing proposals...
+2019-04-09 18:24:02,411 - SPS Tester via steempy - proposal payment test - INFO - Voting proposals for 25 proposals...
+2019-04-09 18:24:22,853 - SPS Tester via steempy - proposal payment test - INFO - Generating blocks ...
+2019-04-09 18:24:37,714 - SPS Tester via steempy - proposal payment test - INFO - Listing proposals...
+2019-04-09 18:24:37,715 - SPS Tester via steempy - proposal payment test - INFO - Listing voter proposals...
