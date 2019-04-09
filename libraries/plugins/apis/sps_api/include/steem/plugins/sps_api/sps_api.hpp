@@ -198,6 +198,10 @@ namespace steem { namespace plugins { namespace sps {
     uint16_t limit = 0;
     // result will contain only data with status flag set to this value
     proposal_status status = proposal_status::all;
+    /** optional ID of last displayed object. Allows to solve paging data problem when start values
+        are not unique.
+    */
+    fc::optional<api_id_type> last_id;
   };
 
   // Return type for list_voter_proposals
@@ -273,5 +277,6 @@ FC_REFLECT(steem::plugins::sps::list_voter_proposals_args,
   (order_direction)
   (limit)
   (status)
+  (last_id)
   );
 
