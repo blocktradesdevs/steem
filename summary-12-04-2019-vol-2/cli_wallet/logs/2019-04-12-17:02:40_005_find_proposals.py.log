@@ -1,0 +1,144 @@
+2019-04-12 17:02:40,274 [INFO] Calling cli_wallet with args `['/home/lumpy/Work/STEEM/steem/build/programs/cli_wallet//cli_wallet --server-rpc-endpoint  ws://127.0.0.1:8090 --cert-auth  _default --rpc-tls-endpoint  127.0.0.1:8092 --rpc-tls-cert  server.pem --rpc-http-endpoint  127.0.0.1:8093 --wallet-file  wallet.json --chain-id  18dcf0a285365fc58b71f18b3d3fec954aa0c141c44e4e5cb4cf777b9eab274e']`
+2019-04-12 17:02:40,275 [INFO] Sending set_password "testpassword" 
+
+2019-04-12 17:02:43,782 [INFO] Sending unlock "testpassword" 
+
+2019-04-12 17:02:47,283 [INFO] Sending import_key "5JNHfZYKGaomSFvd4NUdQ9qMcEAC43kujbfjueTHpVapX1Kzq2n" 
+
+2019-04-12 17:02:50,807 [INFO] Sending find_proposals [1] 
+
+2019-04-12 17:02:54,310 [INFO] Call response: unlocked >>> 
+unlocked >>> 170807ms wallet.cpp:2568               find_proposals       ] args.id_set: [1] 
+170808ms websocket_api.cpp:102         on_message           ] message: {"jsonrpc":"2.0","result":[{"id":1,"creator":"caaaaaaaaaaa","receiver":"daaaaaaaaaaa","start_date":"2029-06-02T00:00:00","end_date":"2029-08-01T00:00:00","daily_pay":{"amount":"1000","precision":3,"nai":"@@000000013"},"subject":"this is subject","permlink":"lorem","total_votes":0,"status":"inactive"}],"id":1} 
+find_proposals [1] 
+[{
+    "id": 1,
+    "creator": "caaaaaaaaaaa",
+    "receiver": "daaaaaaaaaaa",
+    "start_date": "2029-06-02T00:00:00",
+    "end_date": "2029-08-01T00:00:00",
+    "daily_pay": {
+      "amount": "1000",
+      "precision": 3,
+      "nai": "@@000000013"
+    },
+    "subject": "this is subject",
+    "permlink": "lorem",
+    "total_votes": 0,
+    "status": "inactive"
+  }
+]
+
+2019-04-12 17:02:54,311 [INFO] Sending find_proposals [2] 
+
+2019-04-12 17:02:57,813 [INFO] Call response: unlocked >>> 
+unlocked >>> 174311ms wallet.cpp:2568               find_proposals       ] args.id_set: [2] 
+174312ms websocket_api.cpp:102         on_message           ] message: {"jsonrpc":"2.0","result":[],"id":2} 
+find_proposals [2] 
+[]
+
+2019-04-12 17:02:57,814 [INFO] Sending find_proposals [3] 
+
+2019-04-12 17:03:01,316 [INFO] Call response: unlocked >>> 
+unlocked >>> 177814ms wallet.cpp:2568               find_proposals       ] args.id_set: [3] 
+177815ms websocket_api.cpp:102         on_message           ] message: {"jsonrpc":"2.0","result":[],"id":3} 
+find_proposals [3] 
+[]
+
+2019-04-12 17:03:01,317 [INFO] Sending find_proposals [1, 2] 
+
+2019-04-12 17:03:04,819 [INFO] Call response: unlocked >>> 
+unlocked >>> 181317ms wallet.cpp:2568               find_proposals       ] args.id_set: [1,2] 
+181318ms websocket_api.cpp:102         on_message           ] message: {"jsonrpc":"2.0","result":[{"id":1,"creator":"caaaaaaaaaaa","receiver":"daaaaaaaaaaa","start_date":"2029-06-02T00:00:00","end_date":"2029-08-01T00:00:00","daily_pay":{"amount":"1000","precision":3,"nai":"@@000000013"},"subject":"this is subject","permlink":"lorem","total_votes":0,"status":"inactive"}],"id":4} 
+find_proposals [1, 2] 
+[{
+    "id": 1,
+    "creator": "caaaaaaaaaaa",
+    "receiver": "daaaaaaaaaaa",
+    "start_date": "2029-06-02T00:00:00",
+    "end_date": "2029-08-01T00:00:00",
+    "daily_pay": {
+      "amount": "1000",
+      "precision": 3,
+      "nai": "@@000000013"
+    },
+    "subject": "this is subject",
+    "permlink": "lorem",
+    "total_votes": 0,
+    "status": "inactive"
+  }
+]
+
+2019-04-12 17:03:04,820 [INFO] Sending find_proposals [1, 2, 3] 
+
+2019-04-12 17:03:08,323 [INFO] Call response: unlocked >>> 
+unlocked >>> 184821ms wallet.cpp:2568               find_proposals       ] args.id_set: [1,2,3] 
+184822ms websocket_api.cpp:102         on_message           ] message: {"jsonrpc":"2.0","result":[{"id":1,"creator":"caaaaaaaaaaa","receiver":"daaaaaaaaaaa","start_date":"2029-06-02T00:00:00","end_date":"2029-08-01T00:00:00","daily_pay":{"amount":"1000","precision":3,"nai":"@@000000013"},"subject":"this is subject","permlink":"lorem","total_votes":0,"status":"inactive"}],"id":5} 
+find_proposals [1, 2, 3] 
+[{
+    "id": 1,
+    "creator": "caaaaaaaaaaa",
+    "receiver": "daaaaaaaaaaa",
+    "start_date": "2029-06-02T00:00:00",
+    "end_date": "2029-08-01T00:00:00",
+    "daily_pay": {
+      "amount": "1000",
+      "precision": 3,
+      "nai": "@@000000013"
+    },
+    "subject": "this is subject",
+    "permlink": "lorem",
+    "total_votes": 0,
+    "status": "inactive"
+  }
+]
+
+2019-04-12 17:03:08,324 [INFO] Sending find_proposals [2, 3] 
+
+2019-04-12 17:03:11,827 [INFO] Call response: unlocked >>> 
+unlocked >>> 188325ms wallet.cpp:2568               find_proposals       ] args.id_set: [2,3] 
+188326ms websocket_api.cpp:102         on_message           ] message: {"jsonrpc":"2.0","result":[],"id":6} 
+find_proposals [2, 3] 
+[]
+
+2019-04-12 17:03:11,827 [INFO] Sending find_proposals [3, 4] 
+
+2019-04-12 17:03:15,329 [INFO] Call response: unlocked >>> 
+unlocked >>> 191827ms wallet.cpp:2568               find_proposals       ] args.id_set: [3,4] 
+191827ms websocket_api.cpp:102         on_message           ] message: {"jsonrpc":"2.0","result":[],"id":7} 
+find_proposals [3, 4] 
+[]
+
+2019-04-12 17:03:15,329 [INFO] Sending find_proposals [4, 5] 
+
+2019-04-12 17:03:18,832 [INFO] Call response: unlocked >>> 
+unlocked >>> 195330ms wallet.cpp:2568               find_proposals       ] args.id_set: [4,5] 
+195331ms websocket_api.cpp:102         on_message           ] message: {"jsonrpc":"2.0","result":[],"id":8} 
+find_proposals [4, 5] 
+[]
+
+2019-04-12 17:03:18,833 [INFO] Sending find_proposals [1, 2, 3, 4, 5, 6, 7] 
+
+2019-04-12 17:03:22,336 [INFO] Call response: unlocked >>> 
+unlocked >>> 198833ms wallet.cpp:2568               find_proposals       ] args.id_set: [1,2,3,4,5,6,7] 
+198834ms websocket_api.cpp:102         on_message           ] message: {"jsonrpc":"2.0","result":[{"id":1,"creator":"caaaaaaaaaaa","receiver":"daaaaaaaaaaa","start_date":"2029-06-02T00:00:00","end_date":"2029-08-01T00:00:00","daily_pay":{"amount":"1000","precision":3,"nai":"@@000000013"},"subject":"this is subject","permlink":"lorem","total_votes":0,"status":"inactive"}],"id":9} 
+find_proposals [1, 2, 3, 4, 5, 6, 7] 
+[{
+    "id": 1,
+    "creator": "caaaaaaaaaaa",
+    "receiver": "daaaaaaaaaaa",
+    "start_date": "2029-06-02T00:00:00",
+    "end_date": "2029-08-01T00:00:00",
+    "daily_pay": {
+      "amount": "1000",
+      "precision": 3,
+      "nai": "@@000000013"
+    },
+    "subject": "this is subject",
+    "permlink": "lorem",
+    "total_votes": 0,
+    "status": "inactive"
+  }
+]
+
+2019-04-12 17:03:22,336 [INFO] TEST `./tests/005_find_proposals.py` passed

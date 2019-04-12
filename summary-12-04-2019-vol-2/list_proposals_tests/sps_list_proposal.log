@@ -1,0 +1,25 @@
+2019-04-12 17:21:57,892 - SPS-Tester-via-steempy - INFO - Performing SPS tests
+2019-04-12 17:21:57,896 - SPS-Tester-via-steempy - INFO - Running steemd via /home/lumpy/Work/STEEM/steem/build/programs/steemd/steemd in /home/lumpy/Work/STEEM/steem/build/programs/steemd/src/ with config /home/lumpy/Work/STEEM/steem/build/programs/steemd/config.ini
+2019-04-12 17:21:57,899 - SPS-Tester-via-steempy - INFO - Using node at: http://127.0.0.1:8090
+2019-04-12 17:21:57,899 - SPS-Tester-via-steempy - INFO - Using private-key: 5JNHfZYKGaomSFvd4NUdQ9qMcEAC43kujbfjueTHpVapX1Kzq2n
+2019-04-12 17:21:57,920 - SPS-Tester-via-steempy.Runner-Py - INFO - *** START NODE at http://127.0.0.1:8090 in /home/lumpy/Work/STEEM/steem/build/programs/steemd/src/
+2019-04-12 17:21:57,922 - SPS-Tester-via-steempy.Runner-Py - INFO - Running steemd with command: screen -m -d -L -c /home/lumpy/Work/STEEM/steem/build/programs/steemd/src//steem_screen-8090.cfg -S steem-8090-2019-04-12 /home/lumpy/Work/STEEM/steem/build/programs/steemd/steemd -d /home/lumpy/Work/STEEM/steem/build/programs/steemd/src/ --advanced-benchmark --sps-remove-threshold -1 --enable-stale-production
+2019-04-12 17:21:57,925 - SPS-Tester-via-steempy.Tools-Py - INFO - Waiting for 2 blocks to be produced...
+2019-04-12 17:22:10,632 - SPS-Tester-via-steempy.Runner-Py - INFO - Node at http://127.0.0.1:8090 in /home/lumpy/Work/STEEM/steem/build/programs/steemd/src/ is up and running...
+2019-04-12 17:22:11,817 - SPS-Tester-via-steempy - INFO - Creating initial post...
+2019-04-12 17:22:12,877 - SPS-Tester-via-steempy - INFO - Creating proposals...
+2019-04-12 17:22:50,786 - SPS-Tester-via-steempy - INFO - Testing direction ascending with start field given
+2019-04-12 17:22:50,791 - SPS-Tester-via-steempy - INFO - Testing direction descending with start field given
+2019-04-12 17:22:50,795 - SPS-Tester-via-steempy - INFO - Testing empty start string and ascending direction
+2019-04-12 17:22:50,797 - SPS-Tester-via-steempy - INFO - Testing empty start string and descending direction
+2019-04-12 17:22:50,798 - SPS-Tester-via-steempy - INFO - Testing empty start string and ascenging direction and last_id set
+2019-04-12 17:22:50,799 - SPS-Tester-via-steempy - INFO - Testing empty start string and descending direction and last_id set
+2019-04-12 17:22:50,800 - SPS-Tester-via-steempy - INFO - Testing not empty start string and ascenging direction and last_id set
+2019-04-12 17:22:50,802 - SPS-Tester-via-steempy - INFO - Testing not empty start string and descending direction and last_id set
+2019-04-12 17:22:50,804 - SPS-Tester-via-steempy - INFO - Testing not empty start string and ascending direction and last_id set to the last element
+2019-04-12 17:22:50,805 - SPS-Tester-via-steempy - INFO - Testing not empty start string and descending direction and last_id set to the first element
+2019-04-12 17:22:50,806 - SPS-Tester-via-steempy - INFO - Testing not empty start string and ascending direction and last_id set to the first element
+2019-04-12 17:22:50,808 - SPS-Tester-via-steempy - INFO - Testing not empty start string and descending direction and last_id set to the last element
+2019-04-12 17:22:50,810 - SPS-Tester-via-steempy.Runner-Py - INFO - Stopping node at http://127.0.0.1:8090
+2019-04-12 17:22:50,811 - SPS-Tester-via-steempy.Tools-Py - INFO - Terminating steem process running on port 8090
+2019-04-12 17:22:50,854 - SPS-Tester-via-steempy.Tools-Py - INFO - Done...

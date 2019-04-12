@@ -1,0 +1,692 @@
+2019-04-12 16:59:30,775 [INFO] Calling cli_wallet with args `['/home/lumpy/Work/STEEM/steem/build/programs/cli_wallet//cli_wallet --server-rpc-endpoint  ws://127.0.0.1:8090 --cert-auth  _default --rpc-tls-endpoint  127.0.0.1:8092 --rpc-tls-cert  server.pem --rpc-http-endpoint  127.0.0.1:8093 --wallet-file  wallet.json --chain-id  18dcf0a285365fc58b71f18b3d3fec954aa0c141c44e4e5cb4cf777b9eab274e']`
+2019-04-12 16:59:30,777 [INFO] Sending set_password "testpassword" 
+
+2019-04-12 16:59:34,283 [INFO] Sending unlock "testpassword" 
+
+2019-04-12 16:59:37,785 [INFO] Sending import_key "5JNHfZYKGaomSFvd4NUdQ9qMcEAC43kujbfjueTHpVapX1Kzq2n" 
+
+2019-04-12 16:59:41,307 [INFO] Sending list_proposals "" "creator" "asc" 10 "active" "" 
+
+2019-04-12 16:59:44,809 [INFO] Call response: unlocked >>> 
+unlocked >>> 3581307ms wallet.cpp:2498               list_proposals       ] args.start:  
+3581307ms wallet.cpp:2499               list_proposals       ] args.order_by: by_creator 
+3581307ms wallet.cpp:2500               list_proposals       ] args.order_direction: direction_ascending 
+3581307ms wallet.cpp:2501               list_proposals       ] args.limit: 10 
+3581307ms wallet.cpp:2502               list_proposals       ] args.status: active 
+3581307ms wallet.cpp:2503               list_proposals       ] args.last_id:  
+3581308ms websocket_api.cpp:102         on_message           ] message: {"jsonrpc":"2.0","result":[],"id":1} 
+list_proposals "" "creator" "asc" 10 "active" "" 
+[]
+
+2019-04-12 16:59:44,809 [INFO] Sending list_proposals "" "creator" "asc" 10 "inactive" "" 
+
+2019-04-12 16:59:48,312 [INFO] Call response: unlocked >>> 
+unlocked >>> 3584809ms wallet.cpp:2498               list_proposals       ] args.start:  
+3584809ms wallet.cpp:2499               list_proposals       ] args.order_by: by_creator 
+3584810ms wallet.cpp:2500               list_proposals       ] args.order_direction: direction_ascending 
+3584810ms wallet.cpp:2501               list_proposals       ] args.limit: 10 
+3584810ms wallet.cpp:2502               list_proposals       ] args.status: inactive 
+3584810ms wallet.cpp:2503               list_proposals       ] args.last_id:  
+3584810ms websocket_api.cpp:102         on_message           ] message: {"jsonrpc":"2.0","result":[{"id":0,"creator":"aaaaaaaaaaaa","receiver":"baaaaaaaaaaa","start_date":"2029-06-02T00:00:00","end_date":"2029-08-01T00:00:00","daily_pay":{"amount":"1000","precision":3,"nai":"@@000000013"},"subject":"this is subject","permlink":"lorem","total_votes":0,"status":"inactive"},{"id":1,"creator":"caaaaaaaaaaa","receiver":"daaaaaaaaaaa","start_date":"2029-06-02T00:00:00","end_date":"2029-08-01T00:00:00","daily_pay":{"amount":"1000","precision":3,"nai":"@@000000013"},"subject":"this is subject","permlink":"lorem","total_votes":0,"status":"inactive"}],"id":2} 
+list_proposals "" "creator" "asc" 10 "inactive" "" 
+[{
+    "id": 0,
+    "creator": "aaaaaaaaaaaa",
+    "receiver": "baaaaaaaaaaa",
+    "start_date": "2029-06-02T00:00:00",
+    "end_date": "2029-08-01T00:00:00",
+    "daily_pay": {
+      "amount": "1000",
+      "precision": 3,
+      "nai": "@@000000013"
+    },
+    "subject": "this is subject",
+    "permlink": "lorem",
+    "total_votes": 0,
+    "status": "inactive"
+  },{
+    "id": 1,
+    "creator": "caaaaaaaaaaa",
+    "receiver": "daaaaaaaaaaa",
+    "start_date": "2029-06-02T00:00:00",
+    "end_date": "2029-08-01T00:00:00",
+    "daily_pay": {
+      "amount": "1000",
+      "precision": 3,
+      "nai": "@@000000013"
+    },
+    "subject": "this is subject",
+    "permlink": "lorem",
+    "total_votes": 0,
+    "status": "inactive"
+  }
+]
+
+2019-04-12 16:59:48,313 [INFO] Sending list_proposals "" "creator" "asc" 10 "all" "" 
+
+2019-04-12 16:59:51,817 [INFO] Call response: unlocked >>> 
+unlocked >>> 3588314ms wallet.cpp:2498               list_proposals       ] args.start:  
+3588314ms wallet.cpp:2499               list_proposals       ] args.order_by: by_creator 
+3588314ms wallet.cpp:2500               list_proposals       ] args.order_direction: direction_ascending 
+3588314ms wallet.cpp:2501               list_proposals       ] args.limit: 10 
+3588314ms wallet.cpp:2502               list_proposals       ] args.status: all 
+3588314ms wallet.cpp:2503               list_proposals       ] args.last_id:  
+3588315ms websocket_api.cpp:102         on_message           ] message: {"jsonrpc":"2.0","result":[{"id":0,"creator":"aaaaaaaaaaaa","receiver":"baaaaaaaaaaa","start_date":"2029-06-02T00:00:00","end_date":"2029-08-01T00:00:00","daily_pay":{"amount":"1000","precision":3,"nai":"@@000000013"},"subject":"this is subject","permlink":"lorem","total_votes":0,"status":"inactive"},{"id":1,"creator":"caaaaaaaaaaa","receiver":"daaaaaaaaaaa","start_date":"2029-06-02T00:00:00","end_date":"2029-08-01T00:00:00","daily_pay":{"amount":"1000","precision":3,"nai":"@@000000013"},"subject":"this is subject","permlink":"lorem","total_votes":0,"status":"inactive"}],"id":3} 
+list_proposals "" "creator" "asc" 10 "all" "" 
+[{
+    "id": 0,
+    "creator": "aaaaaaaaaaaa",
+    "receiver": "baaaaaaaaaaa",
+    "start_date": "2029-06-02T00:00:00",
+    "end_date": "2029-08-01T00:00:00",
+    "daily_pay": {
+      "amount": "1000",
+      "precision": 3,
+      "nai": "@@000000013"
+    },
+    "subject": "this is subject",
+    "permlink": "lorem",
+    "total_votes": 0,
+    "status": "inactive"
+  },{
+    "id": 1,
+    "creator": "caaaaaaaaaaa",
+    "receiver": "daaaaaaaaaaa",
+    "start_date": "2029-06-02T00:00:00",
+    "end_date": "2029-08-01T00:00:00",
+    "daily_pay": {
+      "amount": "1000",
+      "precision": 3,
+      "nai": "@@000000013"
+    },
+    "subject": "this is subject",
+    "permlink": "lorem",
+    "total_votes": 0,
+    "status": "inactive"
+  }
+]
+
+2019-04-12 16:59:51,818 [INFO] Sending list_proposals "" "creator" "desc" 10 "active" "" 
+
+2019-04-12 16:59:55,321 [INFO] Call response: unlocked >>> 
+unlocked >>> 3591819ms wallet.cpp:2498               list_proposals       ] args.start:  
+3591819ms wallet.cpp:2499               list_proposals       ] args.order_by: by_creator 
+3591819ms wallet.cpp:2500               list_proposals       ] args.order_direction: direction_descending 
+3591819ms wallet.cpp:2501               list_proposals       ] args.limit: 10 
+3591819ms wallet.cpp:2502               list_proposals       ] args.status: active 
+3591819ms wallet.cpp:2503               list_proposals       ] args.last_id:  
+3591820ms websocket_api.cpp:102         on_message           ] message: {"jsonrpc":"2.0","result":[],"id":4} 
+list_proposals "" "creator" "desc" 10 "active" "" 
+[]
+
+2019-04-12 16:59:55,322 [INFO] Sending list_proposals "" "creator" "desc" 10 "inactive" "" 
+
+2019-04-12 16:59:58,826 [INFO] Call response: unlocked >>> 
+unlocked >>> 3595322ms wallet.cpp:2498               list_proposals       ] args.start:  
+3595322ms wallet.cpp:2499               list_proposals       ] args.order_by: by_creator 
+3595322ms wallet.cpp:2500               list_proposals       ] args.order_direction: direction_descending 
+3595322ms wallet.cpp:2501               list_proposals       ] args.limit: 10 
+3595322ms wallet.cpp:2502               list_proposals       ] args.status: inactive 
+3595322ms wallet.cpp:2503               list_proposals       ] args.last_id:  
+3595323ms websocket_api.cpp:102         on_message           ] message: {"jsonrpc":"2.0","result":[{"id":1,"creator":"caaaaaaaaaaa","receiver":"daaaaaaaaaaa","start_date":"2029-06-02T00:00:00","end_date":"2029-08-01T00:00:00","daily_pay":{"amount":"1000","precision":3,"nai":"@@000000013"},"subject":"this is subject","permlink":"lorem","total_votes":0,"status":"inactive"},{"id":0,"creator":"aaaaaaaaaaaa","receiver":"baaaaaaaaaaa","start_date":"2029-06-02T00:00:00","end_date":"2029-08-01T00:00:00","daily_pay":{"amount":"1000","precision":3,"nai":"@@000000013"},"subject":"this is subject","permlink":"lorem","total_votes":0,"status":"inactive"}],"id":5} 
+list_proposals "" "creator" "desc" 10 "inactive" "" 
+[{
+    "id": 1,
+    "creator": "caaaaaaaaaaa",
+    "receiver": "daaaaaaaaaaa",
+    "start_date": "2029-06-02T00:00:00",
+    "end_date": "2029-08-01T00:00:00",
+    "daily_pay": {
+      "amount": "1000",
+      "precision": 3,
+      "nai": "@@000000013"
+    },
+    "subject": "this is subject",
+    "permlink": "lorem",
+    "total_votes": 0,
+    "status": "inactive"
+  },{
+    "id": 0,
+    "creator": "aaaaaaaaaaaa",
+    "receiver": "baaaaaaaaaaa",
+    "start_date": "2029-06-02T00:00:00",
+    "end_date": "2029-08-01T00:00:00",
+    "daily_pay": {
+      "amount": "1000",
+      "precision": 3,
+      "nai": "@@000000013"
+    },
+    "subject": "this is subject",
+    "permlink": "lorem",
+    "total_votes": 0,
+    "status": "inactive"
+  }
+]
+
+2019-04-12 16:59:58,828 [INFO] Sending list_proposals "" "creator" "desc" 10 "all" "" 
+
+2019-04-12 17:00:02,331 [INFO] Call response: unlocked >>> 
+unlocked >>> 3598828ms wallet.cpp:2498               list_proposals       ] args.start:  
+3598828ms wallet.cpp:2499               list_proposals       ] args.order_by: by_creator 
+3598828ms wallet.cpp:2500               list_proposals       ] args.order_direction: direction_descending 
+3598828ms wallet.cpp:2501               list_proposals       ] args.limit: 10 
+3598828ms wallet.cpp:2502               list_proposals       ] args.status: all 
+3598828ms wallet.cpp:2503               list_proposals       ] args.last_id:  
+3598830ms websocket_api.cpp:102         on_message           ] message: {"jsonrpc":"2.0","result":[{"id":1,"creator":"caaaaaaaaaaa","receiver":"daaaaaaaaaaa","start_date":"2029-06-02T00:00:00","end_date":"2029-08-01T00:00:00","daily_pay":{"amount":"1000","precision":3,"nai":"@@000000013"},"subject":"this is subject","permlink":"lorem","total_votes":0,"status":"inactive"},{"id":0,"creator":"aaaaaaaaaaaa","receiver":"baaaaaaaaaaa","start_date":"2029-06-02T00:00:00","end_date":"2029-08-01T00:00:00","daily_pay":{"amount":"1000","precision":3,"nai":"@@000000013"},"subject":"this is subject","permlink":"lorem","total_votes":0,"status":"inactive"}],"id":6} 
+list_proposals "" "creator" "desc" 10 "all" "" 
+[{
+    "id": 1,
+    "creator": "caaaaaaaaaaa",
+    "receiver": "daaaaaaaaaaa",
+    "start_date": "2029-06-02T00:00:00",
+    "end_date": "2029-08-01T00:00:00",
+    "daily_pay": {
+      "amount": "1000",
+      "precision": 3,
+      "nai": "@@000000013"
+    },
+    "subject": "this is subject",
+    "permlink": "lorem",
+    "total_votes": 0,
+    "status": "inactive"
+  },{
+    "id": 0,
+    "creator": "aaaaaaaaaaaa",
+    "receiver": "baaaaaaaaaaa",
+    "start_date": "2029-06-02T00:00:00",
+    "end_date": "2029-08-01T00:00:00",
+    "daily_pay": {
+      "amount": "1000",
+      "precision": 3,
+      "nai": "@@000000013"
+    },
+    "subject": "this is subject",
+    "permlink": "lorem",
+    "total_votes": 0,
+    "status": "inactive"
+  }
+]
+
+2019-04-12 17:00:02,332 [INFO] Sending list_proposals "2019-03-01T00:00:00" "start_date" "asc" 10 "active" "" 
+
+2019-04-12 17:00:05,835 [INFO] Call response: unlocked >>> 
+unlocked >>> 2333ms wallet.cpp:2498               list_proposals       ] args.start: 2019-03-01T00:00:00 
+2333ms wallet.cpp:2499               list_proposals       ] args.order_by: by_start_date 
+2333ms wallet.cpp:2500               list_proposals       ] args.order_direction: direction_ascending 
+2333ms wallet.cpp:2501               list_proposals       ] args.limit: 10 
+2333ms wallet.cpp:2502               list_proposals       ] args.status: active 
+2333ms wallet.cpp:2503               list_proposals       ] args.last_id:  
+2334ms websocket_api.cpp:102         on_message           ] message: {"jsonrpc":"2.0","result":[],"id":7} 
+list_proposals "2019-03-01T00:00:00" "start_date" "asc" 10 "active" "" 
+[]
+
+2019-04-12 17:00:05,835 [INFO] Sending list_proposals "2019-03-01T00:00:00" "start_date" "asc" 10 "inactive" "" 
+
+2019-04-12 17:00:09,338 [INFO] Call response: unlocked >>> 
+unlocked >>> 5835ms wallet.cpp:2498               list_proposals       ] args.start: 2019-03-01T00:00:00 
+5835ms wallet.cpp:2499               list_proposals       ] args.order_by: by_start_date 
+5835ms wallet.cpp:2500               list_proposals       ] args.order_direction: direction_ascending 
+5835ms wallet.cpp:2501               list_proposals       ] args.limit: 10 
+5835ms wallet.cpp:2502               list_proposals       ] args.status: inactive 
+5835ms wallet.cpp:2503               list_proposals       ] args.last_id:  
+5836ms websocket_api.cpp:102         on_message           ] message: {"jsonrpc":"2.0","result":[{"id":0,"creator":"aaaaaaaaaaaa","receiver":"baaaaaaaaaaa","start_date":"2029-06-02T00:00:00","end_date":"2029-08-01T00:00:00","daily_pay":{"amount":"1000","precision":3,"nai":"@@000000013"},"subject":"this is subject","permlink":"lorem","total_votes":0,"status":"inactive"},{"id":1,"creator":"caaaaaaaaaaa","receiver":"daaaaaaaaaaa","start_date":"2029-06-02T00:00:00","end_date":"2029-08-01T00:00:00","daily_pay":{"amount":"1000","precision":3,"nai":"@@000000013"},"subject":"this is subject","permlink":"lorem","total_votes":0,"status":"inactive"}],"id":8} 
+list_proposals "2019-03-01T00:00:00" "start_date" "asc" 10 "inactive" "" 
+[{
+    "id": 0,
+    "creator": "aaaaaaaaaaaa",
+    "receiver": "baaaaaaaaaaa",
+    "start_date": "2029-06-02T00:00:00",
+    "end_date": "2029-08-01T00:00:00",
+    "daily_pay": {
+      "amount": "1000",
+      "precision": 3,
+      "nai": "@@000000013"
+    },
+    "subject": "this is subject",
+    "permlink": "lorem",
+    "total_votes": 0,
+    "status": "inactive"
+  },{
+    "id": 1,
+    "creator": "caaaaaaaaaaa",
+    "receiver": "daaaaaaaaaaa",
+    "start_date": "2029-06-02T00:00:00",
+    "end_date": "2029-08-01T00:00:00",
+    "daily_pay": {
+      "amount": "1000",
+      "precision": 3,
+      "nai": "@@000000013"
+    },
+    "subject": "this is subject",
+    "permlink": "lorem",
+    "total_votes": 0,
+    "status": "inactive"
+  }
+]
+
+2019-04-12 17:00:09,338 [INFO] Sending list_proposals "2019-03-01T00:00:00" "start_date" "asc" 10 "all" "" 
+
+2019-04-12 17:00:12,841 [INFO] Call response: unlocked >>> 
+unlocked >>> 9339ms wallet.cpp:2498               list_proposals       ] args.start: 2019-03-01T00:00:00 
+9339ms wallet.cpp:2499               list_proposals       ] args.order_by: by_start_date 
+9339ms wallet.cpp:2500               list_proposals       ] args.order_direction: direction_ascending 
+9339ms wallet.cpp:2501               list_proposals       ] args.limit: 10 
+9339ms wallet.cpp:2502               list_proposals       ] args.status: all 
+9339ms wallet.cpp:2503               list_proposals       ] args.last_id:  
+9340ms websocket_api.cpp:102         on_message           ] message: {"jsonrpc":"2.0","result":[{"id":0,"creator":"aaaaaaaaaaaa","receiver":"baaaaaaaaaaa","start_date":"2029-06-02T00:00:00","end_date":"2029-08-01T00:00:00","daily_pay":{"amount":"1000","precision":3,"nai":"@@000000013"},"subject":"this is subject","permlink":"lorem","total_votes":0,"status":"inactive"},{"id":1,"creator":"caaaaaaaaaaa","receiver":"daaaaaaaaaaa","start_date":"2029-06-02T00:00:00","end_date":"2029-08-01T00:00:00","daily_pay":{"amount":"1000","precision":3,"nai":"@@000000013"},"subject":"this is subject","permlink":"lorem","total_votes":0,"status":"inactive"}],"id":9} 
+list_proposals "2019-03-01T00:00:00" "start_date" "asc" 10 "all" "" 
+[{
+    "id": 0,
+    "creator": "aaaaaaaaaaaa",
+    "receiver": "baaaaaaaaaaa",
+    "start_date": "2029-06-02T00:00:00",
+    "end_date": "2029-08-01T00:00:00",
+    "daily_pay": {
+      "amount": "1000",
+      "precision": 3,
+      "nai": "@@000000013"
+    },
+    "subject": "this is subject",
+    "permlink": "lorem",
+    "total_votes": 0,
+    "status": "inactive"
+  },{
+    "id": 1,
+    "creator": "caaaaaaaaaaa",
+    "receiver": "daaaaaaaaaaa",
+    "start_date": "2029-06-02T00:00:00",
+    "end_date": "2029-08-01T00:00:00",
+    "daily_pay": {
+      "amount": "1000",
+      "precision": 3,
+      "nai": "@@000000013"
+    },
+    "subject": "this is subject",
+    "permlink": "lorem",
+    "total_votes": 0,
+    "status": "inactive"
+  }
+]
+
+2019-04-12 17:00:12,842 [INFO] Sending list_proposals "2019-03-01T00:00:00" "start_date" "desc" 10 "active" "" 
+
+2019-04-12 17:00:16,344 [INFO] Call response: unlocked >>> 
+unlocked >>> 12843ms wallet.cpp:2498               list_proposals       ] args.start: 2019-03-01T00:00:00 
+12843ms wallet.cpp:2499               list_proposals       ] args.order_by: by_start_date 
+12843ms wallet.cpp:2500               list_proposals       ] args.order_direction: direction_descending 
+12843ms wallet.cpp:2501               list_proposals       ] args.limit: 10 
+12843ms wallet.cpp:2502               list_proposals       ] args.status: active 
+12843ms wallet.cpp:2503               list_proposals       ] args.last_id:  
+12843ms websocket_api.cpp:102         on_message           ] message: {"jsonrpc":"2.0","result":[],"id":10} 
+list_proposals "2019-03-01T00:00:00" "start_date" "desc" 10 "active" "" 
+[]
+
+2019-04-12 17:00:16,345 [INFO] Sending list_proposals "2019-03-01T00:00:00" "start_date" "desc" 10 "inactive" "" 
+
+2019-04-12 17:00:19,848 [INFO] Call response: unlocked >>> 
+unlocked >>> 16346ms wallet.cpp:2498               list_proposals       ] args.start: 2019-03-01T00:00:00 
+16346ms wallet.cpp:2499               list_proposals       ] args.order_by: by_start_date 
+16346ms wallet.cpp:2500               list_proposals       ] args.order_direction: direction_descending 
+16346ms wallet.cpp:2501               list_proposals       ] args.limit: 10 
+16346ms wallet.cpp:2502               list_proposals       ] args.status: inactive 
+16346ms wallet.cpp:2503               list_proposals       ] args.last_id:  
+16347ms websocket_api.cpp:102         on_message           ] message: {"jsonrpc":"2.0","result":[],"id":11} 
+list_proposals "2019-03-01T00:00:00" "start_date" "desc" 10 "inactive" "" 
+[]
+
+2019-04-12 17:00:19,849 [INFO] Sending list_proposals "2019-03-01T00:00:00" "start_date" "desc" 10 "all" "" 
+
+2019-04-12 17:00:23,352 [INFO] Call response: unlocked >>> 
+unlocked >>> 19850ms wallet.cpp:2498               list_proposals       ] args.start: 2019-03-01T00:00:00 
+19850ms wallet.cpp:2499               list_proposals       ] args.order_by: by_start_date 
+19850ms wallet.cpp:2500               list_proposals       ] args.order_direction: direction_descending 
+19850ms wallet.cpp:2501               list_proposals       ] args.limit: 10 
+19850ms wallet.cpp:2502               list_proposals       ] args.status: all 
+19850ms wallet.cpp:2503               list_proposals       ] args.last_id:  
+19851ms websocket_api.cpp:102         on_message           ] message: {"jsonrpc":"2.0","result":[],"id":12} 
+list_proposals "2019-03-01T00:00:00" "start_date" "desc" 10 "all" "" 
+[]
+
+2019-04-12 17:00:23,352 [INFO] Sending list_proposals "2019-03-01T00:00:00" "end_date" "asc" 10 "active" "" 
+
+2019-04-12 17:00:26,854 [INFO] Call response: unlocked >>> 
+unlocked >>> 23353ms wallet.cpp:2498               list_proposals       ] args.start: 2019-03-01T00:00:00 
+23353ms wallet.cpp:2499               list_proposals       ] args.order_by: by_end_date 
+23353ms wallet.cpp:2500               list_proposals       ] args.order_direction: direction_ascending 
+23353ms wallet.cpp:2501               list_proposals       ] args.limit: 10 
+23353ms wallet.cpp:2502               list_proposals       ] args.status: active 
+23353ms wallet.cpp:2503               list_proposals       ] args.last_id:  
+23353ms websocket_api.cpp:102         on_message           ] message: {"jsonrpc":"2.0","result":[],"id":13} 
+list_proposals "2019-03-01T00:00:00" "end_date" "asc" 10 "active" "" 
+[]
+
+2019-04-12 17:00:26,855 [INFO] Sending list_proposals "2019-03-01T00:00:00" "end_date" "asc" 10 "inactive" "" 
+
+2019-04-12 17:00:30,359 [INFO] Call response: unlocked >>> 
+unlocked >>> 26856ms wallet.cpp:2498               list_proposals       ] args.start: 2019-03-01T00:00:00 
+26856ms wallet.cpp:2499               list_proposals       ] args.order_by: by_end_date 
+26856ms wallet.cpp:2500               list_proposals       ] args.order_direction: direction_ascending 
+26856ms wallet.cpp:2501               list_proposals       ] args.limit: 10 
+26856ms wallet.cpp:2502               list_proposals       ] args.status: inactive 
+26856ms wallet.cpp:2503               list_proposals       ] args.last_id:  
+26857ms websocket_api.cpp:102         on_message           ] message: {"jsonrpc":"2.0","result":[{"id":0,"creator":"aaaaaaaaaaaa","receiver":"baaaaaaaaaaa","start_date":"2029-06-02T00:00:00","end_date":"2029-08-01T00:00:00","daily_pay":{"amount":"1000","precision":3,"nai":"@@000000013"},"subject":"this is subject","permlink":"lorem","total_votes":0,"status":"inactive"},{"id":1,"creator":"caaaaaaaaaaa","receiver":"daaaaaaaaaaa","start_date":"2029-06-02T00:00:00","end_date":"2029-08-01T00:00:00","daily_pay":{"amount":"1000","precision":3,"nai":"@@000000013"},"subject":"this is subject","permlink":"lorem","total_votes":0,"status":"inactive"}],"id":14} 
+list_proposals "2019-03-01T00:00:00" "end_date" "asc" 10 "inactive" "" 
+[{
+    "id": 0,
+    "creator": "aaaaaaaaaaaa",
+    "receiver": "baaaaaaaaaaa",
+    "start_date": "2029-06-02T00:00:00",
+    "end_date": "2029-08-01T00:00:00",
+    "daily_pay": {
+      "amount": "1000",
+      "precision": 3,
+      "nai": "@@000000013"
+    },
+    "subject": "this is subject",
+    "permlink": "lorem",
+    "total_votes": 0,
+    "status": "inactive"
+  },{
+    "id": 1,
+    "creator": "caaaaaaaaaaa",
+    "receiver": "daaaaaaaaaaa",
+    "start_date": "2029-06-02T00:00:00",
+    "end_date": "2029-08-01T00:00:00",
+    "daily_pay": {
+      "amount": "1000",
+      "precision": 3,
+      "nai": "@@000000013"
+    },
+    "subject": "this is subject",
+    "permlink": "lorem",
+    "total_votes": 0,
+    "status": "inactive"
+  }
+]
+
+2019-04-12 17:00:30,361 [INFO] Sending list_proposals "2019-03-01T00:00:00" "end_date" "asc" 10 "all" "" 
+
+2019-04-12 17:00:33,864 [INFO] Call response: unlocked >>> 
+unlocked >>> 30361ms wallet.cpp:2498               list_proposals       ] args.start: 2019-03-01T00:00:00 
+30361ms wallet.cpp:2499               list_proposals       ] args.order_by: by_end_date 
+30361ms wallet.cpp:2500               list_proposals       ] args.order_direction: direction_ascending 
+30361ms wallet.cpp:2501               list_proposals       ] args.limit: 10 
+30361ms wallet.cpp:2502               list_proposals       ] args.status: all 
+30362ms wallet.cpp:2503               list_proposals       ] args.last_id:  
+30363ms websocket_api.cpp:102         on_message           ] message: {"jsonrpc":"2.0","result":[{"id":0,"creator":"aaaaaaaaaaaa","receiver":"baaaaaaaaaaa","start_date":"2029-06-02T00:00:00","end_date":"2029-08-01T00:00:00","daily_pay":{"amount":"1000","precision":3,"nai":"@@000000013"},"subject":"this is subject","permlink":"lorem","total_votes":0,"status":"inactive"},{"id":1,"creator":"caaaaaaaaaaa","receiver":"daaaaaaaaaaa","start_date":"2029-06-02T00:00:00","end_date":"2029-08-01T00:00:00","daily_pay":{"amount":"1000","precision":3,"nai":"@@000000013"},"subject":"this is subject","permlink":"lorem","total_votes":0,"status":"inactive"}],"id":15} 
+list_proposals "2019-03-01T00:00:00" "end_date" "asc" 10 "all" "" 
+[{
+    "id": 0,
+    "creator": "aaaaaaaaaaaa",
+    "receiver": "baaaaaaaaaaa",
+    "start_date": "2029-06-02T00:00:00",
+    "end_date": "2029-08-01T00:00:00",
+    "daily_pay": {
+      "amount": "1000",
+      "precision": 3,
+      "nai": "@@000000013"
+    },
+    "subject": "this is subject",
+    "permlink": "lorem",
+    "total_votes": 0,
+    "status": "inactive"
+  },{
+    "id": 1,
+    "creator": "caaaaaaaaaaa",
+    "receiver": "daaaaaaaaaaa",
+    "start_date": "2029-06-02T00:00:00",
+    "end_date": "2029-08-01T00:00:00",
+    "daily_pay": {
+      "amount": "1000",
+      "precision": 3,
+      "nai": "@@000000013"
+    },
+    "subject": "this is subject",
+    "permlink": "lorem",
+    "total_votes": 0,
+    "status": "inactive"
+  }
+]
+
+2019-04-12 17:00:33,865 [INFO] Sending list_proposals "2019-03-01T00:00:00" "end_date" "desc" 10 "active" "" 
+
+2019-04-12 17:00:37,368 [INFO] Call response: unlocked >>> 
+unlocked >>> 33866ms wallet.cpp:2498               list_proposals       ] args.start: 2019-03-01T00:00:00 
+33866ms wallet.cpp:2499               list_proposals       ] args.order_by: by_end_date 
+33866ms wallet.cpp:2500               list_proposals       ] args.order_direction: direction_descending 
+33866ms wallet.cpp:2501               list_proposals       ] args.limit: 10 
+33866ms wallet.cpp:2502               list_proposals       ] args.status: active 
+33866ms wallet.cpp:2503               list_proposals       ] args.last_id:  
+33867ms websocket_api.cpp:102         on_message           ] message: {"jsonrpc":"2.0","result":[],"id":16} 
+list_proposals "2019-03-01T00:00:00" "end_date" "desc" 10 "active" "" 
+[]
+
+2019-04-12 17:00:37,369 [INFO] Sending list_proposals "2019-03-01T00:00:00" "end_date" "desc" 10 "inactive" "" 
+
+2019-04-12 17:00:40,872 [INFO] Call response: unlocked >>> 
+unlocked >>> 37369ms wallet.cpp:2498               list_proposals       ] args.start: 2019-03-01T00:00:00 
+37369ms wallet.cpp:2499               list_proposals       ] args.order_by: by_end_date 
+37369ms wallet.cpp:2500               list_proposals       ] args.order_direction: direction_descending 
+37369ms wallet.cpp:2501               list_proposals       ] args.limit: 10 
+37369ms wallet.cpp:2502               list_proposals       ] args.status: inactive 
+37369ms wallet.cpp:2503               list_proposals       ] args.last_id:  
+37370ms websocket_api.cpp:102         on_message           ] message: {"jsonrpc":"2.0","result":[],"id":17} 
+list_proposals "2019-03-01T00:00:00" "end_date" "desc" 10 "inactive" "" 
+[]
+
+2019-04-12 17:00:40,872 [INFO] Sending list_proposals "2019-03-01T00:00:00" "end_date" "desc" 10 "all" "" 
+
+2019-04-12 17:00:44,374 [INFO] Call response: unlocked >>> 
+unlocked >>> 40872ms wallet.cpp:2498               list_proposals       ] args.start: 2019-03-01T00:00:00 
+40872ms wallet.cpp:2499               list_proposals       ] args.order_by: by_end_date 
+40872ms wallet.cpp:2500               list_proposals       ] args.order_direction: direction_descending 
+40872ms wallet.cpp:2501               list_proposals       ] args.limit: 10 
+40872ms wallet.cpp:2502               list_proposals       ] args.status: all 
+40872ms wallet.cpp:2503               list_proposals       ] args.last_id:  
+40873ms websocket_api.cpp:102         on_message           ] message: {"jsonrpc":"2.0","result":[],"id":18} 
+list_proposals "2019-03-01T00:00:00" "end_date" "desc" 10 "all" "" 
+[]
+
+2019-04-12 17:00:44,375 [INFO] Sending list_proposals 0 "total_votes" "asc" 10 "active" "" 
+
+2019-04-12 17:00:47,878 [INFO] Call response: unlocked >>> 
+unlocked >>> 44375ms wallet.cpp:2498               list_proposals       ] args.start: 0 
+44375ms wallet.cpp:2499               list_proposals       ] args.order_by: by_total_votes 
+44375ms wallet.cpp:2500               list_proposals       ] args.order_direction: direction_ascending 
+44375ms wallet.cpp:2501               list_proposals       ] args.limit: 10 
+44375ms wallet.cpp:2502               list_proposals       ] args.status: active 
+44375ms wallet.cpp:2503               list_proposals       ] args.last_id:  
+44377ms websocket_api.cpp:102         on_message           ] message: {"jsonrpc":"2.0","result":[],"id":19} 
+list_proposals 0 "total_votes" "asc" 10 "active" "" 
+[]
+
+2019-04-12 17:00:47,879 [INFO] Sending list_proposals 0 "total_votes" "asc" 10 "inactive" "" 
+
+2019-04-12 17:00:51,382 [INFO] Call response: unlocked >>> 
+unlocked >>> 47879ms wallet.cpp:2498               list_proposals       ] args.start: 0 
+47879ms wallet.cpp:2499               list_proposals       ] args.order_by: by_total_votes 
+47879ms wallet.cpp:2500               list_proposals       ] args.order_direction: direction_ascending 
+47879ms wallet.cpp:2501               list_proposals       ] args.limit: 10 
+47879ms wallet.cpp:2502               list_proposals       ] args.status: inactive 
+47879ms wallet.cpp:2503               list_proposals       ] args.last_id:  
+47881ms websocket_api.cpp:102         on_message           ] message: {"jsonrpc":"2.0","result":[{"id":0,"creator":"aaaaaaaaaaaa","receiver":"baaaaaaaaaaa","start_date":"2029-06-02T00:00:00","end_date":"2029-08-01T00:00:00","daily_pay":{"amount":"1000","precision":3,"nai":"@@000000013"},"subject":"this is subject","permlink":"lorem","total_votes":0,"status":"inactive"},{"id":1,"creator":"caaaaaaaaaaa","receiver":"daaaaaaaaaaa","start_date":"2029-06-02T00:00:00","end_date":"2029-08-01T00:00:00","daily_pay":{"amount":"1000","precision":3,"nai":"@@000000013"},"subject":"this is subject","permlink":"lorem","total_votes":0,"status":"inactive"}],"id":20} 
+list_proposals 0 "total_votes" "asc" 10 "inactive" "" 
+[{
+    "id": 0,
+    "creator": "aaaaaaaaaaaa",
+    "receiver": "baaaaaaaaaaa",
+    "start_date": "2029-06-02T00:00:00",
+    "end_date": "2029-08-01T00:00:00",
+    "daily_pay": {
+      "amount": "1000",
+      "precision": 3,
+      "nai": "@@000000013"
+    },
+    "subject": "this is subject",
+    "permlink": "lorem",
+    "total_votes": 0,
+    "status": "inactive"
+  },{
+    "id": 1,
+    "creator": "caaaaaaaaaaa",
+    "receiver": "daaaaaaaaaaa",
+    "start_date": "2029-06-02T00:00:00",
+    "end_date": "2029-08-01T00:00:00",
+    "daily_pay": {
+      "amount": "1000",
+      "precision": 3,
+      "nai": "@@000000013"
+    },
+    "subject": "this is subject",
+    "permlink": "lorem",
+    "total_votes": 0,
+    "status": "inactive"
+  }
+]
+
+2019-04-12 17:00:51,383 [INFO] Sending list_proposals 0 "total_votes" "asc" 10 "all" "" 
+
+2019-04-12 17:00:54,886 [INFO] Call response: unlocked >>> 
+unlocked >>> 51383ms wallet.cpp:2498               list_proposals       ] args.start: 0 
+51383ms wallet.cpp:2499               list_proposals       ] args.order_by: by_total_votes 
+51383ms wallet.cpp:2500               list_proposals       ] args.order_direction: direction_ascending 
+51383ms wallet.cpp:2501               list_proposals       ] args.limit: 10 
+51383ms wallet.cpp:2502               list_proposals       ] args.status: all 
+51383ms wallet.cpp:2503               list_proposals       ] args.last_id:  
+51384ms websocket_api.cpp:102         on_message           ] message: {"jsonrpc":"2.0","result":[{"id":0,"creator":"aaaaaaaaaaaa","receiver":"baaaaaaaaaaa","start_date":"2029-06-02T00:00:00","end_date":"2029-08-01T00:00:00","daily_pay":{"amount":"1000","precision":3,"nai":"@@000000013"},"subject":"this is subject","permlink":"lorem","total_votes":0,"status":"inactive"},{"id":1,"creator":"caaaaaaaaaaa","receiver":"daaaaaaaaaaa","start_date":"2029-06-02T00:00:00","end_date":"2029-08-01T00:00:00","daily_pay":{"amount":"1000","precision":3,"nai":"@@000000013"},"subject":"this is subject","permlink":"lorem","total_votes":0,"status":"inactive"}],"id":21} 
+list_proposals 0 "total_votes" "asc" 10 "all" "" 
+[{
+    "id": 0,
+    "creator": "aaaaaaaaaaaa",
+    "receiver": "baaaaaaaaaaa",
+    "start_date": "2029-06-02T00:00:00",
+    "end_date": "2029-08-01T00:00:00",
+    "daily_pay": {
+      "amount": "1000",
+      "precision": 3,
+      "nai": "@@000000013"
+    },
+    "subject": "this is subject",
+    "permlink": "lorem",
+    "total_votes": 0,
+    "status": "inactive"
+  },{
+    "id": 1,
+    "creator": "caaaaaaaaaaa",
+    "receiver": "daaaaaaaaaaa",
+    "start_date": "2029-06-02T00:00:00",
+    "end_date": "2029-08-01T00:00:00",
+    "daily_pay": {
+      "amount": "1000",
+      "precision": 3,
+      "nai": "@@000000013"
+    },
+    "subject": "this is subject",
+    "permlink": "lorem",
+    "total_votes": 0,
+    "status": "inactive"
+  }
+]
+
+2019-04-12 17:00:54,886 [INFO] Sending list_proposals 0 "total_votes" "desc" 10 "active" "" 
+
+2019-04-12 17:00:58,388 [INFO] Call response: unlocked >>> 
+unlocked >>> 54887ms wallet.cpp:2498               list_proposals       ] args.start: 0 
+54887ms wallet.cpp:2499               list_proposals       ] args.order_by: by_total_votes 
+54887ms wallet.cpp:2500               list_proposals       ] args.order_direction: direction_descending 
+54887ms wallet.cpp:2501               list_proposals       ] args.limit: 10 
+54887ms wallet.cpp:2502               list_proposals       ] args.status: active 
+54887ms wallet.cpp:2503               list_proposals       ] args.last_id:  
+54887ms websocket_api.cpp:102         on_message           ] message: {"jsonrpc":"2.0","result":[],"id":22} 
+list_proposals 0 "total_votes" "desc" 10 "active" "" 
+[]
+
+2019-04-12 17:00:58,389 [INFO] Sending list_proposals 0 "total_votes" "desc" 10 "inactive" "" 
+
+2019-04-12 17:01:01,892 [INFO] Call response: unlocked >>> 
+unlocked >>> 58389ms wallet.cpp:2498               list_proposals       ] args.start: 0 
+58389ms wallet.cpp:2499               list_proposals       ] args.order_by: by_total_votes 
+58389ms wallet.cpp:2500               list_proposals       ] args.order_direction: direction_descending 
+58389ms wallet.cpp:2501               list_proposals       ] args.limit: 10 
+58389ms wallet.cpp:2502               list_proposals       ] args.status: inactive 
+58389ms wallet.cpp:2503               list_proposals       ] args.last_id:  
+58390ms websocket_api.cpp:102         on_message           ] message: {"jsonrpc":"2.0","result":[{"id":1,"creator":"caaaaaaaaaaa","receiver":"daaaaaaaaaaa","start_date":"2029-06-02T00:00:00","end_date":"2029-08-01T00:00:00","daily_pay":{"amount":"1000","precision":3,"nai":"@@000000013"},"subject":"this is subject","permlink":"lorem","total_votes":0,"status":"inactive"},{"id":0,"creator":"aaaaaaaaaaaa","receiver":"baaaaaaaaaaa","start_date":"2029-06-02T00:00:00","end_date":"2029-08-01T00:00:00","daily_pay":{"amount":"1000","precision":3,"nai":"@@000000013"},"subject":"this is subject","permlink":"lorem","total_votes":0,"status":"inactive"}],"id":23} 
+list_proposals 0 "total_votes" "desc" 10 "inactive" "" 
+[{
+    "id": 1,
+    "creator": "caaaaaaaaaaa",
+    "receiver": "daaaaaaaaaaa",
+    "start_date": "2029-06-02T00:00:00",
+    "end_date": "2029-08-01T00:00:00",
+    "daily_pay": {
+      "amount": "1000",
+      "precision": 3,
+      "nai": "@@000000013"
+    },
+    "subject": "this is subject",
+    "permlink": "lorem",
+    "total_votes": 0,
+    "status": "inactive"
+  },{
+    "id": 0,
+    "creator": "aaaaaaaaaaaa",
+    "receiver": "baaaaaaaaaaa",
+    "start_date": "2029-06-02T00:00:00",
+    "end_date": "2029-08-01T00:00:00",
+    "daily_pay": {
+      "amount": "1000",
+      "precision": 3,
+      "nai": "@@000000013"
+    },
+    "subject": "this is subject",
+    "permlink": "lorem",
+    "total_votes": 0,
+    "status": "inactive"
+  }
+]
+
+2019-04-12 17:01:01,893 [INFO] Sending list_proposals 0 "total_votes" "desc" 10 "all" "" 
+
+2019-04-12 17:01:05,397 [INFO] Call response: unlocked >>> 
+unlocked >>> 61894ms wallet.cpp:2498               list_proposals       ] args.start: 0 
+61894ms wallet.cpp:2499               list_proposals       ] args.order_by: by_total_votes 
+61894ms wallet.cpp:2500               list_proposals       ] args.order_direction: direction_descending 
+61894ms wallet.cpp:2501               list_proposals       ] args.limit: 10 
+61894ms wallet.cpp:2502               list_proposals       ] args.status: all 
+61894ms wallet.cpp:2503               list_proposals       ] args.last_id:  
+61895ms websocket_api.cpp:102         on_message           ] message: {"jsonrpc":"2.0","result":[{"id":1,"creator":"caaaaaaaaaaa","receiver":"daaaaaaaaaaa","start_date":"2029-06-02T00:00:00","end_date":"2029-08-01T00:00:00","daily_pay":{"amount":"1000","precision":3,"nai":"@@000000013"},"subject":"this is subject","permlink":"lorem","total_votes":0,"status":"inactive"},{"id":0,"creator":"aaaaaaaaaaaa","receiver":"baaaaaaaaaaa","start_date":"2029-06-02T00:00:00","end_date":"2029-08-01T00:00:00","daily_pay":{"amount":"1000","precision":3,"nai":"@@000000013"},"subject":"this is subject","permlink":"lorem","total_votes":0,"status":"inactive"}],"id":24} 
+list_proposals 0 "total_votes" "desc" 10 "all" "" 
+[{
+    "id": 1,
+    "creator": "caaaaaaaaaaa",
+    "receiver": "daaaaaaaaaaa",
+    "start_date": "2029-06-02T00:00:00",
+    "end_date": "2029-08-01T00:00:00",
+    "daily_pay": {
+      "amount": "1000",
+      "precision": 3,
+      "nai": "@@000000013"
+    },
+    "subject": "this is subject",
+    "permlink": "lorem",
+    "total_votes": 0,
+    "status": "inactive"
+  },{
+    "id": 0,
+    "creator": "aaaaaaaaaaaa",
+    "receiver": "baaaaaaaaaaa",
+    "start_date": "2029-06-02T00:00:00",
+    "end_date": "2029-08-01T00:00:00",
+    "daily_pay": {
+      "amount": "1000",
+      "precision": 3,
+      "nai": "@@000000013"
+    },
+    "subject": "this is subject",
+    "permlink": "lorem",
+    "total_votes": 0,
+    "status": "inactive"
+  }
+]
+
+2019-04-12 17:01:05,398 [INFO] TEST `./tests/003_list_proposal.py` passed

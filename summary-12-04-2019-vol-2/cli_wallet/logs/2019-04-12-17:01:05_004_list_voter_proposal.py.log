@@ -1,0 +1,320 @@
+2019-04-12 17:01:05,540 [INFO] Calling cli_wallet with args `['/home/lumpy/Work/STEEM/steem/build/programs/cli_wallet//cli_wallet --server-rpc-endpoint  ws://127.0.0.1:8090 --cert-auth  _default --rpc-tls-endpoint  127.0.0.1:8092 --rpc-tls-cert  server.pem --rpc-http-endpoint  127.0.0.1:8093 --wallet-file  wallet.json --chain-id  18dcf0a285365fc58b71f18b3d3fec954aa0c141c44e4e5cb4cf777b9eab274e']`
+2019-04-12 17:01:05,542 [INFO] Sending set_password "testpassword" 
+
+2019-04-12 17:01:09,048 [INFO] Sending unlock "testpassword" 
+
+2019-04-12 17:01:12,549 [INFO] Sending import_key "5JNHfZYKGaomSFvd4NUdQ9qMcEAC43kujbfjueTHpVapX1Kzq2n" 
+
+2019-04-12 17:01:16,062 [INFO] Sending list_voter_proposals "initminer" "creator" "asc" 10 "active" "" 
+
+2019-04-12 17:01:19,565 [INFO] Call response: unlocked >>> 
+unlocked >>> 76063ms wallet.cpp:2544               list_voter_proposals ] args.start: initminer 
+76063ms wallet.cpp:2545               list_voter_proposals ] args.order_by: by_creator 
+76063ms wallet.cpp:2546               list_voter_proposals ] args.order_direction: direction_ascending 
+76063ms wallet.cpp:2547               list_voter_proposals ] args.limit: 10 
+76063ms wallet.cpp:2548               list_voter_proposals ] args.status: active 
+76063ms wallet.cpp:2549               list_voter_proposals ] args.last_id:  
+76064ms websocket_api.cpp:102         on_message           ] message: {"jsonrpc":"2.0","result":{},"id":1} 
+list_voter_proposals "initminer" "creator" "asc" 10 "active" "" 
+{}
+
+2019-04-12 17:01:19,566 [INFO] Sending list_voter_proposals "initminer" "creator" "asc" 10 "inactive" "" 
+
+2019-04-12 17:01:23,069 [INFO] Call response: unlocked >>> 
+unlocked >>> 79566ms wallet.cpp:2544               list_voter_proposals ] args.start: initminer 
+79566ms wallet.cpp:2545               list_voter_proposals ] args.order_by: by_creator 
+79566ms wallet.cpp:2546               list_voter_proposals ] args.order_direction: direction_ascending 
+79566ms wallet.cpp:2547               list_voter_proposals ] args.limit: 10 
+79566ms wallet.cpp:2548               list_voter_proposals ] args.status: inactive 
+79566ms wallet.cpp:2549               list_voter_proposals ] args.last_id:  
+79567ms websocket_api.cpp:102         on_message           ] message: {"jsonrpc":"2.0","result":{},"id":2} 
+list_voter_proposals "initminer" "creator" "asc" 10 "inactive" "" 
+{}
+
+2019-04-12 17:01:23,069 [INFO] Sending list_voter_proposals "initminer" "creator" "asc" 10 "all" "" 
+
+2019-04-12 17:01:26,572 [INFO] Call response: unlocked >>> 
+unlocked >>> 83070ms wallet.cpp:2544               list_voter_proposals ] args.start: initminer 
+83070ms wallet.cpp:2545               list_voter_proposals ] args.order_by: by_creator 
+83070ms wallet.cpp:2546               list_voter_proposals ] args.order_direction: direction_ascending 
+83070ms wallet.cpp:2547               list_voter_proposals ] args.limit: 10 
+83070ms wallet.cpp:2548               list_voter_proposals ] args.status: all 
+83070ms wallet.cpp:2549               list_voter_proposals ] args.last_id:  
+83071ms websocket_api.cpp:102         on_message           ] message: {"jsonrpc":"2.0","result":{},"id":3} 
+list_voter_proposals "initminer" "creator" "asc" 10 "all" "" 
+{}
+
+2019-04-12 17:01:26,573 [INFO] Sending list_voter_proposals "initminer" "creator" "desc" 10 "active" "" 
+
+2019-04-12 17:01:30,075 [INFO] Call response: unlocked >>> 
+unlocked >>> 86573ms wallet.cpp:2544               list_voter_proposals ] args.start: initminer 
+86573ms wallet.cpp:2545               list_voter_proposals ] args.order_by: by_creator 
+86573ms wallet.cpp:2546               list_voter_proposals ] args.order_direction: direction_descending 
+86573ms wallet.cpp:2547               list_voter_proposals ] args.limit: 10 
+86573ms wallet.cpp:2548               list_voter_proposals ] args.status: active 
+86573ms wallet.cpp:2549               list_voter_proposals ] args.last_id:  
+86574ms websocket_api.cpp:102         on_message           ] message: {"jsonrpc":"2.0","result":{},"id":4} 
+list_voter_proposals "initminer" "creator" "desc" 10 "active" "" 
+{}
+
+2019-04-12 17:01:30,076 [INFO] Sending list_voter_proposals "initminer" "creator" "desc" 10 "inactive" "" 
+
+2019-04-12 17:01:33,579 [INFO] Call response: unlocked >>> 
+unlocked >>> 90077ms wallet.cpp:2544               list_voter_proposals ] args.start: initminer 
+90077ms wallet.cpp:2545               list_voter_proposals ] args.order_by: by_creator 
+90077ms wallet.cpp:2546               list_voter_proposals ] args.order_direction: direction_descending 
+90077ms wallet.cpp:2547               list_voter_proposals ] args.limit: 10 
+90077ms wallet.cpp:2548               list_voter_proposals ] args.status: inactive 
+90077ms wallet.cpp:2549               list_voter_proposals ] args.last_id:  
+90078ms websocket_api.cpp:102         on_message           ] message: {"jsonrpc":"2.0","result":{},"id":5} 
+list_voter_proposals "initminer" "creator" "desc" 10 "inactive" "" 
+{}
+
+2019-04-12 17:01:33,580 [INFO] Sending list_voter_proposals "initminer" "creator" "desc" 10 "all" "" 
+
+2019-04-12 17:01:37,083 [INFO] Call response: unlocked >>> 
+unlocked >>> 93581ms wallet.cpp:2544               list_voter_proposals ] args.start: initminer 
+93581ms wallet.cpp:2545               list_voter_proposals ] args.order_by: by_creator 
+93581ms wallet.cpp:2546               list_voter_proposals ] args.order_direction: direction_descending 
+93581ms wallet.cpp:2547               list_voter_proposals ] args.limit: 10 
+93581ms wallet.cpp:2548               list_voter_proposals ] args.status: all 
+93581ms wallet.cpp:2549               list_voter_proposals ] args.last_id:  
+93582ms websocket_api.cpp:102         on_message           ] message: {"jsonrpc":"2.0","result":{},"id":6} 
+list_voter_proposals "initminer" "creator" "desc" 10 "all" "" 
+{}
+
+2019-04-12 17:01:37,083 [INFO] Sending list_voter_proposals "initminer" "start_date" "asc" 10 "active" "" 
+
+2019-04-12 17:01:40,586 [INFO] Call response: unlocked >>> 
+unlocked >>> 97084ms wallet.cpp:2544               list_voter_proposals ] args.start: initminer 
+97084ms wallet.cpp:2545               list_voter_proposals ] args.order_by: by_start_date 
+97084ms wallet.cpp:2546               list_voter_proposals ] args.order_direction: direction_ascending 
+97084ms wallet.cpp:2547               list_voter_proposals ] args.limit: 10 
+97084ms wallet.cpp:2548               list_voter_proposals ] args.status: active 
+97084ms wallet.cpp:2549               list_voter_proposals ] args.last_id:  
+97084ms websocket_api.cpp:102         on_message           ] message: {"jsonrpc":"2.0","result":{},"id":7} 
+list_voter_proposals "initminer" "start_date" "asc" 10 "active" "" 
+{}
+
+2019-04-12 17:01:40,586 [INFO] Sending list_voter_proposals "initminer" "start_date" "asc" 10 "inactive" "" 
+
+2019-04-12 17:01:44,090 [INFO] Call response: unlocked >>> 
+unlocked >>> 100587ms wallet.cpp:2544               list_voter_proposals ] args.start: initminer 
+100587ms wallet.cpp:2545               list_voter_proposals ] args.order_by: by_start_date 
+100587ms wallet.cpp:2546               list_voter_proposals ] args.order_direction: direction_ascending 
+100587ms wallet.cpp:2547               list_voter_proposals ] args.limit: 10 
+100587ms wallet.cpp:2548               list_voter_proposals ] args.status: inactive 
+100587ms wallet.cpp:2549               list_voter_proposals ] args.last_id:  
+100588ms websocket_api.cpp:102         on_message           ] message: {"jsonrpc":"2.0","result":{},"id":8} 
+list_voter_proposals "initminer" "start_date" "asc" 10 "inactive" "" 
+{}
+
+2019-04-12 17:01:44,090 [INFO] Sending list_voter_proposals "initminer" "start_date" "asc" 10 "all" "" 
+
+2019-04-12 17:01:47,593 [INFO] Call response: unlocked >>> 
+unlocked >>> 104091ms wallet.cpp:2544               list_voter_proposals ] args.start: initminer 
+104091ms wallet.cpp:2545               list_voter_proposals ] args.order_by: by_start_date 
+104091ms wallet.cpp:2546               list_voter_proposals ] args.order_direction: direction_ascending 
+104091ms wallet.cpp:2547               list_voter_proposals ] args.limit: 10 
+104091ms wallet.cpp:2548               list_voter_proposals ] args.status: all 
+104091ms wallet.cpp:2549               list_voter_proposals ] args.last_id:  
+104092ms websocket_api.cpp:102         on_message           ] message: {"jsonrpc":"2.0","result":{},"id":9} 
+list_voter_proposals "initminer" "start_date" "asc" 10 "all" "" 
+{}
+
+2019-04-12 17:01:47,594 [INFO] Sending list_voter_proposals "initminer" "start_date" "desc" 10 "active" "" 
+
+2019-04-12 17:01:51,097 [INFO] Call response: unlocked >>> 
+unlocked >>> 107594ms wallet.cpp:2544               list_voter_proposals ] args.start: initminer 
+107594ms wallet.cpp:2545               list_voter_proposals ] args.order_by: by_start_date 
+107594ms wallet.cpp:2546               list_voter_proposals ] args.order_direction: direction_descending 
+107595ms wallet.cpp:2547               list_voter_proposals ] args.limit: 10 
+107595ms wallet.cpp:2548               list_voter_proposals ] args.status: active 
+107595ms wallet.cpp:2549               list_voter_proposals ] args.last_id:  
+107596ms websocket_api.cpp:102         on_message           ] message: {"jsonrpc":"2.0","result":{},"id":10} 
+list_voter_proposals "initminer" "start_date" "desc" 10 "active" "" 
+{}
+
+2019-04-12 17:01:51,097 [INFO] Sending list_voter_proposals "initminer" "start_date" "desc" 10 "inactive" "" 
+
+2019-04-12 17:01:54,600 [INFO] Call response: unlocked >>> 
+unlocked >>> 111098ms wallet.cpp:2544               list_voter_proposals ] args.start: initminer 
+111098ms wallet.cpp:2545               list_voter_proposals ] args.order_by: by_start_date 
+111098ms wallet.cpp:2546               list_voter_proposals ] args.order_direction: direction_descending 
+111098ms wallet.cpp:2547               list_voter_proposals ] args.limit: 10 
+111098ms wallet.cpp:2548               list_voter_proposals ] args.status: inactive 
+111098ms wallet.cpp:2549               list_voter_proposals ] args.last_id:  
+111099ms websocket_api.cpp:102         on_message           ] message: {"jsonrpc":"2.0","result":{},"id":11} 
+list_voter_proposals "initminer" "start_date" "desc" 10 "inactive" "" 
+{}
+
+2019-04-12 17:01:54,601 [INFO] Sending list_voter_proposals "initminer" "start_date" "desc" 10 "all" "" 
+
+2019-04-12 17:01:58,104 [INFO] Call response: unlocked >>> 
+unlocked >>> 114601ms wallet.cpp:2544               list_voter_proposals ] args.start: initminer 
+114601ms wallet.cpp:2545               list_voter_proposals ] args.order_by: by_start_date 
+114601ms wallet.cpp:2546               list_voter_proposals ] args.order_direction: direction_descending 
+114601ms wallet.cpp:2547               list_voter_proposals ] args.limit: 10 
+114601ms wallet.cpp:2548               list_voter_proposals ] args.status: all 
+114601ms wallet.cpp:2549               list_voter_proposals ] args.last_id:  
+114602ms websocket_api.cpp:102         on_message           ] message: {"jsonrpc":"2.0","result":{},"id":12} 
+list_voter_proposals "initminer" "start_date" "desc" 10 "all" "" 
+{}
+
+2019-04-12 17:01:58,104 [INFO] Sending list_voter_proposals "initminer" "end_date" "asc" 10 "active" "" 
+
+2019-04-12 17:02:01,606 [INFO] Call response: unlocked >>> 
+unlocked >>> 118105ms wallet.cpp:2544               list_voter_proposals ] args.start: initminer 
+118105ms wallet.cpp:2545               list_voter_proposals ] args.order_by: by_end_date 
+118105ms wallet.cpp:2546               list_voter_proposals ] args.order_direction: direction_ascending 
+118105ms wallet.cpp:2547               list_voter_proposals ] args.limit: 10 
+118105ms wallet.cpp:2548               list_voter_proposals ] args.status: active 
+118105ms wallet.cpp:2549               list_voter_proposals ] args.last_id:  
+118105ms websocket_api.cpp:102         on_message           ] message: {"jsonrpc":"2.0","result":{},"id":13} 
+list_voter_proposals "initminer" "end_date" "asc" 10 "active" "" 
+{}
+
+2019-04-12 17:02:01,606 [INFO] Sending list_voter_proposals "initminer" "end_date" "asc" 10 "inactive" "" 
+
+2019-04-12 17:02:05,108 [INFO] Call response: unlocked >>> 
+unlocked >>> 121607ms wallet.cpp:2544               list_voter_proposals ] args.start: initminer 
+121607ms wallet.cpp:2545               list_voter_proposals ] args.order_by: by_end_date 
+121607ms wallet.cpp:2546               list_voter_proposals ] args.order_direction: direction_ascending 
+121607ms wallet.cpp:2547               list_voter_proposals ] args.limit: 10 
+121607ms wallet.cpp:2548               list_voter_proposals ] args.status: inactive 
+121607ms wallet.cpp:2549               list_voter_proposals ] args.last_id:  
+121607ms websocket_api.cpp:102         on_message           ] message: {"jsonrpc":"2.0","result":{},"id":14} 
+list_voter_proposals "initminer" "end_date" "asc" 10 "inactive" "" 
+{}
+
+2019-04-12 17:02:05,109 [INFO] Sending list_voter_proposals "initminer" "end_date" "asc" 10 "all" "" 
+
+2019-04-12 17:02:08,611 [INFO] Call response: unlocked >>> 
+unlocked >>> 125109ms wallet.cpp:2544               list_voter_proposals ] args.start: initminer 
+125109ms wallet.cpp:2545               list_voter_proposals ] args.order_by: by_end_date 
+125109ms wallet.cpp:2546               list_voter_proposals ] args.order_direction: direction_ascending 
+125109ms wallet.cpp:2547               list_voter_proposals ] args.limit: 10 
+125109ms wallet.cpp:2548               list_voter_proposals ] args.status: all 
+125109ms wallet.cpp:2549               list_voter_proposals ] args.last_id:  
+125110ms websocket_api.cpp:102         on_message           ] message: {"jsonrpc":"2.0","result":{},"id":15} 
+list_voter_proposals "initminer" "end_date" "asc" 10 "all" "" 
+{}
+
+2019-04-12 17:02:08,611 [INFO] Sending list_voter_proposals "initminer" "end_date" "desc" 10 "active" "" 
+
+2019-04-12 17:02:12,113 [INFO] Call response: unlocked >>> 
+unlocked >>> 128612ms wallet.cpp:2544               list_voter_proposals ] args.start: initminer 
+128612ms wallet.cpp:2545               list_voter_proposals ] args.order_by: by_end_date 
+128612ms wallet.cpp:2546               list_voter_proposals ] args.order_direction: direction_descending 
+128612ms wallet.cpp:2547               list_voter_proposals ] args.limit: 10 
+128612ms wallet.cpp:2548               list_voter_proposals ] args.status: active 
+128612ms wallet.cpp:2549               list_voter_proposals ] args.last_id:  
+128612ms websocket_api.cpp:102         on_message           ] message: {"jsonrpc":"2.0","result":{},"id":16} 
+list_voter_proposals "initminer" "end_date" "desc" 10 "active" "" 
+{}
+
+2019-04-12 17:02:12,114 [INFO] Sending list_voter_proposals "initminer" "end_date" "desc" 10 "inactive" "" 
+
+2019-04-12 17:02:15,616 [INFO] Call response: unlocked >>> 
+unlocked >>> 132114ms wallet.cpp:2544               list_voter_proposals ] args.start: initminer 
+132114ms wallet.cpp:2545               list_voter_proposals ] args.order_by: by_end_date 
+132114ms wallet.cpp:2546               list_voter_proposals ] args.order_direction: direction_descending 
+132114ms wallet.cpp:2547               list_voter_proposals ] args.limit: 10 
+132114ms wallet.cpp:2548               list_voter_proposals ] args.status: inactive 
+132114ms wallet.cpp:2549               list_voter_proposals ] args.last_id:  
+132115ms websocket_api.cpp:102         on_message           ] message: {"jsonrpc":"2.0","result":{},"id":17} 
+list_voter_proposals "initminer" "end_date" "desc" 10 "inactive" "" 
+{}
+
+2019-04-12 17:02:15,617 [INFO] Sending list_voter_proposals "initminer" "end_date" "desc" 10 "all" "" 
+
+2019-04-12 17:02:19,119 [INFO] Call response: unlocked >>> 
+unlocked >>> 135617ms wallet.cpp:2544               list_voter_proposals ] args.start: initminer 
+135617ms wallet.cpp:2545               list_voter_proposals ] args.order_by: by_end_date 
+135617ms wallet.cpp:2546               list_voter_proposals ] args.order_direction: direction_descending 
+135617ms wallet.cpp:2547               list_voter_proposals ] args.limit: 10 
+135617ms wallet.cpp:2548               list_voter_proposals ] args.status: all 
+135617ms wallet.cpp:2549               list_voter_proposals ] args.last_id:  
+135618ms websocket_api.cpp:102         on_message           ] message: {"jsonrpc":"2.0","result":{},"id":18} 
+list_voter_proposals "initminer" "end_date" "desc" 10 "all" "" 
+{}
+
+2019-04-12 17:02:19,120 [INFO] Sending list_voter_proposals "initminer" "total_votes" "asc" 10 "active" "" 
+
+2019-04-12 17:02:22,623 [INFO] Call response: unlocked >>> 
+unlocked >>> 139120ms wallet.cpp:2544               list_voter_proposals ] args.start: initminer 
+139120ms wallet.cpp:2545               list_voter_proposals ] args.order_by: by_total_votes 
+139120ms wallet.cpp:2546               list_voter_proposals ] args.order_direction: direction_ascending 
+139120ms wallet.cpp:2547               list_voter_proposals ] args.limit: 10 
+139120ms wallet.cpp:2548               list_voter_proposals ] args.status: active 
+139120ms wallet.cpp:2549               list_voter_proposals ] args.last_id:  
+139122ms websocket_api.cpp:102         on_message           ] message: {"jsonrpc":"2.0","result":{},"id":19} 
+list_voter_proposals "initminer" "total_votes" "asc" 10 "active" "" 
+{}
+
+2019-04-12 17:02:22,623 [INFO] Sending list_voter_proposals "initminer" "total_votes" "asc" 10 "inactive" "" 
+
+2019-04-12 17:02:26,125 [INFO] Call response: unlocked >>> 
+unlocked >>> 142624ms wallet.cpp:2544               list_voter_proposals ] args.start: initminer 
+142624ms wallet.cpp:2545               list_voter_proposals ] args.order_by: by_total_votes 
+142624ms wallet.cpp:2546               list_voter_proposals ] args.order_direction: direction_ascending 
+142624ms wallet.cpp:2547               list_voter_proposals ] args.limit: 10 
+142624ms wallet.cpp:2548               list_voter_proposals ] args.status: inactive 
+142624ms wallet.cpp:2549               list_voter_proposals ] args.last_id:  
+142624ms websocket_api.cpp:102         on_message           ] message: {"jsonrpc":"2.0","result":{},"id":20} 
+list_voter_proposals "initminer" "total_votes" "asc" 10 "inactive" "" 
+{}
+
+2019-04-12 17:02:26,125 [INFO] Sending list_voter_proposals "initminer" "total_votes" "asc" 10 "all" "" 
+
+2019-04-12 17:02:29,627 [INFO] Call response: unlocked >>> 
+unlocked >>> 146125ms wallet.cpp:2544               list_voter_proposals ] args.start: initminer 
+146125ms wallet.cpp:2545               list_voter_proposals ] args.order_by: by_total_votes 
+146125ms wallet.cpp:2546               list_voter_proposals ] args.order_direction: direction_ascending 
+146125ms wallet.cpp:2547               list_voter_proposals ] args.limit: 10 
+146125ms wallet.cpp:2548               list_voter_proposals ] args.status: all 
+146126ms wallet.cpp:2549               list_voter_proposals ] args.last_id:  
+146126ms websocket_api.cpp:102         on_message           ] message: {"jsonrpc":"2.0","result":{},"id":21} 
+list_voter_proposals "initminer" "total_votes" "asc" 10 "all" "" 
+{}
+
+2019-04-12 17:02:29,628 [INFO] Sending list_voter_proposals "initminer" "total_votes" "desc" 10 "active" "" 
+
+2019-04-12 17:02:33,132 [INFO] Call response: unlocked >>> 
+unlocked >>> 149629ms wallet.cpp:2544               list_voter_proposals ] args.start: initminer 
+149629ms wallet.cpp:2545               list_voter_proposals ] args.order_by: by_total_votes 
+149629ms wallet.cpp:2546               list_voter_proposals ] args.order_direction: direction_descending 
+149629ms wallet.cpp:2547               list_voter_proposals ] args.limit: 10 
+149629ms wallet.cpp:2548               list_voter_proposals ] args.status: active 
+149629ms wallet.cpp:2549               list_voter_proposals ] args.last_id:  
+149630ms websocket_api.cpp:102         on_message           ] message: {"jsonrpc":"2.0","result":{},"id":22} 
+list_voter_proposals "initminer" "total_votes" "desc" 10 "active" "" 
+{}
+
+2019-04-12 17:02:33,132 [INFO] Sending list_voter_proposals "initminer" "total_votes" "desc" 10 "inactive" "" 
+
+2019-04-12 17:02:36,635 [INFO] Call response: unlocked >>> 
+unlocked >>> 153133ms wallet.cpp:2544               list_voter_proposals ] args.start: initminer 
+153133ms wallet.cpp:2545               list_voter_proposals ] args.order_by: by_total_votes 
+153133ms wallet.cpp:2546               list_voter_proposals ] args.order_direction: direction_descending 
+153133ms wallet.cpp:2547               list_voter_proposals ] args.limit: 10 
+153133ms wallet.cpp:2548               list_voter_proposals ] args.status: inactive 
+153133ms wallet.cpp:2549               list_voter_proposals ] args.last_id:  
+153134ms websocket_api.cpp:102         on_message           ] message: {"jsonrpc":"2.0","result":{},"id":23} 
+list_voter_proposals "initminer" "total_votes" "desc" 10 "inactive" "" 
+{}
+
+2019-04-12 17:02:36,635 [INFO] Sending list_voter_proposals "initminer" "total_votes" "desc" 10 "all" "" 
+
+2019-04-12 17:02:40,138 [INFO] Call response: unlocked >>> 
+unlocked >>> 156636ms wallet.cpp:2544               list_voter_proposals ] args.start: initminer 
+156636ms wallet.cpp:2545               list_voter_proposals ] args.order_by: by_total_votes 
+156636ms wallet.cpp:2546               list_voter_proposals ] args.order_direction: direction_descending 
+156636ms wallet.cpp:2547               list_voter_proposals ] args.limit: 10 
+156636ms wallet.cpp:2548               list_voter_proposals ] args.status: all 
+156636ms wallet.cpp:2549               list_voter_proposals ] args.last_id:  
+156637ms websocket_api.cpp:102         on_message           ] message: {"jsonrpc":"2.0","result":{},"id":24} 
+list_voter_proposals "initminer" "total_votes" "desc" 10 "all" "" 
+{}
+
+2019-04-12 17:02:40,139 [INFO] TEST `./tests/004_list_voter_proposal.py` passed

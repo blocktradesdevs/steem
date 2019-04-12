@@ -1,0 +1,35 @@
+2019-04-12 17:04:19,277 [INFO] Calling cli_wallet with args `['/home/lumpy/Work/STEEM/steem/build/programs/cli_wallet//cli_wallet --server-rpc-endpoint  ws://127.0.0.1:8090 --cert-auth  _default --rpc-tls-endpoint  127.0.0.1:8092 --rpc-tls-cert  server.pem --rpc-http-endpoint  127.0.0.1:8093 --wallet-file  wallet.json --chain-id  18dcf0a285365fc58b71f18b3d3fec954aa0c141c44e4e5cb4cf777b9eab274e']`
+2019-04-12 17:04:19,279 [INFO] Sending set_password "testpassword" 
+
+2019-04-12 17:04:22,786 [INFO] Sending unlock "testpassword" 
+
+2019-04-12 17:04:26,287 [INFO] Sending import_key "5JNHfZYKGaomSFvd4NUdQ9qMcEAC43kujbfjueTHpVapX1Kzq2n" 
+
+2019-04-12 17:04:29,811 [INFO] Sending list_proposals "initminer" "creator" "asc" 50 "all" "x" 
+
+2019-04-12 17:04:33,313 [INFO] unlocked >>> 
+unlocked >>> 269811ms wallet.cpp:2492               list_proposals       ] The value `x` for `_last_id` argument is invalid, it should be integer type.
+list_proposals "initminer" "creator" "asc" 50 "all" "x" 
+[]
+
+2019-04-12 17:04:33,313 [INFO] Sending list_proposals "initminer" "creator" "asc" 50 "all" "y" 
+
+2019-04-12 17:04:36,814 [INFO] unlocked >>> 
+unlocked >>> 273314ms wallet.cpp:2492               list_proposals       ] The value `y` for `_last_id` argument is invalid, it should be integer type.
+list_proposals "initminer" "creator" "asc" 50 "all" "y" 
+[]
+
+2019-04-12 17:04:36,815 [INFO] Sending list_proposals "initminer" "creator" "asc" 50 "all" "10" 
+
+2019-04-12 17:04:40,317 [INFO] unlocked >>> 
+unlocked >>> 276815ms wallet.cpp:2498               list_proposals       ] args.start: initminer 
+276815ms wallet.cpp:2499               list_proposals       ] args.order_by: by_creator 
+276815ms wallet.cpp:2500               list_proposals       ] args.order_direction: direction_ascending 
+276815ms wallet.cpp:2501               list_proposals       ] args.limit: 50 
+276815ms wallet.cpp:2502               list_proposals       ] args.status: all 
+276815ms wallet.cpp:2503               list_proposals       ] args.last_id: 10 
+276816ms websocket_api.cpp:102         on_message           ] message: {"jsonrpc":"2.0","result":[],"id":1} 
+list_proposals "initminer" "creator" "asc" 50 "all" "10" 
+[]
+
+2019-04-12 17:04:40,317 [INFO] TEST `./tests/008_list_proposal_fail_invalid_value_for_last_id.py` passed

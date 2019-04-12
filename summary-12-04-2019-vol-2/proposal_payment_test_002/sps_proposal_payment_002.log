@@ -1,0 +1,1081 @@
+2019-04-12 17:44:57,728 - SPS-Tester-via-steempy - INFO - Performing SPS tests
+2019-04-12 17:44:57,732 - SPS-Tester-via-steempy - INFO - Running steemd via /home/lumpy/Work/STEEM/steem/build/programs/steemd/steemd in /home/lumpy/Work/STEEM/steem/build/programs/steemd/src/ with config /home/lumpy/Work/STEEM/steem/build/programs/steemd/config.ini
+2019-04-12 17:44:57,737 - SPS-Tester-via-steempy - INFO - Using node at: http://127.0.0.1:8090
+2019-04-12 17:44:57,738 - SPS-Tester-via-steempy - INFO - Using private-key: 5JNHfZYKGaomSFvd4NUdQ9qMcEAC43kujbfjueTHpVapX1Kzq2n
+2019-04-12 17:44:57,759 - SPS-Tester-via-steempy.Runner-Py - INFO - *** START NODE at http://127.0.0.1:8090 in /home/lumpy/Work/STEEM/steem/build/programs/steemd/src/
+2019-04-12 17:44:57,760 - SPS-Tester-via-steempy.Runner-Py - INFO - Running steemd with command: screen -m -d -L -c /home/lumpy/Work/STEEM/steem/build/programs/steemd/src//steem_screen-8090.cfg -S steem-8090-2019-04-12 /home/lumpy/Work/STEEM/steem/build/programs/steemd/steemd -d /home/lumpy/Work/STEEM/steem/build/programs/steemd/src/ --advanced-benchmark --sps-remove-threshold -1 --enable-stale-production
+2019-04-12 17:44:57,763 - SPS-Tester-via-steempy.Tools-Py - INFO - Waiting for 2 blocks to be produced...
+2019-04-12 17:45:10,600 - SPS-Tester-via-steempy.Runner-Py - INFO - Node at http://127.0.0.1:8090 in /home/lumpy/Work/STEEM/steem/build/programs/steemd/src/ is up and running...
+2019-04-12 17:45:11,270 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Creating account: tester001
+2019-04-12 17:45:11,915 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Creating account: tester002
+2019-04-12 17:45:12,359 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Creating account: tester003
+2019-04-12 17:45:13,045 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Creating account: tester004
+2019-04-12 17:45:13,680 - SPS-Tester-via-steempy.Tools-Py - INFO - Waiting for 5 blocks to be produced...
+2019-04-12 17:45:31,748 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Transfer to vesting from initminer to tester001 amount 300.000 TESTS
+2019-04-12 17:45:32,312 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Transfer to vesting from initminer to tester002 amount 300.000 TESTS
+2019-04-12 17:45:32,716 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Transfer to vesting from initminer to tester003 amount 300.000 TESTS
+2019-04-12 17:45:33,281 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Transfer to vesting from initminer to tester004 amount 300.000 TESTS
+2019-04-12 17:45:33,897 - SPS-Tester-via-steempy.Tools-Py - INFO - Waiting for 5 blocks to be produced...
+2019-04-12 17:45:51,960 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Transfer from initminer to tester001 amount 400.000 TESTS
+2019-04-12 17:45:52,550 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Transfer from initminer to tester002 amount 400.000 TESTS
+2019-04-12 17:45:53,005 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Transfer from initminer to tester003 amount 400.000 TESTS
+2019-04-12 17:45:53,409 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Transfer from initminer to tester004 amount 400.000 TESTS
+2019-04-12 17:45:54,056 - SPS-Tester-via-steempy.Tools-Py - INFO - Waiting for 5 blocks to be produced...
+2019-04-12 17:46:12,118 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Transfer from initminer to tester001 amount 400.000 TBD
+2019-04-12 17:46:12,565 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Transfer from initminer to tester002 amount 400.000 TBD
+2019-04-12 17:46:13,160 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Transfer from initminer to tester003 amount 400.000 TBD
+2019-04-12 17:46:13,756 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Transfer from initminer to tester004 amount 400.000 TBD
+2019-04-12 17:46:14,432 - SPS-Tester-via-steempy.Tools-Py - INFO - Waiting for 5 blocks to be produced...
+2019-04-12 17:46:32,494 - SPS-Tester-via-steempy - INFO - Balances for accounts after initial transfer
+2019-04-12 17:46:32,500 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Balances ==> tester001:400.000 TBD,tester002:400.000 TBD,tester003:400.000 TBD,tester004:400.000 TBD
+2019-04-12 17:46:32,500 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Transfer from initminer to steem.dao amount 1000000.000 TESTS
+2019-04-12 17:46:33,121 - SPS-Tester-via-steempy.Tools-Py - INFO - Waiting for 2 blocks to be produced...
+2019-04-12 17:46:42,145 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Transfer from initminer to steem.dao amount 1000000.000 TBD
+2019-04-12 17:46:42,577 - SPS-Tester-via-steempy.Tools-Py - INFO - Waiting for 2 blocks to be produced...
+2019-04-12 17:46:51,612 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Balances ==> steem.dao:1000000.000 TBD
+2019-04-12 17:46:51,612 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Creating posts...
+2019-04-12 17:46:51,612 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - New post ==> (Steempy proposal title [tester001],Steempy proposal body [tester001],tester001,steempy-proposal-title-tester001,proposals)
+2019-04-12 17:46:52,222 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - New post ==> (Steempy proposal title [tester002],Steempy proposal body [tester002],tester002,steempy-proposal-title-tester002,proposals)
+2019-04-12 17:46:52,717 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - New post ==> (Steempy proposal title [tester003],Steempy proposal body [tester003],tester003,steempy-proposal-title-tester003,proposals)
+2019-04-12 17:46:53,312 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - New post ==> (Steempy proposal title [tester004],Steempy proposal body [tester004],tester004,steempy-proposal-title-tester004,proposals)
+2019-04-12 17:46:53,717 - SPS-Tester-via-steempy.Tools-Py - INFO - Waiting for 5 blocks to be produced...
+2019-04-12 17:47:11,777 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Creating proposals...
+2019-04-12 17:47:11,777 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - New proposal ==> (tester001,tester001,2019-04-13T15:47:12,2019-04-18T15:47:12,24.000 TBD,Proposal from account tester001,steempy-proposal-title-tester001)
+2019-04-12 17:47:12,373 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - New proposal ==> (tester002,tester002,2019-04-13T15:47:12,2019-04-15T15:47:12,24.000 TBD,Proposal from account tester002,steempy-proposal-title-tester002)
+2019-04-12 17:47:13,039 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - New proposal ==> (tester003,tester003,2019-04-15T15:47:12,2019-04-16T15:47:12,24.000 TBD,Proposal from account tester003,steempy-proposal-title-tester003)
+2019-04-12 17:47:13,633 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - New proposal ==> (tester004,tester004,2019-04-17T15:47:12,2019-04-18T15:47:12,24.000 TBD,Proposal from account tester004,steempy-proposal-title-tester004)
+2019-04-12 17:47:14,229 - SPS-Tester-via-steempy.Tools-Py - INFO - Waiting for 5 blocks to be produced...
+2019-04-12 17:47:32,289 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Listing proposals with status inactive (id:total_votes): 0:0,1:0,2:0,3:0
+2019-04-12 17:47:32,290 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Voting proposals...
+2019-04-12 17:47:32,290 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Account tester001 voted for proposals: 0,1,2,3
+2019-04-12 17:47:32,937 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Account tester002 voted for proposals: 0,1,2,3
+2019-04-12 17:47:33,391 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Account tester003 voted for proposals: 0,1,2,3
+2019-04-12 17:47:34,017 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Account tester004 voted for proposals: 0,1,2,3
+2019-04-12 17:47:34,643 - SPS-Tester-via-steempy.Tools-Py - INFO - Waiting for 5 blocks to be produced...
+2019-04-12 17:47:52,701 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Listing proposals with status inactive (id:total_votes): 0:0,1:0,2:0,3:0
+2019-04-12 17:47:52,702 - SPS-Tester-via-steempy - INFO - Balances for accounts after creating proposals
+2019-04-12 17:47:52,707 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Balances ==> tester001:390.000 TBD,tester002:390.000 TBD,tester003:390.000 TBD,tester004:390.000 TBD
+2019-04-12 17:47:52,708 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Balances ==> steem.dao:1000040.095 TBD
+2019-04-12 17:47:52,708 - SPS-Tester-via-steempy - INFO - Moving to date: 2019-04-13T15:47:12
+2019-04-12 17:48:05,101 - SPS-Tester-via-steempy - INFO - Moving to date: 2019-04-13T16:47:12
+2019-04-12 17:48:05,632 - SPS-Tester-via-steempy - INFO - Balances for accounts at time: 2019-04-13T16:47:12
+2019-04-12 17:48:05,636 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Balances ==> tester001:391.000 TBD,tester002:391.000 TBD,tester003:390.000 TBD,tester004:390.000 TBD
+2019-04-12 17:48:05,637 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Balances ==> steem.dao:1000038.095 TBD
+2019-04-12 17:48:05,638 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Listing proposals with status active (id:total_votes): 0:84600448,1:84600448
+2019-04-12 17:48:05,639 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Listing proposals with status expired (id:total_votes): 
+2019-04-12 17:48:05,640 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Listing proposals with status all (id:total_votes): 0:84600448,1:84600448,2:0,3:0
+2019-04-12 17:48:05,640 - SPS-Tester-via-steempy - INFO - Moving to date: 2019-04-13T17:47:12
+2019-04-12 17:48:06,164 - SPS-Tester-via-steempy - INFO - Balances for accounts at time: 2019-04-13T17:47:12
+2019-04-12 17:48:06,170 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Balances ==> tester001:392.000 TBD,tester002:392.000 TBD,tester003:390.000 TBD,tester004:390.000 TBD
+2019-04-12 17:48:06,171 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Balances ==> steem.dao:1000036.095 TBD
+2019-04-12 17:48:06,172 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Listing proposals with status active (id:total_votes): 0:84600448,1:84600448
+2019-04-12 17:48:06,173 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Listing proposals with status expired (id:total_votes): 
+2019-04-12 17:48:06,174 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Listing proposals with status all (id:total_votes): 0:84600448,1:84600448,2:0,3:0
+2019-04-12 17:48:06,174 - SPS-Tester-via-steempy - INFO - Moving to date: 2019-04-13T18:47:12
+2019-04-12 17:48:06,705 - SPS-Tester-via-steempy - INFO - Balances for accounts at time: 2019-04-13T18:47:12
+2019-04-12 17:48:06,710 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Balances ==> tester001:393.000 TBD,tester002:393.000 TBD,tester003:390.000 TBD,tester004:390.000 TBD
+2019-04-12 17:48:06,711 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Balances ==> steem.dao:1000034.095 TBD
+2019-04-12 17:48:06,712 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Listing proposals with status active (id:total_votes): 0:84600448,1:84600448
+2019-04-12 17:48:06,713 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Listing proposals with status expired (id:total_votes): 
+2019-04-12 17:48:06,714 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Listing proposals with status all (id:total_votes): 0:84600448,1:84600448,2:0,3:0
+2019-04-12 17:48:06,714 - SPS-Tester-via-steempy - INFO - Moving to date: 2019-04-13T19:47:12
+2019-04-12 17:48:07,254 - SPS-Tester-via-steempy - INFO - Balances for accounts at time: 2019-04-13T19:47:12
+2019-04-12 17:48:07,258 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Balances ==> tester001:394.000 TBD,tester002:394.000 TBD,tester003:390.000 TBD,tester004:390.000 TBD
+2019-04-12 17:48:07,259 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Balances ==> steem.dao:1000032.095 TBD
+2019-04-12 17:48:07,260 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Listing proposals with status active (id:total_votes): 0:84600448,1:84600448
+2019-04-12 17:48:07,261 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Listing proposals with status expired (id:total_votes): 
+2019-04-12 17:48:07,262 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Listing proposals with status all (id:total_votes): 0:84600448,1:84600448,2:0,3:0
+2019-04-12 17:48:07,262 - SPS-Tester-via-steempy - INFO - Moving to date: 2019-04-13T20:47:12
+2019-04-12 17:48:07,791 - SPS-Tester-via-steempy - INFO - Balances for accounts at time: 2019-04-13T20:47:12
+2019-04-12 17:48:07,796 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Balances ==> tester001:395.000 TBD,tester002:395.000 TBD,tester003:390.000 TBD,tester004:390.000 TBD
+2019-04-12 17:48:07,797 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Balances ==> steem.dao:1000030.095 TBD
+2019-04-12 17:48:07,798 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Listing proposals with status active (id:total_votes): 0:84600448,1:84600448
+2019-04-12 17:48:07,799 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Listing proposals with status expired (id:total_votes): 
+2019-04-12 17:48:07,800 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Listing proposals with status all (id:total_votes): 0:84600448,1:84600448,2:0,3:0
+2019-04-12 17:48:07,800 - SPS-Tester-via-steempy - INFO - Moving to date: 2019-04-13T21:47:12
+2019-04-12 17:48:08,328 - SPS-Tester-via-steempy - INFO - Balances for accounts at time: 2019-04-13T21:47:12
+2019-04-12 17:48:08,333 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Balances ==> tester001:396.000 TBD,tester002:396.000 TBD,tester003:390.000 TBD,tester004:390.000 TBD
+2019-04-12 17:48:08,334 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Balances ==> steem.dao:1000028.095 TBD
+2019-04-12 17:48:08,335 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Listing proposals with status active (id:total_votes): 0:84600448,1:84600448
+2019-04-12 17:48:08,336 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Listing proposals with status expired (id:total_votes): 
+2019-04-12 17:48:08,337 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Listing proposals with status all (id:total_votes): 0:84600448,1:84600448,2:0,3:0
+2019-04-12 17:48:08,337 - SPS-Tester-via-steempy - INFO - Moving to date: 2019-04-13T22:47:12
+2019-04-12 17:48:08,871 - SPS-Tester-via-steempy - INFO - Balances for accounts at time: 2019-04-13T22:47:12
+2019-04-12 17:48:08,875 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Balances ==> tester001:397.000 TBD,tester002:397.000 TBD,tester003:390.000 TBD,tester004:390.000 TBD
+2019-04-12 17:48:08,876 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Balances ==> steem.dao:1000026.095 TBD
+2019-04-12 17:48:08,877 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Listing proposals with status active (id:total_votes): 0:84600448,1:84600448
+2019-04-12 17:48:08,878 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Listing proposals with status expired (id:total_votes): 
+2019-04-12 17:48:08,879 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Listing proposals with status all (id:total_votes): 0:84600448,1:84600448,2:0,3:0
+2019-04-12 17:48:08,879 - SPS-Tester-via-steempy - INFO - Moving to date: 2019-04-13T23:47:12
+2019-04-12 17:48:09,416 - SPS-Tester-via-steempy - INFO - Balances for accounts at time: 2019-04-13T23:47:12
+2019-04-12 17:48:09,421 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Balances ==> tester001:398.000 TBD,tester002:398.000 TBD,tester003:390.000 TBD,tester004:390.000 TBD
+2019-04-12 17:48:09,422 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Balances ==> steem.dao:1000024.095 TBD
+2019-04-12 17:48:09,423 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Listing proposals with status active (id:total_votes): 0:84600448,1:84600448
+2019-04-12 17:48:09,424 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Listing proposals with status expired (id:total_votes): 
+2019-04-12 17:48:09,425 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Listing proposals with status all (id:total_votes): 0:84600448,1:84600448,2:0,3:0
+2019-04-12 17:48:09,425 - SPS-Tester-via-steempy - INFO - Moving to date: 2019-04-14T00:47:12
+2019-04-12 17:48:09,953 - SPS-Tester-via-steempy - INFO - Balances for accounts at time: 2019-04-14T00:47:12
+2019-04-12 17:48:09,958 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Balances ==> tester001:399.000 TBD,tester002:399.000 TBD,tester003:390.000 TBD,tester004:390.000 TBD
+2019-04-12 17:48:09,960 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Balances ==> steem.dao:1000022.095 TBD
+2019-04-12 17:48:09,961 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Listing proposals with status active (id:total_votes): 0:84600448,1:84600448
+2019-04-12 17:48:09,961 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Listing proposals with status expired (id:total_votes): 
+2019-04-12 17:48:09,962 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Listing proposals with status all (id:total_votes): 0:84600448,1:84600448,2:0,3:0
+2019-04-12 17:48:09,962 - SPS-Tester-via-steempy - INFO - Moving to date: 2019-04-14T01:47:12
+2019-04-12 17:48:10,496 - SPS-Tester-via-steempy - INFO - Balances for accounts at time: 2019-04-14T01:47:12
+2019-04-12 17:48:10,500 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Balances ==> tester001:400.000 TBD,tester002:400.000 TBD,tester003:390.000 TBD,tester004:390.000 TBD
+2019-04-12 17:48:10,501 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Balances ==> steem.dao:1000020.095 TBD
+2019-04-12 17:48:10,502 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Listing proposals with status active (id:total_votes): 0:84600448,1:84600448
+2019-04-12 17:48:10,503 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Listing proposals with status expired (id:total_votes): 
+2019-04-12 17:48:10,504 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Listing proposals with status all (id:total_votes): 0:84600448,1:84600448,2:0,3:0
+2019-04-12 17:48:10,504 - SPS-Tester-via-steempy - INFO - Moving to date: 2019-04-14T02:47:12
+2019-04-12 17:48:11,038 - SPS-Tester-via-steempy - INFO - Balances for accounts at time: 2019-04-14T02:47:12
+2019-04-12 17:48:11,042 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Balances ==> tester001:401.000 TBD,tester002:401.000 TBD,tester003:390.000 TBD,tester004:390.000 TBD
+2019-04-12 17:48:11,043 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Balances ==> steem.dao:1000018.095 TBD
+2019-04-12 17:48:11,045 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Listing proposals with status active (id:total_votes): 0:84600448,1:84600448
+2019-04-12 17:48:11,045 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Listing proposals with status expired (id:total_votes): 
+2019-04-12 17:48:11,046 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Listing proposals with status all (id:total_votes): 0:84600448,1:84600448,2:0,3:0
+2019-04-12 17:48:11,047 - SPS-Tester-via-steempy - INFO - Moving to date: 2019-04-14T03:47:12
+2019-04-12 17:48:11,570 - SPS-Tester-via-steempy - INFO - Balances for accounts at time: 2019-04-14T03:47:12
+2019-04-12 17:48:11,575 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Balances ==> tester001:402.000 TBD,tester002:402.000 TBD,tester003:390.000 TBD,tester004:390.000 TBD
+2019-04-12 17:48:11,576 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Balances ==> steem.dao:1000016.095 TBD
+2019-04-12 17:48:11,577 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Listing proposals with status active (id:total_votes): 0:84600448,1:84600448
+2019-04-12 17:48:11,578 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Listing proposals with status expired (id:total_votes): 
+2019-04-12 17:48:11,579 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Listing proposals with status all (id:total_votes): 0:84600448,1:84600448,2:0,3:0
+2019-04-12 17:48:11,579 - SPS-Tester-via-steempy - INFO - Moving to date: 2019-04-14T04:47:12
+2019-04-12 17:48:12,141 - SPS-Tester-via-steempy - INFO - Balances for accounts at time: 2019-04-14T04:47:12
+2019-04-12 17:48:12,146 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Balances ==> tester001:403.000 TBD,tester002:403.000 TBD,tester003:390.000 TBD,tester004:390.000 TBD
+2019-04-12 17:48:12,147 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Balances ==> steem.dao:1000014.095 TBD
+2019-04-12 17:48:12,148 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Listing proposals with status active (id:total_votes): 0:84600448,1:84600448
+2019-04-12 17:48:12,149 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Listing proposals with status expired (id:total_votes): 
+2019-04-12 17:48:12,150 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Listing proposals with status all (id:total_votes): 0:84600448,1:84600448,2:0,3:0
+2019-04-12 17:48:12,150 - SPS-Tester-via-steempy - INFO - Moving to date: 2019-04-14T05:47:12
+2019-04-12 17:48:12,680 - SPS-Tester-via-steempy - INFO - Balances for accounts at time: 2019-04-14T05:47:12
+2019-04-12 17:48:12,685 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Balances ==> tester001:404.000 TBD,tester002:404.000 TBD,tester003:390.000 TBD,tester004:390.000 TBD
+2019-04-12 17:48:12,686 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Balances ==> steem.dao:1000012.095 TBD
+2019-04-12 17:48:12,687 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Listing proposals with status active (id:total_votes): 0:84600448,1:84600448
+2019-04-12 17:48:12,688 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Listing proposals with status expired (id:total_votes): 
+2019-04-12 17:48:12,688 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Listing proposals with status all (id:total_votes): 0:84600448,1:84600448,2:0,3:0
+2019-04-12 17:48:12,689 - SPS-Tester-via-steempy - INFO - Moving to date: 2019-04-14T06:47:12
+2019-04-12 17:48:13,219 - SPS-Tester-via-steempy - INFO - Balances for accounts at time: 2019-04-14T06:47:12
+2019-04-12 17:48:13,223 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Balances ==> tester001:405.000 TBD,tester002:405.000 TBD,tester003:390.000 TBD,tester004:390.000 TBD
+2019-04-12 17:48:13,225 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Balances ==> steem.dao:1000010.095 TBD
+2019-04-12 17:48:13,226 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Listing proposals with status active (id:total_votes): 0:84600448,1:84600448
+2019-04-12 17:48:13,227 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Listing proposals with status expired (id:total_votes): 
+2019-04-12 17:48:13,227 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Listing proposals with status all (id:total_votes): 0:84600448,1:84600448,2:0,3:0
+2019-04-12 17:48:13,228 - SPS-Tester-via-steempy - INFO - Moving to date: 2019-04-14T07:47:12
+2019-04-12 17:48:13,756 - SPS-Tester-via-steempy - INFO - Balances for accounts at time: 2019-04-14T07:47:12
+2019-04-12 17:48:13,761 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Balances ==> tester001:406.000 TBD,tester002:406.000 TBD,tester003:390.000 TBD,tester004:390.000 TBD
+2019-04-12 17:48:13,762 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Balances ==> steem.dao:1000008.095 TBD
+2019-04-12 17:48:13,763 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Listing proposals with status active (id:total_votes): 0:84600448,1:84600448
+2019-04-12 17:48:13,764 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Listing proposals with status expired (id:total_votes): 
+2019-04-12 17:48:13,765 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Listing proposals with status all (id:total_votes): 0:84600448,1:84600448,2:0,3:0
+2019-04-12 17:48:13,766 - SPS-Tester-via-steempy - INFO - Moving to date: 2019-04-14T08:47:12
+2019-04-12 17:48:14,297 - SPS-Tester-via-steempy - INFO - Balances for accounts at time: 2019-04-14T08:47:12
+2019-04-12 17:48:14,301 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Balances ==> tester001:407.000 TBD,tester002:407.000 TBD,tester003:390.000 TBD,tester004:390.000 TBD
+2019-04-12 17:48:14,302 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Balances ==> steem.dao:1000006.095 TBD
+2019-04-12 17:48:14,303 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Listing proposals with status active (id:total_votes): 0:84600448,1:84600448
+2019-04-12 17:48:14,304 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Listing proposals with status expired (id:total_votes): 
+2019-04-12 17:48:14,305 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Listing proposals with status all (id:total_votes): 0:84600448,1:84600448,2:0,3:0
+2019-04-12 17:48:14,305 - SPS-Tester-via-steempy - INFO - Moving to date: 2019-04-14T09:47:12
+2019-04-12 17:48:14,839 - SPS-Tester-via-steempy - INFO - Balances for accounts at time: 2019-04-14T09:47:12
+2019-04-12 17:48:14,844 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Balances ==> tester001:408.000 TBD,tester002:408.000 TBD,tester003:390.000 TBD,tester004:390.000 TBD
+2019-04-12 17:48:14,845 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Balances ==> steem.dao:1000004.095 TBD
+2019-04-12 17:48:14,846 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Listing proposals with status active (id:total_votes): 0:84600448,1:84600448
+2019-04-12 17:48:14,847 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Listing proposals with status expired (id:total_votes): 
+2019-04-12 17:48:14,848 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Listing proposals with status all (id:total_votes): 0:84600448,1:84600448,2:0,3:0
+2019-04-12 17:48:14,848 - SPS-Tester-via-steempy - INFO - Moving to date: 2019-04-14T10:47:12
+2019-04-12 17:48:15,381 - SPS-Tester-via-steempy - INFO - Balances for accounts at time: 2019-04-14T10:47:12
+2019-04-12 17:48:15,385 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Balances ==> tester001:409.000 TBD,tester002:409.000 TBD,tester003:390.000 TBD,tester004:390.000 TBD
+2019-04-12 17:48:15,387 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Balances ==> steem.dao:1000002.095 TBD
+2019-04-12 17:48:15,388 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Listing proposals with status active (id:total_votes): 0:84600448,1:84600448
+2019-04-12 17:48:15,389 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Listing proposals with status expired (id:total_votes): 
+2019-04-12 17:48:15,389 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Listing proposals with status all (id:total_votes): 0:84600448,1:84600448,2:0,3:0
+2019-04-12 17:48:15,390 - SPS-Tester-via-steempy - INFO - Moving to date: 2019-04-14T11:47:12
+2019-04-12 17:48:15,924 - SPS-Tester-via-steempy - INFO - Balances for accounts at time: 2019-04-14T11:47:12
+2019-04-12 17:48:15,929 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Balances ==> tester001:410.000 TBD,tester002:410.000 TBD,tester003:390.000 TBD,tester004:390.000 TBD
+2019-04-12 17:48:15,930 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Balances ==> steem.dao:1000000.095 TBD
+2019-04-12 17:48:15,931 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Listing proposals with status active (id:total_votes): 0:84600448,1:84600448
+2019-04-12 17:48:15,932 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Listing proposals with status expired (id:total_votes): 
+2019-04-12 17:48:15,933 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Listing proposals with status all (id:total_votes): 0:84600448,1:84600448,2:0,3:0
+2019-04-12 17:48:15,933 - SPS-Tester-via-steempy - INFO - Moving to date: 2019-04-14T12:47:12
+2019-04-12 17:48:16,458 - SPS-Tester-via-steempy - INFO - Balances for accounts at time: 2019-04-14T12:47:12
+2019-04-12 17:48:16,463 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Balances ==> tester001:411.000 TBD,tester002:411.000 TBD,tester003:390.000 TBD,tester004:390.000 TBD
+2019-04-12 17:48:16,464 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Balances ==> steem.dao:999998.095 TBD
+2019-04-12 17:48:16,465 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Listing proposals with status active (id:total_votes): 0:84600448,1:84600448
+2019-04-12 17:48:16,466 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Listing proposals with status expired (id:total_votes): 
+2019-04-12 17:48:16,467 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Listing proposals with status all (id:total_votes): 0:84600448,1:84600448,2:0,3:0
+2019-04-12 17:48:16,467 - SPS-Tester-via-steempy - INFO - Moving to date: 2019-04-14T13:47:12
+2019-04-12 17:48:16,999 - SPS-Tester-via-steempy - INFO - Balances for accounts at time: 2019-04-14T13:47:12
+2019-04-12 17:48:17,004 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Balances ==> tester001:412.000 TBD,tester002:412.000 TBD,tester003:390.000 TBD,tester004:390.000 TBD
+2019-04-12 17:48:17,005 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Balances ==> steem.dao:999996.095 TBD
+2019-04-12 17:48:17,006 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Listing proposals with status active (id:total_votes): 0:84600448,1:84600448
+2019-04-12 17:48:17,007 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Listing proposals with status expired (id:total_votes): 
+2019-04-12 17:48:17,008 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Listing proposals with status all (id:total_votes): 0:84600448,1:84600448,2:0,3:0
+2019-04-12 17:48:17,008 - SPS-Tester-via-steempy - INFO - Moving to date: 2019-04-14T14:47:12
+2019-04-12 17:48:17,542 - SPS-Tester-via-steempy - INFO - Balances for accounts at time: 2019-04-14T14:47:12
+2019-04-12 17:48:17,546 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Balances ==> tester001:413.000 TBD,tester002:413.000 TBD,tester003:390.000 TBD,tester004:390.000 TBD
+2019-04-12 17:48:17,547 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Balances ==> steem.dao:999994.095 TBD
+2019-04-12 17:48:17,548 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Listing proposals with status active (id:total_votes): 0:84600448,1:84600448
+2019-04-12 17:48:17,549 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Listing proposals with status expired (id:total_votes): 
+2019-04-12 17:48:17,550 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Listing proposals with status all (id:total_votes): 0:84600448,1:84600448,2:0,3:0
+2019-04-12 17:48:17,550 - SPS-Tester-via-steempy - INFO - Moving to date: 2019-04-14T15:47:12
+2019-04-12 17:48:18,086 - SPS-Tester-via-steempy - INFO - Balances for accounts at time: 2019-04-14T15:47:12
+2019-04-12 17:48:18,091 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Balances ==> tester001:414.000 TBD,tester002:414.000 TBD,tester003:390.000 TBD,tester004:390.000 TBD
+2019-04-12 17:48:18,092 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Balances ==> steem.dao:999992.095 TBD
+2019-04-12 17:48:18,093 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Listing proposals with status active (id:total_votes): 0:84600448,1:84600448
+2019-04-12 17:48:18,093 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Listing proposals with status expired (id:total_votes): 
+2019-04-12 17:48:18,094 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Listing proposals with status all (id:total_votes): 0:84600448,1:84600448,2:0,3:0
+2019-04-12 17:48:18,094 - SPS-Tester-via-steempy - INFO - Moving to date: 2019-04-14T16:47:12
+2019-04-12 17:48:18,625 - SPS-Tester-via-steempy - INFO - Balances for accounts at time: 2019-04-14T16:47:12
+2019-04-12 17:48:18,629 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Balances ==> tester001:415.000 TBD,tester002:415.000 TBD,tester003:390.000 TBD,tester004:390.000 TBD
+2019-04-12 17:48:18,630 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Balances ==> steem.dao:999990.095 TBD
+2019-04-12 17:48:18,631 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Listing proposals with status active (id:total_votes): 0:84600448,1:84600448
+2019-04-12 17:48:18,632 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Listing proposals with status expired (id:total_votes): 
+2019-04-12 17:48:18,633 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Listing proposals with status all (id:total_votes): 0:84600448,1:84600448,2:0,3:0
+2019-04-12 17:48:18,633 - SPS-Tester-via-steempy - INFO - Moving to date: 2019-04-14T17:47:12
+2019-04-12 17:48:19,164 - SPS-Tester-via-steempy - INFO - Balances for accounts at time: 2019-04-14T17:47:12
+2019-04-12 17:48:19,169 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Balances ==> tester001:416.000 TBD,tester002:416.000 TBD,tester003:390.000 TBD,tester004:390.000 TBD
+2019-04-12 17:48:19,171 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Balances ==> steem.dao:999988.095 TBD
+2019-04-12 17:48:19,172 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Listing proposals with status active (id:total_votes): 0:84600448,1:84600448
+2019-04-12 17:48:19,172 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Listing proposals with status expired (id:total_votes): 
+2019-04-12 17:48:19,173 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Listing proposals with status all (id:total_votes): 0:84600448,1:84600448,2:0,3:0
+2019-04-12 17:48:19,173 - SPS-Tester-via-steempy - INFO - Moving to date: 2019-04-14T18:47:12
+2019-04-12 17:48:19,701 - SPS-Tester-via-steempy - INFO - Balances for accounts at time: 2019-04-14T18:47:12
+2019-04-12 17:48:19,706 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Balances ==> tester001:417.000 TBD,tester002:417.000 TBD,tester003:390.000 TBD,tester004:390.000 TBD
+2019-04-12 17:48:19,707 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Balances ==> steem.dao:999986.095 TBD
+2019-04-12 17:48:19,708 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Listing proposals with status active (id:total_votes): 0:84600448,1:84600448
+2019-04-12 17:48:19,709 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Listing proposals with status expired (id:total_votes): 
+2019-04-12 17:48:19,710 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Listing proposals with status all (id:total_votes): 0:84600448,1:84600448,2:0,3:0
+2019-04-12 17:48:19,710 - SPS-Tester-via-steempy - INFO - Moving to date: 2019-04-14T19:47:12
+2019-04-12 17:48:20,253 - SPS-Tester-via-steempy - INFO - Balances for accounts at time: 2019-04-14T19:47:12
+2019-04-12 17:48:20,258 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Balances ==> tester001:418.000 TBD,tester002:418.000 TBD,tester003:390.000 TBD,tester004:390.000 TBD
+2019-04-12 17:48:20,259 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Balances ==> steem.dao:999984.095 TBD
+2019-04-12 17:48:20,260 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Listing proposals with status active (id:total_votes): 0:84600448,1:84600448
+2019-04-12 17:48:20,260 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Listing proposals with status expired (id:total_votes): 
+2019-04-12 17:48:20,261 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Listing proposals with status all (id:total_votes): 0:84600448,1:84600448,2:0,3:0
+2019-04-12 17:48:20,261 - SPS-Tester-via-steempy - INFO - Moving to date: 2019-04-14T20:47:12
+2019-04-12 17:48:20,792 - SPS-Tester-via-steempy - INFO - Balances for accounts at time: 2019-04-14T20:47:12
+2019-04-12 17:48:20,796 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Balances ==> tester001:419.000 TBD,tester002:419.000 TBD,tester003:390.000 TBD,tester004:390.000 TBD
+2019-04-12 17:48:20,797 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Balances ==> steem.dao:999982.095 TBD
+2019-04-12 17:48:20,798 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Listing proposals with status active (id:total_votes): 0:84600448,1:84600448
+2019-04-12 17:48:20,799 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Listing proposals with status expired (id:total_votes): 
+2019-04-12 17:48:20,800 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Listing proposals with status all (id:total_votes): 0:84600448,1:84600448,2:0,3:0
+2019-04-12 17:48:20,800 - SPS-Tester-via-steempy - INFO - Moving to date: 2019-04-14T21:47:12
+2019-04-12 17:48:21,333 - SPS-Tester-via-steempy - INFO - Balances for accounts at time: 2019-04-14T21:47:12
+2019-04-12 17:48:21,338 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Balances ==> tester001:420.000 TBD,tester002:420.000 TBD,tester003:390.000 TBD,tester004:390.000 TBD
+2019-04-12 17:48:21,339 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Balances ==> steem.dao:999980.095 TBD
+2019-04-12 17:48:21,340 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Listing proposals with status active (id:total_votes): 0:84600448,1:84600448
+2019-04-12 17:48:21,341 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Listing proposals with status expired (id:total_votes): 
+2019-04-12 17:48:21,342 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Listing proposals with status all (id:total_votes): 0:84600448,1:84600448,2:0,3:0
+2019-04-12 17:48:21,342 - SPS-Tester-via-steempy - INFO - Moving to date: 2019-04-14T22:47:12
+2019-04-12 17:48:21,871 - SPS-Tester-via-steempy - INFO - Balances for accounts at time: 2019-04-14T22:47:12
+2019-04-12 17:48:21,876 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Balances ==> tester001:421.000 TBD,tester002:421.000 TBD,tester003:390.000 TBD,tester004:390.000 TBD
+2019-04-12 17:48:21,877 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Balances ==> steem.dao:999978.095 TBD
+2019-04-12 17:48:21,878 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Listing proposals with status active (id:total_votes): 0:84600448,1:84600448
+2019-04-12 17:48:21,878 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Listing proposals with status expired (id:total_votes): 
+2019-04-12 17:48:21,879 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Listing proposals with status all (id:total_votes): 0:84600448,1:84600448,2:0,3:0
+2019-04-12 17:48:21,879 - SPS-Tester-via-steempy - INFO - Moving to date: 2019-04-14T23:47:12
+2019-04-12 17:48:22,415 - SPS-Tester-via-steempy - INFO - Balances for accounts at time: 2019-04-14T23:47:12
+2019-04-12 17:48:22,419 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Balances ==> tester001:422.000 TBD,tester002:422.000 TBD,tester003:390.000 TBD,tester004:390.000 TBD
+2019-04-12 17:48:22,420 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Balances ==> steem.dao:999976.095 TBD
+2019-04-12 17:48:22,422 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Listing proposals with status active (id:total_votes): 0:84600448,1:84600448
+2019-04-12 17:48:22,423 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Listing proposals with status expired (id:total_votes): 
+2019-04-12 17:48:22,424 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Listing proposals with status all (id:total_votes): 0:84600448,1:84600448,2:0,3:0
+2019-04-12 17:48:22,424 - SPS-Tester-via-steempy - INFO - Moving to date: 2019-04-15T00:47:12
+2019-04-12 17:48:22,955 - SPS-Tester-via-steempy - INFO - Balances for accounts at time: 2019-04-15T00:47:12
+2019-04-12 17:48:22,961 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Balances ==> tester001:423.000 TBD,tester002:423.000 TBD,tester003:390.000 TBD,tester004:390.000 TBD
+2019-04-12 17:48:22,962 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Balances ==> steem.dao:999974.095 TBD
+2019-04-12 17:48:22,963 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Listing proposals with status active (id:total_votes): 0:84600448,1:84600448
+2019-04-12 17:48:22,964 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Listing proposals with status expired (id:total_votes): 
+2019-04-12 17:48:22,965 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Listing proposals with status all (id:total_votes): 0:84600448,1:84600448,2:0,3:0
+2019-04-12 17:48:22,966 - SPS-Tester-via-steempy - INFO - Moving to date: 2019-04-15T01:47:12
+2019-04-12 17:48:23,493 - SPS-Tester-via-steempy - INFO - Balances for accounts at time: 2019-04-15T01:47:12
+2019-04-12 17:48:23,497 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Balances ==> tester001:424.000 TBD,tester002:424.000 TBD,tester003:390.000 TBD,tester004:390.000 TBD
+2019-04-12 17:48:23,499 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Balances ==> steem.dao:999972.095 TBD
+2019-04-12 17:48:23,500 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Listing proposals with status active (id:total_votes): 0:84600448,1:84600448
+2019-04-12 17:48:23,501 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Listing proposals with status expired (id:total_votes): 
+2019-04-12 17:48:23,502 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Listing proposals with status all (id:total_votes): 0:84600448,1:84600448,2:0,3:0
+2019-04-12 17:48:23,502 - SPS-Tester-via-steempy - INFO - Moving to date: 2019-04-15T02:47:12
+2019-04-12 17:48:24,035 - SPS-Tester-via-steempy - INFO - Balances for accounts at time: 2019-04-15T02:47:12
+2019-04-12 17:48:24,039 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Balances ==> tester001:425.000 TBD,tester002:425.000 TBD,tester003:390.000 TBD,tester004:390.000 TBD
+2019-04-12 17:48:24,040 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Balances ==> steem.dao:999970.095 TBD
+2019-04-12 17:48:24,041 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Listing proposals with status active (id:total_votes): 0:84600448,1:84600448
+2019-04-12 17:48:24,042 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Listing proposals with status expired (id:total_votes): 
+2019-04-12 17:48:24,043 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Listing proposals with status all (id:total_votes): 0:84600448,1:84600448,2:0,3:0
+2019-04-12 17:48:24,043 - SPS-Tester-via-steempy - INFO - Moving to date: 2019-04-15T03:47:12
+2019-04-12 17:48:24,570 - SPS-Tester-via-steempy - INFO - Balances for accounts at time: 2019-04-15T03:47:12
+2019-04-12 17:48:24,574 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Balances ==> tester001:426.000 TBD,tester002:426.000 TBD,tester003:390.000 TBD,tester004:390.000 TBD
+2019-04-12 17:48:24,575 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Balances ==> steem.dao:999968.095 TBD
+2019-04-12 17:48:24,576 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Listing proposals with status active (id:total_votes): 0:84600448,1:84600448
+2019-04-12 17:48:24,577 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Listing proposals with status expired (id:total_votes): 
+2019-04-12 17:48:24,578 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Listing proposals with status all (id:total_votes): 0:84600448,1:84600448,2:0,3:0
+2019-04-12 17:48:24,578 - SPS-Tester-via-steempy - INFO - Moving to date: 2019-04-15T04:47:12
+2019-04-12 17:48:25,108 - SPS-Tester-via-steempy - INFO - Balances for accounts at time: 2019-04-15T04:47:12
+2019-04-12 17:48:25,112 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Balances ==> tester001:427.000 TBD,tester002:427.000 TBD,tester003:390.000 TBD,tester004:390.000 TBD
+2019-04-12 17:48:25,114 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Balances ==> steem.dao:999966.095 TBD
+2019-04-12 17:48:25,115 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Listing proposals with status active (id:total_votes): 0:84600448,1:84600448
+2019-04-12 17:48:25,116 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Listing proposals with status expired (id:total_votes): 
+2019-04-12 17:48:25,117 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Listing proposals with status all (id:total_votes): 0:84600448,1:84600448,2:0,3:0
+2019-04-12 17:48:25,117 - SPS-Tester-via-steempy - INFO - Moving to date: 2019-04-15T05:47:12
+2019-04-12 17:48:25,654 - SPS-Tester-via-steempy - INFO - Balances for accounts at time: 2019-04-15T05:47:12
+2019-04-12 17:48:25,659 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Balances ==> tester001:428.000 TBD,tester002:428.000 TBD,tester003:390.000 TBD,tester004:390.000 TBD
+2019-04-12 17:48:25,660 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Balances ==> steem.dao:999964.095 TBD
+2019-04-12 17:48:25,661 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Listing proposals with status active (id:total_votes): 0:84600448,1:84600448
+2019-04-12 17:48:25,662 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Listing proposals with status expired (id:total_votes): 
+2019-04-12 17:48:25,663 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Listing proposals with status all (id:total_votes): 0:84600448,1:84600448,2:0,3:0
+2019-04-12 17:48:25,663 - SPS-Tester-via-steempy - INFO - Moving to date: 2019-04-15T06:47:12
+2019-04-12 17:48:26,188 - SPS-Tester-via-steempy - INFO - Balances for accounts at time: 2019-04-15T06:47:12
+2019-04-12 17:48:26,193 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Balances ==> tester001:429.000 TBD,tester002:429.000 TBD,tester003:390.000 TBD,tester004:390.000 TBD
+2019-04-12 17:48:26,194 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Balances ==> steem.dao:999962.095 TBD
+2019-04-12 17:48:26,195 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Listing proposals with status active (id:total_votes): 0:84600448,1:84600448
+2019-04-12 17:48:26,196 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Listing proposals with status expired (id:total_votes): 
+2019-04-12 17:48:26,197 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Listing proposals with status all (id:total_votes): 0:84600448,1:84600448,2:0,3:0
+2019-04-12 17:48:26,197 - SPS-Tester-via-steempy - INFO - Moving to date: 2019-04-15T07:47:12
+2019-04-12 17:48:26,724 - SPS-Tester-via-steempy - INFO - Balances for accounts at time: 2019-04-15T07:47:12
+2019-04-12 17:48:26,728 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Balances ==> tester001:430.000 TBD,tester002:430.000 TBD,tester003:390.000 TBD,tester004:390.000 TBD
+2019-04-12 17:48:26,729 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Balances ==> steem.dao:999960.095 TBD
+2019-04-12 17:48:26,731 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Listing proposals with status active (id:total_votes): 0:84600448,1:84600448
+2019-04-12 17:48:26,731 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Listing proposals with status expired (id:total_votes): 
+2019-04-12 17:48:26,732 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Listing proposals with status all (id:total_votes): 0:84600448,1:84600448,2:0,3:0
+2019-04-12 17:48:26,732 - SPS-Tester-via-steempy - INFO - Moving to date: 2019-04-15T08:47:12
+2019-04-12 17:48:27,266 - SPS-Tester-via-steempy - INFO - Balances for accounts at time: 2019-04-15T08:47:12
+2019-04-12 17:48:27,271 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Balances ==> tester001:431.000 TBD,tester002:431.000 TBD,tester003:390.000 TBD,tester004:390.000 TBD
+2019-04-12 17:48:27,272 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Balances ==> steem.dao:999958.095 TBD
+2019-04-12 17:48:27,273 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Listing proposals with status active (id:total_votes): 0:84600448,1:84600448
+2019-04-12 17:48:27,274 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Listing proposals with status expired (id:total_votes): 
+2019-04-12 17:48:27,275 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Listing proposals with status all (id:total_votes): 0:84600448,1:84600448,2:0,3:0
+2019-04-12 17:48:27,275 - SPS-Tester-via-steempy - INFO - Moving to date: 2019-04-15T09:47:12
+2019-04-12 17:48:27,804 - SPS-Tester-via-steempy - INFO - Balances for accounts at time: 2019-04-15T09:47:12
+2019-04-12 17:48:27,809 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Balances ==> tester001:432.000 TBD,tester002:432.000 TBD,tester003:390.000 TBD,tester004:390.000 TBD
+2019-04-12 17:48:27,810 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Balances ==> steem.dao:999956.095 TBD
+2019-04-12 17:48:27,812 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Listing proposals with status active (id:total_votes): 0:84600448,1:84600448
+2019-04-12 17:48:27,813 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Listing proposals with status expired (id:total_votes): 
+2019-04-12 17:48:27,814 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Listing proposals with status all (id:total_votes): 0:84600448,1:84600448,2:0,3:0
+2019-04-12 17:48:27,814 - SPS-Tester-via-steempy - INFO - Moving to date: 2019-04-15T10:47:12
+2019-04-12 17:48:28,365 - SPS-Tester-via-steempy - INFO - Balances for accounts at time: 2019-04-15T10:47:12
+2019-04-12 17:48:28,370 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Balances ==> tester001:433.000 TBD,tester002:433.000 TBD,tester003:390.000 TBD,tester004:390.000 TBD
+2019-04-12 17:48:28,371 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Balances ==> steem.dao:999954.095 TBD
+2019-04-12 17:48:28,372 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Listing proposals with status active (id:total_votes): 0:84600448,1:84600448
+2019-04-12 17:48:28,373 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Listing proposals with status expired (id:total_votes): 
+2019-04-12 17:48:28,374 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Listing proposals with status all (id:total_votes): 0:84600448,1:84600448,2:0,3:0
+2019-04-12 17:48:28,374 - SPS-Tester-via-steempy - INFO - Moving to date: 2019-04-15T11:47:12
+2019-04-12 17:48:28,901 - SPS-Tester-via-steempy - INFO - Balances for accounts at time: 2019-04-15T11:47:12
+2019-04-12 17:48:28,906 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Balances ==> tester001:434.000 TBD,tester002:434.000 TBD,tester003:390.000 TBD,tester004:390.000 TBD
+2019-04-12 17:48:28,907 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Balances ==> steem.dao:999952.095 TBD
+2019-04-12 17:48:28,908 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Listing proposals with status active (id:total_votes): 0:84600448,1:84600448
+2019-04-12 17:48:28,909 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Listing proposals with status expired (id:total_votes): 
+2019-04-12 17:48:28,910 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Listing proposals with status all (id:total_votes): 0:84600448,1:84600448,2:0,3:0
+2019-04-12 17:48:28,910 - SPS-Tester-via-steempy - INFO - Moving to date: 2019-04-15T12:47:12
+2019-04-12 17:48:29,439 - SPS-Tester-via-steempy - INFO - Balances for accounts at time: 2019-04-15T12:47:12
+2019-04-12 17:48:29,444 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Balances ==> tester001:435.000 TBD,tester002:435.000 TBD,tester003:390.000 TBD,tester004:390.000 TBD
+2019-04-12 17:48:29,445 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Balances ==> steem.dao:999950.095 TBD
+2019-04-12 17:48:29,446 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Listing proposals with status active (id:total_votes): 0:84600448,1:84600448
+2019-04-12 17:48:29,447 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Listing proposals with status expired (id:total_votes): 
+2019-04-12 17:48:29,448 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Listing proposals with status all (id:total_votes): 0:84600448,1:84600448,2:0,3:0
+2019-04-12 17:48:29,448 - SPS-Tester-via-steempy - INFO - Moving to date: 2019-04-15T13:47:12
+2019-04-12 17:48:29,982 - SPS-Tester-via-steempy - INFO - Balances for accounts at time: 2019-04-15T13:47:12
+2019-04-12 17:48:29,987 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Balances ==> tester001:436.000 TBD,tester002:436.000 TBD,tester003:390.000 TBD,tester004:390.000 TBD
+2019-04-12 17:48:29,989 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Balances ==> steem.dao:999948.095 TBD
+2019-04-12 17:48:29,990 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Listing proposals with status active (id:total_votes): 0:84600448,1:84600448
+2019-04-12 17:48:29,990 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Listing proposals with status expired (id:total_votes): 
+2019-04-12 17:48:29,991 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Listing proposals with status all (id:total_votes): 0:84600448,1:84600448,2:0,3:0
+2019-04-12 17:48:29,992 - SPS-Tester-via-steempy - INFO - Moving to date: 2019-04-15T14:47:12
+2019-04-12 17:48:30,528 - SPS-Tester-via-steempy - INFO - Balances for accounts at time: 2019-04-15T14:47:12
+2019-04-12 17:48:30,533 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Balances ==> tester001:437.000 TBD,tester002:437.000 TBD,tester003:390.000 TBD,tester004:390.000 TBD
+2019-04-12 17:48:30,534 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Balances ==> steem.dao:999946.095 TBD
+2019-04-12 17:48:30,535 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Listing proposals with status active (id:total_votes): 0:84600448,1:84600448
+2019-04-12 17:48:30,536 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Listing proposals with status expired (id:total_votes): 
+2019-04-12 17:48:30,537 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Listing proposals with status all (id:total_votes): 0:84600448,1:84600448,2:0,3:0
+2019-04-12 17:48:30,537 - SPS-Tester-via-steempy - INFO - Moving to date: 2019-04-15T15:47:12
+2019-04-12 17:48:31,115 - SPS-Tester-via-steempy - INFO - Balances for accounts at time: 2019-04-15T15:47:12
+2019-04-12 17:48:31,120 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Balances ==> tester001:438.000 TBD,tester002:438.000 TBD,tester003:390.000 TBD,tester004:390.000 TBD
+2019-04-12 17:48:31,121 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Balances ==> steem.dao:999944.095 TBD
+2019-04-12 17:48:31,122 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Listing proposals with status active (id:total_votes): 0:84600448,1:84600448,2:0
+2019-04-12 17:48:31,123 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Listing proposals with status expired (id:total_votes): 
+2019-04-12 17:48:31,124 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Listing proposals with status all (id:total_votes): 0:84600448,1:84600448,2:0,3:0
+2019-04-12 17:48:31,124 - SPS-Tester-via-steempy - INFO - Moving to date: 2019-04-15T16:47:12
+2019-04-12 17:48:31,654 - SPS-Tester-via-steempy - INFO - Balances for accounts at time: 2019-04-15T16:47:12
+2019-04-12 17:48:31,659 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Balances ==> tester001:439.000 TBD,tester002:438.000 TBD,tester003:391.000 TBD,tester004:390.000 TBD
+2019-04-12 17:48:31,661 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Balances ==> steem.dao:999942.095 TBD
+2019-04-12 17:48:31,662 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Listing proposals with status active (id:total_votes): 0:84600448,2:84600448
+2019-04-12 17:48:31,663 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Listing proposals with status expired (id:total_votes): 1:84600448
+2019-04-12 17:48:31,664 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Listing proposals with status all (id:total_votes): 0:84600448,1:84600448,2:84600448,3:0
+2019-04-12 17:48:31,664 - SPS-Tester-via-steempy - INFO - Moving to date: 2019-04-15T17:47:12
+2019-04-12 17:48:32,196 - SPS-Tester-via-steempy - INFO - Balances for accounts at time: 2019-04-15T17:47:12
+2019-04-12 17:48:32,201 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Balances ==> tester001:440.000 TBD,tester002:438.000 TBD,tester003:392.000 TBD,tester004:390.000 TBD
+2019-04-12 17:48:32,202 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Balances ==> steem.dao:999940.095 TBD
+2019-04-12 17:48:32,203 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Listing proposals with status active (id:total_votes): 0:84600448,2:84600448
+2019-04-12 17:48:32,204 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Listing proposals with status expired (id:total_votes): 1:84600448
+2019-04-12 17:48:32,205 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Listing proposals with status all (id:total_votes): 0:84600448,1:84600448,2:84600448,3:0
+2019-04-12 17:48:32,205 - SPS-Tester-via-steempy - INFO - Moving to date: 2019-04-15T18:47:12
+2019-04-12 17:48:32,745 - SPS-Tester-via-steempy - INFO - Balances for accounts at time: 2019-04-15T18:47:12
+2019-04-12 17:48:32,749 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Balances ==> tester001:441.000 TBD,tester002:438.000 TBD,tester003:393.000 TBD,tester004:390.000 TBD
+2019-04-12 17:48:32,751 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Balances ==> steem.dao:999938.095 TBD
+2019-04-12 17:48:32,752 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Listing proposals with status active (id:total_votes): 0:84600448,2:84600448
+2019-04-12 17:48:32,753 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Listing proposals with status expired (id:total_votes): 1:84600448
+2019-04-12 17:48:32,755 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Listing proposals with status all (id:total_votes): 0:84600448,1:84600448,2:84600448,3:0
+2019-04-12 17:48:32,755 - SPS-Tester-via-steempy - INFO - Moving to date: 2019-04-15T19:47:12
+2019-04-12 17:48:33,294 - SPS-Tester-via-steempy - INFO - Balances for accounts at time: 2019-04-15T19:47:12
+2019-04-12 17:48:33,298 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Balances ==> tester001:442.000 TBD,tester002:438.000 TBD,tester003:394.000 TBD,tester004:390.000 TBD
+2019-04-12 17:48:33,299 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Balances ==> steem.dao:999936.095 TBD
+2019-04-12 17:48:33,300 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Listing proposals with status active (id:total_votes): 0:84600448,2:84600448
+2019-04-12 17:48:33,301 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Listing proposals with status expired (id:total_votes): 1:84600448
+2019-04-12 17:48:33,302 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Listing proposals with status all (id:total_votes): 0:84600448,1:84600448,2:84600448,3:0
+2019-04-12 17:48:33,302 - SPS-Tester-via-steempy - INFO - Moving to date: 2019-04-15T20:47:12
+2019-04-12 17:48:33,854 - SPS-Tester-via-steempy - INFO - Balances for accounts at time: 2019-04-15T20:47:12
+2019-04-12 17:48:33,859 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Balances ==> tester001:443.000 TBD,tester002:438.000 TBD,tester003:395.000 TBD,tester004:390.000 TBD
+2019-04-12 17:48:33,860 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Balances ==> steem.dao:999934.095 TBD
+2019-04-12 17:48:33,861 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Listing proposals with status active (id:total_votes): 0:84600448,2:84600448
+2019-04-12 17:48:33,862 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Listing proposals with status expired (id:total_votes): 1:84600448
+2019-04-12 17:48:33,863 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Listing proposals with status all (id:total_votes): 0:84600448,1:84600448,2:84600448,3:0
+2019-04-12 17:48:33,863 - SPS-Tester-via-steempy - INFO - Moving to date: 2019-04-15T21:47:12
+2019-04-12 17:48:34,415 - SPS-Tester-via-steempy - INFO - Balances for accounts at time: 2019-04-15T21:47:12
+2019-04-12 17:48:34,419 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Balances ==> tester001:444.000 TBD,tester002:438.000 TBD,tester003:396.000 TBD,tester004:390.000 TBD
+2019-04-12 17:48:34,420 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Balances ==> steem.dao:999932.095 TBD
+2019-04-12 17:48:34,422 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Listing proposals with status active (id:total_votes): 0:84600448,2:84600448
+2019-04-12 17:48:34,423 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Listing proposals with status expired (id:total_votes): 1:84600448
+2019-04-12 17:48:34,424 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Listing proposals with status all (id:total_votes): 0:84600448,1:84600448,2:84600448,3:0
+2019-04-12 17:48:34,424 - SPS-Tester-via-steempy - INFO - Moving to date: 2019-04-15T22:47:12
+2019-04-12 17:48:34,982 - SPS-Tester-via-steempy - INFO - Balances for accounts at time: 2019-04-15T22:47:12
+2019-04-12 17:48:34,987 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Balances ==> tester001:445.000 TBD,tester002:438.000 TBD,tester003:397.000 TBD,tester004:390.000 TBD
+2019-04-12 17:48:34,988 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Balances ==> steem.dao:999930.095 TBD
+2019-04-12 17:48:34,989 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Listing proposals with status active (id:total_votes): 0:84600448,2:84600448
+2019-04-12 17:48:34,990 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Listing proposals with status expired (id:total_votes): 1:84600448
+2019-04-12 17:48:34,991 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Listing proposals with status all (id:total_votes): 0:84600448,1:84600448,2:84600448,3:0
+2019-04-12 17:48:34,991 - SPS-Tester-via-steempy - INFO - Moving to date: 2019-04-15T23:47:12
+2019-04-12 17:48:35,574 - SPS-Tester-via-steempy - INFO - Balances for accounts at time: 2019-04-15T23:47:12
+2019-04-12 17:48:35,579 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Balances ==> tester001:446.000 TBD,tester002:438.000 TBD,tester003:398.000 TBD,tester004:390.000 TBD
+2019-04-12 17:48:35,581 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Balances ==> steem.dao:999928.095 TBD
+2019-04-12 17:48:35,582 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Listing proposals with status active (id:total_votes): 0:84600448,2:84600448
+2019-04-12 17:48:35,583 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Listing proposals with status expired (id:total_votes): 1:84600448
+2019-04-12 17:48:35,584 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Listing proposals with status all (id:total_votes): 0:84600448,1:84600448,2:84600448,3:0
+2019-04-12 17:48:35,584 - SPS-Tester-via-steempy - INFO - Moving to date: 2019-04-16T00:47:12
+2019-04-12 17:48:36,127 - SPS-Tester-via-steempy - INFO - Balances for accounts at time: 2019-04-16T00:47:12
+2019-04-12 17:48:36,136 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Balances ==> tester001:447.000 TBD,tester002:438.000 TBD,tester003:399.000 TBD,tester004:390.000 TBD
+2019-04-12 17:48:36,138 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Balances ==> steem.dao:999926.095 TBD
+2019-04-12 17:48:36,139 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Listing proposals with status active (id:total_votes): 0:84600448,2:84600448
+2019-04-12 17:48:36,141 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Listing proposals with status expired (id:total_votes): 1:84600448
+2019-04-12 17:48:36,142 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Listing proposals with status all (id:total_votes): 0:84600448,1:84600448,2:84600448,3:0
+2019-04-12 17:48:36,142 - SPS-Tester-via-steempy - INFO - Moving to date: 2019-04-16T01:47:12
+2019-04-12 17:48:36,690 - SPS-Tester-via-steempy - INFO - Balances for accounts at time: 2019-04-16T01:47:12
+2019-04-12 17:48:36,695 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Balances ==> tester001:448.000 TBD,tester002:438.000 TBD,tester003:400.000 TBD,tester004:390.000 TBD
+2019-04-12 17:48:36,696 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Balances ==> steem.dao:999924.095 TBD
+2019-04-12 17:48:36,697 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Listing proposals with status active (id:total_votes): 0:84600448,2:84600448
+2019-04-12 17:48:36,698 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Listing proposals with status expired (id:total_votes): 1:84600448
+2019-04-12 17:48:36,699 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Listing proposals with status all (id:total_votes): 0:84600448,1:84600448,2:84600448,3:0
+2019-04-12 17:48:36,699 - SPS-Tester-via-steempy - INFO - Moving to date: 2019-04-16T02:47:12
+2019-04-12 17:48:37,255 - SPS-Tester-via-steempy - INFO - Balances for accounts at time: 2019-04-16T02:47:12
+2019-04-12 17:48:37,260 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Balances ==> tester001:449.000 TBD,tester002:438.000 TBD,tester003:401.000 TBD,tester004:390.000 TBD
+2019-04-12 17:48:37,261 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Balances ==> steem.dao:999922.095 TBD
+2019-04-12 17:48:37,262 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Listing proposals with status active (id:total_votes): 0:84600448,2:84600448
+2019-04-12 17:48:37,264 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Listing proposals with status expired (id:total_votes): 1:84600448
+2019-04-12 17:48:37,265 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Listing proposals with status all (id:total_votes): 0:84600448,1:84600448,2:84600448,3:0
+2019-04-12 17:48:37,265 - SPS-Tester-via-steempy - INFO - Moving to date: 2019-04-16T03:47:12
+2019-04-12 17:48:37,809 - SPS-Tester-via-steempy - INFO - Balances for accounts at time: 2019-04-16T03:47:12
+2019-04-12 17:48:37,814 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Balances ==> tester001:450.000 TBD,tester002:438.000 TBD,tester003:402.000 TBD,tester004:390.000 TBD
+2019-04-12 17:48:37,815 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Balances ==> steem.dao:999920.095 TBD
+2019-04-12 17:48:37,816 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Listing proposals with status active (id:total_votes): 0:84600448,2:84600448
+2019-04-12 17:48:37,817 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Listing proposals with status expired (id:total_votes): 1:84600448
+2019-04-12 17:48:37,817 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Listing proposals with status all (id:total_votes): 0:84600448,1:84600448,2:84600448,3:0
+2019-04-12 17:48:37,817 - SPS-Tester-via-steempy - INFO - Moving to date: 2019-04-16T04:47:12
+2019-04-12 17:48:38,357 - SPS-Tester-via-steempy - INFO - Balances for accounts at time: 2019-04-16T04:47:12
+2019-04-12 17:48:38,362 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Balances ==> tester001:451.000 TBD,tester002:438.000 TBD,tester003:403.000 TBD,tester004:390.000 TBD
+2019-04-12 17:48:38,363 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Balances ==> steem.dao:999918.095 TBD
+2019-04-12 17:48:38,364 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Listing proposals with status active (id:total_votes): 0:84600448,2:84600448
+2019-04-12 17:48:38,365 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Listing proposals with status expired (id:total_votes): 1:84600448
+2019-04-12 17:48:38,366 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Listing proposals with status all (id:total_votes): 0:84600448,1:84600448,2:84600448,3:0
+2019-04-12 17:48:38,367 - SPS-Tester-via-steempy - INFO - Moving to date: 2019-04-16T05:47:12
+2019-04-12 17:48:38,920 - SPS-Tester-via-steempy - INFO - Balances for accounts at time: 2019-04-16T05:47:12
+2019-04-12 17:48:38,925 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Balances ==> tester001:452.000 TBD,tester002:438.000 TBD,tester003:404.000 TBD,tester004:390.000 TBD
+2019-04-12 17:48:38,927 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Balances ==> steem.dao:999916.095 TBD
+2019-04-12 17:48:38,930 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Listing proposals with status active (id:total_votes): 0:84600448,2:84600448
+2019-04-12 17:48:38,932 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Listing proposals with status expired (id:total_votes): 1:84600448
+2019-04-12 17:48:38,933 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Listing proposals with status all (id:total_votes): 0:84600448,1:84600448,2:84600448,3:0
+2019-04-12 17:48:38,934 - SPS-Tester-via-steempy - INFO - Moving to date: 2019-04-16T06:47:12
+2019-04-12 17:48:39,485 - SPS-Tester-via-steempy - INFO - Balances for accounts at time: 2019-04-16T06:47:12
+2019-04-12 17:48:39,489 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Balances ==> tester001:453.000 TBD,tester002:438.000 TBD,tester003:405.000 TBD,tester004:390.000 TBD
+2019-04-12 17:48:39,490 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Balances ==> steem.dao:999914.095 TBD
+2019-04-12 17:48:39,491 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Listing proposals with status active (id:total_votes): 0:84600448,2:84600448
+2019-04-12 17:48:39,492 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Listing proposals with status expired (id:total_votes): 1:84600448
+2019-04-12 17:48:39,493 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Listing proposals with status all (id:total_votes): 0:84600448,1:84600448,2:84600448,3:0
+2019-04-12 17:48:39,493 - SPS-Tester-via-steempy - INFO - Moving to date: 2019-04-16T07:47:12
+2019-04-12 17:48:40,024 - SPS-Tester-via-steempy - INFO - Balances for accounts at time: 2019-04-16T07:47:12
+2019-04-12 17:48:40,028 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Balances ==> tester001:454.000 TBD,tester002:438.000 TBD,tester003:406.000 TBD,tester004:390.000 TBD
+2019-04-12 17:48:40,029 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Balances ==> steem.dao:999912.095 TBD
+2019-04-12 17:48:40,030 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Listing proposals with status active (id:total_votes): 0:84600448,2:84600448
+2019-04-12 17:48:40,031 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Listing proposals with status expired (id:total_votes): 1:84600448
+2019-04-12 17:48:40,032 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Listing proposals with status all (id:total_votes): 0:84600448,1:84600448,2:84600448,3:0
+2019-04-12 17:48:40,032 - SPS-Tester-via-steempy - INFO - Moving to date: 2019-04-16T08:47:12
+2019-04-12 17:48:40,577 - SPS-Tester-via-steempy - INFO - Balances for accounts at time: 2019-04-16T08:47:12
+2019-04-12 17:48:40,581 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Balances ==> tester001:455.000 TBD,tester002:438.000 TBD,tester003:407.000 TBD,tester004:390.000 TBD
+2019-04-12 17:48:40,582 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Balances ==> steem.dao:999910.095 TBD
+2019-04-12 17:48:40,583 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Listing proposals with status active (id:total_votes): 0:84600448,2:84600448
+2019-04-12 17:48:40,584 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Listing proposals with status expired (id:total_votes): 1:84600448
+2019-04-12 17:48:40,585 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Listing proposals with status all (id:total_votes): 0:84600448,1:84600448,2:84600448,3:0
+2019-04-12 17:48:40,585 - SPS-Tester-via-steempy - INFO - Moving to date: 2019-04-16T09:47:12
+2019-04-12 17:48:41,142 - SPS-Tester-via-steempy - INFO - Balances for accounts at time: 2019-04-16T09:47:12
+2019-04-12 17:48:41,147 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Balances ==> tester001:456.000 TBD,tester002:438.000 TBD,tester003:408.000 TBD,tester004:390.000 TBD
+2019-04-12 17:48:41,148 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Balances ==> steem.dao:999908.095 TBD
+2019-04-12 17:48:41,149 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Listing proposals with status active (id:total_votes): 0:84600448,2:84600448
+2019-04-12 17:48:41,150 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Listing proposals with status expired (id:total_votes): 1:84600448
+2019-04-12 17:48:41,151 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Listing proposals with status all (id:total_votes): 0:84600448,1:84600448,2:84600448,3:0
+2019-04-12 17:48:41,151 - SPS-Tester-via-steempy - INFO - Moving to date: 2019-04-16T10:47:12
+2019-04-12 17:48:41,684 - SPS-Tester-via-steempy - INFO - Balances for accounts at time: 2019-04-16T10:47:12
+2019-04-12 17:48:41,690 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Balances ==> tester001:457.000 TBD,tester002:438.000 TBD,tester003:409.000 TBD,tester004:390.000 TBD
+2019-04-12 17:48:41,691 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Balances ==> steem.dao:999906.095 TBD
+2019-04-12 17:48:41,692 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Listing proposals with status active (id:total_votes): 0:84600448,2:84600448
+2019-04-12 17:48:41,693 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Listing proposals with status expired (id:total_votes): 1:84600448
+2019-04-12 17:48:41,694 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Listing proposals with status all (id:total_votes): 0:84600448,1:84600448,2:84600448,3:0
+2019-04-12 17:48:41,694 - SPS-Tester-via-steempy - INFO - Moving to date: 2019-04-16T11:47:12
+2019-04-12 17:48:42,232 - SPS-Tester-via-steempy - INFO - Balances for accounts at time: 2019-04-16T11:47:12
+2019-04-12 17:48:42,236 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Balances ==> tester001:458.000 TBD,tester002:438.000 TBD,tester003:410.000 TBD,tester004:390.000 TBD
+2019-04-12 17:48:42,237 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Balances ==> steem.dao:999904.095 TBD
+2019-04-12 17:48:42,238 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Listing proposals with status active (id:total_votes): 0:84600448,2:84600448
+2019-04-12 17:48:42,239 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Listing proposals with status expired (id:total_votes): 1:84600448
+2019-04-12 17:48:42,240 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Listing proposals with status all (id:total_votes): 0:84600448,1:84600448,2:84600448,3:0
+2019-04-12 17:48:42,240 - SPS-Tester-via-steempy - INFO - Moving to date: 2019-04-16T12:47:12
+2019-04-12 17:48:42,778 - SPS-Tester-via-steempy - INFO - Balances for accounts at time: 2019-04-16T12:47:12
+2019-04-12 17:48:42,783 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Balances ==> tester001:459.000 TBD,tester002:438.000 TBD,tester003:411.000 TBD,tester004:390.000 TBD
+2019-04-12 17:48:42,784 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Balances ==> steem.dao:999902.095 TBD
+2019-04-12 17:48:42,785 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Listing proposals with status active (id:total_votes): 0:84600448,2:84600448
+2019-04-12 17:48:42,786 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Listing proposals with status expired (id:total_votes): 1:84600448
+2019-04-12 17:48:42,787 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Listing proposals with status all (id:total_votes): 0:84600448,1:84600448,2:84600448,3:0
+2019-04-12 17:48:42,787 - SPS-Tester-via-steempy - INFO - Moving to date: 2019-04-16T13:47:12
+2019-04-12 17:48:43,327 - SPS-Tester-via-steempy - INFO - Balances for accounts at time: 2019-04-16T13:47:12
+2019-04-12 17:48:43,331 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Balances ==> tester001:460.000 TBD,tester002:438.000 TBD,tester003:412.000 TBD,tester004:390.000 TBD
+2019-04-12 17:48:43,332 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Balances ==> steem.dao:999900.095 TBD
+2019-04-12 17:48:43,333 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Listing proposals with status active (id:total_votes): 0:84600448,2:84600448
+2019-04-12 17:48:43,334 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Listing proposals with status expired (id:total_votes): 1:84600448
+2019-04-12 17:48:43,335 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Listing proposals with status all (id:total_votes): 0:84600448,1:84600448,2:84600448,3:0
+2019-04-12 17:48:43,335 - SPS-Tester-via-steempy - INFO - Moving to date: 2019-04-16T14:47:12
+2019-04-12 17:48:43,869 - SPS-Tester-via-steempy - INFO - Balances for accounts at time: 2019-04-16T14:47:12
+2019-04-12 17:48:43,874 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Balances ==> tester001:461.000 TBD,tester002:438.000 TBD,tester003:413.000 TBD,tester004:390.000 TBD
+2019-04-12 17:48:43,875 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Balances ==> steem.dao:999898.095 TBD
+2019-04-12 17:48:43,876 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Listing proposals with status active (id:total_votes): 0:84600448,2:84600448
+2019-04-12 17:48:43,878 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Listing proposals with status expired (id:total_votes): 1:84600448
+2019-04-12 17:48:43,879 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Listing proposals with status all (id:total_votes): 0:84600448,1:84600448,2:84600448,3:0
+2019-04-12 17:48:43,879 - SPS-Tester-via-steempy - INFO - Moving to date: 2019-04-16T15:47:12
+2019-04-12 17:48:44,422 - SPS-Tester-via-steempy - INFO - Balances for accounts at time: 2019-04-16T15:47:12
+2019-04-12 17:48:44,426 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Balances ==> tester001:462.000 TBD,tester002:438.000 TBD,tester003:414.000 TBD,tester004:390.000 TBD
+2019-04-12 17:48:44,428 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Balances ==> steem.dao:999896.095 TBD
+2019-04-12 17:48:44,429 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Listing proposals with status active (id:total_votes): 0:84600448,2:84600448
+2019-04-12 17:48:44,430 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Listing proposals with status expired (id:total_votes): 
+2019-04-12 17:48:44,431 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Listing proposals with status all (id:total_votes): 0:84600448,2:84600448,3:0
+2019-04-12 17:48:44,431 - SPS-Tester-via-steempy - INFO - Moving to date: 2019-04-16T16:47:12
+2019-04-12 17:48:44,966 - SPS-Tester-via-steempy - INFO - Balances for accounts at time: 2019-04-16T16:47:12
+2019-04-12 17:48:44,970 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Balances ==> tester001:463.000 TBD,tester002:438.000 TBD,tester003:414.000 TBD,tester004:390.000 TBD
+2019-04-12 17:48:44,971 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Balances ==> steem.dao:999895.095 TBD
+2019-04-12 17:48:44,972 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Listing proposals with status active (id:total_votes): 0:84600448
+2019-04-12 17:48:44,973 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Listing proposals with status expired (id:total_votes): 2:84600448
+2019-04-12 17:48:44,973 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Listing proposals with status all (id:total_votes): 0:84600448,2:84600448,3:0
+2019-04-12 17:48:44,974 - SPS-Tester-via-steempy - INFO - Moving to date: 2019-04-16T17:47:12
+2019-04-12 17:48:45,514 - SPS-Tester-via-steempy - INFO - Balances for accounts at time: 2019-04-16T17:47:12
+2019-04-12 17:48:45,519 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Balances ==> tester001:464.000 TBD,tester002:438.000 TBD,tester003:414.000 TBD,tester004:390.000 TBD
+2019-04-12 17:48:45,520 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Balances ==> steem.dao:999894.095 TBD
+2019-04-12 17:48:45,521 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Listing proposals with status active (id:total_votes): 0:84600448
+2019-04-12 17:48:45,521 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Listing proposals with status expired (id:total_votes): 2:84600448
+2019-04-12 17:48:45,522 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Listing proposals with status all (id:total_votes): 0:84600448,2:84600448,3:0
+2019-04-12 17:48:45,522 - SPS-Tester-via-steempy - INFO - Moving to date: 2019-04-16T18:47:12
+2019-04-12 17:48:46,053 - SPS-Tester-via-steempy - INFO - Balances for accounts at time: 2019-04-16T18:47:12
+2019-04-12 17:48:46,057 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Balances ==> tester001:465.000 TBD,tester002:438.000 TBD,tester003:414.000 TBD,tester004:390.000 TBD
+2019-04-12 17:48:46,059 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Balances ==> steem.dao:999893.095 TBD
+2019-04-12 17:48:46,059 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Listing proposals with status active (id:total_votes): 0:84600448
+2019-04-12 17:48:46,060 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Listing proposals with status expired (id:total_votes): 2:84600448
+2019-04-12 17:48:46,061 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Listing proposals with status all (id:total_votes): 0:84600448,2:84600448,3:0
+2019-04-12 17:48:46,061 - SPS-Tester-via-steempy - INFO - Moving to date: 2019-04-16T19:47:12
+2019-04-12 17:48:46,601 - SPS-Tester-via-steempy - INFO - Balances for accounts at time: 2019-04-16T19:47:12
+2019-04-12 17:48:46,606 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Balances ==> tester001:466.000 TBD,tester002:438.000 TBD,tester003:414.000 TBD,tester004:390.000 TBD
+2019-04-12 17:48:46,607 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Balances ==> steem.dao:999892.095 TBD
+2019-04-12 17:48:46,608 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Listing proposals with status active (id:total_votes): 0:84600448
+2019-04-12 17:48:46,609 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Listing proposals with status expired (id:total_votes): 2:84600448
+2019-04-12 17:48:46,610 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Listing proposals with status all (id:total_votes): 0:84600448,2:84600448,3:0
+2019-04-12 17:48:46,610 - SPS-Tester-via-steempy - INFO - Moving to date: 2019-04-16T20:47:12
+2019-04-12 17:48:47,139 - SPS-Tester-via-steempy - INFO - Balances for accounts at time: 2019-04-16T20:47:12
+2019-04-12 17:48:47,143 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Balances ==> tester001:467.000 TBD,tester002:438.000 TBD,tester003:414.000 TBD,tester004:390.000 TBD
+2019-04-12 17:48:47,145 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Balances ==> steem.dao:999891.095 TBD
+2019-04-12 17:48:47,146 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Listing proposals with status active (id:total_votes): 0:84600448
+2019-04-12 17:48:47,147 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Listing proposals with status expired (id:total_votes): 2:84600448
+2019-04-12 17:48:47,148 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Listing proposals with status all (id:total_votes): 0:84600448,2:84600448,3:0
+2019-04-12 17:48:47,148 - SPS-Tester-via-steempy - INFO - Moving to date: 2019-04-16T21:47:12
+2019-04-12 17:48:47,702 - SPS-Tester-via-steempy - INFO - Balances for accounts at time: 2019-04-16T21:47:12
+2019-04-12 17:48:47,707 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Balances ==> tester001:468.000 TBD,tester002:438.000 TBD,tester003:414.000 TBD,tester004:390.000 TBD
+2019-04-12 17:48:47,708 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Balances ==> steem.dao:999890.095 TBD
+2019-04-12 17:48:47,709 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Listing proposals with status active (id:total_votes): 0:84600448
+2019-04-12 17:48:47,710 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Listing proposals with status expired (id:total_votes): 2:84600448
+2019-04-12 17:48:47,711 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Listing proposals with status all (id:total_votes): 0:84600448,2:84600448,3:0
+2019-04-12 17:48:47,712 - SPS-Tester-via-steempy - INFO - Moving to date: 2019-04-16T22:47:12
+2019-04-12 17:48:48,256 - SPS-Tester-via-steempy - INFO - Balances for accounts at time: 2019-04-16T22:47:12
+2019-04-12 17:48:48,261 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Balances ==> tester001:469.000 TBD,tester002:438.000 TBD,tester003:414.000 TBD,tester004:390.000 TBD
+2019-04-12 17:48:48,263 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Balances ==> steem.dao:999889.095 TBD
+2019-04-12 17:48:48,264 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Listing proposals with status active (id:total_votes): 0:84600448
+2019-04-12 17:48:48,265 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Listing proposals with status expired (id:total_votes): 2:84600448
+2019-04-12 17:48:48,266 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Listing proposals with status all (id:total_votes): 0:84600448,2:84600448,3:0
+2019-04-12 17:48:48,266 - SPS-Tester-via-steempy - INFO - Moving to date: 2019-04-16T23:47:12
+2019-04-12 17:48:48,805 - SPS-Tester-via-steempy - INFO - Balances for accounts at time: 2019-04-16T23:47:12
+2019-04-12 17:48:48,810 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Balances ==> tester001:470.000 TBD,tester002:438.000 TBD,tester003:414.000 TBD,tester004:390.000 TBD
+2019-04-12 17:48:48,811 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Balances ==> steem.dao:999888.095 TBD
+2019-04-12 17:48:48,812 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Listing proposals with status active (id:total_votes): 0:84600448
+2019-04-12 17:48:48,813 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Listing proposals with status expired (id:total_votes): 2:84600448
+2019-04-12 17:48:48,814 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Listing proposals with status all (id:total_votes): 0:84600448,2:84600448,3:0
+2019-04-12 17:48:48,814 - SPS-Tester-via-steempy - INFO - Moving to date: 2019-04-17T00:47:12
+2019-04-12 17:48:49,349 - SPS-Tester-via-steempy - INFO - Balances for accounts at time: 2019-04-17T00:47:12
+2019-04-12 17:48:49,354 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Balances ==> tester001:471.000 TBD,tester002:438.000 TBD,tester003:414.000 TBD,tester004:390.000 TBD
+2019-04-12 17:48:49,355 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Balances ==> steem.dao:999887.095 TBD
+2019-04-12 17:48:49,356 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Listing proposals with status active (id:total_votes): 0:84600448
+2019-04-12 17:48:49,357 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Listing proposals with status expired (id:total_votes): 2:84600448
+2019-04-12 17:48:49,358 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Listing proposals with status all (id:total_votes): 0:84600448,2:84600448,3:0
+2019-04-12 17:48:49,358 - SPS-Tester-via-steempy - INFO - Moving to date: 2019-04-17T01:47:12
+2019-04-12 17:48:49,886 - SPS-Tester-via-steempy - INFO - Balances for accounts at time: 2019-04-17T01:47:12
+2019-04-12 17:48:49,891 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Balances ==> tester001:472.000 TBD,tester002:438.000 TBD,tester003:414.000 TBD,tester004:390.000 TBD
+2019-04-12 17:48:49,892 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Balances ==> steem.dao:999886.095 TBD
+2019-04-12 17:48:49,893 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Listing proposals with status active (id:total_votes): 0:84600448
+2019-04-12 17:48:49,894 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Listing proposals with status expired (id:total_votes): 2:84600448
+2019-04-12 17:48:49,895 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Listing proposals with status all (id:total_votes): 0:84600448,2:84600448,3:0
+2019-04-12 17:48:49,895 - SPS-Tester-via-steempy - INFO - Moving to date: 2019-04-17T02:47:12
+2019-04-12 17:48:50,459 - SPS-Tester-via-steempy - INFO - Balances for accounts at time: 2019-04-17T02:47:12
+2019-04-12 17:48:50,464 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Balances ==> tester001:473.000 TBD,tester002:438.000 TBD,tester003:414.000 TBD,tester004:390.000 TBD
+2019-04-12 17:48:50,465 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Balances ==> steem.dao:999885.095 TBD
+2019-04-12 17:48:50,467 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Listing proposals with status active (id:total_votes): 0:84600448
+2019-04-12 17:48:50,468 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Listing proposals with status expired (id:total_votes): 2:84600448
+2019-04-12 17:48:50,469 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Listing proposals with status all (id:total_votes): 0:84600448,2:84600448,3:0
+2019-04-12 17:48:50,469 - SPS-Tester-via-steempy - INFO - Moving to date: 2019-04-17T03:47:12
+2019-04-12 17:48:51,003 - SPS-Tester-via-steempy - INFO - Balances for accounts at time: 2019-04-17T03:47:12
+2019-04-12 17:48:51,008 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Balances ==> tester001:474.000 TBD,tester002:438.000 TBD,tester003:414.000 TBD,tester004:390.000 TBD
+2019-04-12 17:48:51,009 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Balances ==> steem.dao:999884.095 TBD
+2019-04-12 17:48:51,010 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Listing proposals with status active (id:total_votes): 0:84600448
+2019-04-12 17:48:51,011 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Listing proposals with status expired (id:total_votes): 2:84600448
+2019-04-12 17:48:51,012 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Listing proposals with status all (id:total_votes): 0:84600448,2:84600448,3:0
+2019-04-12 17:48:51,012 - SPS-Tester-via-steempy - INFO - Moving to date: 2019-04-17T04:47:12
+2019-04-12 17:48:51,545 - SPS-Tester-via-steempy - INFO - Balances for accounts at time: 2019-04-17T04:47:12
+2019-04-12 17:48:51,550 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Balances ==> tester001:475.000 TBD,tester002:438.000 TBD,tester003:414.000 TBD,tester004:390.000 TBD
+2019-04-12 17:48:51,551 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Balances ==> steem.dao:999883.095 TBD
+2019-04-12 17:48:51,552 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Listing proposals with status active (id:total_votes): 0:84600448
+2019-04-12 17:48:51,553 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Listing proposals with status expired (id:total_votes): 2:84600448
+2019-04-12 17:48:51,554 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Listing proposals with status all (id:total_votes): 0:84600448,2:84600448,3:0
+2019-04-12 17:48:51,554 - SPS-Tester-via-steempy - INFO - Moving to date: 2019-04-17T05:47:12
+2019-04-12 17:48:52,086 - SPS-Tester-via-steempy - INFO - Balances for accounts at time: 2019-04-17T05:47:12
+2019-04-12 17:48:52,090 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Balances ==> tester001:476.000 TBD,tester002:438.000 TBD,tester003:414.000 TBD,tester004:390.000 TBD
+2019-04-12 17:48:52,092 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Balances ==> steem.dao:999882.095 TBD
+2019-04-12 17:48:52,093 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Listing proposals with status active (id:total_votes): 0:84600448
+2019-04-12 17:48:52,094 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Listing proposals with status expired (id:total_votes): 2:84600448
+2019-04-12 17:48:52,095 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Listing proposals with status all (id:total_votes): 0:84600448,2:84600448,3:0
+2019-04-12 17:48:52,095 - SPS-Tester-via-steempy - INFO - Moving to date: 2019-04-17T06:47:12
+2019-04-12 17:48:52,639 - SPS-Tester-via-steempy - INFO - Balances for accounts at time: 2019-04-17T06:47:12
+2019-04-12 17:48:52,644 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Balances ==> tester001:477.000 TBD,tester002:438.000 TBD,tester003:414.000 TBD,tester004:390.000 TBD
+2019-04-12 17:48:52,645 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Balances ==> steem.dao:999881.095 TBD
+2019-04-12 17:48:52,647 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Listing proposals with status active (id:total_votes): 0:84600448
+2019-04-12 17:48:52,648 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Listing proposals with status expired (id:total_votes): 2:84600448
+2019-04-12 17:48:52,649 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Listing proposals with status all (id:total_votes): 0:84600448,2:84600448,3:0
+2019-04-12 17:48:52,649 - SPS-Tester-via-steempy - INFO - Moving to date: 2019-04-17T07:47:12
+2019-04-12 17:48:53,184 - SPS-Tester-via-steempy - INFO - Balances for accounts at time: 2019-04-17T07:47:12
+2019-04-12 17:48:53,189 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Balances ==> tester001:478.000 TBD,tester002:438.000 TBD,tester003:414.000 TBD,tester004:390.000 TBD
+2019-04-12 17:48:53,191 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Balances ==> steem.dao:999880.095 TBD
+2019-04-12 17:48:53,192 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Listing proposals with status active (id:total_votes): 0:84600448
+2019-04-12 17:48:53,193 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Listing proposals with status expired (id:total_votes): 2:84600448
+2019-04-12 17:48:53,194 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Listing proposals with status all (id:total_votes): 0:84600448,2:84600448,3:0
+2019-04-12 17:48:53,194 - SPS-Tester-via-steempy - INFO - Moving to date: 2019-04-17T08:47:12
+2019-04-12 17:48:53,742 - SPS-Tester-via-steempy - INFO - Balances for accounts at time: 2019-04-17T08:47:12
+2019-04-12 17:48:53,747 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Balances ==> tester001:479.000 TBD,tester002:438.000 TBD,tester003:414.000 TBD,tester004:390.000 TBD
+2019-04-12 17:48:53,748 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Balances ==> steem.dao:999879.095 TBD
+2019-04-12 17:48:53,749 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Listing proposals with status active (id:total_votes): 0:84600448
+2019-04-12 17:48:53,750 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Listing proposals with status expired (id:total_votes): 2:84600448
+2019-04-12 17:48:53,751 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Listing proposals with status all (id:total_votes): 0:84600448,2:84600448,3:0
+2019-04-12 17:48:53,751 - SPS-Tester-via-steempy - INFO - Moving to date: 2019-04-17T09:47:12
+2019-04-12 17:48:54,286 - SPS-Tester-via-steempy - INFO - Balances for accounts at time: 2019-04-17T09:47:12
+2019-04-12 17:48:54,291 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Balances ==> tester001:480.000 TBD,tester002:438.000 TBD,tester003:414.000 TBD,tester004:390.000 TBD
+2019-04-12 17:48:54,292 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Balances ==> steem.dao:999878.095 TBD
+2019-04-12 17:48:54,293 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Listing proposals with status active (id:total_votes): 0:84600448
+2019-04-12 17:48:54,294 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Listing proposals with status expired (id:total_votes): 2:84600448
+2019-04-12 17:48:54,295 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Listing proposals with status all (id:total_votes): 0:84600448,2:84600448,3:0
+2019-04-12 17:48:54,296 - SPS-Tester-via-steempy - INFO - Moving to date: 2019-04-17T10:47:12
+2019-04-12 17:48:54,830 - SPS-Tester-via-steempy - INFO - Balances for accounts at time: 2019-04-17T10:47:12
+2019-04-12 17:48:54,835 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Balances ==> tester001:481.000 TBD,tester002:438.000 TBD,tester003:414.000 TBD,tester004:390.000 TBD
+2019-04-12 17:48:54,836 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Balances ==> steem.dao:999877.095 TBD
+2019-04-12 17:48:54,837 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Listing proposals with status active (id:total_votes): 0:84600448
+2019-04-12 17:48:54,838 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Listing proposals with status expired (id:total_votes): 2:84600448
+2019-04-12 17:48:54,839 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Listing proposals with status all (id:total_votes): 0:84600448,2:84600448,3:0
+2019-04-12 17:48:54,839 - SPS-Tester-via-steempy - INFO - Moving to date: 2019-04-17T11:47:12
+2019-04-12 17:48:55,372 - SPS-Tester-via-steempy - INFO - Balances for accounts at time: 2019-04-17T11:47:12
+2019-04-12 17:48:55,377 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Balances ==> tester001:482.000 TBD,tester002:438.000 TBD,tester003:414.000 TBD,tester004:390.000 TBD
+2019-04-12 17:48:55,379 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Balances ==> steem.dao:999876.095 TBD
+2019-04-12 17:48:55,380 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Listing proposals with status active (id:total_votes): 0:84600448
+2019-04-12 17:48:55,381 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Listing proposals with status expired (id:total_votes): 2:84600448
+2019-04-12 17:48:55,382 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Listing proposals with status all (id:total_votes): 0:84600448,2:84600448,3:0
+2019-04-12 17:48:55,382 - SPS-Tester-via-steempy - INFO - Moving to date: 2019-04-17T12:47:12
+2019-04-12 17:48:55,905 - SPS-Tester-via-steempy - INFO - Balances for accounts at time: 2019-04-17T12:47:12
+2019-04-12 17:48:55,909 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Balances ==> tester001:483.000 TBD,tester002:438.000 TBD,tester003:414.000 TBD,tester004:390.000 TBD
+2019-04-12 17:48:55,911 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Balances ==> steem.dao:999875.095 TBD
+2019-04-12 17:48:55,912 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Listing proposals with status active (id:total_votes): 0:84600448
+2019-04-12 17:48:55,913 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Listing proposals with status expired (id:total_votes): 2:84600448
+2019-04-12 17:48:55,914 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Listing proposals with status all (id:total_votes): 0:84600448,2:84600448,3:0
+2019-04-12 17:48:55,914 - SPS-Tester-via-steempy - INFO - Moving to date: 2019-04-17T13:47:12
+2019-04-12 17:48:56,436 - SPS-Tester-via-steempy - INFO - Balances for accounts at time: 2019-04-17T13:47:12
+2019-04-12 17:48:56,441 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Balances ==> tester001:484.000 TBD,tester002:438.000 TBD,tester003:414.000 TBD,tester004:390.000 TBD
+2019-04-12 17:48:56,443 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Balances ==> steem.dao:999874.095 TBD
+2019-04-12 17:48:56,444 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Listing proposals with status active (id:total_votes): 0:84600448
+2019-04-12 17:48:56,445 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Listing proposals with status expired (id:total_votes): 2:84600448
+2019-04-12 17:48:56,446 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Listing proposals with status all (id:total_votes): 0:84600448,2:84600448,3:0
+2019-04-12 17:48:56,446 - SPS-Tester-via-steempy - INFO - Moving to date: 2019-04-17T14:47:12
+2019-04-12 17:48:56,970 - SPS-Tester-via-steempy - INFO - Balances for accounts at time: 2019-04-17T14:47:12
+2019-04-12 17:48:56,975 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Balances ==> tester001:485.000 TBD,tester002:438.000 TBD,tester003:414.000 TBD,tester004:390.000 TBD
+2019-04-12 17:48:56,976 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Balances ==> steem.dao:999873.095 TBD
+2019-04-12 17:48:56,977 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Listing proposals with status active (id:total_votes): 0:84600448
+2019-04-12 17:48:56,978 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Listing proposals with status expired (id:total_votes): 2:84600448
+2019-04-12 17:48:56,979 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Listing proposals with status all (id:total_votes): 0:84600448,2:84600448,3:0
+2019-04-12 17:48:56,980 - SPS-Tester-via-steempy - INFO - Moving to date: 2019-04-17T15:47:12
+2019-04-12 17:48:57,514 - SPS-Tester-via-steempy - INFO - Balances for accounts at time: 2019-04-17T15:47:12
+2019-04-12 17:48:57,518 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Balances ==> tester001:486.000 TBD,tester002:438.000 TBD,tester003:414.000 TBD,tester004:390.000 TBD
+2019-04-12 17:48:57,520 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Balances ==> steem.dao:999872.095 TBD
+2019-04-12 17:48:57,521 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Listing proposals with status active (id:total_votes): 0:84600448,3:0
+2019-04-12 17:48:57,522 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Listing proposals with status expired (id:total_votes): 
+2019-04-12 17:48:57,522 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Listing proposals with status all (id:total_votes): 0:84600448,3:0
+2019-04-12 17:48:57,523 - SPS-Tester-via-steempy - INFO - Moving to date: 2019-04-17T16:47:12
+2019-04-12 17:48:58,068 - SPS-Tester-via-steempy - INFO - Balances for accounts at time: 2019-04-17T16:47:12
+2019-04-12 17:48:58,072 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Balances ==> tester001:487.000 TBD,tester002:438.000 TBD,tester003:414.000 TBD,tester004:391.000 TBD
+2019-04-12 17:48:58,073 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Balances ==> steem.dao:999870.095 TBD
+2019-04-12 17:48:58,074 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Listing proposals with status active (id:total_votes): 0:84600448,3:84600448
+2019-04-12 17:48:58,075 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Listing proposals with status expired (id:total_votes): 
+2019-04-12 17:48:58,076 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Listing proposals with status all (id:total_votes): 0:84600448,3:84600448
+2019-04-12 17:48:58,076 - SPS-Tester-via-steempy - INFO - Moving to date: 2019-04-17T17:47:12
+2019-04-12 17:48:58,609 - SPS-Tester-via-steempy - INFO - Balances for accounts at time: 2019-04-17T17:47:12
+2019-04-12 17:48:58,614 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Balances ==> tester001:488.000 TBD,tester002:438.000 TBD,tester003:414.000 TBD,tester004:392.000 TBD
+2019-04-12 17:48:58,615 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Balances ==> steem.dao:999868.095 TBD
+2019-04-12 17:48:58,616 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Listing proposals with status active (id:total_votes): 0:84600448,3:84600448
+2019-04-12 17:48:58,616 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Listing proposals with status expired (id:total_votes): 
+2019-04-12 17:48:58,617 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Listing proposals with status all (id:total_votes): 0:84600448,3:84600448
+2019-04-12 17:48:58,617 - SPS-Tester-via-steempy - INFO - Moving to date: 2019-04-17T18:47:12
+2019-04-12 17:48:59,150 - SPS-Tester-via-steempy - INFO - Balances for accounts at time: 2019-04-17T18:47:12
+2019-04-12 17:48:59,155 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Balances ==> tester001:489.000 TBD,tester002:438.000 TBD,tester003:414.000 TBD,tester004:393.000 TBD
+2019-04-12 17:48:59,156 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Balances ==> steem.dao:999866.095 TBD
+2019-04-12 17:48:59,157 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Listing proposals with status active (id:total_votes): 0:84600448,3:84600448
+2019-04-12 17:48:59,158 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Listing proposals with status expired (id:total_votes): 
+2019-04-12 17:48:59,159 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Listing proposals with status all (id:total_votes): 0:84600448,3:84600448
+2019-04-12 17:48:59,159 - SPS-Tester-via-steempy - INFO - Moving to date: 2019-04-17T19:47:12
+2019-04-12 17:48:59,690 - SPS-Tester-via-steempy - INFO - Balances for accounts at time: 2019-04-17T19:47:12
+2019-04-12 17:48:59,694 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Balances ==> tester001:490.000 TBD,tester002:438.000 TBD,tester003:414.000 TBD,tester004:394.000 TBD
+2019-04-12 17:48:59,695 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Balances ==> steem.dao:999864.095 TBD
+2019-04-12 17:48:59,696 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Listing proposals with status active (id:total_votes): 0:84600448,3:84600448
+2019-04-12 17:48:59,697 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Listing proposals with status expired (id:total_votes): 
+2019-04-12 17:48:59,698 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Listing proposals with status all (id:total_votes): 0:84600448,3:84600448
+2019-04-12 17:48:59,698 - SPS-Tester-via-steempy - INFO - Moving to date: 2019-04-17T20:47:12
+2019-04-12 17:49:00,244 - SPS-Tester-via-steempy - INFO - Balances for accounts at time: 2019-04-17T20:47:12
+2019-04-12 17:49:00,249 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Balances ==> tester001:491.000 TBD,tester002:438.000 TBD,tester003:414.000 TBD,tester004:395.000 TBD
+2019-04-12 17:49:00,250 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Balances ==> steem.dao:999862.095 TBD
+2019-04-12 17:49:00,252 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Listing proposals with status active (id:total_votes): 0:84600448,3:84600448
+2019-04-12 17:49:00,252 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Listing proposals with status expired (id:total_votes): 
+2019-04-12 17:49:00,253 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Listing proposals with status all (id:total_votes): 0:84600448,3:84600448
+2019-04-12 17:49:00,253 - SPS-Tester-via-steempy - INFO - Moving to date: 2019-04-17T21:47:12
+2019-04-12 17:49:00,778 - SPS-Tester-via-steempy - INFO - Balances for accounts at time: 2019-04-17T21:47:12
+2019-04-12 17:49:00,783 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Balances ==> tester001:492.000 TBD,tester002:438.000 TBD,tester003:414.000 TBD,tester004:396.000 TBD
+2019-04-12 17:49:00,784 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Balances ==> steem.dao:999860.095 TBD
+2019-04-12 17:49:00,785 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Listing proposals with status active (id:total_votes): 0:84600448,3:84600448
+2019-04-12 17:49:00,786 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Listing proposals with status expired (id:total_votes): 
+2019-04-12 17:49:00,787 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Listing proposals with status all (id:total_votes): 0:84600448,3:84600448
+2019-04-12 17:49:00,787 - SPS-Tester-via-steempy - INFO - Moving to date: 2019-04-17T22:47:12
+2019-04-12 17:49:01,334 - SPS-Tester-via-steempy - INFO - Balances for accounts at time: 2019-04-17T22:47:12
+2019-04-12 17:49:01,339 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Balances ==> tester001:493.000 TBD,tester002:438.000 TBD,tester003:414.000 TBD,tester004:397.000 TBD
+2019-04-12 17:49:01,341 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Balances ==> steem.dao:999858.095 TBD
+2019-04-12 17:49:01,342 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Listing proposals with status active (id:total_votes): 0:84600448,3:84600448
+2019-04-12 17:49:01,343 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Listing proposals with status expired (id:total_votes): 
+2019-04-12 17:49:01,344 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Listing proposals with status all (id:total_votes): 0:84600448,3:84600448
+2019-04-12 17:49:01,344 - SPS-Tester-via-steempy - INFO - Moving to date: 2019-04-17T23:47:12
+2019-04-12 17:49:01,876 - SPS-Tester-via-steempy - INFO - Balances for accounts at time: 2019-04-17T23:47:12
+2019-04-12 17:49:01,880 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Balances ==> tester001:494.000 TBD,tester002:438.000 TBD,tester003:414.000 TBD,tester004:398.000 TBD
+2019-04-12 17:49:01,881 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Balances ==> steem.dao:999856.095 TBD
+2019-04-12 17:49:01,882 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Listing proposals with status active (id:total_votes): 0:84600448,3:84600448
+2019-04-12 17:49:01,883 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Listing proposals with status expired (id:total_votes): 
+2019-04-12 17:49:01,884 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Listing proposals with status all (id:total_votes): 0:84600448,3:84600448
+2019-04-12 17:49:01,884 - SPS-Tester-via-steempy - INFO - Moving to date: 2019-04-18T00:47:12
+2019-04-12 17:49:02,412 - SPS-Tester-via-steempy - INFO - Balances for accounts at time: 2019-04-18T00:47:12
+2019-04-12 17:49:02,417 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Balances ==> tester001:495.000 TBD,tester002:438.000 TBD,tester003:414.000 TBD,tester004:399.000 TBD
+2019-04-12 17:49:02,419 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Balances ==> steem.dao:999854.095 TBD
+2019-04-12 17:49:02,420 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Listing proposals with status active (id:total_votes): 0:84600448,3:84600448
+2019-04-12 17:49:02,421 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Listing proposals with status expired (id:total_votes): 
+2019-04-12 17:49:02,422 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Listing proposals with status all (id:total_votes): 0:84600448,3:84600448
+2019-04-12 17:49:02,422 - SPS-Tester-via-steempy - INFO - Moving to date: 2019-04-18T01:47:12
+2019-04-12 17:49:02,956 - SPS-Tester-via-steempy - INFO - Balances for accounts at time: 2019-04-18T01:47:12
+2019-04-12 17:49:02,961 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Balances ==> tester001:496.000 TBD,tester002:438.000 TBD,tester003:414.000 TBD,tester004:400.000 TBD
+2019-04-12 17:49:02,962 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Balances ==> steem.dao:999852.095 TBD
+2019-04-12 17:49:02,963 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Listing proposals with status active (id:total_votes): 0:84600448,3:84600448
+2019-04-12 17:49:02,964 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Listing proposals with status expired (id:total_votes): 
+2019-04-12 17:49:02,965 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Listing proposals with status all (id:total_votes): 0:84600448,3:84600448
+2019-04-12 17:49:02,965 - SPS-Tester-via-steempy - INFO - Moving to date: 2019-04-18T02:47:12
+2019-04-12 17:49:03,492 - SPS-Tester-via-steempy - INFO - Balances for accounts at time: 2019-04-18T02:47:12
+2019-04-12 17:49:03,497 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Balances ==> tester001:497.000 TBD,tester002:438.000 TBD,tester003:414.000 TBD,tester004:401.000 TBD
+2019-04-12 17:49:03,499 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Balances ==> steem.dao:999850.095 TBD
+2019-04-12 17:49:03,500 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Listing proposals with status active (id:total_votes): 0:84600448,3:84600448
+2019-04-12 17:49:03,501 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Listing proposals with status expired (id:total_votes): 
+2019-04-12 17:49:03,501 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Listing proposals with status all (id:total_votes): 0:84600448,3:84600448
+2019-04-12 17:49:03,502 - SPS-Tester-via-steempy - INFO - Moving to date: 2019-04-18T03:47:12
+2019-04-12 17:49:04,028 - SPS-Tester-via-steempy - INFO - Balances for accounts at time: 2019-04-18T03:47:12
+2019-04-12 17:49:04,033 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Balances ==> tester001:498.000 TBD,tester002:438.000 TBD,tester003:414.000 TBD,tester004:402.000 TBD
+2019-04-12 17:49:04,035 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Balances ==> steem.dao:999848.095 TBD
+2019-04-12 17:49:04,036 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Listing proposals with status active (id:total_votes): 0:84600448,3:84600448
+2019-04-12 17:49:04,036 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Listing proposals with status expired (id:total_votes): 
+2019-04-12 17:49:04,037 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Listing proposals with status all (id:total_votes): 0:84600448,3:84600448
+2019-04-12 17:49:04,037 - SPS-Tester-via-steempy - INFO - Moving to date: 2019-04-18T04:47:12
+2019-04-12 17:49:04,581 - SPS-Tester-via-steempy - INFO - Balances for accounts at time: 2019-04-18T04:47:12
+2019-04-12 17:49:04,586 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Balances ==> tester001:499.000 TBD,tester002:438.000 TBD,tester003:414.000 TBD,tester004:403.000 TBD
+2019-04-12 17:49:04,587 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Balances ==> steem.dao:999846.095 TBD
+2019-04-12 17:49:04,588 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Listing proposals with status active (id:total_votes): 0:84600448,3:84600448
+2019-04-12 17:49:04,589 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Listing proposals with status expired (id:total_votes): 
+2019-04-12 17:49:04,590 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Listing proposals with status all (id:total_votes): 0:84600448,3:84600448
+2019-04-12 17:49:04,590 - SPS-Tester-via-steempy - INFO - Moving to date: 2019-04-18T05:47:12
+2019-04-12 17:49:05,124 - SPS-Tester-via-steempy - INFO - Balances for accounts at time: 2019-04-18T05:47:12
+2019-04-12 17:49:05,128 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Balances ==> tester001:500.000 TBD,tester002:438.000 TBD,tester003:414.000 TBD,tester004:404.000 TBD
+2019-04-12 17:49:05,130 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Balances ==> steem.dao:999844.095 TBD
+2019-04-12 17:49:05,131 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Listing proposals with status active (id:total_votes): 0:84600448,3:84600448
+2019-04-12 17:49:05,131 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Listing proposals with status expired (id:total_votes): 
+2019-04-12 17:49:05,132 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Listing proposals with status all (id:total_votes): 0:84600448,3:84600448
+2019-04-12 17:49:05,132 - SPS-Tester-via-steempy - INFO - Moving to date: 2019-04-18T06:47:12
+2019-04-12 17:49:05,662 - SPS-Tester-via-steempy - INFO - Balances for accounts at time: 2019-04-18T06:47:12
+2019-04-12 17:49:05,666 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Balances ==> tester001:501.000 TBD,tester002:438.000 TBD,tester003:414.000 TBD,tester004:405.000 TBD
+2019-04-12 17:49:05,667 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Balances ==> steem.dao:999842.095 TBD
+2019-04-12 17:49:05,669 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Listing proposals with status active (id:total_votes): 0:84600448,3:84600448
+2019-04-12 17:49:05,670 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Listing proposals with status expired (id:total_votes): 
+2019-04-12 17:49:05,671 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Listing proposals with status all (id:total_votes): 0:84600448,3:84600448
+2019-04-12 17:49:05,671 - SPS-Tester-via-steempy - INFO - Moving to date: 2019-04-18T07:47:12
+2019-04-12 17:49:06,202 - SPS-Tester-via-steempy - INFO - Balances for accounts at time: 2019-04-18T07:47:12
+2019-04-12 17:49:06,207 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Balances ==> tester001:502.000 TBD,tester002:438.000 TBD,tester003:414.000 TBD,tester004:406.000 TBD
+2019-04-12 17:49:06,208 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Balances ==> steem.dao:999840.095 TBD
+2019-04-12 17:49:06,209 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Listing proposals with status active (id:total_votes): 0:84600448,3:84600448
+2019-04-12 17:49:06,210 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Listing proposals with status expired (id:total_votes): 
+2019-04-12 17:49:06,211 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Listing proposals with status all (id:total_votes): 0:84600448,3:84600448
+2019-04-12 17:49:06,211 - SPS-Tester-via-steempy - INFO - Moving to date: 2019-04-18T08:47:12
+2019-04-12 17:49:06,739 - SPS-Tester-via-steempy - INFO - Balances for accounts at time: 2019-04-18T08:47:12
+2019-04-12 17:49:06,744 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Balances ==> tester001:503.000 TBD,tester002:438.000 TBD,tester003:414.000 TBD,tester004:407.000 TBD
+2019-04-12 17:49:06,745 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Balances ==> steem.dao:999838.095 TBD
+2019-04-12 17:49:06,746 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Listing proposals with status active (id:total_votes): 0:84600448,3:84600448
+2019-04-12 17:49:06,747 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Listing proposals with status expired (id:total_votes): 
+2019-04-12 17:49:06,748 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Listing proposals with status all (id:total_votes): 0:84600448,3:84600448
+2019-04-12 17:49:06,748 - SPS-Tester-via-steempy - INFO - Moving to date: 2019-04-18T09:47:12
+2019-04-12 17:49:07,278 - SPS-Tester-via-steempy - INFO - Balances for accounts at time: 2019-04-18T09:47:12
+2019-04-12 17:49:07,283 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Balances ==> tester001:504.000 TBD,tester002:438.000 TBD,tester003:414.000 TBD,tester004:408.000 TBD
+2019-04-12 17:49:07,285 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Balances ==> steem.dao:999836.095 TBD
+2019-04-12 17:49:07,286 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Listing proposals with status active (id:total_votes): 0:84600448,3:84600448
+2019-04-12 17:49:07,287 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Listing proposals with status expired (id:total_votes): 
+2019-04-12 17:49:07,288 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Listing proposals with status all (id:total_votes): 0:84600448,3:84600448
+2019-04-12 17:49:07,288 - SPS-Tester-via-steempy - INFO - Moving to date: 2019-04-18T10:47:12
+2019-04-12 17:49:07,820 - SPS-Tester-via-steempy - INFO - Balances for accounts at time: 2019-04-18T10:47:12
+2019-04-12 17:49:07,826 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Balances ==> tester001:505.000 TBD,tester002:438.000 TBD,tester003:414.000 TBD,tester004:409.000 TBD
+2019-04-12 17:49:07,827 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Balances ==> steem.dao:999834.095 TBD
+2019-04-12 17:49:07,828 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Listing proposals with status active (id:total_votes): 0:84600448,3:84600448
+2019-04-12 17:49:07,829 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Listing proposals with status expired (id:total_votes): 
+2019-04-12 17:49:07,830 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Listing proposals with status all (id:total_votes): 0:84600448,3:84600448
+2019-04-12 17:49:07,831 - SPS-Tester-via-steempy - INFO - Moving to date: 2019-04-18T11:47:12
+2019-04-12 17:49:08,355 - SPS-Tester-via-steempy - INFO - Balances for accounts at time: 2019-04-18T11:47:12
+2019-04-12 17:49:08,361 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Balances ==> tester001:506.000 TBD,tester002:438.000 TBD,tester003:414.000 TBD,tester004:410.000 TBD
+2019-04-12 17:49:08,362 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Balances ==> steem.dao:999832.095 TBD
+2019-04-12 17:49:08,363 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Listing proposals with status active (id:total_votes): 0:84600448,3:84600448
+2019-04-12 17:49:08,365 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Listing proposals with status expired (id:total_votes): 
+2019-04-12 17:49:08,366 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Listing proposals with status all (id:total_votes): 0:84600448,3:84600448
+2019-04-12 17:49:08,366 - SPS-Tester-via-steempy - INFO - Moving to date: 2019-04-18T12:47:12
+2019-04-12 17:49:08,891 - SPS-Tester-via-steempy - INFO - Balances for accounts at time: 2019-04-18T12:47:12
+2019-04-12 17:49:08,895 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Balances ==> tester001:507.000 TBD,tester002:438.000 TBD,tester003:414.000 TBD,tester004:411.000 TBD
+2019-04-12 17:49:08,897 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Balances ==> steem.dao:999830.095 TBD
+2019-04-12 17:49:08,898 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Listing proposals with status active (id:total_votes): 0:84600448,3:84600448
+2019-04-12 17:49:08,898 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Listing proposals with status expired (id:total_votes): 
+2019-04-12 17:49:08,899 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Listing proposals with status all (id:total_votes): 0:84600448,3:84600448
+2019-04-12 17:49:08,899 - SPS-Tester-via-steempy - INFO - Moving to date: 2019-04-18T13:47:12
+2019-04-12 17:49:09,425 - SPS-Tester-via-steempy - INFO - Balances for accounts at time: 2019-04-18T13:47:12
+2019-04-12 17:49:09,429 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Balances ==> tester001:508.000 TBD,tester002:438.000 TBD,tester003:414.000 TBD,tester004:412.000 TBD
+2019-04-12 17:49:09,431 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Balances ==> steem.dao:999828.095 TBD
+2019-04-12 17:49:09,432 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Listing proposals with status active (id:total_votes): 0:84600448,3:84600448
+2019-04-12 17:49:09,433 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Listing proposals with status expired (id:total_votes): 
+2019-04-12 17:49:09,433 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Listing proposals with status all (id:total_votes): 0:84600448,3:84600448
+2019-04-12 17:49:09,433 - SPS-Tester-via-steempy - INFO - Moving to date: 2019-04-18T14:47:12
+2019-04-12 17:49:09,963 - SPS-Tester-via-steempy - INFO - Balances for accounts at time: 2019-04-18T14:47:12
+2019-04-12 17:49:09,968 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Balances ==> tester001:509.000 TBD,tester002:438.000 TBD,tester003:414.000 TBD,tester004:413.000 TBD
+2019-04-12 17:49:09,969 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Balances ==> steem.dao:999826.095 TBD
+2019-04-12 17:49:09,970 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Listing proposals with status active (id:total_votes): 0:84600448,3:84600448
+2019-04-12 17:49:09,971 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Listing proposals with status expired (id:total_votes): 
+2019-04-12 17:49:09,972 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Listing proposals with status all (id:total_votes): 0:84600448,3:84600448
+2019-04-12 17:49:09,972 - SPS-Tester-via-steempy - INFO - Moving to date: 2019-04-18T15:47:12
+2019-04-12 17:49:10,503 - SPS-Tester-via-steempy - INFO - Balances for accounts at time: 2019-04-18T15:47:12
+2019-04-12 17:49:10,508 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Balances ==> tester001:510.000 TBD,tester002:438.000 TBD,tester003:414.000 TBD,tester004:414.000 TBD
+2019-04-12 17:49:10,509 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Balances ==> steem.dao:999824.095 TBD
+2019-04-12 17:49:10,510 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Listing proposals with status active (id:total_votes): 0:84600448,3:84600448
+2019-04-12 17:49:10,511 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Listing proposals with status expired (id:total_votes): 
+2019-04-12 17:49:10,512 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Listing proposals with status all (id:total_votes): 0:84600448,3:84600448
+2019-04-12 17:49:10,512 - SPS-Tester-via-steempy - INFO - Moving to date: 2019-04-18T16:47:12
+2019-04-12 17:49:11,044 - SPS-Tester-via-steempy - INFO - Balances for accounts at time: 2019-04-18T16:47:12
+2019-04-12 17:49:11,049 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Balances ==> tester001:510.000 TBD,tester002:438.000 TBD,tester003:414.000 TBD,tester004:414.000 TBD
+2019-04-12 17:49:11,050 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Balances ==> steem.dao:999824.095 TBD
+2019-04-12 17:49:11,051 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Listing proposals with status active (id:total_votes): 
+2019-04-12 17:49:11,052 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Listing proposals with status expired (id:total_votes): 0:84600448,3:84600448
+2019-04-12 17:49:11,053 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Listing proposals with status all (id:total_votes): 0:84600448,3:84600448
+2019-04-12 17:49:11,053 - SPS-Tester-via-steempy - INFO - Moving to date: 2019-04-18T17:47:12
+2019-04-12 17:49:11,580 - SPS-Tester-via-steempy - INFO - Balances for accounts at time: 2019-04-18T17:47:12
+2019-04-12 17:49:11,585 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Balances ==> tester001:510.000 TBD,tester002:438.000 TBD,tester003:414.000 TBD,tester004:414.000 TBD
+2019-04-12 17:49:11,586 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Balances ==> steem.dao:999824.095 TBD
+2019-04-12 17:49:11,587 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Listing proposals with status active (id:total_votes): 
+2019-04-12 17:49:11,588 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Listing proposals with status expired (id:total_votes): 0:84600448,3:84600448
+2019-04-12 17:49:11,589 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Listing proposals with status all (id:total_votes): 0:84600448,3:84600448
+2019-04-12 17:49:11,589 - SPS-Tester-via-steempy - INFO - Moving to date: 2019-04-18T18:47:12
+2019-04-12 17:49:12,119 - SPS-Tester-via-steempy - INFO - Balances for accounts at time: 2019-04-18T18:47:12
+2019-04-12 17:49:12,123 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Balances ==> tester001:510.000 TBD,tester002:438.000 TBD,tester003:414.000 TBD,tester004:414.000 TBD
+2019-04-12 17:49:12,125 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Balances ==> steem.dao:999824.095 TBD
+2019-04-12 17:49:12,125 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Listing proposals with status active (id:total_votes): 
+2019-04-12 17:49:12,126 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Listing proposals with status expired (id:total_votes): 0:84600448,3:84600448
+2019-04-12 17:49:12,127 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Listing proposals with status all (id:total_votes): 0:84600448,3:84600448
+2019-04-12 17:49:12,127 - SPS-Tester-via-steempy - INFO - Moving to date: 2019-04-18T19:47:12
+2019-04-12 17:49:12,654 - SPS-Tester-via-steempy - INFO - Balances for accounts at time: 2019-04-18T19:47:12
+2019-04-12 17:49:12,659 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Balances ==> tester001:510.000 TBD,tester002:438.000 TBD,tester003:414.000 TBD,tester004:414.000 TBD
+2019-04-12 17:49:12,660 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Balances ==> steem.dao:999824.095 TBD
+2019-04-12 17:49:12,661 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Listing proposals with status active (id:total_votes): 
+2019-04-12 17:49:12,662 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Listing proposals with status expired (id:total_votes): 0:84600448,3:84600448
+2019-04-12 17:49:12,663 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Listing proposals with status all (id:total_votes): 0:84600448,3:84600448
+2019-04-12 17:49:12,663 - SPS-Tester-via-steempy - INFO - Moving to date: 2019-04-18T20:47:12
+2019-04-12 17:49:13,198 - SPS-Tester-via-steempy - INFO - Balances for accounts at time: 2019-04-18T20:47:12
+2019-04-12 17:49:13,203 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Balances ==> tester001:510.000 TBD,tester002:438.000 TBD,tester003:414.000 TBD,tester004:414.000 TBD
+2019-04-12 17:49:13,205 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Balances ==> steem.dao:999824.095 TBD
+2019-04-12 17:49:13,206 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Listing proposals with status active (id:total_votes): 
+2019-04-12 17:49:13,207 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Listing proposals with status expired (id:total_votes): 0:84600448,3:84600448
+2019-04-12 17:49:13,208 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Listing proposals with status all (id:total_votes): 0:84600448,3:84600448
+2019-04-12 17:49:13,209 - SPS-Tester-via-steempy - INFO - Moving to date: 2019-04-18T21:47:12
+2019-04-12 17:49:13,740 - SPS-Tester-via-steempy - INFO - Balances for accounts at time: 2019-04-18T21:47:12
+2019-04-12 17:49:13,745 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Balances ==> tester001:510.000 TBD,tester002:438.000 TBD,tester003:414.000 TBD,tester004:414.000 TBD
+2019-04-12 17:49:13,747 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Balances ==> steem.dao:999824.095 TBD
+2019-04-12 17:49:13,748 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Listing proposals with status active (id:total_votes): 
+2019-04-12 17:49:13,749 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Listing proposals with status expired (id:total_votes): 0:84600448,3:84600448
+2019-04-12 17:49:13,750 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Listing proposals with status all (id:total_votes): 0:84600448,3:84600448
+2019-04-12 17:49:13,750 - SPS-Tester-via-steempy - INFO - Moving to date: 2019-04-18T22:47:12
+2019-04-12 17:49:14,282 - SPS-Tester-via-steempy - INFO - Balances for accounts at time: 2019-04-18T22:47:12
+2019-04-12 17:49:14,286 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Balances ==> tester001:510.000 TBD,tester002:438.000 TBD,tester003:414.000 TBD,tester004:414.000 TBD
+2019-04-12 17:49:14,288 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Balances ==> steem.dao:999824.095 TBD
+2019-04-12 17:49:14,289 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Listing proposals with status active (id:total_votes): 
+2019-04-12 17:49:14,289 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Listing proposals with status expired (id:total_votes): 0:84600448,3:84600448
+2019-04-12 17:49:14,290 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Listing proposals with status all (id:total_votes): 0:84600448,3:84600448
+2019-04-12 17:49:14,290 - SPS-Tester-via-steempy - INFO - Moving to date: 2019-04-18T23:47:12
+2019-04-12 17:49:14,818 - SPS-Tester-via-steempy - INFO - Balances for accounts at time: 2019-04-18T23:47:12
+2019-04-12 17:49:14,823 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Balances ==> tester001:510.000 TBD,tester002:438.000 TBD,tester003:414.000 TBD,tester004:414.000 TBD
+2019-04-12 17:49:14,824 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Balances ==> steem.dao:999824.095 TBD
+2019-04-12 17:49:14,825 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Listing proposals with status active (id:total_votes): 
+2019-04-12 17:49:14,826 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Listing proposals with status expired (id:total_votes): 0:84600448,3:84600448
+2019-04-12 17:49:14,827 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Listing proposals with status all (id:total_votes): 0:84600448,3:84600448
+2019-04-12 17:49:14,827 - SPS-Tester-via-steempy - INFO - Moving to date: 2019-04-19T00:47:12
+2019-04-12 17:49:15,355 - SPS-Tester-via-steempy - INFO - Balances for accounts at time: 2019-04-19T00:47:12
+2019-04-12 17:49:15,360 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Balances ==> tester001:510.000 TBD,tester002:438.000 TBD,tester003:414.000 TBD,tester004:414.000 TBD
+2019-04-12 17:49:15,361 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Balances ==> steem.dao:999824.095 TBD
+2019-04-12 17:49:15,362 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Listing proposals with status active (id:total_votes): 
+2019-04-12 17:49:15,363 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Listing proposals with status expired (id:total_votes): 0:84600448,3:84600448
+2019-04-12 17:49:15,364 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Listing proposals with status all (id:total_votes): 0:84600448,3:84600448
+2019-04-12 17:49:15,364 - SPS-Tester-via-steempy - INFO - Moving to date: 2019-04-19T01:47:12
+2019-04-12 17:49:15,894 - SPS-Tester-via-steempy - INFO - Balances for accounts at time: 2019-04-19T01:47:12
+2019-04-12 17:49:15,899 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Balances ==> tester001:510.000 TBD,tester002:438.000 TBD,tester003:414.000 TBD,tester004:414.000 TBD
+2019-04-12 17:49:15,900 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Balances ==> steem.dao:999824.095 TBD
+2019-04-12 17:49:15,901 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Listing proposals with status active (id:total_votes): 
+2019-04-12 17:49:15,902 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Listing proposals with status expired (id:total_votes): 0:84600448,3:84600448
+2019-04-12 17:49:15,903 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Listing proposals with status all (id:total_votes): 0:84600448,3:84600448
+2019-04-12 17:49:15,903 - SPS-Tester-via-steempy - INFO - Moving to date: 2019-04-19T02:47:12
+2019-04-12 17:49:16,437 - SPS-Tester-via-steempy - INFO - Balances for accounts at time: 2019-04-19T02:47:12
+2019-04-12 17:49:16,441 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Balances ==> tester001:510.000 TBD,tester002:438.000 TBD,tester003:414.000 TBD,tester004:414.000 TBD
+2019-04-12 17:49:16,443 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Balances ==> steem.dao:999824.095 TBD
+2019-04-12 17:49:16,443 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Listing proposals with status active (id:total_votes): 
+2019-04-12 17:49:16,444 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Listing proposals with status expired (id:total_votes): 0:84600448,3:84600448
+2019-04-12 17:49:16,445 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Listing proposals with status all (id:total_votes): 0:84600448,3:84600448
+2019-04-12 17:49:16,445 - SPS-Tester-via-steempy - INFO - Moving to date: 2019-04-19T03:47:12
+2019-04-12 17:49:16,977 - SPS-Tester-via-steempy - INFO - Balances for accounts at time: 2019-04-19T03:47:12
+2019-04-12 17:49:16,982 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Balances ==> tester001:510.000 TBD,tester002:438.000 TBD,tester003:414.000 TBD,tester004:414.000 TBD
+2019-04-12 17:49:16,983 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Balances ==> steem.dao:999824.095 TBD
+2019-04-12 17:49:16,984 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Listing proposals with status active (id:total_votes): 
+2019-04-12 17:49:16,985 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Listing proposals with status expired (id:total_votes): 0:84600448,3:84600448
+2019-04-12 17:49:16,986 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Listing proposals with status all (id:total_votes): 0:84600448,3:84600448
+2019-04-12 17:49:16,986 - SPS-Tester-via-steempy - INFO - Moving to date: 2019-04-19T04:47:12
+2019-04-12 17:49:17,513 - SPS-Tester-via-steempy - INFO - Balances for accounts at time: 2019-04-19T04:47:12
+2019-04-12 17:49:17,518 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Balances ==> tester001:510.000 TBD,tester002:438.000 TBD,tester003:414.000 TBD,tester004:414.000 TBD
+2019-04-12 17:49:17,519 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Balances ==> steem.dao:999824.095 TBD
+2019-04-12 17:49:17,520 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Listing proposals with status active (id:total_votes): 
+2019-04-12 17:49:17,521 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Listing proposals with status expired (id:total_votes): 0:84600448,3:84600448
+2019-04-12 17:49:17,522 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Listing proposals with status all (id:total_votes): 0:84600448,3:84600448
+2019-04-12 17:49:17,522 - SPS-Tester-via-steempy - INFO - Moving to date: 2019-04-19T05:47:12
+2019-04-12 17:49:18,058 - SPS-Tester-via-steempy - INFO - Balances for accounts at time: 2019-04-19T05:47:12
+2019-04-12 17:49:18,063 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Balances ==> tester001:510.000 TBD,tester002:438.000 TBD,tester003:414.000 TBD,tester004:414.000 TBD
+2019-04-12 17:49:18,064 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Balances ==> steem.dao:999824.095 TBD
+2019-04-12 17:49:18,065 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Listing proposals with status active (id:total_votes): 
+2019-04-12 17:49:18,066 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Listing proposals with status expired (id:total_votes): 0:84600448,3:84600448
+2019-04-12 17:49:18,067 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Listing proposals with status all (id:total_votes): 0:84600448,3:84600448
+2019-04-12 17:49:18,067 - SPS-Tester-via-steempy - INFO - Moving to date: 2019-04-19T06:47:12
+2019-04-12 17:49:18,598 - SPS-Tester-via-steempy - INFO - Balances for accounts at time: 2019-04-19T06:47:12
+2019-04-12 17:49:18,603 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Balances ==> tester001:510.000 TBD,tester002:438.000 TBD,tester003:414.000 TBD,tester004:414.000 TBD
+2019-04-12 17:49:18,604 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Balances ==> steem.dao:999824.095 TBD
+2019-04-12 17:49:18,605 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Listing proposals with status active (id:total_votes): 
+2019-04-12 17:49:18,606 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Listing proposals with status expired (id:total_votes): 0:84600448,3:84600448
+2019-04-12 17:49:18,608 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Listing proposals with status all (id:total_votes): 0:84600448,3:84600448
+2019-04-12 17:49:18,608 - SPS-Tester-via-steempy - INFO - Moving to date: 2019-04-19T07:47:12
+2019-04-12 17:49:19,149 - SPS-Tester-via-steempy - INFO - Balances for accounts at time: 2019-04-19T07:47:12
+2019-04-12 17:49:19,153 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Balances ==> tester001:510.000 TBD,tester002:438.000 TBD,tester003:414.000 TBD,tester004:414.000 TBD
+2019-04-12 17:49:19,155 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Balances ==> steem.dao:999824.095 TBD
+2019-04-12 17:49:19,156 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Listing proposals with status active (id:total_votes): 
+2019-04-12 17:49:19,156 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Listing proposals with status expired (id:total_votes): 0:84600448,3:84600448
+2019-04-12 17:49:19,157 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Listing proposals with status all (id:total_votes): 0:84600448,3:84600448
+2019-04-12 17:49:19,157 - SPS-Tester-via-steempy - INFO - Moving to date: 2019-04-19T08:47:12
+2019-04-12 17:49:19,692 - SPS-Tester-via-steempy - INFO - Balances for accounts at time: 2019-04-19T08:47:12
+2019-04-12 17:49:19,697 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Balances ==> tester001:510.000 TBD,tester002:438.000 TBD,tester003:414.000 TBD,tester004:414.000 TBD
+2019-04-12 17:49:19,698 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Balances ==> steem.dao:999824.095 TBD
+2019-04-12 17:49:19,699 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Listing proposals with status active (id:total_votes): 
+2019-04-12 17:49:19,700 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Listing proposals with status expired (id:total_votes): 0:84600448,3:84600448
+2019-04-12 17:49:19,701 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Listing proposals with status all (id:total_votes): 0:84600448,3:84600448
+2019-04-12 17:49:19,701 - SPS-Tester-via-steempy - INFO - Moving to date: 2019-04-19T09:47:12
+2019-04-12 17:49:20,238 - SPS-Tester-via-steempy - INFO - Balances for accounts at time: 2019-04-19T09:47:12
+2019-04-12 17:49:20,242 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Balances ==> tester001:510.000 TBD,tester002:438.000 TBD,tester003:414.000 TBD,tester004:414.000 TBD
+2019-04-12 17:49:20,243 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Balances ==> steem.dao:999824.095 TBD
+2019-04-12 17:49:20,244 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Listing proposals with status active (id:total_votes): 
+2019-04-12 17:49:20,245 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Listing proposals with status expired (id:total_votes): 0:84600448,3:84600448
+2019-04-12 17:49:20,246 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Listing proposals with status all (id:total_votes): 0:84600448,3:84600448
+2019-04-12 17:49:20,247 - SPS-Tester-via-steempy - INFO - Moving to date: 2019-04-19T10:47:12
+2019-04-12 17:49:20,774 - SPS-Tester-via-steempy - INFO - Balances for accounts at time: 2019-04-19T10:47:12
+2019-04-12 17:49:20,779 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Balances ==> tester001:510.000 TBD,tester002:438.000 TBD,tester003:414.000 TBD,tester004:414.000 TBD
+2019-04-12 17:49:20,780 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Balances ==> steem.dao:999824.095 TBD
+2019-04-12 17:49:20,781 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Listing proposals with status active (id:total_votes): 
+2019-04-12 17:49:20,782 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Listing proposals with status expired (id:total_votes): 0:84600448,3:84600448
+2019-04-12 17:49:20,784 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Listing proposals with status all (id:total_votes): 0:84600448,3:84600448
+2019-04-12 17:49:20,784 - SPS-Tester-via-steempy - INFO - Moving to date: 2019-04-19T11:47:12
+2019-04-12 17:49:21,315 - SPS-Tester-via-steempy - INFO - Balances for accounts at time: 2019-04-19T11:47:12
+2019-04-12 17:49:21,320 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Balances ==> tester001:510.000 TBD,tester002:438.000 TBD,tester003:414.000 TBD,tester004:414.000 TBD
+2019-04-12 17:49:21,322 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Balances ==> steem.dao:999824.095 TBD
+2019-04-12 17:49:21,323 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Listing proposals with status active (id:total_votes): 
+2019-04-12 17:49:21,324 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Listing proposals with status expired (id:total_votes): 0:84600448,3:84600448
+2019-04-12 17:49:21,325 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Listing proposals with status all (id:total_votes): 0:84600448,3:84600448
+2019-04-12 17:49:21,325 - SPS-Tester-via-steempy - INFO - Moving to date: 2019-04-19T12:47:12
+2019-04-12 17:49:21,852 - SPS-Tester-via-steempy - INFO - Balances for accounts at time: 2019-04-19T12:47:12
+2019-04-12 17:49:21,857 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Balances ==> tester001:510.000 TBD,tester002:438.000 TBD,tester003:414.000 TBD,tester004:414.000 TBD
+2019-04-12 17:49:21,858 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Balances ==> steem.dao:999824.095 TBD
+2019-04-12 17:49:21,858 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Listing proposals with status active (id:total_votes): 
+2019-04-12 17:49:21,859 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Listing proposals with status expired (id:total_votes): 0:84600448,3:84600448
+2019-04-12 17:49:21,860 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Listing proposals with status all (id:total_votes): 0:84600448,3:84600448
+2019-04-12 17:49:21,860 - SPS-Tester-via-steempy - INFO - Moving to date: 2019-04-19T13:47:12
+2019-04-12 17:49:22,388 - SPS-Tester-via-steempy - INFO - Balances for accounts at time: 2019-04-19T13:47:12
+2019-04-12 17:49:22,393 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Balances ==> tester001:510.000 TBD,tester002:438.000 TBD,tester003:414.000 TBD,tester004:414.000 TBD
+2019-04-12 17:49:22,394 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Balances ==> steem.dao:999824.095 TBD
+2019-04-12 17:49:22,395 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Listing proposals with status active (id:total_votes): 
+2019-04-12 17:49:22,396 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Listing proposals with status expired (id:total_votes): 0:84600448,3:84600448
+2019-04-12 17:49:22,397 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Listing proposals with status all (id:total_votes): 0:84600448,3:84600448
+2019-04-12 17:49:22,398 - SPS-Tester-via-steempy - INFO - Moving to date: 2019-04-19T14:47:12
+2019-04-12 17:49:22,932 - SPS-Tester-via-steempy - INFO - Balances for accounts at time: 2019-04-19T14:47:12
+2019-04-12 17:49:22,937 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Balances ==> tester001:510.000 TBD,tester002:438.000 TBD,tester003:414.000 TBD,tester004:414.000 TBD
+2019-04-12 17:49:22,938 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Balances ==> steem.dao:999824.095 TBD
+2019-04-12 17:49:22,938 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Listing proposals with status active (id:total_votes): 
+2019-04-12 17:49:22,939 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Listing proposals with status expired (id:total_votes): 0:84600448,3:84600448
+2019-04-12 17:49:22,940 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Listing proposals with status all (id:total_votes): 0:84600448,3:84600448
+2019-04-12 17:49:22,940 - SPS-Tester-via-steempy - INFO - Moving to date: 2019-04-19T15:47:12
+2019-04-12 17:49:23,476 - SPS-Tester-via-steempy - INFO - Balances for accounts at time: 2019-04-19T15:47:12
+2019-04-12 17:49:23,480 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Balances ==> tester001:510.000 TBD,tester002:438.000 TBD,tester003:414.000 TBD,tester004:414.000 TBD
+2019-04-12 17:49:23,482 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Balances ==> steem.dao:999824.095 TBD
+2019-04-12 17:49:23,483 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Listing proposals with status active (id:total_votes): 
+2019-04-12 17:49:23,483 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Listing proposals with status expired (id:total_votes): 
+2019-04-12 17:49:23,484 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Listing proposals with status all (id:total_votes): 
+2019-04-12 17:49:23,484 - SPS-Tester-via-steempy - INFO - Moving to date: 2019-04-19T16:47:12
+2019-04-12 17:49:24,020 - SPS-Tester-via-steempy - INFO - Balances for accounts at time: 2019-04-19T16:47:12
+2019-04-12 17:49:24,024 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Balances ==> tester001:510.000 TBD,tester002:438.000 TBD,tester003:414.000 TBD,tester004:414.000 TBD
+2019-04-12 17:49:24,026 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Balances ==> steem.dao:999824.095 TBD
+2019-04-12 17:49:24,027 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Listing proposals with status active (id:total_votes): 
+2019-04-12 17:49:24,028 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Listing proposals with status expired (id:total_votes): 
+2019-04-12 17:49:24,028 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Listing proposals with status all (id:total_votes): 
+2019-04-12 17:49:24,029 - SPS-Tester-via-steempy - INFO - Moving to date: 2019-04-19T16:47:12
+2019-04-12 17:49:24,029 - SPS-Tester-via-steempy - INFO - Balances for accounts at time: 2019-04-19T16:47:12
+2019-04-12 17:49:24,034 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Balances ==> tester001:510.000 TBD,tester002:438.000 TBD,tester003:414.000 TBD,tester004:414.000 TBD
+2019-04-12 17:49:24,036 - SPS-Tester-via-steempy.SPS-Tester-Utils - INFO - Balances ==> steem.dao:999824.095 TBD
+2019-04-12 17:49:24,036 - SPS-Tester-via-steempy.Runner-Py - INFO - Stopping node at http://127.0.0.1:8090
+2019-04-12 17:49:24,036 - SPS-Tester-via-steempy.Tools-Py - INFO - Terminating steem process running on port 8090
+2019-04-12 17:49:24,081 - SPS-Tester-via-steempy.Tools-Py - INFO - Done...
