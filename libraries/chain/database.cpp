@@ -5087,6 +5087,11 @@ void database::apply_hardfork( uint32_t hardfork )
                   auth.posting.weight_threshold = 1;
                   auth.posting.clear();
                });
+
+            modify( get_account( STEEM_TREASURY_ACCOUNT ), [&]( account_object& a )
+            {
+               a.recovery_account = STEEM_TREASURY_ACCOUNT;
+            });
          }
          break;
       default:
