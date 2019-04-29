@@ -5087,6 +5087,21 @@ void database::apply_hardfork( uint32_t hardfork )
                   auth.posting.weight_threshold = 1;
                   auth.posting.clear();
                });
+
+            modify( get_account( STEEM_TREASURY_ACCOUNT ), [&]( account_object& a )
+            {
+               a.recovery_account = STEEM_TREASURY_ACCOUNT;
+            });
+
+            const auto& rec_req_idx = get_index< account_recovery_request_index >().indices().get< by_account >();
+            auto rec_req = rec_req_idx.find( STEEM_TREASURY_ACCOUNT );
+            if( rec_req != rec_req_idx.end() )
+               remove( *rec_req );
+
+            const auto& change_recovery_idx = get_index< change_recovery_account_request_index >().indices().get< by_account >();
+            auto change_request = change_recovery_idx.find( STEEM_TREASURY_ACCOUNT );
+            if( change_request != change_recovery_idx.end() )
+               remove( *change_request );
          }
          break;
       default:
